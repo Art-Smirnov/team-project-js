@@ -1,0 +1,74 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $main-font;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  outline: 1px solid red;
+
+  @include for-size(mobile) {
+    width: 270px;
+  }
+
+  @include for-size(tablet) {
+    width: 594px;
+    padding-left: 87px;
+    padding-right: 87px;
+  }
+
+  @include for-size(desktop) {
+    width: 930px;
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
