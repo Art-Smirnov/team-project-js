@@ -4,11 +4,24 @@ import './services/apiService.js';
 import './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
+import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
-import listTmpl from './templates/card-list.hbs';
 
 const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
-// preloader.show();
+const refs = getRefs();
 
-apiService.fetchDefaultEvents();
+renderDefaultEvents();
+
+async function renderDefaultEvents() {
+  preloader.show();
+  const result = await apiService.fetchDefaultEvents();
+  console.log(result);
+
+  appendImagesMarkup(result);
+  preloader.hide();
+}
+
+function appendImagesMarkup(events) {
+  refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
+}
