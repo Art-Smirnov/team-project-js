@@ -1,5 +1,7 @@
-import './shared_scss/main.scss';
+'use strict';
 
+import './shared_scss/main.scss';
+import './services/scrollUp/scrollUp';
 import './services/apiService.js';
 import './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
@@ -21,7 +23,6 @@ async function renderDefaultEvents() {
   appendImagesMarkup(result);
   preloader.hide();
 }
-
 function appendImagesMarkup(events) {
   refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
 }
