@@ -13,10 +13,11 @@ function trackScroll() {
 }
 
 function backToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -80);
-    setTimeout(backToTop, 0);
-  }
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+    during: 1000,
+  });
 }
 
 const goTopBtn = document.querySelector('.back_to_top');

@@ -4,6 +4,7 @@ import './shared_scss/main.scss';
 import './services/scrollUp/scrollUp';
 import './services/apiService.js';
 import './services/countriesCodes.js';
+
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
