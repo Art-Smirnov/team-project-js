@@ -1,12 +1,14 @@
 {{#each this}}
-<div class="photo-card">
-  <img src="{{largeImageURL}}" alt="{{webformatURL}}" />
+<li class="card-list-item">
+  <div class="photo-card">
+    <img src="{{images.5.url}}" alt="{{name}}" />
 
-  <div class="info">
-    <h3 class="info-item"></h3>
-    <p class="date-item"></p>
-    <p class="place-item"></p>
+    <div class="info">
+      <h3 class="info-item">{{name}}</h3>
+      <p class="date-item">{{dates.start.localDate}}</p>
+      <p class="place-item">{{dates.timezone}}</p>
 
+    </div>
   </div>
-</div>
+</li>
 {{/each}}

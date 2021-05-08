@@ -1,0 +1,48 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-list-item {
+  margin-right: 15px;
+  margin-bottom: 40px;
+  max-width: calc((100% - 15px) / 2);
+
+  @include for-size(tablet) {
+    width: calc((100% - 84px) / 3);
+    margin-right: 28px;
+    margin-bottom: 50px;
+  }
+  // @media screen and (min-width: 1200px) .portfolio-list__card:nth-child(3n) {
+  //   margin-right: 0;
+  // }
+
+  @include for-size(desktop) {
+    width: calc((100% - 216px) / 4);
+    margin-right: 72px;
+    margin-bottom: 66px;
+  }
+
+  &:nth-child(2n) {
+    @include for-size(mobile-only) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(3n) {
+    @include for-size(tablet) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(4n) {
+    @include for-size(desktop) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(3n) {
+    @include for-size(desktop) {
+      margin-right: 72px;
+    }
+  }
+}

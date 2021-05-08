@@ -3,6 +3,7 @@ const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const MY_KEY = '0E9J50fYPIbPJoVb72f3QU7X5EGa9oFk';
 
 const DEFAULT_COUNTRY = 'US';
+
 export default class ApiService {
   constructor() {
     this.page = 1;
@@ -18,7 +19,6 @@ export default class ApiService {
     }
     const res = await response.json();
 
-    console.log(res._embedded.events);
-    return await Promise.resolve(res._embedded);
+    return await Promise.resolve(res._embedded.events);
   }
 }
