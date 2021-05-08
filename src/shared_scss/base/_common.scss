@@ -13,6 +13,15 @@ body {
   font-family: $main-font;
   background-color: $modal-content;
   color: $text-cl;
+  background-image: url(../images/mobile/noise_body_mobile.jpg);
+
+  @include for-size(tablet) {
+    background-image: url(../images/tablet/bg_body_tablet@2x.jpg);
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/bg_body_desktop@2x.jpg);
+  }
 }
 
 h1,
