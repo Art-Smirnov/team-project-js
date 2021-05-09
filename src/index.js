@@ -11,11 +11,24 @@ const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
 
-renderDefaultEvents();
-
+// renderDefaultEvents();
+renderEventsByQuery();
 async function renderDefaultEvents() {
   preloader.show();
+
+  clearGallery();
   const result = await apiService.fetchDefaultEvents();
+  console.log(result);
+
+  appendImagesMarkup(result);
+  preloader.hide();
+}
+
+async function renderEventsByQuery() {
+  preloader.show();
+
+  clearGallery();
+  const result = await apiService.fetchEventsByQuery();
   console.log(result);
 
   appendImagesMarkup(result);
@@ -24,4 +37,8 @@ async function renderDefaultEvents() {
 
 function appendImagesMarkup(events) {
   refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
+}
+
+function clearGallery() {
+  refs.cardList.innerHTML = '';
 }

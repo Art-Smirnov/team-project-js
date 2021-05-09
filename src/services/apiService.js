@@ -7,11 +7,25 @@ const DEFAULT_COUNTRY = 'US';
 export default class ApiService {
   constructor() {
     this.page = 1;
+    this.searchQuery = 'dakhabrakha';
   }
 
   async fetchDefaultEvents() {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}`,
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const res = await response.json();
+
+    return await Promise.resolve(res._embedded.events);
+  }
+
+  async fetchEventsByQuery() {
+    const response = await fetch(
+      `${BASE_URL}events.json?keyword=${this.searchQuery}&apikey=${MY_KEY}`,
     );
 
     if (!response.ok) {
