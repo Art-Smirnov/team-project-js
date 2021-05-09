@@ -21,16 +21,14 @@
   background-size: 60%;
   background-repeat: no-repeat;
 }
-.modal-tit {
+.modal-titel {
   list-style: none;
   color: $primary-accent;
 }
-.modal-cvg:before {
-}
 
-// ,
 .backdrop {
   position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;

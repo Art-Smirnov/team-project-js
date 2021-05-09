@@ -5,7 +5,9 @@
         <div>
             <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'>
             <ul>
-                <li class="modal-tit">INFO
+
+                <li class="modal-titel">INFO
+
                     <span class="modal-text">{{promoter.description}}</span>
                 </li>
                 <li class="modal-tit">WHEN
@@ -13,7 +15,9 @@
                     <span>{{resultFeatch.dates.start.localTime}}</span>
                     <span>{{dates.timezone}}</span>
                 </li>
-                <li class="modal-tit">WHERE
+
+                <li class="modal-titel">WHERE
+
                     <span class="modal-text">{{_embedded.venues.0.country.name}}</span>
                     <span>{{_embedded.venues.1.city.name}}</span>
                     <span>{{_embedded.venues.0.name}}</span>
@@ -23,7 +27,9 @@
                 </li>
                 <li class="modal-buy-tickets">
                     <ul>
+
                         <li class="modal-status-ticket">
+
                             Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}} ({{priceRanges.0.currency}})
                             <button class='modal-button'>
                                 <a href="{{resultFeatch.url}}">BUY TICKETS</a>
