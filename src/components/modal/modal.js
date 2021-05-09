@@ -3,7 +3,7 @@ import getRefs from '../../services/get-refs.js';
 import modalTmpl from '../../templates/card-list.hbs';
 const apiService = new ApiService();
 const refs = getRefs();
-refs.overlayModal.insertAdjacentHTML('beforeend', modalTmpl())
+refs.overlay.insertAdjacentHTML('beforeend', modalTmpl())
 // function onImageClick(e) {
 //     const image = e.target;
 
