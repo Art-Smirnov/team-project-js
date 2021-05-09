@@ -1,0 +1,32 @@
+.header {
+  background: #c4c4c4;
+  text-align: center;
+}
+
+.header-overlay {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-image: linear-gradient(rgba(13, 13, 13, 0) rgba(14, 14, 14, 0.8));
+}
+
+.header-main {
+  background-image: url(/images/mobile/hero_mobile@1x.jpg);
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+.header-title-container {
+  width: 212px;
+  padding-top: 78px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-title {
+  font-family: $main-font;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: $primary-accent;
+}
