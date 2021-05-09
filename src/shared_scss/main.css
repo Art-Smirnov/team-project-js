@@ -1,6 +1,7 @@
+@import url(e:\team-project-js\src\components\modal\overlay.css);
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -8,11 +9,11 @@ html {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #0e0e0e;
   color: white;
   background-image: url(../images/mobile/noise_body_mobile.jpg);
@@ -104,9 +105,9 @@ img {
 
 .lds-roller div {
   -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   -webkit-transform-origin: 40px 40px;
-          transform-origin: 40px 40px;
+  transform-origin: 40px 40px;
 }
 
 .lds-roller div:after {
@@ -122,7 +123,7 @@ img {
 
 .lds-roller div:nth-child(1) {
   -webkit-animation-delay: -0.036s;
-          animation-delay: -0.036s;
+  animation-delay: -0.036s;
 }
 
 .lds-roller div:nth-child(1):after {
@@ -132,7 +133,7 @@ img {
 
 .lds-roller div:nth-child(2) {
   -webkit-animation-delay: -0.072s;
-          animation-delay: -0.072s;
+  animation-delay: -0.072s;
 }
 
 .lds-roller div:nth-child(2):after {
@@ -142,7 +143,7 @@ img {
 
 .lds-roller div:nth-child(3) {
   -webkit-animation-delay: -0.108s;
-          animation-delay: -0.108s;
+  animation-delay: -0.108s;
 }
 
 .lds-roller div:nth-child(3):after {
@@ -152,7 +153,7 @@ img {
 
 .lds-roller div:nth-child(4) {
   -webkit-animation-delay: -0.144s;
-          animation-delay: -0.144s;
+  animation-delay: -0.144s;
 }
 
 .lds-roller div:nth-child(4):after {
@@ -162,7 +163,7 @@ img {
 
 .lds-roller div:nth-child(5) {
   -webkit-animation-delay: -0.18s;
-          animation-delay: -0.18s;
+  animation-delay: -0.18s;
 }
 
 .lds-roller div:nth-child(5):after {
@@ -172,7 +173,7 @@ img {
 
 .lds-roller div:nth-child(6) {
   -webkit-animation-delay: -0.216s;
-          animation-delay: -0.216s;
+  animation-delay: -0.216s;
 }
 
 .lds-roller div:nth-child(6):after {
@@ -182,7 +183,7 @@ img {
 
 .lds-roller div:nth-child(7) {
   -webkit-animation-delay: -0.252s;
-          animation-delay: -0.252s;
+  animation-delay: -0.252s;
 }
 
 .lds-roller div:nth-child(7):after {
@@ -192,7 +193,7 @@ img {
 
 .lds-roller div:nth-child(8) {
   -webkit-animation-delay: -0.288s;
-          animation-delay: -0.288s;
+  animation-delay: -0.288s;
 }
 
 .lds-roller div:nth-child(8):after {
@@ -203,22 +204,22 @@ img {
 @-webkit-keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -227,7 +228,14 @@ img {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.card-list-item {
+  margin-right: 15px;
+  margin-bottom: 40px;
+  max-width: calc((100% - 15px) / 2);
+
   margin-left: -15px;
   margin-top: -40px;
 }
