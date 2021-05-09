@@ -1,8 +1,8 @@
 import debounce from 'lodash.debounce';
 import './shared_scss/main.scss';
-
 import './services/apiService.js';
-import './services/countriesCodes.js';
+import './services/apiService.js';
+
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
@@ -53,3 +53,4 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
+
