@@ -9,3 +9,14 @@ function renderSelectCountry(arr) {
   });
   refs().selectForm.insertAdjacentHTML('beforeend', option);
 }
+
+refs().selectForm.addEventListener('change', onSelectCountry);
+
+function onSelectCountry(e) {
+  let selectEl = e.target;
+  let value = selectEl.options[selectEl.selectedIndex].value;
+  let text = selectEl.options[selectEl.selectedIndex].text;
+  console.log(value, '---value');
+  console.log(text, '---text');
+  return text;
+}
