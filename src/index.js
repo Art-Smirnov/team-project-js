@@ -13,13 +13,15 @@ const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
 
-refs.input.addEventListener('input', debounce(onInputChange, 500));
-// renderDefaultEvents();
-renderEventsByQuery();
+renderDefaultEvents();
+
+refs.searchEventInp.addEventListener('input', debounce(onInputChange, 500));
+
 async function renderDefaultEvents() {
   preloader.show();
 
   clearGallery();
+
   const result = await apiService.fetchDefaultEvents();
   console.log(result);
 
@@ -27,15 +29,21 @@ async function renderDefaultEvents() {
   preloader.hide();
 }
 
-async function renderEventsByQuery() {
-  preloader.show();
+async function onInputChange(e) {
+  try {
+    preloader.show();
 
-  clearGallery();
-  const result = await apiService.fetchEventsByQuery();
-  console.log(result);
+    clearGallery();
+    apiService.query = e.target.value;
+    const result = await apiService.fetchEventsByQuery();
+    console.log(result);
 
-  appendImagesMarkup(result);
-  preloader.hide();
+    appendImagesMarkup(result);
+  } catch (error) {
+    alert('Something went wrong! Please enter a more specific query!');
+  } finally {
+    preloader.hide();
+  }
 }
 
 function appendImagesMarkup(events) {
