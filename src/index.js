@@ -2,6 +2,7 @@ import debounce from 'lodash.debounce';
 import './shared_scss/main.scss';
 import './services/apiService.js';
 import './services/apiService.js';
+import './components/modal/modal';
 
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
@@ -53,4 +54,3 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
-
