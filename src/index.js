@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce';
 import './shared_scss/main.scss';
 
 import './services/apiService.js';
@@ -6,12 +7,13 @@ import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
-import renderSerchForm from './components/search-form/renderSearchForm.js'
+import renderSerchForm from './components/search-form/renderSearchForm.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
 
+refs.input.addEventListener('input', debounce(onInputChange, 500));
 // renderDefaultEvents();
 renderEventsByQuery();
 async function renderDefaultEvents() {

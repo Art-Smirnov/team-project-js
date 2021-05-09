@@ -7,7 +7,7 @@ const DEFAULT_COUNTRY = 'US';
 export default class ApiService {
   constructor() {
     this.page = 1;
-    this.searchQuery = 'dakhabrakha';
+    this.searchQuery = '';
   }
 
   async fetchDefaultEvents() {
