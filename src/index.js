@@ -3,6 +3,7 @@ import './shared_scss/main.scss';
 import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
+import './components/scroll-up/scroll_up';
 
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
