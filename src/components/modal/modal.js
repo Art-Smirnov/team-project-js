@@ -1,8 +1,9 @@
-import ApiService from './services/apiService.js';
-import getRefs from './services/get-refs.js';
-import windwTmpl from './templates/card-list.hbs';
+import ApiService from '../../services/apiService.js';
+import getRefs from '../../services/get-refs.js';
+import modalTmpl from '../../templates/card-list.hbs';
 const apiService = new ApiService();
-
+const refs = getRefs();
+refs.overlayModal.insertAdjacentHTML('beforeend', modalTmpl())
 // function onImageClick(e) {
 //     const image = e.target;
 
@@ -28,12 +29,12 @@ const apiService = new ApiService();
 //   const result = await apiService.fetchDefaultEvents();
 //   console.log(result);
 // }
-function modalMarkup(events) {
-  getRefs.overlayModal.insertAdjacentHTML('beforeend', windwTmpl(events));
-}
-const result = await apiService.fetchDefaultEvents()
-console.log(result);
+// function modalMarkup(events) {
+//   getRefs.overlayModal.insertAdjacentHTML('beforeend', windwTmpl(events));
+// }
+// const result = await apiService.fetchDefaultEvents()
+// console.log(result);
 
-modalMarkup(result)
-console.log(getRefs.cardList);
-console.log('2356');
+// modalMarkup(result)
+// console.log(getRefs.cardList);
+// console.log('2356');
