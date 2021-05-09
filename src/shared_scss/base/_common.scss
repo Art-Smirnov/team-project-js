@@ -50,8 +50,6 @@ img {
 
 .container {
   width: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
   margin-right: auto;
   margin-left: auto;
   outline: 1px solid red;
@@ -62,14 +60,10 @@ img {
 
   @include for-size(tablet) {
     width: 594px;
-    padding-left: 87px;
-    padding-right: 87px;
   }
 
   @include for-size(desktop) {
     width: 930px;
-    padding-left: 175px;
-    padding-right: 175px;
   }
 }
 
