@@ -47,6 +47,28 @@ async function onInputChange(e) {
   }
 }
 
+getRefs().selectForm.addEventListener('change', onSelectCountry);
+
+async function onSelectCountry(e) {
+  try {
+    preloader.show();
+
+    clearGallery();
+
+    let selectEl = e.target;
+    let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
+
+    const result = await apiService.fetchEventsByCountry(selectCountryCode);
+    console.log(result);
+
+    appendImagesMarkup(result);
+  } catch (error) {
+    alert('No events. Please choose other country!');
+  } finally {
+    preloader.hide();
+  }
+}
+
 function appendImagesMarkup(events) {
   refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
 }

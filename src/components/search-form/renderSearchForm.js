@@ -9,3 +9,4 @@ function renderSelectCountry(arr) {
   });
   refs().selectForm.insertAdjacentHTML('beforeend', option);
 }
+
