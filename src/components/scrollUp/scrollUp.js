@@ -1,5 +1,3 @@
-'use strict';
-
 function trackScroll() {
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
