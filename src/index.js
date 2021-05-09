@@ -1,5 +1,3 @@
-'use strict';
-
 import './shared_scss/main.scss';
 import './services/scrollUp/scrollUp';
 import './services/apiService.js';
