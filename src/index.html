@@ -37,6 +37,21 @@
         <svg class="svg">
           <use href="./symbol-defs.svg#ticket1"></use>
         </svg> -->
+        <div class="form-search">
+          <form action="">
+            <label for="search-event">
+              <input
+                id="search-event"
+                type="text"
+                placeholder="Start searching"
+              />
+            </label>
+
+            <select name="country" id="" class="form-select">
+              <option value="">Choose country</option>
+            </select>
+          </form>
+        </div>
       </div>
     </header>
     <main>
@@ -54,8 +69,10 @@
           <div></div>
         </div>
       </div>
+      <div class="overlay is-closed"></div>
       <div class="pag"><ul class="pag__list"></ul></div>
     </main>
+
     <footer><div class="container"></div></footer>
   </body>
 </html>

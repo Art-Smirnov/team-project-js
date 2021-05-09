@@ -1,3 +1,4 @@
+@import url(e:\team-project-js\src\components\modal\overlay.css);
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -265,6 +266,14 @@ img {
     width: calc((100% - 288px) / 4);
     margin-left: 72px;
     margin-top: 66px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=main.css.map */
