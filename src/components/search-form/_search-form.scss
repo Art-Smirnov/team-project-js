@@ -1,0 +1,8 @@
+@import '../../shared_scss/utils/mixins';
+@import '../../shared_scss/utils/variables';
+
+.form-search {
+  @include for-size(tablet) {
+    display: flex;
+  }
+}
