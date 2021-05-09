@@ -1,4 +1,3 @@
-@import url(e:\team-project-js\src\components\modal\overlay.css);
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -275,5 +274,83 @@ img {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.overlay-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #4c00fe;
+  cursor: pointer;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  background-image: url '../../images/sprite.svg#close';
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.modal-tit {
+  list-style: none;
+  color: #dc56c5;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 201px;
+  width: 930px;
+  height: 1023px;
+  background-color: #fff2fd;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-status-ticket {
+  list-style: none;
+  color: #0e0e0e;
+}
+
+.modal-status-ticket::before {
+  content: '';
+  background-image: url(../images/sprite.svg#ticket1);
+  width: 29px;
+  height: 19px;
+  fill: #0e0e0e;
 }
 /*# sourceMappingURL=main.css.map */

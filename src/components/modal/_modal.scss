@@ -1,0 +1,64 @@
+.overlay-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: $btn;
+  cursor: pointer;
+  transition: background-color $animation-duration $timing-function;
+  outline: none;
+  background-image: url '../../images/sprite.svg#close';
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+.modal-tit {
+  list-style: none;
+  color: $primary-accent;
+}
+.modal-cvg:before {
+}
+
+// ,
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 201px;
+  width: 930px;
+  height: 1023px;
+  background-color: $modal-bg;
+  transform: scale(0.95);
+  transition: transform $animation-duration $timing-function;
+}
+.modal-status-ticket {
+  list-style: none;
+  color: $modal-content;
+}
+.modal-status-ticket::before {
+  content: '';
+  background-image: url(../images/sprite.svg#ticket1);
+  width: 29px;
+  height: 19px;
+  fill: $modal-content;
+}

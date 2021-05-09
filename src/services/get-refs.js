@@ -4,7 +4,9 @@ export default function getRefs() {
     overlay: document.querySelector('.overlay'),
     searchEventInp: document.querySelector('#search-event'),
     searchEventBtn: document.querySelector('.search-event-submit'),
-    selectForm: document.querySelector('.form-select')
+    selectForm: document.querySelector('.form-select'),
+    modal: document.querySelector('.modal'),
+    backdrop: document.querySelector('.backdrop'),
 
   };
 }
