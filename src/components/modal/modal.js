@@ -1,40 +1,47 @@
 import ApiService from '../../services/apiService.js';
-import getRefs from '../../services/get-refs.js';
+import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/card-list.hbs';
+
 const apiService = new ApiService();
-const refs = getRefs();
-refs.overlay.insertAdjacentHTML('beforeend', modalTmpl())
-// function onImageClick(e) {
-//     const image = e.target;
+let currentID = '';
+// const refs = getRefs();
 
-// }
+// refs.overlay.insertAdjacentHTML('beforeend', modalTmpl());
 
-// async function openModal(e) {
-//     e.preventDefault();
-//     // const image = e.target;
-//     if (e.target.localName === 'img') {
-//         getRefs.overlay.classList.add('is-open')
-//         const result = await apiService.fetchDefaultEvents();
-//         modalMarkup(result)
-//             // modalImgRef.src = e.target.dataset.source;
+console.log(getRefs().cardList);
+getRefs().cardList.addEventListener('click', onClickCard);
+refs.modal.addEventListener('click', onCloseModal);
+
+async function onClickCard(e) {
+  console.log(1);
+  onToggleModal();
+
+  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
+    currentID = e.target.parentElement.dataset.id;
+  }
+  if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
+    currentID = e.target.parentElement.parentElement.dataset.id;
+  }
+  if (e.target.nodeName === 'LI') {
+    currentID = e.target.dataset.id;
+  }
+  const result = await apiService.fetchDefaultEvents();
+
+  for (const el of result) {
+    if (el.id === currentID) {
+      refs.modal.insertAdjacentHTML('beforeend', modalTmpl(el));
+    }
+  }
+}
+
+// function onCloseModal(e) {
+//   if (e.target.nodeName !== 'BUTTON') {
+//     return;
 //   }
-//   for (let el of markup) {
-//     if (el.includes(e.target.src)) {
-//       activeIndex = markup.indexOf(el);
-//     }
-//   }
+//   onToggleModal();
+//   cleanInformationCard();
 // }
-// getFetch()
-// async function gaeFetch() {
-//   const result = await apiService.fetchDefaultEvents();
-//   console.log(result);
-// }
-// function modalMarkup(events) {
-//   getRefs.overlayModal.insertAdjacentHTML('beforeend', windwTmpl(events));
-// }
-// const result = await apiService.fetchDefaultEvents()
-// console.log(result);
 
-// modalMarkup(result)
-// console.log(getRefs.cardList);
-// console.log('2356');
+// function onToggleModal() {
+//   refs.modal.classList.toggle('is-hidden');
+// }
