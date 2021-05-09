@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACcI,MAAM,EAAE,SAAS,EAAE,KAAK;EDX5B,AAAA,YAAY,CAAC;IAET,OAAO,EAAE,IAAI;GAEhB",
+    "sources": [
+        "search-form.scss",
+        "../../shared_scss/utils/_mixins.scss",
+        "../../shared_scss/utils/_variables.scss"
+    ],
+    "names": [],
+    "file": "search-form.css"
+}

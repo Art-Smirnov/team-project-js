@@ -1,0 +1,56 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-top: -40px;
+  @include for-size(tablet) {
+    margin-left: -28px;
+    margin-top: -50px;
+  }
+
+  @include for-size(desktop) {
+    margin-left: -72px;
+    margin-top: -66px;
+  }
+}
+.card-list-item {
+  margin-left: 15px;
+  margin-top: 40px;
+  max-width: calc((100% - 30px) / 2);
+
+  @include for-size(tablet) {
+    width: calc((100% - 84px) / 3);
+    margin-left: 28px;
+    margin-top: 50px;
+  }
+
+  @include for-size(desktop) {
+    width: calc((100% - 288px) / 4);
+    margin-left: 72px;
+    margin-top: 66px;
+  }
+
+  // &:nth-child(2n) {
+  //   @include for-size(mobile-only) {
+  //     margin-right: 0;
+  //   }
+  // }
+
+  // &:nth-child(3n) {
+  //   @include for-size(tablet) {
+  //     margin-right: 0;
+  //   }
+  // }
+
+  // &:nth-child(4n) {
+  //   @include for-size(desktop) {
+  //     margin-right: 0;
+  //   }
+  // }
+
+  // &:nth-child(3n) {
+  //   @include for-size(desktop) {
+  //     margin-right: 72px;
+  //   }
+  // }
+}

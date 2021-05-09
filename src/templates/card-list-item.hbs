@@ -1,0 +1,14 @@
+{{#each this}}
+<li class="card-list-item" data-id="{{id}}">
+  <div class="photo-card">
+    <img src="{{images.5.url}}" alt="{{name}}" />
+
+    <div class="info">
+      <h3 class="info-item">{{name}}</h3>
+      <p class="date-item">{{dates.start.localDate}}</p>
+      <p class="place-item">{{dates.timezone}}</p>
+
+    </div>
+  </div>
+</li>
+{{/each}}
