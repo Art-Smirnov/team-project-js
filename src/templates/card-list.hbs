@@ -1,0 +1,41 @@
+{{#each this}}
+<img src="{{images.url}}" alt="{{name}}" class='modal-photo'>
+<div>
+    <img src="{{images.url}}" alt="{{name}}" class='modal-photo-main'>
+    <ul>
+        <li class="modal-titel">INFO
+            <span class="modal-text">{{info}}</span>
+        </li>
+        <li class="modal-titel">WHEN
+            <span>{{dates.start.localDate}}</span>
+            <span>{{dates.start.localTime}}</span>
+            <span>{{dates.timezone}}</span>
+        </li>
+        <li class="modal-titel">WHERE
+            <span class="modal-text">{{dates.timezone}}</span>
+            <span></span>
+        </li>
+        <li class="modal-titel">WHO
+            <span class="modal-text">{{name}}</span>
+        </li>
+        <li class="modal-titel">
+            <ul>
+                <li>
+                    Standart 300-500 UAH
+                    <button class='modal-button'>
+                        <span>BUY TICKETS</span>
+
+                    </button>
+                </li>
+                <li>
+                    VIP 1000-1500 UAH
+                    <button class='modal-button'>
+                        <span>BUY TICKETS</span>
+
+                    </button>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{{/each}}
