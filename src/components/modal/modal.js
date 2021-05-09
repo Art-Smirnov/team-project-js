@@ -6,15 +6,15 @@ const apiService = new ApiService();
 let currentID = '';
 // const refs = getRefs();
 
-// refs.overlay.insertAdjacentHTML('beforeend', modalTmpl());
+getRefs().overlay.insertAdjacentHTML('beforeend', modalTmpl());
 
-console.log(getRefs().cardList);
 getRefs().cardList.addEventListener('click', onClickCard);
-refs.modal.addEventListener('click', onCloseModal);
+getRefs().modal.addEventListener('click', onCloseModal);
 
 async function onClickCard(e) {
-  console.log(1);
-  onToggleModal();
+  console.log(getRefs().cardList);
+  getRefs().cardList.classList.toggle('.is-hidden');
+  // onToggleModal();
 
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
     currentID = e.target.parentElement.dataset.id;
@@ -27,21 +27,20 @@ async function onClickCard(e) {
   }
   const result = await apiService.fetchDefaultEvents();
 
-  for (const el of result) {
-    if (el.id === currentID) {
-      refs.modal.insertAdjacentHTML('beforeend', modalTmpl(el));
-    }
-  }
+  // for (const el of result) {
+  //   if (el.id === currentID) {
+  //     getRefs().modal.insertAdjacentHTML('beforeend', modalTmpl(el));
+  //   }
+  // }
 }
 
-// function onCloseModal(e) {
-//   if (e.target.nodeName !== 'BUTTON') {
-//     return;
-//   }
-//   onToggleModal();
-//   cleanInformationCard();
-// }
+function onCloseModal(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  onToggleModal();
+}
 
-// function onToggleModal() {
-//   refs.modal.classList.toggle('is-hidden');
-// }
+function onToggleModal() {
+  getRefs().cardList.classList.toggle('.is-hidden');
+}
