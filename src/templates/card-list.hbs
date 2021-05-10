@@ -1,38 +1,39 @@
 <div class="overlay-lightbox modal">
     <button class="close-button" data-modal-close></button>
     <div class="overlay-modal">
-        <img src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-            alt="{{name}}" width="20px" height="20px" class='modal-photo'>
-        {{!-- <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo'> --}}
+        {{!-- <img
+            src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
+            alt="{{name}}" width="20px" height="20px" class='modal-photo'> --}}
+        <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo'>
         <div class="modal-content">
-            <img src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-                alt="{{name}}" class='modal-photo-main'>
-            {{!-- <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'> --}}
-            <ul>
+            {{!-- <img
+                src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
+                alt="{{name}}" class='modal-photo-main'> --}}
+            <img src="src=" {{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'>
+            <ul class="modal-content-list">
 
                 <li class="modal-titel">INFO
 
-                    <span class="modal-text">Atlas Weekend is the largest music festival
-                        in Ukraine.More than 200 artists will create
-                        a proper music festival atmosphere on 10 stages{{promoter.description}}</span>
+                    <span class="modal-text">{{promoter.description}}</span>
                 </li>
                 <li class="modal-titel">WHEN
-                    <span>{{dates.start.localDate}}</span>
-                    <span>{{resultFeatch.dates.start.localTime}}</span>
-                    <span>{{dates.timezone}}</span>
+                    <span class="modal-text">{{dates.start.localDate}}</span>
+                    <span class="modal-text">{{resultFeatch.dates.start.localTime}} ({{dates.timezone}})</span>
                 </li>
 
                 <li class="modal-titel">WHERE
 
-                    <span class="modal-text">{{_embedded.venues.0.country.name}}</span>
-                    <span>{{_embedded.venues.1.city.name}}</span>
-                    <span>{{_embedded.venues.0.name}}</span>
+                    <span class="modal-text">{{_embedded.venues.1.city.name}},
+                        {{_embedded.venues.0.country.name}}</span>
+                    <span class="modal-text">{{_embedded.venues.0.name}}</span>
+
                 </li>
                 <li class="modal-titel">WHO
-                    <span class="modal-text">{{name}}</span>
+                    <span class="modal-text">{{name}}The Black Eyed Peas</span>
                 </li>
                 <li class="modal-buy-tickets">
-                    <ul>
+                    <span class="modal-titel">PRICES</span>
+                    <ul class="modal-content-list">
 
                         <li>
                             <div class="modal-ticket">
@@ -51,7 +52,7 @@
                             </button>
                         </li>
                         <li>
-                            <div>
+                            <div class="modal-ticket">
                                 <span class="modal-skan-svg">
                                 </span>
                                 <span class="modal-status-ticket">

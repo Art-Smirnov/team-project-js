@@ -7,6 +7,10 @@
   list-style: none;
   color: $primary-accent;
   display: grid;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.22em;
+  margin-bottom: 20px;
 }
 
 .backdrop {
@@ -25,17 +29,23 @@
 .modal {
   margin-left: auto;
   margin-right: auto;
+  padding: 62px 30px;
+
   margin-top: 201px;
   width: 930px;
-  height: 1023px;
+  min-height: 1023px;
   background-color: $modal-bg;
   transform: scale(0.95);
   transition: transform $animation-duration $timing-function;
   border-radius: 300px 0px;
+  text-align: center;
 }
 .modal-status-ticket {
   list-style: none;
   color: $modal-content;
+  font-size: 18px;
+  font-weight: 400;
+  align-items: 1.22em;
 }
 
 .modal-skan-svg {
@@ -66,9 +76,11 @@
 .modal-photo {
   margin-left: auto;
   margin-left: auto;
+  margin-bottom: 41px;
   width: 132px;
   height: 132px;
   border-radius: 50%;
+  display: inline-block;
 }
 
 .close-button {
@@ -98,25 +110,49 @@
   display: flex;
   min-height: 641px;
 }
+.modal-content-list {
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+}
+.modal-content-list li:not(:last-child) {
+  margin-bottom: 31px;
+}
 .modal-photo-main {
   width: auto;
   height: 100%;
   object-fit: cover;
-  margin-top: 235px;
+
   margin-right: 60px;
 }
 .modal-text {
-  color: $overlay-cl;
+  color: $modal-content;
+  font-size: 18px;
+  font-weight: 400;
 }
 .modal-ticket {
   display: flex;
+  margin-bottom: 20px;
 }
 .modal-button {
   min-height: 40px;
   min-width: 145px;
   background-color: $btn;
+  border-radius: 5px;
 }
+.modal-button a {
+  color: $text-cl;
+  text-decoration: none;
+}
+
 .modal-button-more {
-  margin-top: auto;
-  margin-bottom: 62px;
+  min-width: 255px;
+  min-height: 40px;
+  border: 1px solid $btn;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $btn;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: 1.22em;
 }
