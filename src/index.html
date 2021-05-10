@@ -14,6 +14,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header header-overlay">
@@ -77,7 +81,7 @@
             </label>
 
             <select name="country" id="" class="form-select">
-              <option value="">Choose country</option>
+              <option value="" disabled selected hidden>Choose country</option>
             </select>
           </form>
         </div>
@@ -98,7 +102,11 @@
           <div></div>
         </div>
       </div>
-      <div class="overlay is-closed"></div>
+      <div class="is-hidden backdrop" data-modal></div>
+
+      <a class="back_to_top" title="Наверх"
+        >&#8682; <br /><span class="up">up</span>
+      </a>
     </main>
 
     <footer><div class="container"></div></footer>
