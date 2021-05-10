@@ -5,13 +5,13 @@ const MY_KEY = '0E9J50fYPIbPJoVb72f3QU7X5EGa9oFk';
 const DEFAULT_COUNTRY = 'US';
 
 export default class ApiService {
-  constructor() {
-    this.page = 1;
-    this.searchQuery = '';
-    this.countryQuery = '';
-  }
+  // constructor() {
+  //   this.page = 1;
+  //   this.searchQuery = '';
+  //   this.countryQuery = '';
+  // }
 
-  async fetchDefaultEvents() {
+  static async fetchDefaultEvents() {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}`,
     );

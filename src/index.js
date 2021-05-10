@@ -14,7 +14,7 @@ import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
 // import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
-const apiService = new ApiService();
+// const apiService = new ApiService();
 const refs = getRefs();
 renderSelectCountry(countryCodes);
 renderDefaultEvents();
@@ -26,8 +26,7 @@ async function renderDefaultEvents() {
 
   clearGallery();
 
-  const result = await apiService.fetchDefaultEvents();
-  console.log(result);
+  const result = await ApiService.fetchDefaultEvents();
 
   appendImagesMarkup(result);
   preloader.hide();
@@ -35,13 +34,15 @@ async function renderDefaultEvents() {
 
 async function onInputChange(e) {
   e.preventDefault();
-  console.log(e.currentTarget.elements.query.value);
+
   try {
     preloader.show();
 
     clearGallery();
-    // apiService.query = e.target.value;
-    const result = await apiService.fetchEventsByQuery(e.target.value);
+
+    const result = await ApiService.fetchEventsByQuery(
+      e.currentTarget.elements[0].value,
+    );
     console.log(result);
 
     appendImagesMarkup(result);
