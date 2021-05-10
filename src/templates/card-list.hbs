@@ -1,16 +1,20 @@
 <div class="overlay-lightbox modal">
-    <button class="close-button" data-modal-close>x</button>
+    <button class="close-button" data-modal-close></button>
     <div class="overlay-modal">
-        <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo'>
-        <div>
-            <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'>
+        <img src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
+            alt="{{name}}" width="20px" height="20px" class='modal-photo'>
+        {{!-- <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo'> --}}
+        <div class="modal-content">
+            <img src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
+                alt="{{name}}" class='modal-photo-main'>
+            {{!-- <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'> --}}
             <ul>
 
                 <li class="modal-titel">INFO
 
                     <span class="modal-text">{{promoter.description}}</span>
                 </li>
-                <li class="modal-tit">WHEN
+                <li class="modal-titel">WHEN
                     <span>{{dates.start.localDate}}</span>
                     <span>{{resultFeatch.dates.start.localTime}}</span>
                     <span>{{dates.timezone}}</span>
@@ -22,27 +26,39 @@
                     <span>{{_embedded.venues.1.city.name}}</span>
                     <span>{{_embedded.venues.0.name}}</span>
                 </li>
-                <li class="modal-tit">WHO
+                <li class="modal-titel">WHO
                     <span class="modal-text">{{name}}</span>
                 </li>
                 <li class="modal-buy-tickets">
                     <ul>
 
-                        <li class="modal-status-ticket">
-
-                            Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}} ({{priceRanges.0.currency}})
+                        <li>
+                            <div class="modal-ticket">
+                                <span class="modal-skan-svg">
+                                    <svg class='modal-svg'>
+                                        <use href="../images/ticket.svg"></use>
+                                    </svg>
+                                </span>
+                                <span class="modal-status-ticket">
+                                    Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}} ({{priceRanges.0.currency}})
+                                </span>
+                            </div>
                             <button class='modal-button'>
                                 <a href="{{resultFeatch.url}}">BUY TICKETS</a>
 
                             </button>
                         </li>
-                        <li class="modal-status-ticket">
-                            {{!-- <svg>
-                                <use href="../images/sprite.svg#ticket1"></use>
-                            </svg> --}}
-                            VIP 1000-1500 UAH
+                        <li>
+                            <div>
+                                <span class="modal-skan-svg">
+                                </span>
+                                <span class="modal-status-ticket">
+                                    VIP 1000-1500 UAH :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    ({{priceRanges.0.currency}})
+                                </span>
+                            </div>
                             <button class='modal-button'>
-                                <span>BUY TICKETS</span>
+                                <a href="{{resultFeatch.url}}">BUY TICKETS</a>
 
                             </button>
                         </li>
@@ -51,5 +67,7 @@
             </ul>
         </div>
     </div>
-
+    <button class="modal-button-more">
+        <span>MORE FROM THIS AUTHOR</span>
+    </button>
 </div>

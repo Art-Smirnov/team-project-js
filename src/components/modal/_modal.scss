@@ -1,25 +1,7 @@
-.overlay-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  align-items: center;
+.overlay-modal {
+  margin-bottom: 45px;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  color: $btn;
-  cursor: pointer;
-  transition: background-color $animation-duration $timing-function;
-  outline: none;
-  background-image: url '../../images/sprite.svg#close';
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+  align-items: center;
 }
 .modal-titel {
   list-style: none;
@@ -48,15 +30,88 @@
   background-color: $modal-bg;
   transform: scale(0.95);
   transition: transform $animation-duration $timing-function;
+  border-radius: 300px 0px;
 }
 .modal-status-ticket {
   list-style: none;
   color: $modal-content;
 }
+
+.modal-skan-svg {
+  width: 32px;
+  height: 21px;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+}
+
 .modal-status-ticket::before {
   content: '';
-  background-image: url(../images/sprite.svg#ticket1);
+  border: black;
+  background-repeat: no-repeat;
+  background-image: url('../images/ticket.svg');
   width: 29px;
   height: 19px;
-  fill: $modal-content;
+  fill: black;
+}
+
+.modal-svg {
+  width: 29px;
+  height: 19px;
+  fill: black;
+  border: 1px solid black;
+}
+.modal-photo {
+  margin-left: auto;
+  margin-left: auto;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color $animation-duration $timing-function;
+  outline: none;
+  background-image: url('../images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+.modal-content {
+  display: flex;
+  min-height: 641px;
+}
+.modal-photo-main {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 235px;
+}
+.modal-ticket {
+  display: flex;
+}
+.modal-button {
+  min-height: 40px;
+  min-width: 145px;
+  background-color: $btn;
+}
+.modal-button-more {
+  margin-top: auto;
+  margin-bottom: 62px;
 }

@@ -362,35 +362,14 @@ img {
   }
 }
 
-.overlay-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.overlay-modal {
+  margin-bottom: 45px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  color: #4c00fe;
-  cursor: pointer;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-  background-image: url '../../images/sprite.svg#close';
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal-titel {
@@ -426,6 +405,7 @@ img {
   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 300px 0px;
 }
 
 .modal-status-ticket {
@@ -433,11 +413,103 @@ img {
   color: #0e0e0e;
 }
 
+.modal-skan-svg {
+  width: 32px;
+  height: 21px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+}
+
 .modal-status-ticket::before {
   content: '';
-  background-image: url(../images/sprite.svg#ticket1);
+  border: black;
+  background-repeat: no-repeat;
+  background-image: url("../images/ticket.svg");
   width: 29px;
   height: 19px;
-  fill: #0e0e0e;
+  fill: black;
+}
+
+.modal-svg {
+  width: 29px;
+  height: 19px;
+  fill: black;
+  border: 1px solid black;
+}
+
+.modal-photo {
+  margin-left: auto;
+  margin-left: auto;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  background-image: url("../images/icon-close.svg");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 641px;
+}
+
+.modal-photo-main {
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 235px;
+}
+
+.modal-ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-button {
+  min-height: 40px;
+  min-width: 145px;
+  background-color: #4c00fe;
+}
+
+.modal-button-more {
+  margin-top: auto;
+  margin-bottom: 62px;
 }
 /*# sourceMappingURL=main.css.map */
