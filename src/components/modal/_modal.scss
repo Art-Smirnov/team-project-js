@@ -74,13 +74,11 @@
   border: 1px solid black;
 }
 .modal-photo {
-  margin-left: auto;
-  margin-left: auto;
-  margin-bottom: 41px;
-  width: 132px;
+  border-radius: 100px;
+
   height: 132px;
-  border-radius: 50%;
-  display: inline-block;
+  width: 132px;
+  object-fit: cover;
 }
 
 .close-button {
@@ -118,9 +116,24 @@
 .modal-content-list li:not(:last-child) {
   margin-bottom: 31px;
 }
+.modal-img-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 41px;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+}
+.modal-content-img-wrapper {
+  height: 641px;
+  width: 360px;
+  margin-right: 60px;
+}
 .modal-photo-main {
-  width: auto;
-  height: 100%;
+  position: relative;
+
+  height: 641px;
   object-fit: cover;
 
   margin-right: 60px;

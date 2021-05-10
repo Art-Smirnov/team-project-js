@@ -27,7 +27,8 @@ async function onClickCard(e) {
 
   for (const el of result) {
     if (el.id === currentID) {
-      getRefs().modal.insertAdjacentHTML('beforeend', modalTmpl(el));
+      getRefs().backdrop.innerHTML=""
+     getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
     }
   }
 }

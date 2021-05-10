@@ -1,68 +1,69 @@
 <div class="overlay-lightbox modal">
     <button class="close-button" data-modal-close></button>
     <div class="overlay-modal">
-        {{!-- <img
-            src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-            alt="{{name}}" width="20px" height="20px" class='modal-photo'> --}}
-        <img src="{{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo'>
-        <div class="modal-content">
-            {{!-- <img
-                src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-                alt="{{name}}" class='modal-photo-main'> --}}
-            <img src="src=" {{images.1.url}}" alt="{{name}}" width="20px" height="20px" class='modal-photo-main'>
-            <ul class="modal-content-list">
+        <span class="modal-img-wrapper">
+            <img src="{{images.1.url}}" alt="{{name}}" class="modal-photo" />
+        </span>
 
-                <li class="modal-titel">INFO
+        <div class="modal-content">
+            <span class="modal-content-img-wrapper">
+                <img src="{{images.1.url}}" alt="{{name}}" class="modal-photo-main" />
+            </span>
+
+            <ul class="modal-content-list">
+                <li class="modal-titel">
+                    INFO
 
                     <span class="modal-text">{{promoter.description}}</span>
                 </li>
-                <li class="modal-titel">WHEN
+                <li class="modal-titel">
+                    WHEN
                     <span class="modal-text">{{dates.start.localDate}}</span>
-                    <span class="modal-text">{{resultFeatch.dates.start.localTime}} ({{dates.timezone}})</span>
+                    <span class="modal-text">{{resultFeatch.dates.start.localTime}}
+                        ({{dates.timezone}})</span>
                 </li>
 
-                <li class="modal-titel">WHERE
+                <li class="modal-titel">
+                    WHERE
 
                     <span class="modal-text">{{_embedded.venues.1.city.name}},
                         {{_embedded.venues.0.country.name}}</span>
                     <span class="modal-text">{{_embedded.venues.0.name}}</span>
-
                 </li>
-                <li class="modal-titel">WHO
+                <li class="modal-titel">
+                    WHO
                     <span class="modal-text">{{name}}The Black Eyed Peas</span>
                 </li>
                 <li class="modal-buy-tickets">
                     <span class="modal-titel">PRICES</span>
                     <ul class="modal-content-list">
-
                         <li>
                             <div class="modal-ticket">
                                 <span class="modal-skan-svg">
-                                    <svg class='modal-svg'>
+                                    <svg class="modal-svg">
                                         <use href="../images/ticket.svg"></use>
                                     </svg>
                                 </span>
                                 <span class="modal-status-ticket">
-                                    Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}} ({{priceRanges.0.currency}})
+                                    Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    ({{priceRanges.0.currency}})
                                 </span>
                             </div>
-                            <button class='modal-button'>
+                            <button class="modal-button">
                                 <a href="{{resultFeatch.url}}">BUY TICKETS</a>
-
                             </button>
                         </li>
                         <li>
                             <div class="modal-ticket">
-                                <span class="modal-skan-svg">
-                                </span>
+                                <span class="modal-skan-svg"> </span>
                                 <span class="modal-status-ticket">
-                                    VIP 1000-1500 UAH :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    VIP 1000-1500 UAH
+                                    :{{priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
                                 </span>
                             </div>
-                            <button class='modal-button'>
+                            <button class="modal-button">
                                 <a href="{{resultFeatch.url}}">BUY TICKETS</a>
-
                             </button>
                         </li>
                     </ul>
