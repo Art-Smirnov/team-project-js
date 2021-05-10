@@ -11,31 +11,31 @@
             </span>
 
             <ul class="modal-content-list">
-                <li class="modal-titel">
+                <li class="modal-title">
                     INFO
 
                     <span class="modal-text">{{promoter.description}}</span>
                 </li>
-                <li class="modal-titel">
+                <li class="modal-title">
                     WHEN
                     <span class="modal-text">{{dates.start.localDate}}</span>
                     <span class="modal-text">{{resultFeatch.dates.start.localTime}}
                         ({{dates.timezone}})</span>
                 </li>
 
-                <li class="modal-titel">
+                <li class="modal-title">
                     WHERE
 
                     <span class="modal-text">{{_embedded.venues.1.city.name}},
                         {{_embedded.venues.0.country.name}}</span>
                     <span class="modal-text">{{_embedded.venues.0.name}}</span>
                 </li>
-                <li class="modal-titel">
+                <li class="modal-title">
                     WHO
                     <span class="modal-text">{{name}}The Black Eyed Peas</span>
                 </li>
                 <li class="modal-buy-tickets">
-                    <span class="modal-titel">PRICES</span>
+                    <span class="modal-title">PRICES</span>
                     <ul class="modal-content-list">
                         <li>
                             <div class="modal-ticket">
@@ -45,7 +45,7 @@
                                     </svg>
                                 </span>
                                 <span class="modal-status-ticket">
-                                    Standart :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    Standart :{{_embedded.venues.priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
                                 </span>
                             </div>
