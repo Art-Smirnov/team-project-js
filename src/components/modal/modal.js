@@ -3,6 +3,7 @@ import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/card-list.hbs';
 
 const apiService = new ApiService();
+const refs = getRefs();
 let currentID = '';
 
 getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl());
@@ -24,10 +25,12 @@ async function onClickCard(e) {
   }
 
   const result = await apiService.fetchDefaultEvents();
+  
 
   for (const el of result) {
     if (el.id === currentID) {
-      getRefs().modal.insertAdjacentHTML('beforeend', modalTmpl(el));
+      getRefs().backdrop.innerHTML=""
+     getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
     }
   }
 }
@@ -41,12 +44,12 @@ function onCloseModal(e) {
 }
 
 function onToggleModal() {
-  getRefs().backdrop.classList.toggle('is-hidden');
+  refs.backdrop.classList.toggle('is-hidden');
 }
 
 function onKeyModalEscClose(e) {
   if (e.key !== 'Escape') {
     return;
   }
-  getRefs().backdrop.classList.add('is-hidden');
+  refs.backdrop.classList.add('is-hidden');
 }

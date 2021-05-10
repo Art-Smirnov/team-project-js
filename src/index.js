@@ -6,19 +6,20 @@ import './components/modal/modal';
 import './components/scroll-up/scroll_up';
 import './components/search-more/search-more';
 
+import countryCodes from './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
-import renderSerchForm from './components/search-form/renderSearchForm.js';
-
+import renderSelectCountry from './components/search-form/renderSearchForm.js';
+// import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
-
+renderSelectCountry(countryCodes);
 renderDefaultEvents();
 
-refs.searchEventInp.addEventListener('input', debounce(onInputChange, 500));
+refs.searchEventInp.addEventListener('submit', debounce(onInputChange, 500));
 
 async function renderDefaultEvents() {
   preloader.show();
@@ -49,7 +50,7 @@ async function onInputChange(e) {
   }
 }
 
-getRefs().selectForm.addEventListener('change', onSelectCountry);
+refs.selectForm.addEventListener('change', onSelectCountry);
 
 async function onSelectCountry(e) {
   try {
@@ -59,11 +60,14 @@ async function onSelectCountry(e) {
 
     let selectEl = e.target;
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-
-    const result = await apiService.fetchEventsByCountry(selectCountryCode);
-    console.log(result);
-
-    appendImagesMarkup(result);
+    apiService.setSelectedCountry(selectCountryCode);
+    if (selectCountryCode == 'All') {
+      const result = await apiService.fetchEventsInAllContries();
+      appendImagesMarkup(result);
+    } else if (selectCountryCode !== 'All') {
+      const result = await apiService.fetchEventsByCountry();
+      appendImagesMarkup(result);
+    }
   } catch (error) {
     alert('No events. Please choose other country!');
   } finally {

@@ -38,8 +38,7 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
-  async fetchEventsByCountry(selectCountryCode) {
-    this.countryQuery = selectCountryCode;
+  async fetchEventsByCountry() {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${this.countryQuery}&apikey=${MY_KEY}`,
     );
@@ -52,6 +51,9 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
+  setSelectedCountry(selectCountryCode) {
+    this.countryQuery = selectCountryCode;
+  }
 
   get query() {
     return this.searchQuery;
