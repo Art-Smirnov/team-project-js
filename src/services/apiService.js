@@ -5,12 +5,7 @@ const MY_KEY = '0E9J50fYPIbPJoVb72f3QU7X5EGa9oFk';
 const DEFAULT_COUNTRY = 'US';
 
 export default class ApiService {
-  constructor() {
-    this.page = 1;
-    this.searchQuery = '';
-  }
-
-  async fetchDefaultEvents() {
+  static async fetchDefaultEvents() {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}`,
     );
@@ -23,10 +18,10 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
-  async fetchEventsByQuery() {
-    console.log(this.searchQuery);
+  static async fetchEventsByQuery(value) {
+    console.log(value);
     const response = await fetch(
-      `${BASE_URL}events.json?keyword=${this.searchQuery}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?keyword=${value}&apikey=${MY_KEY}`,
     );
 
     if (!response.ok) {
@@ -37,7 +32,7 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
-  async fetchEventsByCountry(selectCountryCode, currentPage = 0) {
+  static async fetchEventsByCountry(selectCountryCode, currentPage = 0) {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${selectCountryCode}&page=${currentPage}&apikey=${MY_KEY}`,
     );
@@ -50,7 +45,7 @@ export default class ApiService {
     return await Promise.resolve(res._embedded);
   }
 
-  async fetchEventsInAllContries(currentPage = 0) {
+  static async fetchEventsInAllContries(currentPage = 0) {
     const response = await fetch(
       `${BASE_URL}events.json?page=${currentPage}&apikey=${MY_KEY}`,
     );
@@ -61,14 +56,5 @@ export default class ApiService {
     const res = await response.json();
 
     return await Promise.resolve(res._embedded);
-  }
-
-
-  get query() {
-    return this.searchQuery;
-  }
-
-  set query(newQuery) {
-    this.searchQuery = newQuery;
   }
 }

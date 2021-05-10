@@ -7,6 +7,6 @@ export default function getRefs() {
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
     moreButton: document.querySelector('.modal-button-more'),
-
+    form: document.querySelector('.form-search'),
   };
 }
