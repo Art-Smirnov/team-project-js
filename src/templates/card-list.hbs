@@ -26,7 +26,7 @@
                 <li class="modal-title">
                     WHERE
 
-                    <span class="modal-text">{{_embedded.venues.1.city.name}},
+                    <span class="modal-text">{{_embedded.venues.0.city.name}},
                         {{_embedded.venues.0.country.name}}</span>
                     <span class="modal-text">{{_embedded.venues.0.name}}</span>
                 </li>
@@ -45,25 +45,25 @@
                                     </svg>
                                 </span>
                                 <span class="modal-status-ticket">
-                                    Standart :{{_embedded.venues.priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    {{products.0.type}} :{{_embedded.venues.priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
                                 </span>
                             </div>
                             <button class="modal-button">
-                                <a href="{{resultFeatch.url}}">BUY TICKETS</a>
+                                <a href="{{products.1.url}}">BUY TICKETS</a>
                             </button>
                         </li>
                         <li>
                             <div class="modal-ticket">
                                 <span class="modal-skan-svg"> </span>
                                 <span class="modal-status-ticket">
-                                    VIP 1000-1500 UAH
-                                    :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    {{products.1.type}}: {{_embedded.venues.priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
+
                                 </span>
                             </div>
                             <button class="modal-button">
-                                <a href="{{resultFeatch.url}}">BUY TICKETS</a>
+                                <a href="{{products.0.url}}">BUY TICKETS</a>
                             </button>
                         </li>
                     </ul>
