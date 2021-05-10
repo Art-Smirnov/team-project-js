@@ -6,6 +6,7 @@
 .modal-titel {
   list-style: none;
   color: $primary-accent;
+  display: grid;
 }
 
 .backdrop {
@@ -102,6 +103,10 @@
   height: 100%;
   object-fit: cover;
   margin-top: 235px;
+  margin-right: 60px;
+}
+.modal-text {
+  color: $overlay-cl;
 }
 .modal-ticket {
   display: flex;
