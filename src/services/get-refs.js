@@ -6,6 +6,7 @@ export default function getRefs() {
     selectForm: document.querySelector('.form-select'),
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
+    moreButton: document.querySelector('.modal-button-more'),
 
   };
 }
