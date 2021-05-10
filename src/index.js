@@ -4,6 +4,7 @@ import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
+import './components/search-more/search-more';
 
 import preloaderFactory from './services/placeholder/placeholder.js';
 import ApiService from './services/apiService.js';
