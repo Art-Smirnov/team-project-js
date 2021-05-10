@@ -51,11 +51,9 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
-
   setSelectedCountry(selectCountryCode) {
     this.countryQuery = selectCountryCode;
   }
-
 
   get query() {
     return this.searchQuery;
