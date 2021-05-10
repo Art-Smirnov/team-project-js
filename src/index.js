@@ -60,13 +60,12 @@ async function onSelectCountry(e) {
 
     let selectEl = e.target;
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-    apiService.setSelectedCountry(selectCountryCode);
     if (selectCountryCode == 'All') {
       const result = await apiService.fetchEventsInAllContries();
-      appendImagesMarkup(result);
+      appendImagesMarkup(result.events);
     } else if (selectCountryCode !== 'All') {
-      const result = await apiService.fetchEventsByCountry();
-      appendImagesMarkup(result);
+      const result = await apiService.fetchEventsByCountry(selectCountryCode);
+      appendImagesMarkup(result.events);
     }
   } catch (error) {
     alert('No events. Please choose other country!');
