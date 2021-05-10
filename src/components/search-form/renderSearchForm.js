@@ -1,9 +1,6 @@
-import countryCodes from '../../services/countriesCodes';
 import refs from '../../services/get-refs.js';
 
-renderSelectCountry(countryCodes);
-
-function renderSelectCountry(arr) {
+export default function renderSelectCountry(arr) {
   const option = arr.map(({ alphaCode, name }) => {
     return `<option value="${alphaCode}">${name}</option>`;
   });

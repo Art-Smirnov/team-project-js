@@ -8,6 +8,7 @@ export default class ApiService {
   constructor() {
     this.page = 4;
     this.searchQuery = '';
+    this.countryQuery = '';
   }
 
   async fetchDefaultEvents() {
@@ -35,6 +36,23 @@ export default class ApiService {
     const res = await response.json();
 
     return await Promise.resolve(res._embedded.events);
+  }
+
+  async fetchEventsByCountry() {
+    const response = await fetch(
+      `${BASE_URL}events.json?countryCode=${this.countryQuery}&apikey=${MY_KEY}`,
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const res = await response.json();
+
+    return await Promise.resolve(res._embedded.events);
+  }
+
+  setSelectedCountry(selectCountryCode) {
+    this.countryQuery = selectCountryCode;
   }
 
   get query() {

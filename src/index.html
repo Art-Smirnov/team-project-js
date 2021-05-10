@@ -14,14 +14,47 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <h1>FIND BEST EVENTS AROUND THE WORLD</h1>
-        <svg class="logo">
-          <use href="./images/sprite.svg#logo"></use>
-        </svg>
+    <header class="header header-overlay">
+      <div class="logo-container">
+        <picture>
+          <source
+            srcset="
+              ./images/desktop/logo-desktop-@1x.png 1x,
+              ./images/desktop/logo-desktop-@2x.png 2x
+            "
+            media="(min-width:1280px)"
+          />
+          <source
+            srcset="
+              ./images/tablet/logo-tablet-@1x.png 1x,
+              ./images/tablet/logo-tablet-@2x.png 2x
+            "
+            media="(min-width:768px)"
+          />
+          <source
+            srcset="
+              ./images/mobile/logo-mobile-@1x.png 1x,
+              ./images/mobile/logo-mobile-@2x.png 2x
+            "
+            media="(min-width:767px)"
+          />
+          <img
+            src="./images/mobile/logo-mobile-@1x.png"
+            alt="Описание изображени для всех версий"
+          />
+        </picture>
+      </div>
+      <div class="container header-main">
+        <div class="header-title-container">
+          <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
+        </div>
+
         <!-- <svg class="svg">
           <use href="./symbol-defs.svg#arrow"></use>
         </svg>
@@ -38,7 +71,7 @@
           <use href="./symbol-defs.svg#ticket1"></use>
         </svg> -->
         <div class="form-search">
-          <form action="">
+          <form action="submit">
             <label for="search-event">
               <input
                 id="search-event"
@@ -48,7 +81,8 @@
             </label>
 
             <select name="country" id="" class="form-select">
-              <option value="">Choose country</option>
+              <option value="" disabled selected hidden>Choose country</option>
+              <option value="All">All countries</option>
             </select>
           </form>
         </div>
@@ -56,6 +90,7 @@
     </header>
     <main>
       <!-- loader -->
+
       <div class="container">
         <ul class="card-list list"></ul>
         <div class="lds-roller disable">
