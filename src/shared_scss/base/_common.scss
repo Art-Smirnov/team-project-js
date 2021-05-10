@@ -13,6 +13,15 @@ body {
   font-family: $main-font;
   background-color: $modal-content;
   color: $text-cl;
+  background-image: url(../images/mobile/noise_body_mobile.jpg);
+
+  @include for-size(tablet) {
+    background-image: url(../images/tablet/bg_body_tablet@1x.jpg);
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/bg_body_desktop@1x.jpg);
+  }
 }
 
 h1,
@@ -41,8 +50,6 @@ img {
 
 .container {
   width: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
   margin-right: auto;
   margin-left: auto;
   outline: 1px solid red;
@@ -53,14 +60,10 @@ img {
 
   @include for-size(tablet) {
     width: 594px;
-    padding-left: 87px;
-    padding-right: 87px;
   }
 
   @include for-size(desktop) {
     width: 930px;
-    padding-left: 175px;
-    padding-right: 175px;
   }
 }
 
