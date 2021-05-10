@@ -11,7 +11,7 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSerchForm from './components/search-form/renderSearchForm.js';
-// import modalWindow from './components/modal/modal.js';
+import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
@@ -59,11 +59,14 @@ async function onSelectCountry(e) {
 
     let selectEl = e.target;
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-
-    const result = await apiService.fetchEventsByCountry(selectCountryCode);
-    console.log(result);
-
-    appendImagesMarkup(result);
+    apiService.setSelectedCountry(selectCountryCode);
+    if (selectCountryCode == 'All') {
+      const result = await apiService.fetchEventsInAllContries();
+      appendImagesMarkup(result);
+    } else if (selectCountryCode !== 'All') {
+      const result = await apiService.fetchEventsByCountry();
+      appendImagesMarkup(result);
+    }
   } catch (error) {
     alert('No events. Please choose other country!');
   } finally {
