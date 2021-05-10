@@ -24,10 +24,10 @@ export default class ApiService {
     return await Promise.resolve(res._embedded.events);
   }
 
-  async fetchEventsByQuery() {
-    console.log(this.searchQuery);
+  static async fetchEventsByQuery(value) {
+    console.log(value);
     const response = await fetch(
-      `${BASE_URL}events.json?keyword=${this.searchQuery}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?keyword=${value}&apikey=${MY_KEY}`,
     );
 
     if (!response.ok) {

@@ -19,7 +19,7 @@ const refs = getRefs();
 renderSelectCountry(countryCodes);
 renderDefaultEvents();
 
-refs.searchEventInp.addEventListener('submit', debounce(onInputChange, 500));
+refs.form.addEventListener('submit', onInputChange);
 
 async function renderDefaultEvents() {
   preloader.show();
@@ -34,17 +34,19 @@ async function renderDefaultEvents() {
 }
 
 async function onInputChange(e) {
+  e.preventDefault();
+  console.log(e.currentTarget.elements.query.value);
   try {
     preloader.show();
 
     clearGallery();
-    apiService.query = e.target.value;
-    const result = await apiService.fetchEventsByQuery();
+    // apiService.query = e.target.value;
+    const result = await apiService.fetchEventsByQuery(e.target.value);
     console.log(result);
 
     appendImagesMarkup(result);
   } catch (error) {
-    alert('Something went wrong! Please enter a more specific query!');
+    // alert('Something went wrong! Please enter a more specific query!');
   } finally {
     preloader.hide();
   }
