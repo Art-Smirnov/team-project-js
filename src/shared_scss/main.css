@@ -362,13 +362,13 @@ img {
   }
 }
 
-.material-icons {
+.material-icons-location {
   font-size: 10px;
   margin-right: 3px;
 }
 
 @media (min-width: 768px) {
-  .material-icons {
+  .material-icons-location {
     font-size: 12px;
   }
 }
