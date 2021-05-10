@@ -6,7 +6,7 @@ const DEFAULT_COUNTRY = 'US';
 
 export default class ApiService {
   constructor() {
-    this.page = 1;
+    this.page = 4;
     this.searchQuery = '';
   }
 

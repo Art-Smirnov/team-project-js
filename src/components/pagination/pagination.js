@@ -6,7 +6,7 @@ const API = new ApiService();
 const pagList = document.querySelector('.pag__list');
 
 // pagList.addEventListener('click');
-let totalPages = 5;
+let totalPages = 8;
 
 const pages = API.page;
 console.log(pages);
@@ -34,7 +34,7 @@ function render() {
   const sixthItemLogic = pages + 3 < totalPages ? '...' : totalPages - 1;
 
   if (totalPages <= 7) {
-    pagList.insertAdjacentHTML('beforeend', counter());
+    pagList.insertAdjacentHTML('beforeend', counter);
   }
   if (totalPages > 7) {
     pagList.insertAdjacentHTML(
