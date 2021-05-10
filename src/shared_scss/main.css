@@ -1,6 +1,7 @@
+@import url(d:\GoIT\Project\team-project-js\src\components\modal\overlay.css);
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -8,11 +9,11 @@ html {
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #0e0e0e;
   color: white;
   background-image: url(../images/mobile/noise_body_mobile.jpg);
@@ -104,9 +105,9 @@ img {
 
 .lds-roller div {
   -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-          animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   -webkit-transform-origin: 40px 40px;
-          transform-origin: 40px 40px;
+  transform-origin: 40px 40px;
 }
 
 .lds-roller div:after {
@@ -122,7 +123,7 @@ img {
 
 .lds-roller div:nth-child(1) {
   -webkit-animation-delay: -0.036s;
-          animation-delay: -0.036s;
+  animation-delay: -0.036s;
 }
 
 .lds-roller div:nth-child(1):after {
@@ -132,7 +133,7 @@ img {
 
 .lds-roller div:nth-child(2) {
   -webkit-animation-delay: -0.072s;
-          animation-delay: -0.072s;
+  animation-delay: -0.072s;
 }
 
 .lds-roller div:nth-child(2):after {
@@ -142,7 +143,7 @@ img {
 
 .lds-roller div:nth-child(3) {
   -webkit-animation-delay: -0.108s;
-          animation-delay: -0.108s;
+  animation-delay: -0.108s;
 }
 
 .lds-roller div:nth-child(3):after {
@@ -152,7 +153,7 @@ img {
 
 .lds-roller div:nth-child(4) {
   -webkit-animation-delay: -0.144s;
-          animation-delay: -0.144s;
+  animation-delay: -0.144s;
 }
 
 .lds-roller div:nth-child(4):after {
@@ -162,7 +163,7 @@ img {
 
 .lds-roller div:nth-child(5) {
   -webkit-animation-delay: -0.18s;
-          animation-delay: -0.18s;
+  animation-delay: -0.18s;
 }
 
 .lds-roller div:nth-child(5):after {
@@ -172,7 +173,7 @@ img {
 
 .lds-roller div:nth-child(6) {
   -webkit-animation-delay: -0.216s;
-          animation-delay: -0.216s;
+  animation-delay: -0.216s;
 }
 
 .lds-roller div:nth-child(6):after {
@@ -182,7 +183,7 @@ img {
 
 .lds-roller div:nth-child(7) {
   -webkit-animation-delay: -0.252s;
-          animation-delay: -0.252s;
+  animation-delay: -0.252s;
 }
 
 .lds-roller div:nth-child(7):after {
@@ -192,7 +193,7 @@ img {
 
 .lds-roller div:nth-child(8) {
   -webkit-animation-delay: -0.288s;
-          animation-delay: -0.288s;
+  animation-delay: -0.288s;
 }
 
 .lds-roller div:nth-child(8):after {
@@ -203,22 +204,149 @@ img {
 @-webkit-keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes lds-roller {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+}
+
+.logo-container {
+  position: absolute;
+}
+
+.header {
+  height: 364px;
+  background: #c4c4c4;
+  text-align: center;
+}
+
+@media (min-width: 1280px) {
+  .header {
+    height: 446px;
+  }
+}
+
+.header-overlay {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(13, 13, 13, 0.19)),
+      to(rgba(14, 14, 14, 0.8))
+    ),
+    url(/images/mobile/hero_mobile@2x.jpg);
+  background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.19) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    ),
+    url(/images/mobile/hero_mobile@2x.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .header-overlay {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(13, 13, 13, 0.19)),
+        to(rgba(14, 14, 14, 0.8))
+      ),
+      url(/images/tablet/hero_tablet@2x.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.19) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(/images/tablet/hero_tablet@2x.jpg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-overlay {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(13, 13, 13, 0.19)),
+        to(rgba(14, 14, 14, 0.8))
+      ),
+      url(/images/desktop/hero_desktop@2x.jpg);
+    background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.19) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(/images/desktop/hero_desktop@2x.jpg);
+  }
+}
+
+.header-main {
+  color: #ffffff;
+}
+
+.header-title-container {
+  width: 212px;
+  padding-top: 78px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .header-title-container {
+    padding-top: 40px;
+    width: 353px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-title-container {
+    width: 589px;
+  }
+}
+
+.header-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #dc56c5;
+}
+
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-title {
+    font-size: 50px;
+    line-height: 61px;
   }
 }
 
@@ -227,7 +355,7 @@ img {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-left: -15px;
   margin-top: -40px;
 }
@@ -282,7 +410,7 @@ img {
   border-bottom-right-radius: 50px;
   height: 161px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
@@ -376,11 +504,11 @@ img {
 .overlay-modal {
   margin-bottom: 45px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .modal-title {
@@ -418,11 +546,12 @@ img {
   min-height: 1023px;
   background-color: #fff2fd;
   -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  transform: scale(0.95);
   -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 300px 0px;
   text-align: center;
 }
@@ -433,19 +562,19 @@ img {
   font-size: 18px;
   font-weight: 400;
   -webkit-box-align: 1.22em;
-      -ms-flex-align: 1.22em;
-          align-items: 1.22em;
+  -ms-flex-align: 1.22em;
+  align-items: 1.22em;
 }
 
 .modal-skan-svg {
   width: 32px;
   height: 21px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-size: cover;
 }
 
@@ -453,7 +582,7 @@ img {
   content: '';
   border: black;
   background-repeat: no-repeat;
-  background-image: url("../images/ticket.svg");
+  background-image: url('../images/ticket.svg');
   width: 29px;
   height: 19px;
   fill: black;
@@ -471,7 +600,7 @@ img {
   height: 132px;
   width: 132px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .close-button {
@@ -482,11 +611,11 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
   padding: 0;
@@ -499,7 +628,7 @@ img {
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
-  background-image: url("../images/icon-close.svg");
+  background-image: url('../images/icon-close.svg');
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
@@ -542,7 +671,7 @@ img {
   position: relative;
   height: 641px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 60px;
 }
 
@@ -581,8 +710,8 @@ img {
   font-size: 16px;
   font-weight: 500;
   -webkit-box-align: 1.22em;
-      -ms-flex-align: 1.22em;
-          align-items: 1.22em;
+  -ms-flex-align: 1.22em;
+  align-items: 1.22em;
 }
 
 .back_to_top {

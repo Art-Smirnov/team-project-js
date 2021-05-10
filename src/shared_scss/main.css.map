@@ -7,6 +7,8 @@
         "utils/_mixins.scss",
         "base/_common.scss",
         "../services/placeholder/_placeholder.scss",
+        "../components/logo/_logo.scss",
+        "../components/header/_header.scss",
         "../components/card-list/_card-list.scss",
         "../components/search-form/_search-form.scss",
         "utils/_mixins.scss",
