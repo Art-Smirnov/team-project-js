@@ -214,4 +214,39 @@ img {
             transform: rotate(360deg);
   }
 }
+
+.footer-heart {
+  color: red;
+}
+
+.footer {
+  width: 252px;
+  height: 34px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 27px;
+  color: #939393;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    width: 521px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer {
+    margin-bottom: 19px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
