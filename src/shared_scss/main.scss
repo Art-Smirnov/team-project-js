@@ -2,6 +2,9 @@
 @import './utils/mixins';
 @import './base/common';
 @import '../services/placeholder/placeholder';
+@import '../components/logo/footer/footer';
+@import '../components/logo/logo';
+@import '../components/header/header';
 @import '../components/card-list/card-list';
 @import '../components/search-form/search-form';
 @import '../components/card-list/card-list-item';
