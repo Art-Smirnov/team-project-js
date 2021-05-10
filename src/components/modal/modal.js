@@ -7,7 +7,8 @@ let currentID = '';
 
 getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 getRefs().cardList.addEventListener('click', onClickCard);
-getRefs().modal.addEventListener('click', onCloseModal);
+getRefs().backdrop.addEventListener('click', onCloseModal);
+window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
   onToggleModal();
@@ -32,7 +33,8 @@ async function onClickCard(e) {
 }
 
 function onCloseModal(e) {
-  if (e.target.nodeName !== 'BUTTON') {
+  console.dir(e.target);
+  if (e.target.nodeName !== 'BUTTON' && e.target.className !== 'backdrop') {
     return;
   }
   onToggleModal();
@@ -41,8 +43,6 @@ function onCloseModal(e) {
 function onToggleModal() {
   getRefs().backdrop.classList.toggle('is-hidden');
 }
-
-window.addEventListener('keyup', onKeyModalEscClose);
 
 function onKeyModalEscClose(e) {
   if (e.key !== 'Escape') {
