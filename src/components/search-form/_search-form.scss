@@ -2,7 +2,35 @@
 @import '../../shared_scss/utils/variables';
 
 .form-search {
+  margin-left: auto;
+  margin-right: auto;
   @include for-size(tablet) {
     display: flex;
+    justify-content: center;
+  }
+}
+
+.form-search-event,
+.form-select {
+  width: 270px;
+  height: 40px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 0px;
+  border-radius: 20px;
+}
+
+.form-search-event::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: $input-content;
+}
+
+.form-search-event {
+  @include for-size(tablet) {
+    margin-right: 30px;
   }
 }
