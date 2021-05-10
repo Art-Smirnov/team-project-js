@@ -14,7 +14,6 @@ import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
 // import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
-// const apiService = new ApiService();
 const refs = getRefs();
 renderSelectCountry(countryCodes);
 renderDefaultEvents();
@@ -47,7 +46,7 @@ async function onInputChange(e) {
 
     appendImagesMarkup(result);
   } catch (error) {
-    // alert('Something went wrong! Please enter a more specific query!');
+    alert('Something went wrong! Please enter a more specific query!');
   } finally {
     preloader.hide();
   }
@@ -60,14 +59,13 @@ async function onSelectCountry(e) {
     preloader.show();
 
     clearGallery();
-
     let selectEl = e.target;
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
     if (selectCountryCode == 'All') {
-      const result = await apiService.fetchEventsInAllContries();
+      const result = await ApiService.fetchEventsInAllContries();
       appendImagesMarkup(result.events);
     } else if (selectCountryCode !== 'All') {
-      const result = await apiService.fetchEventsByCountry(selectCountryCode);
+      const result = await ApiService.fetchEventsByCountry(selectCountryCode);
       appendImagesMarkup(result.events);
     }
   } catch (error) {
