@@ -8,7 +8,7 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSerchForm from './components/search-form/renderSearchForm.js';
-import modalWindow from './components/modal/modal.js';
+// import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const apiService = new ApiService();
 const refs = getRefs();
@@ -53,4 +53,3 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
-

@@ -228,22 +228,46 @@ img {
   left: 0;
 }
 
+.logo-container {
+  position: absolute;
+}
+
 .header {
+  height: 364px;
   background: #c4c4c4;
   text-align: center;
 }
 
+@media (min-width: 1280px) {
+  .header {
+    height: 446px;
+  }
+}
+
 .header-overlay {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/mobile/hero_mobile@2x.jpg);
+  background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/mobile/hero_mobile@2x.jpg);
+  background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0)));
-  background-image: linear-gradient(rgba(13, 13, 13, 0) rgba(14, 14, 14, 0.8));
+}
+
+@media (min-width: 768px) {
+  .header-overlay {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/tablet/hero_tablet@2x.jpg);
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/tablet/hero_tablet@2x.jpg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-overlay {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/desktop/hero_desktop@2x.jpg);
+    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/desktop/hero_desktop@2x.jpg);
+  }
 }
 
 .header-main {
-  background-image: url(/images/mobile/hero_mobile@1x.jpg);
-  background-repeat: no-repeat;
   color: #ffffff;
 }
 
@@ -254,6 +278,19 @@ img {
   margin-right: auto;
 }
 
+@media (min-width: 768px) {
+  .header-title-container {
+    padding-top: 40px;
+    width: 353px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-title-container {
+    width: 589px;
+  }
+}
+
 .header-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
@@ -261,6 +298,20 @@ img {
   line-height: 22px;
   text-align: center;
   color: #dc56c5;
+}
+
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-title {
+    font-size: 50px;
+    line-height: 61px;
+  }
 }
 
 .card-list {
