@@ -24,14 +24,21 @@ async function onClickCard(e) {
   }
 
   const result = await ApiService.feachEventById(currentID);
-
-  refs.backdrop.innerHTML = '';
-  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(result));
+  cleanModal();
+  markupModalText(result);
 }
-
+function markupModalText(text) {
+  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(text));
+}
+function cleanModal() {
+  refs.backdrop.innerHTML = '';
+}
+console.log(refs.titleEvent);
 function onCloseModal(e) {
-  console.dir(e.target);
-  if (e.target.nodeName !== 'BUTTON' && e.target.className !== 'backdrop') {
+  if (
+    e.target.className !== 'close-button' &&
+    e.target.className !== 'backdrop'
+  ) {
     return;
   }
   onToggleModal();
