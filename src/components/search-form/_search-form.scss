@@ -33,7 +33,11 @@
   border: 0px;
   border-radius: 20px;
 
+  transition-duration: $animation-duration;
+  transition-timing-function: $timing-function;
+
   &:focus {
+    transform: scale(1.15);
     outline: none;
     border: 1px solid $primary-accent;
   }
@@ -101,8 +105,12 @@
   top: 4px;
   right: -240px;
 
+  transition-duration: $animation-duration;
+  transition-timing-function: $timing-function;
+
   .form-search-event:focus ~ & {
     fill: $primary-accent;
+    transform: scale(1.15);
   }
 
   @include for-size(tablet) {
@@ -124,6 +132,9 @@
   top: 5px;
   right: 30px;
 
+  transition-duration: $animation-duration;
+  transition-timing-function: $timing-function;
+
   .form-select:focus ~ & {
     opacity: 0;
   }
@@ -139,7 +150,11 @@
   right: 30px;
   opacity: 0;
 
+  transition-duration: $animation-duration;
+  transition-timing-function: $timing-function;
+
   .form-select:focus ~ & {
     opacity: 1;
+    transform: scale(1.15);
   }
 }
