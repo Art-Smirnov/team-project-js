@@ -2,7 +2,6 @@ import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/card-list.hbs';
 
-const apiService = new ApiService();
 const refs = getRefs();
 let currentID = '';
 
@@ -24,13 +23,12 @@ async function onClickCard(e) {
     currentID = e.target.dataset.id;
   }
 
-  const result = await apiService.fetchDefaultEvents();
-  
+  const result = await ApiService.fetchDefaultEvents();
 
   for (const el of result) {
     if (el.id === currentID) {
-      getRefs().backdrop.innerHTML=""
-     getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
+      getRefs().backdrop.innerHTML = '';
+      getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
     }
   }
 }
