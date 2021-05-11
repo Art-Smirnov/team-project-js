@@ -57,4 +57,15 @@ export default class ApiService {
 
     return await Promise.resolve(res._embedded);
   }
+
+  static async feachEventById(currentID) {
+    const responce = await fetch(
+      `${BASE_URL}events/${currentID}.json?apikey=${MY_KEY}`,
+    );
+    if (!responce.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const res = await responce.json();
+    return await Promise.resolve(res);
+  }
 }
