@@ -6,43 +6,30 @@ const Theme = {
 };
 
 const refs = getRefs();
-
 refs.chekBoxRef.addEventListener('change', onThemeChange);
+refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
 
-refs.bodyRef.classList.add(Theme.DARK);
-refs.headerOverlay.classList.add(Theme.DARK);
-populateBodyClassList();
+refs.bodyRef.classList.add(
+  localStorage.getItem('body-theme') === null
+    ? Theme.DARK
+    : localStorage.getItem('body-theme'),
+);
 
-function onThemeChange() {
-  refs.bodyRef.classList.toggle(Theme.LIGHT);
-  refs.bodyRef.classList.toggle(Theme.DARK);
-  refs.headerOverlay.classList.toggle(Theme.LIGHT);
-  refs.headerOverlay.classList.toggle(Theme.DARK);
+refs.headerOverlay.classList.add(
+  localStorage.getItem('headerOverlay-theme') === null
+    ? Theme.DARK
+    : localStorage.getItem('headerOverlay-theme'),
+);
 
-  save('theme', refs.bodyRef.classList[0]);
-  save('headerOverlay-theme', refs.headerOverlay.classList[0]);
+function onThemeChange({ target }) {
+  target.checked
+    ? changeTheme(Theme.LIGHT, Theme.DARK)
+    : changeTheme(Theme.DARK, Theme.LIGHT);
 }
 
-function populateBodyClassList() {
-  const savedMassage = load('theme');
-  const heroSavedMassage = load('headerOverlay-theme');
-
-  if (savedMassage && heroSavedMassage) {
-    refs.bodyRef.classList.add(savedMassage);
-    refs.headerOverlay.classList.add(heroSavedMassage);
-  }
-
-  if (savedMassage === Theme.LIGHT && heroSavedMassage === Theme.LIGHT) {
-    refs.bodyRef.classList.remove(Theme.DARK);
-    refs.headerOverlay.classList.remove(Theme.DARK);
-    refs.chekBoxRef.checked = true;
-  }
-}
-
-function load(key) {
-  return localStorage.getItem(key);
-}
-
-function save(key, value) {
-  localStorage.setItem(key, value);
+function changeTheme(add, rem) {
+  refs.bodyRef.classList.replace(rem, add);
+  refs.headerOverlay.classList.replace(rem, add);
+  localStorage.setItem('body-theme', add);
+  localStorage.setItem('headerOverlay-theme', add);
 }
