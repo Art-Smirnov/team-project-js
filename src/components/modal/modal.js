@@ -25,12 +25,8 @@ async function onClickCard(e) {
 
   const result = await ApiService.feachEventById(currentID);
 
-  for (const el of result) {
-    if (el.id === currentID) {
-      refs.backdrop.innerHTML = modalTmpl(el)
-    
-    }
-  }
+  refs.backdrop.innerHTML = '';
+  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(result));
 }
 
 function onCloseModal(e) {

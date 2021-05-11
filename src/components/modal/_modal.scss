@@ -1,19 +1,31 @@
 .overlay-modal {
+  justify-content: center;
+  align-items: center;
+  @include for-size(mobile) {
+  }
   @include for-size(desktop) {
-    margin-bottom: 45px;
-    justify-content: center;
-    align-items: center;
+    // margin-bottom: 45px;
   }
 }
 .modal-title {
+  color: $primary-accent;
+  display: grid;
+  line-height: 1.22em;
+  @include for-size(mobile) {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   @include for-size(desktop) {
-    list-style: none;
-    color: $primary-accent;
-    display: grid;
     font-size: 24px;
     font-weight: 600;
-    line-height: 1.22em;
+
     margin-bottom: 20px;
+  }
+}
+.modal-title li:not(:last-child) {
+  @include for-size(mobile) {
+    margin-bottom: 10px;
   }
 }
 
@@ -24,34 +36,44 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  @include for-size(desktop) {
-  }
+  overflow-y: scroll;
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  @include for-size(desktop) {
-  }
 }
 .modal {
+  background-color: $modal-bg;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  @include for-size(mobile) {
+    width: 272px;
+    min-height: auto;
+    margin-top: 414px;
+    border-radius: 150px 0px;
+    padding: 75px 15px 104px;
+  }
+
+  @include for-size(tablet) {
+    padding: 28px 17px 56px 50px;
+    width: 595px;
+    min-height: auto;
+    margin-top: 161px;
+  }
   @include for-size(desktop) {
-    margin-left: auto;
-    margin-right: auto;
     padding: 62px 30px;
     margin-top: 201px;
     width: 930px;
-    min-height: 1023px;
-    background-color: $modal-bg;
     transform: scale(0.95);
     transition: transform $animation-duration $timing-function;
     border-radius: 300px 0px;
-    text-align: center;
   }
 }
 .modal-status-ticket {
+  color: $modal-content;
   @include for-size(desktop) {
-    list-style: none;
-    color: $modal-content;
     font-size: 18px;
     font-weight: 400;
     align-items: 1.22em;
@@ -83,60 +105,84 @@
   height: 19px;
   fill: black;
   border: 1px solid black;
+  color: black;
 }
 .modal-photo {
+  border-radius: 100px;
+  object-fit: cover;
+  @include for-size(mobile) {
+    height: 102px;
+    width: 102px;
+  }
   @include for-size(desktop) {
-    border-radius: 100px;
     height: 132px;
     width: 132px;
-    object-fit: cover;
   }
 }
 
 .close-button {
+  color: $btn;
+  background-color: transparent;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: background-color $animation-duration $timing-function;
+  outline: none;
+  background-image: url('../images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+  @include for-size(mobile) {
+    background-color: aqua;
+  }
   @include for-size(desktop) {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color $animation-duration $timing-function;
-    outline: none;
-    background-image: url('../images/icon-close.svg');
-    background-position: center;
-    background-size: 60%;
-    background-repeat: no-repeat;
   }
 }
 .modal-content {
-  @include for-size(desktop) {
+  @include for-size(tablet) {
     display: flex;
+  }
+  @include for-size(desktop) {
     min-height: 641px;
   }
 }
 .modal-content-list {
-  @include for-size(desktop) {
+  @include for-size(tablet) {
     text-align: left;
     padding: 0px;
     margin: 0px;
   }
+  // @include for-size(desktop) {
+  //   text-align: left;
+  //   padding: 0px;
+  //   margin: 0px;
+  // }
 }
 .modal-content-list li:not(:last-child) {
-  margin-bottom: 31px;
+  @include for-size(mobile) {
+    margin-bottom: 20px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 31px;
+  }
 }
 .modal-img-wrapper {
+  display: inline-block;
+  @include for-size(mobile) {
+    margin-bottom: 18px;
+  }
   @include for-size(desktop) {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 41px;
@@ -146,6 +192,10 @@
   }
 }
 .modal-content-img-wrapper {
+  @include for-size(tablet) {
+    width: 233px;
+    height: 416px;
+  }
   @include for-size(desktop) {
     height: 641px;
     width: 360px;
@@ -153,51 +203,86 @@
   }
 }
 .modal-photo-main {
+  @include for-size(mobile-only) {
+    display: none;
+  }
+  @include for-size(tablet) {
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 30px;
+  }
   @include for-size(desktop) {
     position: relative;
-    height: 641px;
+    height: 100%;
     object-fit: cover;
     margin-right: 60px;
   }
 }
-.modal-text {
+.modal-title .modal-text {
+  color: $modal-content;
+  font-weight: 400;
+  font-style: normal;
+  align-items: 1.22em;
+  @include for-size(mobile) {
+    font-size: 16px;
+    margin-top: 5px;
+  }
   @include for-size(desktop) {
-    color: $modal-content;
     font-size: 18px;
-    font-weight: 400;
   }
 }
 .modal-ticket {
+  @include for-size(mobile) {
+    margin-bottom: 10px;
+  }
+
   @include for-size(desktop) {
     display: flex;
     margin-bottom: 20px;
   }
 }
 .modal-button {
-  @include for-size(desktop) {
-    min-height: 40px;
-    min-width: 145px;
-    background-color: $btn;
-    border-radius: 5px;
+  background-color: $btn;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500px;
+  align-items: 1.22em;
+  min-height: 40px;
+  min-width: 145px;
+  @include for-size(mobile) {
   }
-}
-.modal-button a {
   @include for-size(desktop) {
-    color: $text-cl;
-    text-decoration: none;
   }
 }
 
+.modal-button a {
+  color: $text-cl;
+  text-decoration: none;
+}
+// .modal-button:last-child {
+//   @include for-size(mobile) {
+//   }
+// }
+// .modal-button:last-child {
+//   @include for-size(mobile) {
+//     margin-bottom: 25px;
+//   }
+// }
+
 .modal-button-more {
+  color: $btn;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  align-items: 1.22em;
+  border-radius: 5px;
+  border: 1px solid $btn;
+  @include for-size(mobile) {
+    margin-top: 25px;
+    min-width: 224px;
+    min-height: 20px;
+  }
   @include for-size(desktop) {
-    min-width: 255px;
-    min-height: 40px;
-    border: 1px solid $btn;
-    border-radius: 5px;
-    background-color: transparent;
-    color: $btn;
-    font-size: 16px;
-    font-weight: 500;
-    align-items: 1.22em;
   }
 }
