@@ -22,7 +22,6 @@ refs.form.addEventListener('submit', onInputChange);
 
 async function renderDefaultEvents() {
   preloader.show();
-
   clearGallery();
 
   const result = await ApiService.fetchDefaultEvents();

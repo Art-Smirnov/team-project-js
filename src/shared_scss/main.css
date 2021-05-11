@@ -112,8 +112,10 @@ img {
 }
 
 .lds-roller {
-  display: inline-block;
+  display: block;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   width: 80px;
   height: 80px;
 }
@@ -371,6 +373,7 @@ img {
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  margin-bottom: 0;
   color: #dc56c5;
 }
 
@@ -434,12 +437,215 @@ img {
   }
 }
 
+.form-search {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
 @media (min-width: 768px) {
   .form-search {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 37px;
   }
+}
+
+@media (min-width: 1280px) {
+  .form-search {
+    margin-top: 52px;
+  }
+}
+
+.form-search-event,
+.form-select {
+  width: 270px;
+  height: 40px;
+  padding: 10px 45px 10px 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 0px;
+  border-radius: 20px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-search-event:focus,
+.form-select:focus {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  outline: none;
+  border: 1px solid #dc56c5;
+}
+
+.form-search-event:-webkit-autofill,
+.form-search-event:-webkit-autofill:hover,
+.form-search-event:-webkit-autofill:focus {
+  -webkit-text-fill-color: #939393;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-select::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 7.5px 0 7.5px;
+  border-color: #6980fe transparent transparent transparent;
+}
+
+.form-select.is-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-select option {
+  background: #616161;
+}
+
+.form-search-event::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+}
+
+.form-search-event:-ms-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+}
+
+.form-search-event::-ms-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+}
+
+.form-search-event::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #939393;
+}
+
+.form-search-event {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+  .form-search-event {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.search-event_position-svg {
+  position: relative;
+}
+
+.form-search_icon-search {
+  width: 12px;
+  height: 12px;
+  fill: #939393;
+  position: absolute;
+  top: 4px;
+  right: -240px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-search-event:focus ~ .form-search_icon-search {
+  fill: #dc56c5;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+@media (min-width: 768px) {
+  .form-search_icon-search {
+    top: 14px;
+    right: 60px;
+  }
+}
+
+.search-country_position-svg {
+  position: relative;
+}
+
+.form-search_icon-arrow {
+  width: 15px;
+  height: 10px;
+  fill: #939393;
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .form-search_icon-arrow {
+    top: 15px;
+  }
+}
+
+.form-select:focus ~ .form-search_icon-arrow {
+  opacity: 0;
+}
+
+.form-search_icon-eject {
+  width: 18px;
+  height: 13px;
+  fill: #dc56c5;
+  position: absolute;
+  top: 3px;
+  right: 30px;
+  opacity: 0;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .form-search_icon-eject {
+    top: 13px;
+  }
+}
+
+.form-select:focus ~ .form-search_icon-eject {
+  opacity: 1;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .card-list-item__photo {
