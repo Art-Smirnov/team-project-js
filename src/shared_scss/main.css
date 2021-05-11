@@ -436,10 +436,16 @@ img {
           backdrop-filter: blur(20px);
   border: 0px;
   border-radius: 20px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-search-event:focus,
 .form-select:focus {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
   outline: none;
   border: 1px solid #dc56c5;
 }
@@ -530,15 +536,21 @@ img {
   position: absolute;
   top: 4px;
   right: -240px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-search-event:focus ~ .form-search_icon-search {
   fill: #dc56c5;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 @media (min-width: 768px) {
   .form-search_icon-search {
-    top: 4px;
+    top: 14px;
     right: 60px;
   }
 }
@@ -554,6 +566,16 @@ img {
   position: absolute;
   top: 5px;
   right: 30px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .form-search_icon-arrow {
+    top: 15px;
+  }
 }
 
 .form-select:focus ~ .form-search_icon-arrow {
@@ -568,10 +590,22 @@ img {
   top: 3px;
   right: 30px;
   opacity: 0;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .form-search_icon-eject {
+    top: 13px;
+  }
 }
 
 .form-select:focus ~ .form-search_icon-eject {
   opacity: 1;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .card-list-item__photo {

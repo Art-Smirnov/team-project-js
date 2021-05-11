@@ -114,7 +114,7 @@
   }
 
   @include for-size(tablet) {
-    top: 4px;
+    top: 14px;
     right: 60px;
   }
 }
@@ -135,6 +135,10 @@
   transition-duration: $animation-duration;
   transition-timing-function: $timing-function;
 
+  @include for-size(tablet) {
+    top: 15px;
+  }
+
   .form-select:focus ~ & {
     opacity: 0;
   }
@@ -152,6 +156,10 @@
 
   transition-duration: $animation-duration;
   transition-timing-function: $timing-function;
+
+  @include for-size(tablet) {
+    top: 13px;
+  }
 
   .form-select:focus ~ & {
     opacity: 1;
