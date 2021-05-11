@@ -347,6 +347,10 @@ img {
   }
 }
 
+.header-main {
+  position: relative;
+}
+
 .header-title-container {
   width: 212px;
   padding-top: 78px;
@@ -1000,6 +1004,9 @@ img {
 }
 
 .theme-switch {
+  position: absolute;
+  right: 0;
+  top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
