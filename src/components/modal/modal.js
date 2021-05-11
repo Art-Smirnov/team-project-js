@@ -5,9 +5,9 @@ import modalTmpl from '../../templates/card-list.hbs';
 const refs = getRefs();
 let currentID = '';
 
-getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl());
-getRefs().cardList.addEventListener('click', onClickCard);
-getRefs().backdrop.addEventListener('click', onCloseModal);
+refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
+refs.cardList.addEventListener('click', onClickCard);
+refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
@@ -27,8 +27,8 @@ async function onClickCard(e) {
 
   for (const el of result) {
     if (el.id === currentID) {
-      getRefs().backdrop.innerHTML = '';
-      getRefs().backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
+      refs.backdrop.innerHTML = '';
+      refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(el));
     }
   }
 }
