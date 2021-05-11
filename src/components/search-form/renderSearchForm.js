@@ -6,3 +6,16 @@ export default function renderSelectCountry(arr) {
   });
   refs().selectForm.insertAdjacentHTML('beforeend', option);
 }
+
+refs().selectForm.addEventListener('click', () => {
+  if (refs().selectForm.classList.contains('is-active')) {
+    refs().selectForm.classList.remove('is-active');
+    return
+  }
+  refs().selectForm.classList.add('is-active')
+})
+
+refs().selectForm.addEventListener('blur', () => {
+  refs().selectForm.classList.remove('is-active')
+})
+
