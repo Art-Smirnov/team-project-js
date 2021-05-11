@@ -1,10 +1,10 @@
-import debounce from 'lodash.debounce';
 import './shared_scss/main.scss';
 import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
 import './components/search-more/search-more';
+import './components/theme-switch/theme-switch';
 
 import countryCodes from './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
@@ -14,32 +14,33 @@ import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
 // import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
-const apiService = new ApiService();
 const refs = getRefs();
 renderSelectCountry(countryCodes);
 renderDefaultEvents();
 
-refs.searchEventInp.addEventListener('submit', debounce(onInputChange, 500));
+refs.form.addEventListener('submit', onInputChange);
 
 async function renderDefaultEvents() {
   preloader.show();
-
   clearGallery();
 
-  const result = await apiService.fetchDefaultEvents();
-  console.log(result);
+  const result = await ApiService.fetchDefaultEvents();
 
   appendImagesMarkup(result);
   preloader.hide();
 }
 
 async function onInputChange(e) {
+  e.preventDefault();
+
   try {
     preloader.show();
 
     clearGallery();
-    apiService.query = e.target.value;
-    const result = await apiService.fetchEventsByQuery();
+
+    const result = await ApiService.fetchEventsByQuery(
+      e.currentTarget.elements[0].value,
+    );
     console.log(result);
 
     appendImagesMarkup(result);
@@ -57,16 +58,14 @@ async function onSelectCountry(e) {
     preloader.show();
 
     clearGallery();
-
     let selectEl = e.target;
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-    apiService.setSelectedCountry(selectCountryCode);
     if (selectCountryCode == 'All') {
-      const result = await apiService.fetchEventsInAllContries();
-      appendImagesMarkup(result);
+      const result = await ApiService.fetchEventsInAllContries();
+      appendImagesMarkup(result.events);
     } else if (selectCountryCode !== 'All') {
-      const result = await apiService.fetchEventsByCountry();
-      appendImagesMarkup(result);
+      const result = await ApiService.fetchEventsByCountry(selectCountryCode);
+      appendImagesMarkup(result.events);
     }
   } catch (error) {
     alert('No events. Please choose other country!');

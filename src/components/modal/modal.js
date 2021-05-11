@@ -2,9 +2,7 @@ import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/card-list.hbs';
 
-const apiService = new ApiService();
 const refs = getRefs();
-let currentID = '';
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.cardList.addEventListener('click', onClickCard);
@@ -12,6 +10,7 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
+  let currentID = '';
   onToggleModal();
 
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
@@ -24,8 +23,7 @@ async function onClickCard(e) {
     currentID = e.target.dataset.id;
   }
 
-  const result = await apiService.fetchDefaultEvents();
-  
+  const result = await ApiService.feachEventById(currentID);
 
   for (const el of result) {
     if (el.id === currentID) {

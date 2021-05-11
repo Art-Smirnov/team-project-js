@@ -1,5 +1,7 @@
 export default function getRefs() {
   return {
+    bodyRef: document.querySelector('body'),
+    headerOverlay: document.querySelector('.header-overlay'),
     cardList: document.querySelector('.card-list'),
     searchEventInp: document.querySelector('#search-event'),
     searchEventBtn: document.querySelector('.search-event-submit'),
@@ -7,6 +9,7 @@ export default function getRefs() {
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
     moreButton: document.querySelector('.modal-button-more'),
-
+    form: document.querySelector('.form-search'),
+    chekBoxRef: document.querySelector('#theme-switch-toggle'),
   };
 }

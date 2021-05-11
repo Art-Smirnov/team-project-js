@@ -11,9 +11,12 @@ html {
 
 body {
   font-family: $main-font;
+}
+
+body.dark-theme {
   background-color: $modal-content;
-  color: $text-cl;
   background-image: url(../images/mobile/noise_body_mobile.jpg);
+  color: $text-cl;
 
   @include for-size(tablet) {
     background-image: url(../images/tablet/bg_body_tablet@1x.jpg);
@@ -21,6 +24,19 @@ body {
 
   @include for-size(desktop) {
     background-image: url(../images/desktop/bg_body_desktop@1x.jpg);
+  }
+}
+
+body.light-theme {
+  background-color: $modal-bg;
+  background-image: url(../images/light-theme/mobile/noise_body_mobile_light.jpg);
+  color: $modal-content;
+
+  @include for-size(tablet) {
+    background-image: url(../images/light-theme/tablet/bg_body_tablet_light@1x.jpg);
+  }
+  @include for-size(desktop) {
+    background-image: url(../images/light-theme/desktop/bg_body_desktop_light@1x.jpg);
   }
 }
 
