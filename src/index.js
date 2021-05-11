@@ -1,10 +1,10 @@
-import debounce from 'lodash.debounce';
 import './shared_scss/main.scss';
 import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
 import './components/search-more/search-more';
+import './components/theme-switch/theme-switch';
 
 import countryCodes from './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
