@@ -11,5 +11,6 @@ export default function getRefs() {
     moreButton: document.querySelector('.modal-button-more'),
     form: document.querySelector('.form-search'),
     chekBoxRef: document.querySelector('#theme-switch-toggle'),
+    titleEvent: document.querySelector('#title-event'),
   };
 }

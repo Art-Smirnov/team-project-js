@@ -1,20 +1,24 @@
 .back_to_top {
-  position: fixed;
-  bottom: 120px;
-  right: 180px;
-  z-index: 9999;
-  width: 45px;
+  position: sticky;
+  z-index: 1;
+
   background-color: rgba(0, 0, 0, 0.6);
-  height: 30px;
+
   text-align: center;
   line-height: 31px;
   background: initial;
-  font-size: 400%;
-  color: #444;
-  opacity: 0.7;
+  color: rgb(209, 202, 202);
+  opacity: 0.4;
   cursor: pointer;
   border-radius: 2px;
   display: none;
+
+  @media screen and (max-width: 350px) {
+    left: 60%;
+  }
+  width: 0px;
+  bottom: 20%;
+  left: 100%;
 }
 
 .back_to_top:hover {
@@ -24,7 +28,88 @@
 .back_to_top-show {
   display: block;
 }
-.up {
-  font-size: 20px;
-  margin: 0 -18px 0 0;
+
+.center-con {
+  transform: rotate(-90deg);
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.round {
+  position: absolute;
+}
+
+#cta {
+  width: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#cta .arrow {
+  left: 30%;
+}
+.arrow {
+  position: absolute;
+  bottom: 0;
+  margin-left: 0px;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  top: 35px;
+}
+.segunda {
+  margin-left: 18px;
+}
+.next {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.9);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.arrow.primera.bounceAlpha {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.round:hover .arrow {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.round:hover .arrow.primera {
+  animation-name: bounceAlpha;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
