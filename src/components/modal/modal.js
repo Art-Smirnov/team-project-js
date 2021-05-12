@@ -30,6 +30,8 @@ async function onClickCard(e) {
 
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
+
+  console.log(result);
   markupModalText(result);
   console.log(result._embedded.venues[0].name);
 
