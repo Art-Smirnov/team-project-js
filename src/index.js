@@ -77,7 +77,7 @@ async function onSelectCountry(e) {
 }
 
 function appendImagesMarkup(events) {
-  refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
+  refs.cardList.innerHTML = cardTmpl(events);
 }
 
 function clearGallery() {

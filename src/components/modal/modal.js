@@ -25,6 +25,8 @@ async function onClickCard(e) {
 
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
+
+  console.log(result);
   markupModalText(result);
 }
 function markupModalText(text) {
@@ -33,7 +35,7 @@ function markupModalText(text) {
 function cleanModal() {
   refs.backdrop.innerHTML = '';
 }
-console.log(refs.titleEvent);
+
 function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&

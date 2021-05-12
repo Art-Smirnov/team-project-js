@@ -6,7 +6,6 @@ const refs = getRefs();
 
 const apiService = new ApiService();
 
-
 refs.moreButton.addEventListener('click', onSearchMore);
 
 async function onSearchMore() {
