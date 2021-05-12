@@ -1,7 +1,11 @@
 import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/card-list.hbs';
+import cardTmpl from '../../templates/card-list-item.hbs';
 
+import preloaderFactory from '../../services/placeholder/placeholder';
+
+const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
@@ -13,7 +17,6 @@ async function onClickCard(e) {
   let currentID = '';
   onToggleModal();
   removeScroll();
-  console.log(1);
 
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
     currentID = e.target.parentElement.dataset.id;
@@ -28,6 +31,34 @@ async function onClickCard(e) {
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
   markupModalText(result);
+  console.log(result._embedded.venues[0].name);
+
+  //search Event
+  const moreButtonRef = document.querySelector('.modal-button-more');
+
+  moreButtonRef.addEventListener('click', onSearchMore);
+
+  async function onSearchMore() {
+    const eventName = document.querySelector('.title-event').textContent;
+    onToggleModal();
+    preloader.show();
+    try {
+      clearGallery();
+
+      const result = await ApiService.fetchEventsByQuery(eventName);
+      appendImagesMarkup(result);
+    } catch (error) {
+      alert('Something went wrong! Please enter a more specific query!');
+    } finally {
+      preloader.hide();
+    }
+  }
+  function appendImagesMarkup(events) {
+    refs.cardList.innerHTML = cardTmpl(events);
+  }
+  function clearGallery() {
+    refs.cardList.innerHTML = '';
+  }
 }
 
 function markupModalText(text) {
