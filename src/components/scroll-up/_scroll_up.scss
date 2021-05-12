@@ -8,13 +8,13 @@
   line-height: 31px;
   background: initial;
   color: rgb(209, 202, 202);
-  opacity: 0.4;
+  opacity: 0.9;
   cursor: pointer;
   border-radius: 2px;
   display: none;
 
   @media screen and (max-width: 350px) {
-    left: 60%;
+    left: 75%;
   }
   width: 0px;
   bottom: 20%;
@@ -32,13 +32,15 @@
 .center-con {
   transform: rotate(-90deg);
   display: flex;
+  display: flex;
 
   align-items: center;
   justify-content: center;
 }
 
 .round {
-  position: absolute;
+  width: 30px;
+  height: 30px;
 }
 
 #cta {

@@ -12,6 +12,8 @@ window.addEventListener('keyup', onKeyModalEscClose);
 async function onClickCard(e) {
   let currentID = '';
   onToggleModal();
+  removeScroll();
+  console.log(1);
 
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
     currentID = e.target.parentElement.dataset.id;
@@ -27,13 +29,15 @@ async function onClickCard(e) {
   cleanModal();
   markupModalText(result);
 }
+
 function markupModalText(text) {
   refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(text));
 }
+
 function cleanModal() {
   refs.backdrop.innerHTML = '';
 }
-console.log(refs.titleEvent);
+
 function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&
@@ -46,6 +50,12 @@ function onCloseModal(e) {
 
 function onToggleModal() {
   refs.backdrop.classList.toggle('is-hidden');
+}
+
+function removeScroll() {
+  if (refs.scroll.classList.contains('back_to_top-show')) {
+    refs.scroll.classList.remove('back_to_top-show');
+  }
 }
 
 function onKeyModalEscClose(e) {
