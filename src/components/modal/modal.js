@@ -1,6 +1,6 @@
 import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
-import modalTmpl from '../../templates/card-list.hbs';
+import modalTmpl from '../../templates/modal-events.hbs';
 
 const refs = getRefs();
 
@@ -38,6 +38,7 @@ function onCloseModal(e) {
 }
 
 function onToggleModal() {
+  
   refs.backdrop.classList.toggle('is-hidden');
 }
 
