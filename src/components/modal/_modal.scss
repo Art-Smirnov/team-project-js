@@ -1,18 +1,13 @@
 .overlay-modal {
   justify-content: center;
   align-items: center;
-  @include for-size(mobile) {
-  }
-  @include for-size(desktop) {
-    // margin-bottom: 45px;
-  }
 }
 .modal-title {
   color: $primary-accent;
   display: grid;
   line-height: 1.22em;
   text-transform: uppercase;
-  // padding-top: 5px;
+
   @include for-size(mobile) {
     font-size: 20px;
     font-weight: 600;
@@ -22,15 +17,9 @@
   @include for-size(desktop) {
     font-size: 24px;
     font-weight: 600;
-
     margin-bottom: 20px;
   }
 }
-// .modal-title .modal-text:not(:last-child) {
-//   @include for-size(mobile) {
-//     margin-bottom: 10px;
-//   }
-// }
 
 .backdrop {
   position: fixed;
@@ -70,7 +59,6 @@
     padding: 62px 30px;
   }
   @include for-size(desktop) {
-    // padding: 62px 30px;
     margin-top: 201px;
     width: 930px;
     transform: scale(0.95);
@@ -143,15 +131,8 @@
   top: 25px;
   right: 25px;
   transition: background-color $animation-duration $timing-function;
-  // outline: none;
-  // background-image: url('../images/icon-close.svg');
-  // background-position: center;
-  // background-size: 60%;
-  // background-repeat: no-repeat;
-  // display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   margin: 0;
   border: none;
@@ -163,7 +144,6 @@
     width: 17px;
     height: 17px;
     font-weight: 600;
-    // background-color: aqua;
   }
   @include for-size(tablet) {
     width: 25px;
@@ -190,11 +170,6 @@
     padding: 0px;
     margin: 0px;
   }
-  // @include for-size(desktop) {
-  //   text-align: left;
-  //   padding: 0px;
-  //   margin: 0px;
-  // }
 }
 .modal-content-list .modal-ticket:not(:last-child) {
   @include for-size(mobile) {
@@ -256,9 +231,7 @@
   font-style: normal;
   align-items: 1.22em;
   font-size: 16px;
-  @include for-size(mobile) {
-    // margin-top: 5px;
-  }
+
   @include for-size(desktop) {
     font-size: 18px;
   }
@@ -267,16 +240,6 @@
   padding-top: 5px;
 }
 
-// .modal-ticket {
-//   @include for-size(mobile) {
-//     margin-bottom: 10px;
-//   }
-
-//   @include for-size(desktop) {
-//     display: flex;
-//     margin-bottom: 20px;
-//   }
-// }
 .modal-ticket-text {
   @include for-size(mobile) {
     margin-bottom: 10px;
@@ -294,19 +257,7 @@
   @include for-size(mobile) {
     padding: 9px 19px;
   }
-  @include for-size(desktop) {
-  }
 }
-
-// .modal-button:last-child {
-//   @include for-size(mobile) {
-//   }
-// }
-// .modal-button:last-child {
-//   @include for-size(mobile) {
-//     margin-bottom: 25px;
-//   }
-// }
 
 .modal-button-more {
   color: $btn;
