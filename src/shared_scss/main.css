@@ -863,12 +863,14 @@ img {
   display: -ms-grid;
   display: grid;
   line-height: 1.22em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 320px) {
   .modal-title {
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 10px;
   }
 }
 
@@ -877,12 +879,6 @@ img {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
-  }
-}
-
-@media (min-width: 320px) {
-  .modal-title li:not(:last-child) {
-    margin-bottom: 10px;
   }
 }
 
@@ -926,12 +922,12 @@ img {
     width: 595px;
     min-height: auto;
     margin-top: 161px;
+    padding: 62px 30px;
   }
 }
 
 @media (min-width: 1280px) {
   .modal {
-    padding: 62px 30px;
     margin-top: 201px;
     width: 930px;
     -webkit-transform: scale(0.95);
@@ -941,6 +937,12 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 300px 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-buy-tickets .modal-title {
+    margin-bottom: 5px;
   }
 }
 
@@ -1003,6 +1005,13 @@ img {
   }
 }
 
+@media (min-width: 768px) {
+  .modal-photo {
+    height: 70px;
+    width: 70px;
+  }
+}
+
 @media (min-width: 1280px) {
   .modal-photo {
     height: 132px;
@@ -1014,36 +1023,50 @@ img {
   color: #4c00fe;
   background-color: transparent;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 25px;
+  right: 25px;
   -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-  background-image: url("../images/icon-close.svg");
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 48px;
-  height: 48px;
   padding: 0;
   margin: 0;
   border: none;
   border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   cursor: pointer;
 }
 
 @media (min-width: 320px) {
   .close-button {
-    background-color: aqua;
+    width: 17px;
+    height: 17px;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 768px) {
+  .close-button {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .close-button {
+    top: 30px;
+    right: 30px;
   }
 }
 
@@ -1070,13 +1093,13 @@ img {
 }
 
 @media (min-width: 320px) {
-  .modal-content-list li:not(:last-child) {
+  .modal-content-list .modal-ticket:not(:last-child) {
     margin-bottom: 20px;
   }
 }
 
 @media (min-width: 1280px) {
-  .modal-content-list li:not(:last-child) {
+  .modal-content-list .modal-ticket:not(:last-child) {
     margin-bottom: 31px;
   }
 }
@@ -1088,6 +1111,13 @@ img {
 @media (min-width: 320px) {
   .modal-img-wrapper {
     margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-img-wrapper {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -1106,6 +1136,7 @@ img {
   .modal-content-img-wrapper {
     width: 233px;
     height: 416px;
+    margin-right: 30px;
   }
 }
 
@@ -1113,7 +1144,7 @@ img {
   .modal-content-img-wrapper {
     height: 641px;
     width: 360px;
-    margin-right: 60px;
+    margin-right: 30px;
   }
 }
 
@@ -1129,7 +1160,6 @@ img {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    margin-right: 30px;
   }
 }
 
@@ -1150,13 +1180,7 @@ img {
   -webkit-box-align: 1.22em;
       -ms-flex-align: 1.22em;
           align-items: 1.22em;
-}
-
-@media (min-width: 320px) {
-  .modal-title .modal-text {
-    font-size: 16px;
-    margin-top: 5px;
-  }
+  font-size: 16px;
 }
 
 @media (min-width: 1280px) {
@@ -1165,22 +1189,18 @@ img {
   }
 }
 
+.modal-text:first-child {
+  padding-top: 5px;
+}
+
 @media (min-width: 320px) {
-  .modal-ticket {
+  .modal-ticket-text {
     margin-bottom: 10px;
   }
 }
 
-@media (min-width: 1280px) {
-  .modal-ticket {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 20px;
-  }
-}
-
 .modal-button {
+  display: inline-block;
   background-color: #4c00fe;
   border-radius: 5px;
   font-size: 16px;
@@ -1188,13 +1208,14 @@ img {
   -webkit-box-align: 1.22em;
       -ms-flex-align: 1.22em;
           align-items: 1.22em;
-  min-height: 40px;
-  min-width: 145px;
+  text-decoration: none;
+  color: white;
 }
 
-.modal-button a {
-  color: white;
-  text-decoration: none;
+@media (min-width: 320px) {
+  .modal-button {
+    padding: 9px 19px;
+  }
 }
 
 .modal-button-more {
@@ -1206,14 +1227,31 @@ img {
       -ms-flex-align: 1.22em;
           align-items: 1.22em;
   border-radius: 5px;
-  border: 1px solid #4c00fe;
 }
 
 @media (min-width: 320px) {
   .modal-button-more {
+    border: 1px solid #4c00fe;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: 25px;
     min-width: 224px;
     min-height: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-button-more {
+    border: 1px solid #dc56c5;
+    padding: 10px 15px;
+    margin-top: 43px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .modal-button-more {
+    border: 1px solid #4c00fe;
+    margin-top: 45px;
   }
 }
 
@@ -1255,6 +1293,14 @@ img {
           transform: translate(-50%, -50%);
 }
 
+.wrapper-scroll .white-svg-scroll {
+  fill: whitesmoke;
+}
+
+.wrapper-scroll .light-theme {
+  fill: black;
+}
+
 .wrapper-scroll svg {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -1263,10 +1309,9 @@ img {
   margin: 0;
   cursor: pointer;
   overflow: visible;
-  fill: whitesmoke;
 }
 
-.wrapper-scroll svg polygon,
+.wrapper-scroll svg \ polygon,
 .wrapper-scroll svg path {
   -webkit-transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
   transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
