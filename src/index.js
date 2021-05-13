@@ -11,6 +11,8 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
+import gameMarkup from './components/tic-tac-toe/game-markup.js';
+console.log(gameMarkup());
 // import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -44,7 +46,9 @@ async function onInputChange(e) {
 
     appendImagesMarkup(result);
   } catch (error) {
-    alert('Something went wrong! Please enter a more specific query!');
+    // alert('Something went wrong! Please enter a more specific query!');
+    clearGallery();
+    onNoResultsError();
   } finally {
     preloader.hide();
   }
@@ -69,7 +73,9 @@ async function onSelectCountry(e) {
       console.log(result);
     }
   } catch (error) {
-    alert('No events. Please choose other country!');
+    // alert('No events. Please choose other country!');
+    clearGallery();
+    onNoResultsError();
   } finally {
     preloader.hide();
   }
@@ -82,3 +88,12 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
+
+function onNoResultsError() {
+  refs.cardList.insertAdjacentHTML('beforeend', gameMarkup())
+}
+
+//Появление секции команды
+refs.logoEl.addEventListener('click', (e) => {
+  refs.dreamTeamEl.classList.toggle('show');
+})
