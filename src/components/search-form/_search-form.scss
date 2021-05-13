@@ -54,6 +54,8 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .form-select::before {
@@ -85,6 +87,8 @@
 
 .form-search-event {
   margin-bottom: 25px;
+  -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
   @include for-size(tablet) {
     margin-right: 30px;
@@ -166,3 +170,4 @@
     transform: scale(1.15);
   }
 }
+
