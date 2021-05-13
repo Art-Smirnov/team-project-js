@@ -81,3 +81,12 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
+
+function onNoResultsError() {
+  
+}
+
+//Появление секции команды
+refs.logoEl.addEventListener('click', (e) => {
+  refs.dreamTeamEl.classList.toggle('show');
+})

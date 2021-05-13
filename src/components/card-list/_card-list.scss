@@ -30,3 +30,21 @@
     margin-top: 66px;
   }
 }
+
+//dream-team list styles
+.dream-team-section{
+  position: absolute;
+  z-index: 2;
+}
+
+// -- список - это пример потом нужно удалить!
+.teammates {
+  list-style: none;
+  margin: 0;
+  margin-left: 10%;
+  display: flex;
+
+  & li {
+    width: 250px;
+  }
+}

@@ -1,8 +1,16 @@
 .card-list-item__photo {
   position: relative;
+  z-index: 3;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   height: 161px;
+  -webkit-animation: flip-scale-up-diag-2 0.5s linear both;
+  animation: flip-scale-up-diag-2 0.5s linear both;
+  transition: box-shadow 0.25s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
+  }
 
   @include for-size(tablet) {
     height: 227px;
@@ -52,12 +60,17 @@
 }
 .card-list-item::after {
   position: absolute;
+  z-index: 4;
   top: -9px;
   right: -10px;
   content: '';
   display: block;
   width: 108px;
   height: 101px;
+
+  &:hover .card-list-item__photo {
+    box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  }
   @include for-size(tablet) {
     width: 153px;
     height: 143px;
@@ -75,4 +88,9 @@
   @include for-size(tablet) {
     font-size: 12px;
   }
+}
+
+.card-list-item__info {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
