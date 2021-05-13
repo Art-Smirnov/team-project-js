@@ -1,6 +1,6 @@
 import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
-import modalTmpl from '../../templates/card-list.hbs';
+import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
@@ -30,6 +30,8 @@ async function onClickCard(e) {
 
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
+
+  console.log(result);
   markupModalText(result);
   console.log(result._embedded.venues[0].name);
 

@@ -6,6 +6,7 @@ const Theme = {
 };
 
 const refs = getRefs();
+
 refs.chekBoxRef.addEventListener('change', onThemeChange);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
 
@@ -21,6 +22,12 @@ refs.headerOverlay.classList.add(
     : localStorage.getItem('headerOverlay-theme'),
 );
 
+refs.svgScroll.classList.add(
+  localStorage.getItem('svg-theme-dark') === null
+    ? Theme.DARK
+    : localStorage.getItem('svg-theme-dark'),
+);
+
 function onThemeChange({ target }) {
   target.checked
     ? changeTheme(Theme.LIGHT, Theme.DARK)
@@ -30,6 +37,7 @@ function onThemeChange({ target }) {
 function changeTheme(add, rem) {
   refs.bodyRef.classList.replace(rem, add);
   refs.headerOverlay.classList.replace(rem, add);
+  refs.svgScroll.classList.replace(rem, add);
   localStorage.setItem('body-theme', add);
   localStorage.setItem('headerOverlay-theme', add);
 }

@@ -10,6 +10,9 @@ export default function getRefs() {
     backdrop: document.querySelector('.backdrop'),
     form: document.querySelector('.form-search'),
     chekBoxRef: document.querySelector('#theme-switch-toggle'),
+    logoEl: document.querySelector('.logo-container'),
+    dreamTeamEl : document.querySelector('.dream-team-section'),
     scroll: document.querySelector('.back_to_top'),
+    svgScroll: document.querySelector('.svg-theme'),
   };
 }
