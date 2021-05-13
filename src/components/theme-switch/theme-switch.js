@@ -21,7 +21,6 @@ refs.headerOverlay.classList.add(
     ? Theme.DARK
     : localStorage.getItem('headerOverlay-theme'),
 );
-console.log(refs.svgScroll);
 
 refs.svgScroll.classList.add(
   localStorage.getItem('svg-theme-dark') === null
