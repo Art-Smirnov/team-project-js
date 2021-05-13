@@ -262,14 +262,15 @@
   align-items: 1.22em;
   text-decoration: none;
   color: $text-cl;
+  transition: $transition;
   @include for-size(mobile) {
     padding: 9px 19px;
   }
 }
+
 .modal-button:focus,
 .modal-button:hover {
-  background-color: $text-cl;
-  color: $btn;
+  background-color: $primary-accent;
   border: 1px solid $btn;
   font-weight: 700;
 }
@@ -282,6 +283,9 @@
   align-items: 1.22em;
   border-radius: 5px;
   cursor: pointer;
+
+  transition: $transition;
+
   @include for-size(mobile) {
     border: 1px solid $btn;
     padding-top: 10px;
@@ -301,7 +305,11 @@
     margin-top: 45px;
   }
 }
+
 .modal-button-more:hover,
 .modal-button-more:focus {
   font-weight: 700;
+  color: $primary-accent;
+  border: 1px solid $btn;
+  transition: $transition;
 }

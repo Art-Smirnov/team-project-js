@@ -9,7 +9,8 @@
   transition: box-shadow 0.25s ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
+      0 0 25px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
   }
 
   @include for-size(tablet) {
@@ -57,9 +58,11 @@
 
 .card-list-item {
   position: relative;
+  cursor: pointer;
 }
 .card-list-item::after {
   position: absolute;
+  pointer-events: none;
   z-index: 4;
   top: -9px;
   right: -10px;
@@ -69,7 +72,8 @@
   height: 101px;
 
   &:hover .card-list-item__photo {
-    box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+    box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de,
+      0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
   }
   @include for-size(tablet) {
     width: 153px;
@@ -91,6 +95,6 @@
 }
 
 .card-list-item__info {
-  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
