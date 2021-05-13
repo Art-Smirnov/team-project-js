@@ -1185,6 +1185,485 @@ img {
           box-shadow: 0 0 0 3px #dc56c5;
 }
 
+.game-wrapper {
+  margin: 0 auto;
+  margin-top: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 600px;
+  width: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-wrapper .game__title-wrapper {
+  position: absolute;
+  top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .game-wrapper .game__title-wrapper {
+    top: 2%;
+  }
+}
+
+.game-wrapper .no-results__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 38px;
+  color: #dc56c5;
+}
+
+@media (max-width: 767px) {
+  .game-wrapper .no-results__title {
+    margin-bottom: 10;
+    font-size: 32px;
+  }
+}
+
+.game-wrapper .no-results__description {
+  margin: 0;
+  font-size: 20px;
+  color: #929292;
+}
+
+@media (max-width: 767px) {
+  .game-wrapper .no-results__description {
+    font-size: 14px;
+  }
+}
+
+.game-wrapper svg {
+  height: 100px;
+  width: 100px;
+}
+
+.game-wrapper input {
+  opacity: 0;
+}
+
+.game-wrapper label {
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+}
+
+.game-wrapper input,
+.game-wrapper span,
+.game-wrapper label {
+  left: calc(var(--col) * 100px);
+  position: absolute;
+  top: calc(var(--row) * 100px);
+}
+
+.game-wrapper circle,
+.game-wrapper path {
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: draw;
+  animation-name: draw;
+}
+
+.game-wrapper circle {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  stroke: #dc56c5;
+}
+
+.game-wrapper path {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  stroke: #6980fe;
+}
+
+.game-wrapper button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: 0;
+  background: #dc56c5;
+  font-size: 0.75rem;
+  color: #fafafa;
+  -webkit-filter: drop-shadow(0 5px 5px #000);
+          filter: drop-shadow(0 5px 5px #000);
+  -webkit-transition: -webkit-transform 0.1s, -webkit-filter 0.1s;
+  transition: -webkit-transform 0.1s, -webkit-filter 0.1s;
+  transition: transform 0.1s, filter 0.1s;
+  transition: transform 0.1s, filter 0.1s, -webkit-transform 0.1s, -webkit-filter 0.1s;
+}
+
+.game-wrapper button:hover {
+  -webkit-filter: drop-shadow(0 5px 4px #000);
+          filter: drop-shadow(0 5px 4px #000);
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+.game-wrapper button:active {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-filter: drop-shadow(0 0 0 transparent);
+          filter: drop-shadow(0 0 0 transparent);
+}
+
+.game-wrapper span {
+  display: none;
+  -webkit-transform: translate3d(0, 0, 3px);
+          transform: translate3d(0, 0, 3px);
+}
+
+.game-wrapper input:checked + span {
+  display: block;
+}
+
+.game-wrapper .o {
+  -webkit-transform: rotateY(180deg) rotate(-35deg);
+          transform: rotateY(180deg) rotate(-35deg);
+}
+
+.game-wrapper .x path:nth-of-type(2) {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.game-wrapper .board {
+  height: 300px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 300px;
+}
+
+.game-wrapper .board__line {
+  height: 10px;
+  left: calc(var(--x) * 100px);
+  position: absolute;
+  top: calc(var(--y) * 100px);
+  width: 300px;
+}
+
+.game-wrapper .board__line path {
+  stroke: #929292;
+}
+
+.game-wrapper .board__line:nth-of-type(1),
+.game-wrapper .board__line:nth-of-type(2) {
+  -webkit-transform: rotate(90deg) translate(-5px, 0);
+          transform: rotate(90deg) translate(-5px, 0);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.game-wrapper .board__line:nth-of-type(3),
+.game-wrapper .board__line:nth-of-type(4) {
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media (max-width: 767px) {
+  .game-wrapper .board__line:nth-of-type(3),
+  .game-wrapper .board__line:nth-of-type(4) {
+    -webkit-transform: scaleX(0.9);
+            transform: scaleX(0.9);
+  }
+}
+
+.game-wrapper .board__line:nth-of-type(1) path {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.game-wrapper .board__line:nth-of-type(2) path {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.game-wrapper .board__line:nth-of-type(3) path {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+
+.game-wrapper .board__line:nth-of-type(4) path {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.game-wrapper .board__result {
+  -webkit-animation: fadeBg 0.25s 0.5s;
+  animation: fadeBg 0.25s 0.5s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  /* background: #1f3a93; */
+  display: none;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 4px);
+          transform: translate3d(0, 0, 4px);
+  width: 100%;
+}
+
+.game-wrapper .result__content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: flyIn 0.25s 0.75s;
+  animation: flyIn 0.25s 0.75s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  background: #fafafa;
+  border-radius: 10px;
+  color: #1f3a93;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-filter: drop-shadow(0 10px 10px #000);
+          filter: drop-shadow(0 10px 10px #000);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.game-wrapper .result__title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.game-wrapper .result__details {
+  margin: 0;
+}
+
+.game-wrapper .result__shield {
+  -webkit-animation: fadeBg 0.25s 0.5s;
+  animation: fadeBg 0.25s 0.5s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  background: #1f3a93;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.game-wrapper .result__emoji {
+  font-size: 5rem;
+}
+
+.game-wrapper .result__icon path:nth-of-type(1) {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.game-wrapper .result__icon path:nth-of-type(2) {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+
+.game-wrapper .result__icon circle {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.game-wrapper .result__firework-icon {
+  -webkit-animation: fly 0.75s 1s;
+  animation: fly 0.75s 1s;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  -webkit-animation-timing-function: cubic-bezier(0, 0.64, 0.25, 1.01);
+  animation-timing-function: cubic-bezier(0, 0.64, 0.25, 1.01);
+  font-size: 2rem;
+  height: 2rem;
+  left: 50%;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: rotate(calc(var(--r) * 1deg)) translateY(calc(var(--y) * -1px));
+          transform: rotate(calc(var(--r) * 1deg)) translateY(calc(var(--y) * -1px));
+  width: 2rem;
+}
+
+.game-wrapper :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even) {
+  -webkit-transform: translate3d(0, 0, 2px);
+          transform: translate3d(0, 0, 2px);
+}
+
+.game-wrapper :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd) {
+  -webkit-transform: translate3d(0, 0, -1px);
+          transform: translate3d(0, 0, -1px);
+}
+
+.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board__result--draw {
+  display: block;
+}
+
+.game-wrapper #x--0:checked ~ #x--1:checked ~ #x--2:checked ~ .board__result--x,
+.game-wrapper #x--3:checked ~ #x--4:checked ~ #x--5:checked ~ .board__result--x,
+.game-wrapper #x--6:checked ~ #x--7:checked ~ #x--8:checked ~ .board__result--x,
+.game-wrapper #x--0:checked ~ #x--3:checked ~ #x--6:checked ~ .board__result--x,
+.game-wrapper #x--1:checked ~ #x--4:checked ~ #x--7:checked ~ .board__result--x,
+.game-wrapper #x--2:checked ~ #x--5:checked ~ #x--8:checked ~ .board__result--x,
+.game-wrapper #x--0:checked ~ #x--4:checked ~ #x--8:checked ~ .board__result--x,
+.game-wrapper #x--2:checked ~ #x--4:checked ~ #x--6:checked ~ .board__result--x,
+.game-wrapper #o--0:checked ~ #o--1:checked ~ #o--2:checked ~ .board__result--o,
+.game-wrapper #o--3:checked ~ #o--4:checked ~ #o--5:checked ~ .board__result--o,
+.game-wrapper #o--6:checked ~ #o--7:checked ~ #o--8:checked ~ .board__result--o,
+.game-wrapper #o--0:checked ~ #o--3:checked ~ #o--6:checked ~ .board__result--o,
+.game-wrapper #o--1:checked ~ #o--4:checked ~ #o--7:checked ~ .board__result--o,
+.game-wrapper #o--2:checked ~ #o--5:checked ~ #o--8:checked ~ .board__result--o,
+.game-wrapper #o--0:checked ~ #o--4:checked ~ #o--8:checked ~ .board__result--o,
+.game-wrapper #o--2:checked ~ #o--4:checked ~ #o--6:checked ~ .board__result--o {
+  display: block;
+}
+
+.game-wrapper #x--0:checked ~ #x--1:checked ~ #x--2:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--3:checked ~ #x--4:checked ~ #x--5:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--6:checked ~ #x--7:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--0:checked ~ #x--3:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--1:checked ~ #x--4:checked ~ #x--7:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--2:checked ~ #x--5:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--0:checked ~ #x--4:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #x--2:checked ~ #x--4:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
+.game-wrapper #o--0:checked ~ #o--1:checked ~ #o--2:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--3:checked ~ #o--4:checked ~ #o--5:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--6:checked ~ #o--7:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--0:checked ~ #o--3:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--1:checked ~ #o--4:checked ~ #o--7:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--2:checked ~ #o--5:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--0:checked ~ #o--4:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
+.game-wrapper #o--2:checked ~ #o--4:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw {
+  display: none;
+}
+
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fadeBg {
+  from {
+    background: rgba(31, 58, 147, 0);
+  }
+}
+
+@keyframes fadeBg {
+  from {
+    background: rgba(31, 58, 147, 0);
+  }
+}
+
+@-webkit-keyframes fly {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fly {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  5%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes flyIn {
+  from {
+    -webkit-transform: translateY(100%) scale(0);
+            transform: translateY(100%) scale(0);
+  }
+}
+
+@keyframes flyIn {
+  from {
+    -webkit-transform: translateY(100%) scale(0);
+            transform: translateY(100%) scale(0);
+  }
+}
+
 @-webkit-keyframes text-flicker-in-glow {
   0% {
     opacity: 0;
