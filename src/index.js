@@ -3,7 +3,6 @@ import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
-import './components/search-more/search-more';
 import './components/theme-switch/theme-switch';
 
 import countryCodes from './services/countriesCodes.js';
@@ -66,10 +65,12 @@ async function onSelectCountry(e) {
     let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
     if (selectCountryCode == 'All') {
       const result = await ApiService.fetchEventsInAllContries();
+      console.log(result);
       appendImagesMarkup(result.events);
     } else if (selectCountryCode !== 'All') {
       const result = await ApiService.fetchEventsByCountry(selectCountryCode);
       appendImagesMarkup(result.events);
+      console.log(result);
     }
   } catch (error) {
     // alert('No events. Please choose other country!');
@@ -81,7 +82,7 @@ async function onSelectCountry(e) {
 }
 
 function appendImagesMarkup(events) {
-  refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
+  refs.cardList.innerHTML = cardTmpl(events);
 }
 
 function clearGallery() {

@@ -10,7 +10,7 @@
                 <img src="{{images.1.url}}" alt="{{name}}" class="modal-photo-main" />
             </span>
 
-            <ul class="modal-content-list">
+            <ul class="modal-content-list list">
                 <li class="modal-title">
                     INFO
 
@@ -26,46 +26,46 @@
                 <li class="modal-title">
                     WHERE
 
-                    <span class="modal-text">{{_embedded.venues.1.city.name}},
+                    <span class="modal-text">{{_embedded.venues.0.city.name}},
                         {{_embedded.venues.0.country.name}}</span>
                     <span class="modal-text">{{_embedded.venues.0.name}}</span>
                 </li>
                 <li class="modal-title">
                     WHO
-                    <span class="modal-text">{{name}}The Black Eyed Peas</span>
+                    <span class="modal-text title-event">{{name}}</span>
                 </li>
                 <li class="modal-buy-tickets">
-                    <span class="modal-title">PRICES</span>
-                    <ul class="modal-content-list">
+                    {{!-- <span class="modal-title">PRICES</span>
+                    <ul class="modal-content-list list">
                         <li>
                             <div class="modal-ticket">
                                 <span class="modal-skan-svg">
                                     <svg class="modal-svg">
-                                        <use href="../images/ticket.svg"></use>
+                                        <use href="../images/barcode_icon_138897.svg"></use>
                                     </svg>
                                 </span>
                                 <span class="modal-status-ticket">
-                                    Standart :{{_embedded.venues.priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    {{products.0.type}} :{{priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
                                 </span>
                             </div>
                             <button class="modal-button">
-                                <a href="{{resultFeatch.url}}">BUY TICKETS</a>
+                                <a href="{{products.1.url}}">BUY TICKETS</a>
                             </button>
                         </li>
                         <li>
                             <div class="modal-ticket">
                                 <span class="modal-skan-svg"> </span>
                                 <span class="modal-status-ticket">
-                                    VIP 1000-1500 UAH
-                                    :{{priceRanges.0.min}}-{{priceRanges.0.max}}
+                                    {{products.1.type}}: {{priceRanges.0.min}}-{{priceRanges.0.max}}
                                     ({{priceRanges.0.currency}})
+
                                 </span>
                             </div>
                             <button class="modal-button">
-                                <a href="{{resultFeatch.url}}">BUY TICKETS</a>
+                                <a href="{{products.0.url}}">BUY TICKETS</a>
                             </button>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
             </ul>
