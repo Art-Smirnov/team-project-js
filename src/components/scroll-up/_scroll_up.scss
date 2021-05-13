@@ -2,7 +2,6 @@
   position: sticky;
   z-index: 1;
 
-
   background-color: rgba(0, 0, 0, 0.6);
 
   text-align: center;
@@ -32,13 +31,18 @@
 }
 $ease: cubic-bezier(0.2, 1, 0.3, 1);
 
-
 .wrapper-scroll {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
+  .white-svg-scroll {
+    fill: whitesmoke;
+  }
 
+  .light-theme {
+    fill: black;
+  }
   svg {
     transform: rotate(90deg);
     width: 50px;
@@ -46,8 +50,7 @@ $ease: cubic-bezier(0.2, 1, 0.3, 1);
     margin: 0;
     cursor: pointer;
     overflow: visible;
-    fill: whitesmoke;
-    polygon,
+    \ polygon,
     path {
       transition: all 0.5s $ease;
     }
@@ -57,7 +60,6 @@ $ease: cubic-bezier(0.2, 1, 0.3, 1);
       fill: $primary-accent;
     }
 
-
     &:hover .arrow {
       animation: arrow-anim 2.5s $ease infinite;
     }
@@ -65,7 +67,6 @@ $ease: cubic-bezier(0.2, 1, 0.3, 1);
       animation: arrow-fixed-anim 2.5s $ease infinite;
     }
   }
-
 }
 
 @keyframes arrow-anim {
@@ -93,4 +94,3 @@ $ease: cubic-bezier(0.2, 1, 0.3, 1);
     opacity: 1;
   }
 }
-

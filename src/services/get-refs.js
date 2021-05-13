@@ -11,5 +11,6 @@ export default function getRefs() {
     form: document.querySelector('.form-search'),
     chekBoxRef: document.querySelector('#theme-switch-toggle'),
     scroll: document.querySelector('.back_to_top'),
+    svgScroll: document.querySelector('.svg-theme'),
   };
 }
