@@ -79,7 +79,6 @@ img {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  outline: 1px solid red;
 }
 
 @media (min-width: 320px) {
@@ -98,6 +97,13 @@ img {
   .container {
     width: 930px;
   }
+}
+
+.main-container {
+  position: relative;
+  top: -51px;
+  left: 0;
+  right: 0;
 }
 
 .list {
@@ -1126,18 +1132,17 @@ img {
   line-height: 31px;
   background: initial;
   color: #d1caca;
-  opacity: 0.4;
+  opacity: 0.9;
   cursor: pointer;
-  border-radius: 2px;
   display: none;
   width: 0px;
-  bottom: 20%;
+  bottom: 10%;
   left: 100%;
 }
 
 @media screen and (max-width: 350px) {
   .back_to_top {
-    left: 60%;
+    left: 75%;
   }
 }
 
@@ -1149,144 +1154,103 @@ img {
   display: block;
 }
 
-.center-con {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.wrapper-scroll {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.round {
-  position: absolute;
-}
-
-#cta {
-  width: 100%;
+.wrapper-scroll svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 50px;
+  height: auto;
+  margin: 0;
   cursor: pointer;
-  position: absolute;
+  overflow: visible;
+  fill: whitesmoke;
 }
 
-#cta .arrow {
-  left: 30%;
+.wrapper-scroll svg polygon,
+.wrapper-scroll svg path {
+  -webkit-transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.arrow {
-  position: absolute;
-  bottom: 0;
-  margin-left: 0px;
-  width: 32px;
-  height: 32px;
-  background-size: contain;
-  top: 35px;
+.wrapper-scroll svg:hover polygon,
+.wrapper-scroll svg:hover path {
+  -webkit-transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+  fill: #dc56c5;
 }
 
-.segunda {
-  margin-left: 18px;
+.wrapper-scroll svg:hover .arrow {
+  -webkit-animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
-.next {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+.wrapper-scroll svg:hover .arrow-fixed {
+  -webkit-animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+          animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
 }
 
-@-webkit-keyframes bounceAlpha {
+@-webkit-keyframes arrow-anim {
   0% {
     opacity: 1;
-    -webkit-transform: translateX(0px) scale(1);
-            transform: translateX(0px) scale(1);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
-  25% {
+  5% {
+    -webkit-transform: translateX(-0.1rem);
+            transform: translateX(-0.1rem);
+  }
+  100% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
     opacity: 0;
-    -webkit-transform: translateX(10px) scale(0.9);
-            transform: translateX(10px) scale(0.9);
-  }
-  26% {
-    opacity: 0;
-    -webkit-transform: translateX(-10px) scale(0.9);
-            transform: translateX(-10px) scale(0.9);
-  }
-  55% {
-    opacity: 1;
-    -webkit-transform: translateX(0px) scale(1);
-            transform: translateX(0px) scale(1);
   }
 }
 
-@keyframes bounceAlpha {
+@keyframes arrow-anim {
   0% {
     opacity: 1;
-    -webkit-transform: translateX(0px) scale(1);
-            transform: translateX(0px) scale(1);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
-  25% {
+  5% {
+    -webkit-transform: translateX(-0.1rem);
+            transform: translateX(-0.1rem);
+  }
+  100% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
     opacity: 0;
-    -webkit-transform: translateX(10px) scale(0.9);
-            transform: translateX(10px) scale(0.9);
   }
-  26% {
+}
+
+@-webkit-keyframes arrow-fixed-anim {
+  5% {
     opacity: 0;
-    -webkit-transform: translateX(-10px) scale(0.9);
-            transform: translateX(-10px) scale(0.9);
   }
-  55% {
+  20% {
+    opacity: 0.4;
+  }
+  100% {
     opacity: 1;
-    -webkit-transform: translateX(0px) scale(1);
-            transform: translateX(0px) scale(1);
   }
 }
 
-.bounceAlpha {
-  -webkit-animation-name: bounceAlpha;
-          animation-name: bounceAlpha;
-  -webkit-animation-duration: 1.4s;
-          animation-duration: 1.4s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-.arrow.primera.bounceAlpha {
-  -webkit-animation-name: bounceAlpha;
-          animation-name: bounceAlpha;
-  -webkit-animation-duration: 1.4s;
-          animation-duration: 1.4s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-.round:hover .arrow {
-  -webkit-animation-name: bounceAlpha;
-          animation-name: bounceAlpha;
-  -webkit-animation-duration: 1.4s;
-          animation-duration: 1.4s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-.round:hover .arrow.primera {
-  -webkit-animation-name: bounceAlpha;
-          animation-name: bounceAlpha;
-  -webkit-animation-duration: 1.4s;
-          animation-duration: 1.4s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+@keyframes arrow-fixed-anim {
+  5% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .theme-switch {
