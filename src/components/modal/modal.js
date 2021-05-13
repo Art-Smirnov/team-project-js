@@ -1,6 +1,6 @@
 import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
-import modalTmpl from '../../templates/card-list.hbs';
+import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
