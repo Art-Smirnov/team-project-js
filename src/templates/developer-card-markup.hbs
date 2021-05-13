@@ -1,0 +1,24 @@
+
+{{!-- <ul class="team-list container list"> --}}
+    {{#each this}}
+    <li class="team-list-item">
+        <img class="team-list-item-img" src="{{image}}" alt="член команды" />
+        <h3 class="team-list-item-name">"{{nameDev}}"</h3>
+        <ul class="sotial-list list">
+            <li class="sotial-list-item">
+                <a class="sotial-list-item-link link" href="{{github}}"
+                    aria-label="иконка гитхаб">
+                    <img src="" alt="иконка гитхаб" class="social-list-item-icon" />
+                </a>
+            </li>
+             <li class="sotial-list-item">
+                    <a class="sotial-list-item-link link" href="" aria-label="иконка линкедит">
+                        <img src="./images/sotial-list/linkedin.svg" alt="иконка линкедит" class="social-list-item-icon" />
+                    </a>
+             </li>
+        </ul>
+     </li>
+        </ul>
+    </li>
+    {{/each}}
+{{!-- </ul> --}}
