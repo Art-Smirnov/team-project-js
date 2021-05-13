@@ -14,13 +14,10 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
-  if (e.target.nodeName === 'UL') {
+  if (e.target.nodeName === 'UL' || e.target.nodeName === 'LI') {
     return;
   }
-  if (e.target.nodeName === 'LI') {
-    return;
-  }
-  console.log(e.target.nodeName);
+
   let currentID = '';
   onToggleModal();
   removeScroll();
@@ -50,7 +47,7 @@ async function onClickCard(e) {
       clearGallery();
 
       const result = await ApiService.fetchEventsByQuery(eventName);
-      
+
       appendImagesMarkup(result);
     } catch (error) {
       alert('Something went wrong! Please enter a more specific query!');
@@ -59,7 +56,6 @@ async function onClickCard(e) {
     }
   }
   function appendImagesMarkup(events) {
-   console.log(events);
     refs.cardList.innerHTML = cardTmpl(events);
   }
   function clearGallery() {
