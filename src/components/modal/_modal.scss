@@ -254,9 +254,15 @@
   align-items: 1.22em;
   text-decoration: none;
   color: $text-cl;
+  transition: $transition;
   @include for-size(mobile) {
     padding: 9px 19px;
   }
+}
+.modal-button:hover {
+  transform: $timing-function;
+  background-color: $primary-accent;
+  transition: $transition;
 }
 
 .modal-button-more {
@@ -266,7 +272,8 @@
   font-weight: 500;
   align-items: 1.22em;
   border-radius: 5px;
-
+  cursor: pointer;
+  transition: $transition;
   @include for-size(mobile) {
     border: 1px solid $btn;
     padding-top: 10px;
@@ -285,4 +292,9 @@
     border: 1px solid $btn;
     margin-top: 45px;
   }
+}
+.modal-button-more:hover {
+  color: $primary-accent;
+  border: 1px solid $btn;
+  transition: $transition;
 }

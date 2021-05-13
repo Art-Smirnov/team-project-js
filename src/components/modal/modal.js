@@ -14,6 +14,13 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
+  if (e.target.nodeName === 'UL') {
+    return;
+  }
+  if (e.target.nodeName === 'LI') {
+    return;
+  }
+  console.log(e.target.nodeName);
   let currentID = '';
   onToggleModal();
   removeScroll();
@@ -24,16 +31,11 @@ async function onClickCard(e) {
   if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
     currentID = e.target.parentElement.parentElement.dataset.id;
   }
-  if (e.target.nodeName === 'LI') {
-    currentID = e.target.dataset.id;
-  }
 
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
 
-  console.log(result);
   markupModalText(result);
-  console.log(result._embedded.venues[0].name);
 
   //search Event
   const moreButtonRef = document.querySelector('.modal-button-more');
