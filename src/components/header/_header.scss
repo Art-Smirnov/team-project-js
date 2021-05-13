@@ -1,7 +1,8 @@
 .header {
   height: 364px;
   background: #c4c4c4;
-  text-align: center;
+  text-align: center;  
+  position: relative;
   @include for-size(desktop) {
     height: 446px;
   }
@@ -78,6 +79,11 @@
   padding-top: 78px;
   margin-left: auto;
   margin-right: auto;
+  transition: text-shadow 0.25s ease-in-out;
+
+  &:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  }
 
   @include for-size(tablet) {
     padding-top: 40px;
@@ -96,6 +102,9 @@
   text-align: center;
   margin-bottom: 0;
   color: $primary-accent;
+  -webkit-animation: text-flicker-in-glow 4s linear both;
+	        animation: text-flicker-in-glow 4s linear both;
+  
 
   @include for-size(tablet) {
     font-size: 30px;
@@ -105,5 +114,28 @@
   @include for-size(desktop) {
     font-size: 50px;
     line-height: 61px;
+  }
+}
+
+.dream-team-section {
+  display: none;
+  opacity: 0;
+  @include for-size(desktop) {
+    display: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #0e0e0ecc;
+    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
+	        animation: scale-up-tl 0.4s ease-in-out both;
+
+    &.show {
+    display: block;
+    opacity: 1;
+    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
+	        animation: scale-up-tl 0.4s ease-in-out both;
+    }
   }
 }
