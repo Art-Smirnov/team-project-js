@@ -48,6 +48,7 @@ async function onClickCard(e) {
       clearGallery();
 
       const result = await ApiService.fetchEventsByQuery(eventName);
+      
       appendImagesMarkup(result);
     } catch (error) {
       alert('Something went wrong! Please enter a more specific query!');
@@ -56,6 +57,7 @@ async function onClickCard(e) {
     }
   }
   function appendImagesMarkup(events) {
+   console.log(events);
     refs.cardList.innerHTML = cardTmpl(events);
   }
   function clearGallery() {
