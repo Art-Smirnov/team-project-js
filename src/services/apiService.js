@@ -5,9 +5,14 @@ const MY_KEY = '0E9J50fYPIbPJoVb72f3QU7X5EGa9oFk';
 const DEFAULT_COUNTRY = 'US';
 
 export default class ApiService {
-  static async fetchDefaultEvents() {
+  constructor() {
+    this.tag = '';
+  }
+  static async fetchDefaultEvents(currentPage = 0) {
     const response = await fetch(
-      `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}&page=${
+        currentPage - 1 < 0 ? 0 : currentPage - 1
+      }`,
     );
 
     if (!response.ok) {
@@ -15,47 +20,57 @@ export default class ApiService {
     }
     const res = await response.json();
 
-    return await Promise.resolve(res._embedded.events);
+    this.tag = 'default';
+
+    return res;
   }
 
-  static async fetchEventsByQuery(value) {
-    console.log(value);
+  static async fetchEventsByQuery(value, currentPage = 0) {
     const response = await fetch(
-      `${BASE_URL}events.json?keyword=${value}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?keyword=${value}&apikey=${MY_KEY}&page=${
+        currentPage - 1 < 0 ? 0 : currentPage - 1
+      }`,
     );
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await response.json();
+    this.tag = 'byQuery';
 
-    return await Promise.resolve(res._embedded.events);
+    return res;
   }
 
   static async fetchEventsByCountry(selectCountryCode, currentPage = 0) {
     const response = await fetch(
-      `${BASE_URL}events.json?countryCode=${selectCountryCode}&page=${currentPage}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?countryCode=${selectCountryCode}&page=${
+        currentPage - 1 < 0 ? 0 : currentPage - 1
+      }&apikey=${MY_KEY}`,
     );
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await response.json();
+    this.tag = 'byOneCountry';
 
-    return await Promise.resolve(res._embedded);
+    return res;
   }
 
   static async fetchEventsInAllContries(currentPage = 0) {
     const response = await fetch(
-      `${BASE_URL}events.json?page=${currentPage}&apikey=${MY_KEY}`,
+      `${BASE_URL}events.json?page=${
+        currentPage - 1 < 0 ? 0 : currentPage - 1
+      }&apikey=${MY_KEY}`,
     );
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await response.json();
+    this.tag = 'byAllCountries';
 
-    return await Promise.resolve(res._embedded);
+    return res;
   }
 
   static async feachEventById(currentID) {
@@ -66,6 +81,6 @@ export default class ApiService {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await responce.json();
-    return await Promise.resolve(res);
+    return res;
   }
 }

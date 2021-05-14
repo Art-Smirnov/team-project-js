@@ -4,6 +4,10 @@ import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
 import './components/theme-switch/theme-switch';
+import {
+  paginationRender,
+  clearPagList,
+} from './components/pagination/pagination';
 
 import countryCodes from './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';
@@ -17,35 +21,45 @@ import gameMarkup from './components/tic-tac-toe/game-markup.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
+const APIQ = ApiService.tag;
 renderSelectCountry(countryCodes);
-renderDefaultEvents();
+
+if (APIQ === undefined) {
+  renderDefaultEvents();
+}
 
 refs.form.addEventListener('submit', onInputChange);
 
-async function renderDefaultEvents() {
+async function renderDefaultEvents(page = 0) {
   preloader.show();
   clearGallery();
+  clearPagList();
 
-  const result = await ApiService.fetchDefaultEvents();
+  const result = await ApiService.fetchDefaultEvents(page);
 
-  appendImagesMarkup(result);
+  appendImagesMarkup(result._embedded.events);
+  paginationRender(result.page, page);
   preloader.hide();
 }
 
-async function onInputChange(e) {
+function onInputChange(e) {
   e.preventDefault();
+  refs.selectForm.value = '';
+  localStorage.setItem('value', `${e.currentTarget.elements[0].value}`);
+  byQuery();
+}
 
+async function byQuery(page = 0) {
+  const value = localStorage.getItem('value');
   try {
     preloader.show();
-
     clearGallery();
+    clearPagList();
 
-    const result = await ApiService.fetchEventsByQuery(
-      e.currentTarget.elements[0].value,
-    );
-    console.log(result);
+    const result = await ApiService.fetchEventsByQuery(value, page);
 
-    appendImagesMarkup(result);
+    appendImagesMarkup(result._embedded.events);
+    paginationRender(result.page, page);
   } catch (error) {
     // alert('Something went wrong! Please enter a more specific query!');
     clearGallery();
@@ -57,21 +71,29 @@ async function onInputChange(e) {
 
 refs.selectForm.addEventListener('change', onSelectCountry);
 
-async function onSelectCountry(e) {
+function onSelectCountry(e) {
+  refs.searchEventInp.value = '';
+  const selectEl = e.target;
+  const selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
+  localStorage.setItem('country', `${selectCountryCode}`);
+  byCountry();
+}
+
+async function byCountry(page = 0) {
+  const country = localStorage.getItem('country');
   try {
     preloader.show();
-
     clearGallery();
-    let selectEl = e.target;
-    let selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-    if (selectCountryCode == 'All') {
-      const result = await ApiService.fetchEventsInAllContries();
-      console.log(result);
-      appendImagesMarkup(result.events);
-    } else if (selectCountryCode !== 'All') {
-      const result = await ApiService.fetchEventsByCountry(selectCountryCode);
-      appendImagesMarkup(result.events);
-      console.log(result);
+    clearPagList();
+
+    if (country == 'All') {
+      const result = await ApiService.fetchEventsInAllContries(page);
+      appendImagesMarkup(result._embedded.events);
+      paginationRender(result.page, page);
+    } else if (country !== 'All') {
+      const result = await ApiService.fetchEventsByCountry(country, page);
+      appendImagesMarkup(result._embedded.events);
+      paginationRender(result.page, page);
     }
   } catch (error) {
     // alert('No events. Please choose other country!');
@@ -89,6 +111,8 @@ function appendImagesMarkup(events) {
 function clearGallery() {
   refs.cardList.innerHTML = '';
 }
+
+export { renderDefaultEvents, byCountry, byQuery };
 
 function onNoResultsError() {
   refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
