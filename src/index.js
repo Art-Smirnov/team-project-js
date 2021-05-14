@@ -12,7 +12,6 @@ import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
 import gameMarkup from './components/tic-tac-toe/game-markup.js';
-console.log(gameMarkup());
 // import modalWindow from './components/modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
