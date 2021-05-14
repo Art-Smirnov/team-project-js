@@ -54,7 +54,6 @@
     "chokidar": "^3.5.1",
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
-    "lodash.debounce": "^4.0.8",
-    "paginationjs": "^2.1.5"
+    "lodash.debounce": "^4.0.8"
   }
 }
