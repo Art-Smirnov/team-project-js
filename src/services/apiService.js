@@ -8,6 +8,7 @@ export default class ApiService {
   constructor() {
     this.tag = '';
   }
+
   static async fetchDefaultEvents(currentPage = 0) {
     const response = await fetch(
       `${BASE_URL}events.json?countryCode=${DEFAULT_COUNTRY}&apikey=${MY_KEY}&page=${

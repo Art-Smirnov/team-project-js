@@ -9,30 +9,34 @@ const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
-refs.cardList.addEventListener('click', onClickCard);
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
-async function onClickCard(e) {
-  if (e.target.nodeName === 'UL' || e.target.nodeName === 'LI') {
-    return;
+export default async function onClickCard(e) {
+  try {
+    if (e.target.nodeName === 'UL' || e.target.nodeName === 'LI') {
+      return;
+    }
+
+    let currentID = '';
+    onToggleModal();
+    removeScroll();
+
+    if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
+      currentID = e.target.parentElement.dataset.id;
+    }
+    if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
+      currentID = e.target.parentElement.parentElement.dataset.id;
+    }
+
+    const result = await ApiService.feachEventById(currentID);
+    console.log(result);
+    cleanModal();
+
+    markupModalText(result);
+  } catch (error) {
+    console.log(error);
   }
-
-  let currentID = '';
-  onToggleModal();
-  removeScroll();
-
-  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
-    currentID = e.target.parentElement.dataset.id;
-  }
-  if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
-    currentID = e.target.parentElement.parentElement.dataset.id;
-  }
-
-  const result = await ApiService.feachEventById(currentID);
-  cleanModal();
-
-  markupModalText(result);
 
   //search Event
   const moreButtonRef = document.querySelector('.modal-button-more');
