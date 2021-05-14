@@ -3,7 +3,6 @@ import './services/apiService.js';
 import './services/apiService.js';
 import './components/modal/modal';
 import './components/scroll-up/scroll_up';
-import './components/search-more/search-more';
 import './components/theme-switch/theme-switch';
 import {
   paginationRender,
@@ -16,7 +15,11 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
+
+import gameMarkup from './components/tic-tac-toe/game-markup.js';
+
 // import modalWindow from './components/modal/modal.js';
+
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 const APIQ = ApiService.tag;
@@ -59,7 +62,9 @@ async function byQuery(page = 0) {
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);
   } catch (error) {
-    alert('Something went wrong! Please enter a more specific query!');
+    // alert('Something went wrong! Please enter a more specific query!');
+    clearGallery();
+    onNoResultsError();
   } finally {
     preloader.hide();
   }
@@ -92,14 +97,16 @@ async function byCountry(page = 0) {
       paginationRender(result.page, page);
     }
   } catch (error) {
-    alert('No events. Please choose other country!');
+    // alert('No events. Please choose other country!');
+    clearGallery();
+    onNoResultsError();
   } finally {
     preloader.hide();
   }
 }
 
 function appendImagesMarkup(events) {
-  refs.cardList.insertAdjacentHTML('beforeend', cardTmpl(events));
+  refs.cardList.innerHTML = cardTmpl(events);
 }
 
 function clearGallery() {
@@ -107,3 +114,12 @@ function clearGallery() {
 }
 
 export { renderDefaultEvents, byCountry, byQuery };
+
+function onNoResultsError() {
+  refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
+}
+
+//Появление секции команды
+refs.logoEl.addEventListener('click', e => {
+  refs.dreamTeamEl.classList.toggle('show');
+});

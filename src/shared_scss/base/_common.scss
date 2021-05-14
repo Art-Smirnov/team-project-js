@@ -83,6 +83,19 @@ img {
   }
 }
 
+.main-container {
+  position: relative;
+  top: -51px;
+
+  @include for-size(tablet) {
+    top: -47px;
+  }
+
+  @include for-size(desktop) {
+    top: -46px;
+  }
+}
+
 .list {
   list-style: none;
   margin: 0;

@@ -1,12 +1,16 @@
+import getRefs from '../../services/get-refs';
+
+const refs = getRefs();
+
 function trackScroll() {
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
 
   if (scrolled > coords) {
-    goTopBtn.classList.add('back_to_top-show');
+    refs.scroll.classList.add('back_to_top-show');
   }
   if (scrolled < coords) {
-    goTopBtn.classList.remove('back_to_top-show');
+    refs.scroll.classList.remove('back_to_top-show');
   }
 }
 
@@ -18,7 +22,5 @@ function backToTop() {
   });
 }
 
-const goTopBtn = document.querySelector('.back_to_top');
-
 window.addEventListener('scroll', trackScroll);
-goTopBtn.addEventListener('click', backToTop);
+refs.scroll.addEventListener('click', backToTop);
