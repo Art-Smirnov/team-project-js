@@ -11,8 +11,10 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
+
 import gameMarkup from './components/tic-tac-toe/game-markup.js';
 // import modalWindow from './components/modal/modal.js';
+
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 renderSelectCountry(countryCodes);
@@ -89,10 +91,10 @@ function clearGallery() {
 }
 
 function onNoResultsError() {
-  refs.cardList.insertAdjacentHTML('beforeend', gameMarkup())
+  refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
 }
 
 //Появление секции команды
-refs.logoEl.addEventListener('click', (e) => {
+refs.logoEl.addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
-})
+});

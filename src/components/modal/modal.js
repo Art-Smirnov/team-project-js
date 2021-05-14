@@ -1,6 +1,6 @@
 import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
-import modalTmpl from '../../templates/card-list.hbs';
+import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
@@ -14,6 +14,10 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 async function onClickCard(e) {
+  if (e.target.nodeName === 'UL' || e.target.nodeName === 'LI') {
+    return;
+  }
+
   let currentID = '';
   onToggleModal();
   removeScroll();
@@ -24,16 +28,11 @@ async function onClickCard(e) {
   if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
     currentID = e.target.parentElement.parentElement.dataset.id;
   }
-  if (e.target.nodeName === 'LI') {
-    currentID = e.target.dataset.id;
-  }
 
   const result = await ApiService.feachEventById(currentID);
   cleanModal();
 
-  console.log(result);
   markupModalText(result);
-  console.log(result._embedded.venues[0].name);
 
   //search Event
   const moreButtonRef = document.querySelector('.modal-button-more');
@@ -48,6 +47,7 @@ async function onClickCard(e) {
       clearGallery();
 
       const result = await ApiService.fetchEventsByQuery(eventName);
+
       appendImagesMarkup(result);
     } catch (error) {
       alert('Something went wrong! Please enter a more specific query!');

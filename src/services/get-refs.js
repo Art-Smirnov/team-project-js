@@ -13,5 +13,6 @@ export default function getRefs() {
     logoEl: document.querySelector('.logo-container'),
     dreamTeamEl : document.querySelector('.dream-team-section'),
     scroll: document.querySelector('.back_to_top'),
+    svgScroll: document.querySelector('.svg-theme'),
   };
 }
