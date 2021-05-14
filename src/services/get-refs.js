@@ -1,6 +1,7 @@
 export default function getRefs() {
   return {
     bodyRef: document.querySelector('body'),
+    mainContainer: document.querySelector('.main-container'),
     headerOverlay: document.querySelector('.header-overlay'),
     cardList: document.querySelector('.card-list'),
     searchEventInp: document.querySelector('#search-event'),
