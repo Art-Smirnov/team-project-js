@@ -15,9 +15,8 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
-
 import gameMarkup from './components/tic-tac-toe/game-markup.js';
-// import modalWindow from './components/modal/modal.js';
+import onClickCard from './components/modal/modal.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -32,6 +31,7 @@ refs.form.addEventListener('submit', onInputChange);
 
 async function renderDefaultEvents(page = 0) {
   preloader.show();
+  refs.cardList.addEventListener('click', onClickCard);
   clearGallery();
   clearPagList();
 
@@ -43,6 +43,7 @@ async function renderDefaultEvents(page = 0) {
 }
 
 function onInputChange(e) {
+  refs.cardList.addEventListener('click', onClickCard);
   e.preventDefault();
   refs.selectForm.value = '';
   localStorage.setItem('value', `${e.currentTarget.elements[0].value}`);
@@ -72,6 +73,7 @@ async function byQuery(page = 0) {
 refs.selectForm.addEventListener('change', onSelectCountry);
 
 function onSelectCountry(e) {
+  refs.cardList.addEventListener('click', onClickCard);
   refs.searchEventInp.value = '';
   const selectEl = e.target;
   const selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
@@ -115,6 +117,7 @@ function clearGallery() {
 export { renderDefaultEvents, byCountry, byQuery };
 
 function onNoResultsError() {
+  refs.cardList.removeEventListener('click', onClickCard);
   refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
 }
 

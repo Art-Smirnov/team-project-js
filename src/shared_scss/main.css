@@ -819,8 +819,8 @@ img {
 }
 
 .card-list-item::after:hover .card-list-item__photo {
-  -webkit-box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
-          box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  -webkit-box-shadow: 0px 0px 5px 2px #fff, 0px 0px 11px 4px #dc56c5;
+          box-shadow: 0px 0px 5px 2px #fff, 0px 0px 11px 4px #dc56c5;
 }
 
 @media (min-width: 768px) {
@@ -1520,8 +1520,29 @@ img {
           box-shadow: 0 0 0 3px #dc56c5;
 }
 
+.pag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pag__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pag__list li {
+  margin-right: 10px;
+}
+
 .game-wrapper {
   margin: 0 auto;
+  margin-left: 15px;
   margin-top: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1542,6 +1563,18 @@ img {
   width: 600px;
   overflow: hidden;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .game-wrapper {
+    margin-left: 28px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .game-wrapper {
+    margin-left: 244px;
+  }
 }
 
 .game-wrapper .game__title-wrapper {
@@ -1870,28 +1903,84 @@ img {
 .game-wrapper :checked ~ label:nth-of-type(odd),
 .game-wrapper :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
 .game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(odd),
 .game-wrapper :checked ~ :checked ~ label:nth-of-type(even),
 .game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even) {
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(even),
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(even) {
   -webkit-transform: translate3d(0, 0, 2px);
           transform: translate3d(0, 0, 2px);
 }
 
 .game-wrapper :checked ~ label:nth-of-type(even),
 .game-wrapper :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(even),
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(even),
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(even),
 .game-wrapper :checked ~ :checked ~ label:nth-of-type(odd),
 .game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd),
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ label:nth-of-type(odd) {
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(odd),
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ label:nth-of-type(odd) {
   -webkit-transform: translate3d(0, 0, -1px);
           transform: translate3d(0, 0, -1px);
 }
 
-.game-wrapper :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ :checked ~ .board__result--draw {
+.game-wrapper :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ :checked
+~ .board__result--draw {
   display: block;
 }
 
@@ -1914,22 +2003,86 @@ img {
   display: block;
 }
 
-.game-wrapper #x--0:checked ~ #x--1:checked ~ #x--2:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--3:checked ~ #x--4:checked ~ #x--5:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--6:checked ~ #x--7:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--0:checked ~ #x--3:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--1:checked ~ #x--4:checked ~ #x--7:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--2:checked ~ #x--5:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--0:checked ~ #x--4:checked ~ #x--8:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #x--2:checked ~ #x--4:checked ~ #x--6:checked ~ .board__result--x ~ .board__result--draw,
-.game-wrapper #o--0:checked ~ #o--1:checked ~ #o--2:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--3:checked ~ #o--4:checked ~ #o--5:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--6:checked ~ #o--7:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--0:checked ~ #o--3:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--1:checked ~ #o--4:checked ~ #o--7:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--2:checked ~ #o--5:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--0:checked ~ #o--4:checked ~ #o--8:checked ~ .board__result--o ~ .board__result--draw,
-.game-wrapper #o--2:checked ~ #o--4:checked ~ #o--6:checked ~ .board__result--o ~ .board__result--draw {
+.game-wrapper #x--0:checked
+~ #x--1:checked
+~ #x--2:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--3:checked
+~ #x--4:checked
+~ #x--5:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--6:checked
+~ #x--7:checked
+~ #x--8:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--0:checked
+~ #x--3:checked
+~ #x--6:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--1:checked
+~ #x--4:checked
+~ #x--7:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--2:checked
+~ #x--5:checked
+~ #x--8:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--0:checked
+~ #x--4:checked
+~ #x--8:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #x--2:checked
+~ #x--4:checked
+~ #x--6:checked
+~ .board__result--x
+~ .board__result--draw,
+.game-wrapper #o--0:checked
+~ #o--1:checked
+~ #o--2:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--3:checked
+~ #o--4:checked
+~ #o--5:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--6:checked
+~ #o--7:checked
+~ #o--8:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--0:checked
+~ #o--3:checked
+~ #o--6:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--1:checked
+~ #o--4:checked
+~ #o--7:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--2:checked
+~ #o--5:checked
+~ #o--8:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--0:checked
+~ #o--4:checked
+~ #o--8:checked
+~ .board__result--o
+~ .board__result--draw,
+.game-wrapper #o--2:checked
+~ #o--4:checked
+~ #o--6:checked
+~ .board__result--o
+~ .board__result--draw {
   display: none;
 }
 
@@ -1963,7 +2116,8 @@ img {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  5%, 50% {
+  5%,
+  50% {
     opacity: 1;
   }
   100% {
@@ -1977,7 +2131,8 @@ img {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  5%, 50% {
+  5%,
+  50% {
     opacity: 1;
   }
   100% {
