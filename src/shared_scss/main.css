@@ -311,7 +311,7 @@ img {
 
 .header {
   height: 364px;
-  background: #c4c4c4;
+  background: white;
   text-align: center;
   position: relative;
 }
@@ -346,8 +346,7 @@ img {
 }
 
 .header-overlay.light-theme {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
-  background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
+  background-image: url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
@@ -356,15 +355,13 @@ img {
 
 @media (min-width: 768px) {
   .header-overlay.light-theme {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
-    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
+    background-image: url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
   }
 }
 
 @media (min-width: 1280px) {
   .header-overlay.light-theme {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0.19)), to(rgba(14, 14, 14, 0.8))), url(/images/light-theme/desktop/hero_desktop_light@2x.jpg);
-    background-image: linear-gradient(180deg, rgba(13, 13, 13, 0.19) 0%, rgba(14, 14, 14, 0.8) 100%), url(/images/light-theme/desktop/hero_desktop_light@2x.jpg);
+    background-image: url(/images/light-theme/desktop/hero_desktop_light@2x.png);
   }
 }
 
@@ -746,8 +743,8 @@ img {
 }
 
 .card-list-item__photo:hover {
-  -webkit-box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
-          box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de;
+  -webkit-box-shadow: 0px 0px 5px 2px #fff, 0px 0px 11px 4px #dc56c5;
+          box-shadow: 0px 0px 5px 2px #fff, 0px 0px 11px 4px #dc56c5;
 }
 
 @media (min-width: 768px) {
@@ -803,10 +800,12 @@ img {
 
 .card-list-item {
   position: relative;
+  cursor: pointer;
 }
 
 .card-list-item::after {
   position: absolute;
+  pointer-events: none;
   z-index: 4;
   top: -9px;
   right: -10px;
@@ -820,8 +819,8 @@ img {
 }
 
 .card-list-item::after:hover .card-list-item__photo {
-  -webkit-box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
-          box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  -webkit-box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+          box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
 }
 
 @media (min-width: 768px) {
@@ -1217,6 +1216,8 @@ img {
           align-items: 1.22em;
   text-decoration: none;
   color: white;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 320px) {
@@ -1227,8 +1228,7 @@ img {
 
 .modal-button:focus,
 .modal-button:hover {
-  background-color: white;
-  color: #4c00fe;
+  background-color: #dc56c5;
   border: 1px solid #4c00fe;
   font-weight: 700;
 }
@@ -1243,6 +1243,8 @@ img {
           align-items: 1.22em;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 320px) {
@@ -1274,6 +1276,10 @@ img {
 .modal-button-more:hover,
 .modal-button-more:focus {
   font-weight: 700;
+  color: #dc56c5;
+  border: 1px solid #4c00fe;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .back_to_top {
@@ -1286,6 +1292,7 @@ img {
   background: initial;
   color: #d1caca;
   opacity: 0.9;
+  z-index: 5;
   cursor: pointer;
   display: none;
   width: 0px;
