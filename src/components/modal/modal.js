@@ -2,6 +2,7 @@ import ApiService from '../../services/apiService.js';
 import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
+import modalTimer from '../modal-timer/modal-timer.js';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
 
@@ -36,6 +37,7 @@ export default async function onClickCard(e) {
     const result = await ApiService.feachEventById(currentID);
     console.log(result);
     markupModalText(result);
+    modalTimer(result.dates.start.dateTime);
   } catch (error) {
     console.log(error);
   }
