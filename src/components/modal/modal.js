@@ -1,9 +1,9 @@
 import ApiService from '../../services/apiService.js';
-import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
-
+import getRefs from '../../services/get-refs';
 import preloaderFactory from '../../services/placeholder/placeholder';
+import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -33,9 +33,16 @@ export default async function onClickCard(e) {
       currentID = e.target.parentElement.parentElement.dataset.id;
     }
 
+    // console.log(result._embedded.attractions);
+
+    // renderSelectAuthors(result._embedded.attractions);
+
     const result = await ApiService.feachEventById(currentID);
-    console.log(result);
     markupModalText(result);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log(1);
+    });
   } catch (error) {
     console.log(error);
   }
@@ -62,9 +69,7 @@ export default async function onClickCard(e) {
     preloader.show();
     try {
       clearGallery();
-
       const result = await ApiService.fetchEventsByQuery(nameEvent);
-
       appendImagesMarkup(result._embedded.events);
     } catch (error) {
       alert('Something went wrong! Please enter a more specific query!');
