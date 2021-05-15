@@ -13,18 +13,19 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 export default async function onClickCard(e) {
+  // console.log(e.target.classList.contains('card-list'));
+  // console.log(e.target.classList.contains('card-list-item'));
+  if (e.target.classList.contains('card-list')) {
+    return;
+  }
+  let currentID = '';
+
+  onToggleModal();
+  removeScroll();
   try {
-    if (
-      e.target.classList.contains('card-list') ||
-      e.target.classList.contains('card-list-item ')
-    ) {
-      return;
+    if (e.target.classList.contains('card-list-item')) {
+      currentID = e.target.dataset.id;
     }
-
-    let currentID = '';
-    onToggleModal();
-    removeScroll();
-
     if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
       currentID = e.target.parentElement.dataset.id;
     }
@@ -33,8 +34,7 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
-    cleanModal();
-
+    console.log(result);
     markupModalText(result);
   } catch (error) {
     console.log(error);
@@ -56,6 +56,7 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
+    console.log(nameEvent);
 
     onToggleModal();
     preloader.show();
@@ -64,7 +65,7 @@ export default async function onClickCard(e) {
 
       const result = await ApiService.fetchEventsByQuery(nameEvent);
 
-      appendImagesMarkup(result);
+      appendImagesMarkup(result._embedded.events);
     } catch (error) {
       alert('Something went wrong! Please enter a more specific query!');
     } finally {
@@ -74,11 +75,7 @@ export default async function onClickCard(e) {
 }
 
 function markupModalText(text) {
-  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(text));
-}
-
-function cleanModal() {
-  refs.backdrop.innerHTML = '';
+  refs.backdrop.innerHTML = modalTmpl(text);
 }
 
 function onCloseModal(e) {
