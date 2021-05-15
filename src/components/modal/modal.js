@@ -39,10 +39,6 @@ export default async function onClickCard(e) {
 
     const result = await ApiService.feachEventById(currentID);
     markupModalText(result);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log(1);
-    });
   } catch (error) {
     console.log(error);
   }
@@ -77,6 +73,9 @@ export default async function onClickCard(e) {
       preloader.hide();
     }
   }
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log(refs);
+  });
 }
 
 function markupModalText(text) {
