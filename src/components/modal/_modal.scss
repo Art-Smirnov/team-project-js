@@ -280,12 +280,15 @@
   // border: 1px solid $btn;
   font-weight: 700;
 }
-
+.modal-button-more:first-child {
+  margin-bottom: 10px;
+}
 .modal-button-more {
   color: $btn;
   background-color: transparent;
+  text-transform: uppercase;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   align-items: 1.22em;
   border-radius: 5px;
   cursor: pointer;
@@ -296,26 +299,36 @@
     border: 1px solid $btn;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 25px;
+
     min-width: 224px;
     min-height: 20px;
   }
   @include for-size(tablet) {
     border: 1px solid $primary-accent;
     padding: 10px 15px;
-    margin-top: 43px;
   }
 
   @include for-size(desktop) {
     border: 1px solid $btn;
-    margin-top: 45px;
   }
 }
 
 .modal-button-more:hover,
 .modal-button-more:focus {
-  font-weight: 700;
   color: $primary-accent;
-  border: 1px solid $btn;
+  border: 1px solid $primary-accent;
   transition: $transition;
+}
+.button-more-grop {
+  display: inline-grid;
+  @include for-size(mobile) {
+    margin-top: 25px;
+  }
+  @include for-size(tablet) {
+    margin-top: 43px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 45px;
+  }
 }

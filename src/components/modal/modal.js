@@ -14,7 +14,10 @@ window.addEventListener('keyup', onKeyModalEscClose);
 
 export default async function onClickCard(e) {
   try {
-    if (e.target.nodeName === 'UL' || e.target.nodeName === 'LI') {
+    if (
+      e.target.classList.contains('card-list') ||
+      e.target.classList.contains('card-list-item ')
+    ) {
       return;
     }
 
@@ -30,7 +33,6 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
-    console.log(result);
     cleanModal();
 
     markupModalText(result);
@@ -39,18 +41,28 @@ export default async function onClickCard(e) {
   }
 
   //search Event
-  const moreButtonRef = document.querySelector('.modal-button-more');
-
+  const moreButtonRef = document.querySelector('.button-more-grop');
   moreButtonRef.addEventListener('click', onSearchMore);
 
-  async function onSearchMore() {
-    const eventName = document.querySelector('.title-event').textContent;
+  async function onSearchMore(e) {
+    let nameEvent;
+    if (e.target.nodeName === 'DIV') {
+      return;
+    }
+
+    if (e.target.nodeName === 'BUTTON') {
+      nameEvent = e.target.firstElementChild.textContent;
+    }
+    if (e.target.nodeName === 'SPAN') {
+      nameEvent = e.target.textContent;
+    }
+
     onToggleModal();
     preloader.show();
     try {
       clearGallery();
 
-      const result = await ApiService.fetchEventsByQuery(eventName);
+      const result = await ApiService.fetchEventsByQuery(nameEvent);
 
       appendImagesMarkup(result);
     } catch (error) {
@@ -58,12 +70,6 @@ export default async function onClickCard(e) {
     } finally {
       preloader.hide();
     }
-  }
-  function appendImagesMarkup(events) {
-    refs.cardList.innerHTML = cardTmpl(events);
-  }
-  function clearGallery() {
-    refs.cardList.innerHTML = '';
   }
 }
 
@@ -100,4 +106,10 @@ function onKeyModalEscClose(e) {
     return;
   }
   refs.backdrop.classList.add('is-hidden');
+}
+function appendImagesMarkup(events) {
+  refs.cardList.innerHTML = cardTmpl(events);
+}
+function clearGallery() {
+  refs.cardList.innerHTML = '';
 }

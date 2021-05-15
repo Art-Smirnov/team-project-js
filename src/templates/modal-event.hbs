@@ -4,12 +4,12 @@
     <div class="overlay-modal">
         <div>
             <div class="modal-img-wrapper">
-                <img src="{{images.3.url}}" alt="{{name}}" class="modal-photo" />
+                <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
             </div>
 
             <div class="modal-content">
                 <div class="modal-content-img-wrapper">
-                    <img src="{{images.3.url}}" alt="{{name}}" class="modal-photo-main" />
+                    <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
                 </div>
                 <ul class="modal-content-list list">
                     <li class="modal-title">
@@ -75,9 +75,14 @@
             </ul>
             </div>
             </div>
-            
+    <div class="button-more-grop">
+                {{#each _embedded.attractions}}
+           
             <button class="modal-button-more ">
-                <span>MORE FROM THIS AUTHOR</span>
+                more from : <span>{{ this.name}}</span> 
             </button>
+           
+            {{/each}}
+            </div>
             </div>
             </div>
