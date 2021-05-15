@@ -8,6 +8,8 @@ import {
   paginationRender,
   clearPagList,
 } from './components/pagination/pagination';
+import './components/authentication/auth';
+import './components/authentication/like-event';
 
 import countryCodes from './services/countriesCodes.js';
 import preloaderFactory from './services/placeholder/placeholder.js';

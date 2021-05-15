@@ -4,13 +4,17 @@ import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
+import {LikeEvent} from '../authentication/like-event'
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
+let currentID = '';
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
+refs.backdrop.addEventListener('click', onClickLikeEventBtn);
+
 
 export default async function onClickCard(e) {
   try {
@@ -18,7 +22,7 @@ export default async function onClickCard(e) {
       return;
     }
 
-    let currentID = '';
+
     onToggleModal();
     removeScroll();
 
@@ -100,4 +104,20 @@ function onKeyModalEscClose(e) {
     return;
   }
   refs.backdrop.classList.add('is-hidden');
+}
+
+
+// myyyyyyyyyy
+function onClickLikeEventBtn(e) {
+    if (e.target.className !== 'like-event') {
+        return
+  }
+  e.target.classList.toggle('current-like');
+  console.log(currentID);
+  const idLikeEvent = {
+    idLike: currentID
+  }
+  //запрос на сервер с добавлением айди ивента
+  LikeEvent.create(idLikeEvent)
+  
 }
