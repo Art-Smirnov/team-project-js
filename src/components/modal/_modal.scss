@@ -280,9 +280,10 @@
   // border: 1px solid $btn;
   font-weight: 700;
 }
-.modal-button-more:first-child {
+.modal-button-more:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .modal-button-more {
   color: $btn;
   background-color: transparent;
