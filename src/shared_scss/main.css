@@ -307,6 +307,19 @@ img {
   left: 0;
   top: 0;
   z-index: 1001;
+  max-width: 105px;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    max-width: 175px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .logo-container {
+    max-width: 240px;
+  }
 }
 
 .header {
@@ -346,7 +359,7 @@ img {
 }
 
 .header-overlay.light-theme {
-  background-image: url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
+  background-image: url(/images/light-theme/mobile/hero_mobile@2x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
@@ -355,7 +368,7 @@ img {
 
 @media (min-width: 768px) {
   .header-overlay.light-theme {
-    background-image: url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
+    background-image: url(/images/light-theme/tablet/hero_tablet@2x.jpg);
   }
 }
 
@@ -434,15 +447,19 @@ img {
     right: 0;
     left: 0;
     bottom: 0;
-    background: #0e0e0ecc;
+    background: #0d0d0df2;
     -webkit-animation: scale-up-tl 0.4s ease-in-out both;
     animation: scale-up-tl 0.4s ease-in-out both;
   }
   .dream-team-section.show {
     display: block;
     opacity: 1;
+    z-index: 20;
     -webkit-animation: scale-up-tl 0.4s ease-in-out both;
     animation: scale-up-tl 0.4s ease-in-out both;
+  }
+  .dream-team-section.light-theme {
+    background: #c9c9c9cc;
   }
 }
 
@@ -562,6 +579,11 @@ img {
           transform: scale(1.15);
   outline: none;
   border: 1px solid #dc56c5;
+}
+
+.form-search-event.light-theme,
+.form-select.light-theme {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .form-search-event:-webkit-autofill,
@@ -2571,5 +2593,33 @@ img {
     -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
   }
+}
+
+.title {
+  color: #dc56c5;
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.value-date {
+  display: inline-block;
+  width: 45px;
+  color: #000000;
+  font-size: 30px;
+}
+
+.label {
+  color: #000000;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=main.css.map */
