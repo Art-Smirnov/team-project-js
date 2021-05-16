@@ -346,7 +346,7 @@ img {
 }
 
 .header-overlay.light-theme {
-  background-image: url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
+  background-image: url(/images/light-theme/mobile/hero_mobile@2x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
@@ -434,15 +434,19 @@ img {
     right: 0;
     left: 0;
     bottom: 0;
-    background: #0e0e0ecc;
+    background: #0d0d0df2;
     -webkit-animation: scale-up-tl 0.4s ease-in-out both;
     animation: scale-up-tl 0.4s ease-in-out both;
   }
   .dream-team-section.show {
     display: block;
     opacity: 1;
+    z-index: 20;
     -webkit-animation: scale-up-tl 0.4s ease-in-out both;
     animation: scale-up-tl 0.4s ease-in-out both;
+  }
+  .dream-team-section.light-theme {
+    background: #c9c9c9cc;
   }
 }
 
@@ -562,6 +566,11 @@ img {
           transform: scale(1.15);
   outline: none;
   border: 1px solid #dc56c5;
+}
+
+.form-search-event.light-theme,
+.form-select.light-theme {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .form-search-event:-webkit-autofill,
