@@ -1,4 +1,8 @@
-import { renderDefaultEvents, byCountry, byQuery } from '../../index.js';
+import {
+  renderDefaultEvents,
+  byCountry,
+  byQuery,
+} from '../events-list/events-list';
 import ApiService from '../../services/apiService';
 import getRefs from '../../services/get-refs.js';
 const refs = getRefs();
