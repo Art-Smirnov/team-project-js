@@ -41,14 +41,14 @@
 }
 
 .header-overlay.light-theme {
-  background-image: url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
+  background-image: url(/images/light-theme/mobile/hero_mobile@2x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @include for-size(tablet) {
-    background-image: url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
+    background-image: url(/images/light-theme/tablet/hero_tablet@2x.jpg);
   }
   @include for-size(desktop) {
     background-image: url(/images/light-theme/desktop/hero_desktop_light@2x.png);

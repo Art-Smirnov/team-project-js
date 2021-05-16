@@ -346,7 +346,7 @@ img {
 }
 
 .header-overlay.light-theme {
-  background-image: url(/images/light-theme/mobile/hero_mobile_light@2x.jpg);
+  background-image: url(/images/light-theme/mobile/hero_mobile@2x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
@@ -355,7 +355,7 @@ img {
 
 @media (min-width: 768px) {
   .header-overlay.light-theme {
-    background-image: url(/images/light-theme/tablet/hero_tablet_light@2x.jpg);
+    background-image: url(/images/light-theme/tablet/hero_tablet@2x.jpg);
   }
 }
 
@@ -2571,5 +2571,33 @@ img {
     -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
   }
+}
+
+.title {
+  color: #dc56c5;
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.value-date {
+  display: inline-block;
+  width: 45px;
+  color: #000000;
+  font-size: 30px;
+}
+
+.label {
+  color: #000000;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=main.css.map */
