@@ -314,12 +314,45 @@
   }
 }
 
+.form-select-author {
+  color: $btn;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  align-items: 1.22em;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: $transition;
+
+  @include for-size(mobile) {
+    border: 1px solid $btn;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    min-width: 224px;
+    min-height: 20px;
+  }
+  @include for-size(tablet) {
+    border: 1px solid $primary-accent;
+    padding: 10px 15px;
+  }
+
+  @include for-size(desktop) {
+    border: 1px solid $btn;
+  }
+}
+
 .modal-button-more:hover,
-.modal-button-more:focus {
+.modal-button-more:focus,
+.form-select-author:hover,
+.form-select-author:focus {
   color: $primary-accent;
   border: 1px solid $primary-accent;
   transition: $transition;
 }
+
 .button-more-grop {
   display: inline-grid;
   @include for-size(mobile) {
