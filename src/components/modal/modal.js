@@ -73,9 +73,9 @@ export default async function onClickCard(e) {
       preloader.hide();
     }
   }
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log(refs);
-  });
+  //   document.addEventListener('DOMContentLoaded', () => {
+  //     console.log(refs);
+  //   });
 }
 
 function markupModalText(text) {
