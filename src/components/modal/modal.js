@@ -44,14 +44,14 @@ export default async function onClickCard(e) {
   }
 
   //search Event
-  const moreButtonRef = document.querySelector('.button-more-grop');
+  const moreButtonRef = document.querySelector('.modal-button-more');
   moreButtonRef.addEventListener('click', onSearchMore);
 
   async function onSearchMore(e) {
     let nameEvent;
-    if (e.target.nodeName === 'DIV') {
-      return;
-    }
+    // if (e.target.nodeName === 'DIV') {
+    //   return;
+    // }
 
     if (e.target.nodeName === 'BUTTON') {
       nameEvent = e.target.firstElementChild.textContent;
@@ -73,9 +73,6 @@ export default async function onClickCard(e) {
       preloader.hide();
     }
   }
-  //   document.addEventListener('DOMContentLoaded', () => {
-  //     console.log(refs);
-  //   });
 }
 
 function markupModalText(text) {
