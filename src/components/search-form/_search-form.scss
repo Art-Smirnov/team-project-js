@@ -41,6 +41,10 @@
     outline: none;
     border: 1px solid $primary-accent;
   }
+
+  &.light-theme {
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .form-search-event:-webkit-autofill,
