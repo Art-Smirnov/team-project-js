@@ -111,13 +111,3 @@ function getLogoLightThemeMarkup() {
   </picture>`;
 };
 
-// function onLogoThemeChange() {
-//   if(localStorage.getItem('body-theme') === null || localStorage.getItem('body-theme') === Theme.DARK ) {
-//     refs.logoEl.innerHTML = getLogoDarkThemeMarkup();
-//     return;
-//   } else if (localStorage.getItem('body-theme') === Theme.LIGHT) {
-//     refs.logoEl.innerHTML = getLogoLightThemeMarkup();
-//     return;
-//   }
-// }
-
