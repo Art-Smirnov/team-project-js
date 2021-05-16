@@ -7,7 +7,6 @@ export default function getRefs() {
     searchEventInp: document.querySelector('#search-event'),
     searchEventBtn: document.querySelector('.search-event-submit'),
     selectForm: document.querySelector('.form-select'),
-    selectAuthor: document.querySelector('.form-select-author'),
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
     form: document.querySelector('.form-search'),

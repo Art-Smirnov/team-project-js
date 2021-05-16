@@ -4,6 +4,7 @@ import cardTmpl from '../../templates/card-list-item.hbs';
 import getRefs from '../../services/get-refs';
 import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
+import { byQuery } from '../../index.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -33,25 +34,27 @@ export default async function onClickCard(e) {
       currentID = e.target.parentElement.parentElement.dataset.id;
     }
 
-    // console.log(result._embedded.attractions);
-
-    // renderSelectAuthors(result._embedded.attractions);
-
     const result = await ApiService.feachEventById(currentID);
     markupModalText(result);
+
+    const selectAuthor = document.querySelector('.form-select-author');
+
+    if (selectAuthor) {
+      renderSelectAuthors(result._embedded.attractions, selectAuthor);
+      selectAuthor.addEventListener('change', onSelectAuthor);
+    }
   } catch (error) {
     console.log(error);
   }
 
   //search Event
   const moreButtonRef = document.querySelector('.modal-button-more');
-  moreButtonRef.addEventListener('click', onSearchMore);
+  if (moreButtonRef) {
+    moreButtonRef.addEventListener('click', onSearchMore);
+  }
 
   async function onSearchMore(e) {
     let nameEvent;
-    // if (e.target.nodeName === 'DIV') {
-    //   return;
-    // }
 
     if (e.target.nodeName === 'BUTTON') {
       nameEvent = e.target.firstElementChild.textContent;
@@ -59,7 +62,6 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
-    console.log(nameEvent);
 
     onToggleModal();
     preloader.show();
@@ -110,4 +112,14 @@ function appendImagesMarkup(events) {
 }
 function clearGallery() {
   refs.cardList.innerHTML = '';
+}
+
+function onSelectAuthor(e) {
+  const selectEl = e.target;
+  const authorSelect = selectEl.options[selectEl.selectedIndex].value;
+  console.log(authorSelect);
+  // refs.selectForm.value = '';
+  localStorage.setItem('value', authorSelect);
+  byQuery();
+  onToggleModal();
 }

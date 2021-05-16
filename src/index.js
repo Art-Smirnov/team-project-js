@@ -63,7 +63,7 @@ async function byQuery(page = 0) {
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);
   } catch (error) {
-    // alert('Something went wrong! Please enter a more specific query!');
+    console.log(error);
     clearGallery();
     onNoResultsError();
   } finally {
@@ -99,7 +99,7 @@ async function byCountry(page = 0) {
       paginationRender(result.page, page);
     }
   } catch (error) {
-    // alert('No events. Please choose other country!');
+    console.log(error);
     clearGallery();
     onNoResultsError();
   } finally {
@@ -115,8 +115,6 @@ function clearGallery() {
   refs.cardList.innerHTML = '';
 }
 
-export { renderDefaultEvents, byCountry, byQuery };
-
 function onNoResultsError() {
   refs.cardList.removeEventListener('click', onClickCard);
   refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
@@ -126,3 +124,5 @@ function onNoResultsError() {
 refs.logoEl.addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
+
+export { renderDefaultEvents, byCountry, byQuery };

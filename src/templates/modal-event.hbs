@@ -80,15 +80,9 @@
       <label for="search-country" class="">
         <select name="country" id="search-country" class="form-select-author">
           <option class="form-select-option" value="" disabled selected hidden>
-            Choose author
+            MORE FROM AUTHORS
           </option>
-          <option value="All">All countries</option>
         </select>
-      {{!-- {{#each _embedded.attractions}}
-      <button class="modal-button-more ">
-        more from : <span>{{ this.name}}</span>
-      </button>
-      {{/each}} --}}
       {{else}}
       <button class="modal-button-more">
         more from : <span>{{ _embedded.attractions.[0].name}}</span>
