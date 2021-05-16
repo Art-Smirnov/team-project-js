@@ -69,18 +69,10 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
+    localStorage.setItem('value', nameEvent);
 
     onToggleModal();
-    preloader.show();
-    try {
-      clearGallery();
-      const result = await ApiService.fetchEventsByQuery(nameEvent);
-      appendImagesMarkup(result._embedded.events);
-    } catch (error) {
-      alert('Something went wrong! Please enter a more specific query!');
-    } finally {
-      preloader.hide();
-    }
+    byQuery();
   }
 }
 

@@ -9,55 +9,93 @@ const refs = getRefs();
 refs.pagList.addEventListener('click', onClick);
 
 function paginationRender({ totalPages }, currentPage) {
+  const totalPaginationPages = totalPages < 50 ? totalPages : 50;
   const secondItemLogic = currentPage - 2 > 2 ? '...' : '2';
   const thirdItemLogic =
     currentPage < 5
       ? '3'
-      : totalPages - 3 < currentPage
-      ? totalPages - 4
-      : currentPage - 1;
+      : totalPaginationPages - 5 < currentPage
+      ? totalPaginationPages - 6
+      : currentPage - 2;
   const fourthItemLogic =
     currentPage < 5
       ? '4'
-      : totalPages - 2 <= currentPage
-      ? totalPages - 3
-      : currentPage;
+      : totalPaginationPages - 4 <= currentPage
+      ? totalPaginationPages - 5
+      : currentPage - 1;
   const fifthItemLogic =
     currentPage < 5
       ? '5'
-      : totalPages - 3 < currentPage
-      ? totalPages - 2
+      : totalPaginationPages - 5 < currentPage
+      ? totalPaginationPages - 4
+      : currentPage;
+  const sixthItemLogic =
+    currentPage < 5
+      ? '6'
+      : totalPaginationPages - 5 < currentPage
+      ? totalPaginationPages - 3
       : currentPage + 1;
-  const sixthItemLogic = currentPage + 3 < totalPages ? '...' : totalPages - 1;
+  const seventhItemLogic =
+    currentPage < 5
+      ? '7'
+      : totalPaginationPages - 5 < currentPage
+      ? totalPaginationPages - 2
+      : currentPage + 2;
+  const eightItemLogic =
+    currentPage + 4 < totalPaginationPages ? '...' : totalPaginationPages - 1;
 
-  if (totalPages <= 7) {
+  if (totalPaginationPages <= 9) {
     const arr = [];
 
-    for (let i = 1; i <= totalPages; i += 1) {
-      arr.push(`<li>${i}</li>`);
+    for (let i = 1; i <= totalPaginationPages; i += 1) {
+      arr.push(`<li class="pag__item">${i}</li>`);
     }
     const fullArr = arr.join('');
     refs.pagList.insertAdjacentHTML('beforeend', fullArr);
   }
-  if (totalPages > 7) {
+  if (totalPaginationPages > 9) {
     refs.pagList.insertAdjacentHTML(
       'beforeend',
       `
-    <li>1</li>
-    <li>${secondItemLogic}</li>
-    <li>${thirdItemLogic}</li>
-    <li>${fourthItemLogic}</li>
-    <li>${fifthItemLogic}</li>
-    <li>${sixthItemLogic}</li>
-    <li>${totalPages}</li>
+    <li class="pag__item">1</li>
+    <li class="pag__item">${secondItemLogic}</li>
+    <li class="pag__item">${thirdItemLogic}</li>
+    <li class="pag__item">${fourthItemLogic}</li>
+    <li class="pag__item">${fifthItemLogic}</li> 
+    <li class="pag__item">${sixthItemLogic}</li>
+    <li class="pag__item">${seventhItemLogic}</li>
+    <li class="pag__item">${eightItemLogic}</li>
+    <li class="pag__item">${totalPaginationPages}</li>
     `,
     );
   }
+  onSetPaginationItemClass();
+}
+
+function onSetPaginationItemClass() {
+  const pagPage = localStorage.getItem('page');
+  refs.pagList.firstElementChild.classList.add('is-active');
+  refs.pagList.childNodes.forEach(el => {
+    if (el.textContent === pagPage) {
+      refs.pagList.firstElementChild.classList.remove('is-active');
+      el.classList.add('is-active');
+    }
+
+    if (el.textContent === '...') {
+      el.classList.add('disabled');
+    }
+
+    if (el.textContent.length === 2) {
+      el.classList.add('modified');
+    }
+  });
+  localStorage.setItem('page', '1');
 }
 
 function onClick(e) {
   const APITag = ApiService.tag;
-  const page = Number(e.target.textContent);
+  const page = +e.target.textContent;
+  localStorage.setItem('page', page);
 
   if (e.target.nodeName === 'UL') {
     return;
