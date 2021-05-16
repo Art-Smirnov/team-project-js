@@ -307,6 +307,19 @@ img {
   left: 0;
   top: 0;
   z-index: 1001;
+  max-width: 105px;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    max-width: 175px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .logo-container {
+    max-width: 240px;
+  }
 }
 
 .header {
