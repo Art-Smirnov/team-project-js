@@ -1,8 +1,8 @@
 import './shared_scss/main.scss';
 import './services/apiService.js';
 import './services/apiService.js';
-import './components/modal/modal';
 import './components/scroll-up/scroll_up';
+import './components/modal/modal';
 import './components/theme-switch/theme-switch';
 import {
   paginationRender,
@@ -15,6 +15,7 @@ import ApiService from './services/apiService.js';
 import getRefs from './services/get-refs.js';
 import cardTmpl from './templates/card-list-item.hbs';
 import renderSelectCountry from './components/search-form/renderSearchForm.js';
+
 import gameMarkup from './components/tic-tac-toe/game-markup.js';
 import onClickCard from './components/modal/modal.js';
 
@@ -62,7 +63,7 @@ async function byQuery(page = 0) {
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);
   } catch (error) {
-    // alert('Something went wrong! Please enter a more specific query!');
+    console.log(error);
     clearGallery();
     onNoResultsError();
   } finally {
@@ -98,7 +99,7 @@ async function byCountry(page = 0) {
       paginationRender(result.page, page);
     }
   } catch (error) {
-    // alert('No events. Please choose other country!');
+    console.log(error);
     clearGallery();
     onNoResultsError();
   } finally {
@@ -114,8 +115,6 @@ function clearGallery() {
   refs.cardList.innerHTML = '';
 }
 
-export { renderDefaultEvents, byCountry, byQuery };
-
 function onNoResultsError() {
   refs.cardList.removeEventListener('click', onClickCard);
   refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
@@ -125,3 +124,5 @@ function onNoResultsError() {
 refs.logoEl.addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
+
+export { renderDefaultEvents, byCountry, byQuery };

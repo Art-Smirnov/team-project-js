@@ -99,13 +99,18 @@
       </div>
     </div>
     <div class="button-more-grop">
-      {{#each _embedded.attractions}}
-
-      <button class="modal-button-more ">
-        more from : <span>{{ this.name}}</span>
+      {{#if _embedded.attractions.[1]}}
+      <label for="search-country" class="">
+        <select name="country" id="search-country" class="form-select-author">
+          <option class="form-select-option" value="" disabled selected hidden>
+            MORE FROM AUTHORS
+          </option>
+        </select>
+      {{else}}
+      <button class="modal-button-more">
+        more from : <span>{{ _embedded.attractions.[0].name}}</span>
       </button>
-
-      {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>
