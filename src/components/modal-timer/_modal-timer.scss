@@ -1,0 +1,21 @@
+.title {
+  color: $primary-accent;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-date {
+  display: inline-block;
+  width: 45px;
+  color: #000000;
+  font-size: 30px;
+}
+
+.label {
+  color: #000000;
+  margin-right: 5px;
+}

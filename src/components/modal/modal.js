@@ -2,6 +2,8 @@ import ApiService from '../../services/apiService.js';
 import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 import getRefs from '../../services/get-refs';
+import modalTimer from '../modal-timer/modal-timer.js';
+
 import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../../index.js';
@@ -43,6 +45,7 @@ export default async function onClickCard(e) {
       renderSelectAuthors(result._embedded.attractions, selectAuthor);
       selectAuthor.addEventListener('change', onSelectAuthor);
     }
+    modalTimer(result.dates.start.dateTime);
   } catch (error) {
     console.log(error);
   }
