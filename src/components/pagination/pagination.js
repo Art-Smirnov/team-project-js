@@ -42,7 +42,7 @@ function paginationRender({ totalPages }, currentPage) {
       ? totalPaginationPages - 2
       : currentPage + 2;
   const eightItemLogic =
-    currentPage + 3 < totalPaginationPages ? '...' : totalPaginationPages - 1;
+    currentPage + 4 < totalPaginationPages ? '...' : totalPaginationPages - 1;
 
   if (totalPaginationPages <= 9) {
     const arr = [];
@@ -94,7 +94,7 @@ function onSetPaginationItemClass() {
 
 function onClick(e) {
   const APITag = ApiService.tag;
-  const page = Number(e.target.textContent);
+  const page = +e.target.textContent;
   localStorage.setItem('page', page);
 
   if (e.target.nodeName === 'UL') {
