@@ -3,7 +3,6 @@ import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
-
 import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
@@ -75,6 +74,9 @@ export default async function onClickCard(e) {
 function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
+
+const timerRef = document.getElementById('timer-1');
+console.log(timerRef);
 
 function onCloseModal(e) {
   if (

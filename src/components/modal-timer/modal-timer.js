@@ -3,6 +3,7 @@ class CountdownTimer {
     this.element = selector;
     this.targetDate = targetDate;
   }
+
   countdownTime() {
     const time = this.targetDate - Date.now();
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
