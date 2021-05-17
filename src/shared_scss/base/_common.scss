@@ -68,25 +68,6 @@ img {
 }
 
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  outline: 1px solid red;
-
-  @include for-size(mobile) {
-    width: 270px;
-  }
-
-  @include for-size(tablet) {
-    width: 594px;
-  }
-
-  @include for-size(desktop) {
-    width: 930px;
-  }
-}
-
-.container {
   position: relative;
   width: 100%;
   margin-right: auto;
