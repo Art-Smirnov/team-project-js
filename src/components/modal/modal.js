@@ -34,7 +34,8 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
       currentID = e.target.parentElement.parentElement.dataset.id;
     }
-
+    refs.backdrop.classList.add('modal-open')
+    
     const result = await ApiService.feachEventById(currentID);
     markupModalText(result);
 
