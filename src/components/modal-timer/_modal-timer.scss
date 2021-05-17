@@ -1,21 +1,70 @@
-.title {
-  color: $primary-accent;
-}
+// .timer {
+//   display: flex;
+//   align-items: center;
+//   // justify-content: center;
+// }
+
+// .value-date {
+//   display: inline-block;
+//   width: 45px;
+//   color: #000000;
+//   font-size: 30px;
+//   margin-bottom: 10px;
+//   color: red;
+//   font-family: 'digital numbers';
+// }
+
+// .label {
+//   color: #000000;
+//   margin-right: 5px;
+//   color: red;
+//   font-family: 'digital numbers';
+// }
 
 .timer {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+
   display: flex;
-  align-items: center;
+
+  // transform: translate(-50%, -50%);
+  border: 1px solid #0e0e0e;
+  border-radius: 10px;
   justify-content: center;
 }
 
-.value-date {
-  display: inline-block;
-  width: 45px;
-  color: #000000;
-  font-size: 30px;
+.field {
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px;
+
+  text-align: center;
+}
+
+.value {
+  margin-bottom: 10px;
+
+  font-size: 20px;
+  color: #0e0e0e;
+  font-family: 'digital numbers';
 }
 
 .label {
-  color: #000000;
-  margin-right: 5px;
+  font-size: 10px;
+  color: #0e0e0e;
+  font-family: 'digital numbers';
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.box-dots {
+  margin-bottom: 22px;
+
+  font-size: 20px;
+  color: #0e0e0e;
 }

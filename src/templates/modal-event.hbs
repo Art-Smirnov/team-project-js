@@ -10,29 +10,7 @@
       <div class="modal-content">
         <div class="modal-content-img-wrapper">
           <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
-          <h1 class="title">Start event in:</h1>
-          <div class="timer" id="timer-1">
-            <div class="field">
-              <span class="value-date" data-value="days">??</span>
-              <span class="label">ds</span>
-            </div>
           
-            <div class="field">
-              <span class="value-date" data-value="hours">??</span>
-              <span class="label">h</span>
-            </div>
-          
-            <div class="field">
-              <span class="value-date" data-value="mins">??</span>
-              <span class="label">min</span>
-            </div>
-          
-            <div class="field">
-              <span class="value-date" data-value="secs">??</span>
-              <span class="label">sec</span>
-            </div>
-          </div>
-
         </div>
         <ul class="modal-content-list list">
           <li class="modal-title">
@@ -95,7 +73,51 @@
               {{/if}}
             </div>
           </li>
+          <h1 class="modal-title">Event start in:</h1>
+          {{!-- <div class="timer" id="timer-1">
+            <div class="field">
+              <span class="value-date" data-value="days">??</span>
+              <span class="label">ds</span>
+            </div>
+          
+            <div class="field">
+              <span class="value-date" data-value="hours">??</span>
+              <span class="label">h</span>
+            </div>
+          
+            <div class="field">
+              <span class="value-date" data-value="mins">??</span>
+              <span class="label">min</span>
+            </div>
+          
+            <div class="field">
+              <span class="value-date" data-value="secs">??</span>
+              <span class="label">sec</span>
+            </div>
+          </div> --}}
+          <div class="timer" id="timer-1">
+            <div class="field">
+              <span class="value" data-value="days">--</span>
+              <span class="label">Days</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="hours">--</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="mins">--</span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="secs">--</span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
         </ul>
+        
       </div>
     </div>
     <div class="button-more-grop">
