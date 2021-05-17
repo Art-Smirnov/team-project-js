@@ -1,10 +1,12 @@
 import ApiService from '../../services/apiService.js';
-import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
+import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
 
 import preloaderFactory from '../../services/placeholder/placeholder';
+import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
+import { byQuery } from '../events-list/events-list.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -35,22 +37,27 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
-    console.log(result);
     markupModalText(result);
+
+    const selectAuthor = document.querySelector('.form-select-author');
+
+    if (selectAuthor) {
+      renderSelectAuthors(result._embedded.attractions, selectAuthor);
+      selectAuthor.addEventListener('change', onSelectAuthor);
+    }
     modalTimer(result.dates.start.dateTime);
   } catch (error) {
     console.log(error);
   }
 
   //search Event
-  const moreButtonRef = document.querySelector('.button-more-grop');
-  moreButtonRef.addEventListener('click', onSearchMore);
+  const moreButtonRef = document.querySelector('.modal-button-more');
+  if (moreButtonRef) {
+    moreButtonRef.addEventListener('click', onSearchMore);
+  }
 
   async function onSearchMore(e) {
     let nameEvent;
-    if (e.target.nodeName === 'DIV') {
-      return;
-    }
 
     if (e.target.nodeName === 'BUTTON') {
       nameEvent = e.target.firstElementChild.textContent;
@@ -58,21 +65,10 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
-    console.log(nameEvent);
+    localStorage.setItem('value', nameEvent);
 
     onToggleModal();
-    preloader.show();
-    try {
-      clearGallery();
-
-      const result = await ApiService.fetchEventsByQuery(nameEvent);
-
-      appendImagesMarkup(result._embedded.events);
-    } catch (error) {
-      alert('Something went wrong! Please enter a more specific query!');
-    } finally {
-      preloader.hide();
-    }
+    byQuery();
   }
 }
 
@@ -114,4 +110,14 @@ function appendImagesMarkup(events) {
 }
 function clearGallery() {
   refs.cardList.innerHTML = '';
+}
+
+function onSelectAuthor(e) {
+  const selectEl = e.target;
+  const authorSelect = selectEl.options[selectEl.selectedIndex].value;
+  console.log(authorSelect);
+  // refs.selectForm.value = '';
+  localStorage.setItem('value', authorSelect);
+  byQuery();
+  onToggleModal();
 }
