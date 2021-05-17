@@ -78,31 +78,6 @@ img {
 }
 
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  outline: 1px solid red;
-}
-
-@media (min-width: 320px) {
-  .container {
-    width: 270px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 594px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    width: 930px;
-  }
-}
-
-.container {
   position: relative;
   width: 100%;
   margin-right: auto;
