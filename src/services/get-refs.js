@@ -11,7 +11,7 @@ export default function getRefs() {
     backdrop: document.querySelector('.backdrop'),
     form: document.querySelector('.form-search'),
     chekBoxRef: document.querySelector('#theme-switch-toggle'),
-    logoEl: document.querySelector('.logo-container'),
+    logoEl: document.querySelectorAll('.logo-container'),
     lightLogoEl: document.querySelector('.logo-container.light-logo'),
     darkLogoEl: document.querySelector('.logo-container.dark-logo'),
     dreamTeamEl: document.querySelector('.dream-team-section'),
