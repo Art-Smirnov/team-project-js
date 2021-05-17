@@ -6,51 +6,20 @@ const Theme = {
 };
 
 const refs = getRefs();
+const currentThemeClass =
+  localStorage.getItem('body-theme') === null
+    ? Theme.DARK
+    : localStorage.getItem('body-theme');
 
 refs.chekBoxRef.addEventListener('change', onThemeChange);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
-if(localStorage.getItem('body-theme') === null || localStorage.getItem('body-theme') === Theme.DARK) {
-  refs.logoEl.innerHTML = getLogoDarkThemeMarkup();
-}
-if (localStorage.getItem('body-theme') === Theme.LIGHT) {
-  refs.logoEl.innerHTML = getLogoLightThemeMarkup();
-}
 
-refs.bodyRef.classList.add(
-  localStorage.getItem('body-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('body-theme'),
-);
-
-refs.searchEventInp.classList.add(
-  localStorage.getItem('body-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('body-theme'),
-);
-
-refs.selectForm.classList.add(
-  localStorage.getItem('body-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('body-theme'),
-);
-
-refs.dreamTeamEl.classList.add(
-  localStorage.getItem('body-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('body-theme'),
-);
-
-refs.headerOverlay.classList.add(
-  localStorage.getItem('headerOverlay-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('headerOverlay-theme'),
-);
-
-refs.svgScroll.classList.add(
-  localStorage.getItem('svg-theme-dark') === null
-    ? Theme.DARK
-    : localStorage.getItem('svg-theme-dark'),
-);
+refs.bodyRef.classList.add(currentThemeClass);
+refs.searchEventInp.classList.add(currentThemeClass);
+refs.selectForm.classList.add(currentThemeClass);
+refs.dreamTeamEl.classList.add(currentThemeClass);
+refs.headerOverlay.classList.add(currentThemeClass);
+refs.svgScroll.classList.add(currentThemeClass);
 
 function onThemeChange({ target }) {
   target.checked
@@ -66,14 +35,13 @@ function changeTheme(add, rem) {
   refs.selectForm.classList.replace(rem, add);
   refs.dreamTeamEl.classList.replace(rem, add);
   localStorage.setItem('body-theme', add);
-  localStorage.setItem('headerOverlay-theme', add);
-  if(add === Theme.DARK ) {
+  if (add === Theme.DARK) {
     refs.logoEl.innerHTML = getLogoDarkThemeMarkup();
   }
   if (add === Theme.LIGHT) {
     refs.logoEl.innerHTML = getLogoLightThemeMarkup();
+  }
 }
-};
 
 function getLogoDarkThemeMarkup() {
   return `<picture>
@@ -91,7 +59,7 @@ function getLogoDarkThemeMarkup() {
     " media="(min-width:767px)">
   <img src="images/mobile/logo-mobile-@1x.png" alt="Описание изображени для всех версий">
 </picture>`;
-};
+}
 
 function getLogoLightThemeMarkup() {
   return `<picture>
@@ -109,5 +77,4 @@ function getLogoLightThemeMarkup() {
   " media="(min-width:767px)">
     <img src="./images/light-theme/mobile/logo-mobile-@2x.png" alt="Светлая тема">
   </picture>`;
-};
-
+}
