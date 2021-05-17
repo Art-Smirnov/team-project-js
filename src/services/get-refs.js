@@ -12,6 +12,8 @@ export default function getRefs() {
     form: document.querySelector('.form-search'),
     chekBoxRef: document.querySelector('#theme-switch-toggle'),
     logoEl: document.querySelector('.logo-container'),
+    lightLogoEl: document.querySelector('.logo-container.light-logo'),
+    darkLogoEl: document.querySelector('.logo-container.dark-logo'),
     dreamTeamEl: document.querySelector('.dream-team-section'),
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
