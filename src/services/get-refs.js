@@ -10,7 +10,7 @@ export default function getRefs() {
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
     form: document.querySelector('.form-search'),
-    chekBoxRef: document.querySelector('#theme-switch-toggle'),
+    chekBoxRef: document.querySelector('#toggle'),
     logoEl: document.querySelector('.logo-container'),
     dreamTeamEl: document.querySelector('.dream-team-section'),
     scroll: document.querySelector('.back_to_top'),

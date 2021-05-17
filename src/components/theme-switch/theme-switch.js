@@ -12,7 +12,20 @@ const currentThemeClass =
     : localStorage.getItem('body-theme');
 
 refs.chekBoxRef.addEventListener('change', onThemeChange);
+// console.log(refs.chekBoxRef);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
+
+const toggle = document.querySelector('#toggle');
+
+// const updateBackground = event => {
+//   document.body.classList.toggle('on');
+// };
+
+toggle.addEventListener(
+  'click',
+  () => document.body.classList.toggle('on'),
+  false,
+);
 
 refs.bodyRef.classList.add(currentThemeClass);
 refs.searchEventInp.classList.add(currentThemeClass);
