@@ -1,75 +1,82 @@
 import ApiService from '../../services/apiService.js';
-import getRefs from '../../services/get-refs';
 import modalTmpl from '../../templates/modal-event.hbs';
 import cardTmpl from '../../templates/card-list-item.hbs';
-
+import getRefs from '../../services/get-refs';
+import modalTimer from '../modal-timer/modal-timer.js';
 import preloaderFactory from '../../services/placeholder/placeholder';
+import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
+import { byQuery } from '../events-list/events-list.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
-refs.cardList.addEventListener('click', onClickCard);
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
-async function onClickCard(e) {
+export default async function onClickCard(e) {
+  // console.log(e.target.classList.contains('card-list'));
+  // console.log(e.target.classList.contains('card-list-item'));
+  if (e.target.classList.contains('card-list')) {
+    return;
+  }
   let currentID = '';
+
   onToggleModal();
   removeScroll();
+  try {
+    if (e.target.classList.contains('card-list-item')) {
+      currentID = e.target.dataset.id;
+    }
+    if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
+      currentID = e.target.parentElement.dataset.id;
+    }
+    if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
+      currentID = e.target.parentElement.parentElement.dataset.id;
+    }
 
-  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'DIV') {
-    currentID = e.target.parentElement.dataset.id;
-  }
-  if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
-    currentID = e.target.parentElement.parentElement.dataset.id;
-  }
-  if (e.target.nodeName === 'LI') {
-    currentID = e.target.dataset.id;
-  }
+    const result = await ApiService.feachEventById(currentID);
+    markupModalText(result);
 
-  const result = await ApiService.feachEventById(currentID);
-  cleanModal();
+    const selectAuthor = document.querySelector('.form-select-author');
 
-  console.log(result);
-  markupModalText(result);
-  console.log(result._embedded.venues[0].name);
+    if (selectAuthor) {
+      renderSelectAuthors(result._embedded.attractions, selectAuthor);
+      selectAuthor.addEventListener('change', onSelectAuthor);
+    }
+    modalTimer(result.dates.start.dateTime);
+  } catch (error) {
+    console.log(error);
+  }
 
   //search Event
   const moreButtonRef = document.querySelector('.modal-button-more');
+  if (moreButtonRef) {
+    moreButtonRef.addEventListener('click', onSearchMore);
+  }
 
-  moreButtonRef.addEventListener('click', onSearchMore);
+  async function onSearchMore(e) {
+    let nameEvent;
 
-  async function onSearchMore() {
-    const eventName = document.querySelector('.title-event').textContent;
-    onToggleModal();
-    preloader.show();
-    try {
-      clearGallery();
-
-      const result = await ApiService.fetchEventsByQuery(eventName);
-      appendImagesMarkup(result);
-    } catch (error) {
-      alert('Something went wrong! Please enter a more specific query!');
-    } finally {
-      preloader.hide();
+    if (e.target.nodeName === 'BUTTON') {
+      nameEvent = e.target.firstElementChild.textContent;
     }
-  }
-  function appendImagesMarkup(events) {
-    refs.cardList.innerHTML = cardTmpl(events);
-  }
-  function clearGallery() {
-    refs.cardList.innerHTML = '';
+    if (e.target.nodeName === 'SPAN') {
+      nameEvent = e.target.textContent;
+    }
+    localStorage.setItem('value', nameEvent);
+
+    onToggleModal();
+    byQuery();
   }
 }
 
 function markupModalText(text) {
-  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl(text));
+  refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-function cleanModal() {
-  refs.backdrop.innerHTML = '';
-}
+const timerRef = document.getElementById('timer-1');
+console.log(timerRef);
 
 function onCloseModal(e) {
   if (
@@ -96,4 +103,20 @@ function onKeyModalEscClose(e) {
     return;
   }
   refs.backdrop.classList.add('is-hidden');
+}
+function appendImagesMarkup(events) {
+  refs.cardList.innerHTML = cardTmpl(events);
+}
+function clearGallery() {
+  refs.cardList.innerHTML = '';
+}
+
+function onSelectAuthor(e) {
+  const selectEl = e.target;
+  const authorSelect = selectEl.options[selectEl.selectedIndex].value;
+  console.log(authorSelect);
+  // refs.selectForm.value = '';
+  localStorage.setItem('value', authorSelect);
+  byQuery();
+  onToggleModal();
 }

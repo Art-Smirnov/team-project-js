@@ -50,8 +50,8 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
-    "chokidar": "^3.5.1",
     "basiclightbox": "^5.0.4",
+    "chokidar": "^3.5.1",
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8"

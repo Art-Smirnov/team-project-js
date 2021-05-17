@@ -1,5 +1,5 @@
 export default function gameMarkup() {
-    return `<li class="game-wrapper">
+  return `<li class="game-wrapper">
     <div class="game__title-wrapper">     
    <h2 class="no-results__title">Sorry, there're no events.</h2>
    <p class="no-results__description">But keep calm and play tic-tac-toe👇</p>
@@ -214,4 +214,4 @@ export default function gameMarkup() {
          </form>
        </div>
      </li>`;
-};
+}

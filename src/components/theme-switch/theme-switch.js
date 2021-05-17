@@ -6,27 +6,23 @@ const Theme = {
 };
 
 const refs = getRefs();
+const currentThemeClass =
+  localStorage.getItem('body-theme') === null
+    ? Theme.DARK
+    : localStorage.getItem('body-theme');
 
 refs.chekBoxRef.addEventListener('change', onThemeChange);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
 
-refs.bodyRef.classList.add(
-  localStorage.getItem('body-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('body-theme'),
-);
-
-refs.headerOverlay.classList.add(
-  localStorage.getItem('headerOverlay-theme') === null
-    ? Theme.DARK
-    : localStorage.getItem('headerOverlay-theme'),
-);
-
-refs.svgScroll.classList.add(
-  localStorage.getItem('svg-theme-dark') === null
-    ? Theme.DARK
-    : localStorage.getItem('svg-theme-dark'),
-);
+refs.chekBoxContainer.classList.add(currentThemeClass);
+refs.bodyRef.classList.add(currentThemeClass);
+refs.searchEventInp.classList.add(currentThemeClass);
+refs.selectForm.classList.add(currentThemeClass);
+refs.dreamTeamEl.classList.add(currentThemeClass);
+refs.headerOverlay.classList.add(currentThemeClass);
+refs.svgScroll.classList.add(currentThemeClass);
+refs.lightLogoEl.classList.add(currentThemeClass);
+refs.darkLogoEl.classList.add(currentThemeClass);
 
 function onThemeChange({ target }) {
   target.checked
@@ -35,9 +31,14 @@ function onThemeChange({ target }) {
 }
 
 function changeTheme(add, rem) {
+  refs.chekBoxContainer.classList.replace(rem, add);
   refs.bodyRef.classList.replace(rem, add);
   refs.headerOverlay.classList.replace(rem, add);
   refs.svgScroll.classList.replace(rem, add);
+  refs.searchEventInp.classList.replace(rem, add);
+  refs.selectForm.classList.replace(rem, add);
+  refs.dreamTeamEl.classList.replace(rem, add);
+  refs.lightLogoEl.classList.replace(rem, add);
+  refs.darkLogoEl.classList.replace(rem, add);
   localStorage.setItem('body-theme', add);
-  localStorage.setItem('headerOverlay-theme', add);
 }
