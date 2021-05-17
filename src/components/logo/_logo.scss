@@ -19,4 +19,25 @@
   @include for-size(desktop) {
     max-width: 240px;
   }
+
+  &.dark-logo.dark-theme {
+    display: block;
+    opacity: 1;
+  }
+
+  &.dark-logo.light-theme {
+    display: none;
+    opacity: 0;
+  }
+
+  &.light-logo.dark-theme {
+    display: none;
+    opacity: 0;
+  }
+
+  &.light-logo.light-theme {
+    display: block;
+    opacity: 1;
+  }
+
 }
