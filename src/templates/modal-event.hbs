@@ -1,36 +1,14 @@
 <div class="overlay-lightbox modal">
   <button class="close-button" data-modal-close>X</button>
   <div class="overlay-modal">
-    <div>
-      <div class="modal-img-wrapper">
-        <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
-      </div>
+    <div class="modal-img-wrapper">
+      <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
+    </div>
 
-      <div class="modal-content">
+    <div class="modal-content">
+      <div class="wrapper">
         <div class="modal-content-img-wrapper">
           <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
-          <h1 class="title">Start event in:</h1>
-          <div class="timer" id="timer-1">
-            <div class="field">
-              <span class="value-date" data-value="days">??</span>
-              <span class="label">ds</span>
-            </div>
-
-            <div class="field">
-              <span class="value-date" data-value="hours">??</span>
-              <span class="label">h</span>
-            </div>
-
-            <div class="field">
-              <span class="value-date" data-value="mins">??</span>
-              <span class="label">min</span>
-            </div>
-
-            <div class="field">
-              <span class="value-date" data-value="secs">??</span>
-              <span class="label">sec</span>
-            </div>
-          </div>
         </div>
         <ul class="modal-content-list list">
           <li class="modal-title">
@@ -82,30 +60,55 @@
               </div>
 
               {{/if}}
-
-              <div>
-                <p class="social">Share in :</p>
-                <ul class="social-icons">
-                  <li>
-                    <a class="social-icon-twitter"
-                      href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/"
-                      title="share in Twitter" target="_blank" rel="noopener"></a>
-                  </li>
-                  <li>
-                    <a class="social-icon-fb"
-                      href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/"
-                      title="share Facebook" target="_blank" rel="noopener"></a>
-                  </li>
-                  <li>
-                    <a class="social-icon-vk"
-                      href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
-                      target="_blank" rel="noopener"></a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </li>
         </ul>
+      </div>
+      <div class="wrapper">
+        <div>
+          <p class="social">Share in :</p>
+          <ul class="social-icons">
+            <li>
+              <a class="social-icon-twitter"
+                href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/"
+                title="share in Twitter" target="_blank" rel="noopener"></a>
+            </li>
+            <li>
+              <a class="social-icon-fb"
+                href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/"
+                title="share Facebook" target="_blank" rel="noopener"></a>
+            </li>
+            <li>
+              <a class="social-icon-vk"
+                href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
+                target="_blank" rel="noopener"></a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="modal-title">Event start in:</h1>
+          <div class="timer" id="timer-1">
+            <div class="field">
+              <span class="value" data-value="days">--</span>
+              <span class="label">Days</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="hours">--</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="mins">--</span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="box"><span class="box-dots">:</span></div>
+            <div class="field">
+              <span class="value" data-value="secs">--</span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="button-more-grop">
         {{#if _embedded.attractions.[1]}}
