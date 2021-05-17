@@ -101,8 +101,8 @@
           </li>
         </ul>
       </div>
-      <div class="logo-container">
-        <!-- <picture>
+      <div class="logo-container dark-logo">
+        <picture>
           <source
             srcset="
               ./images/desktop/logo-desktop-@1x.png 1x,
@@ -128,7 +128,24 @@
             src="./images/mobile/logo-mobile-@1x.png"
             alt="Описание изображени для всех версий"
           />
-        </picture> -->
+        </picture>
+      </div>
+      <div class="logo-container light-logo">
+        <picture>
+          <source srcset="
+          ./images/light-theme/desktop/logo-desktop-@1x.png 1x,
+          ./images/light-theme/desktop/logo-desktop-@2x.png 2x
+        " media="(min-width:1280px)">
+          <source srcset="
+          ./images/light-theme/tablet/logo-tablet-@1x.png 1x,
+          ./images/light-theme/tablet/logo-tablet-@2x.png 2x
+        " media="(min-width:768px)">
+          <source srcset="
+          ./images/light-theme/mobile/logo-mobile-@1x.png 1x,
+          ./images/light-theme/mobile/logo-mobile-@2x.png 2x
+        " media="(min-width:767px)">
+          <img src="./images/light-theme/mobile/logo-mobile-@2x.png" alt="Светлая тема">
+        </picture>
       </div>
       <div class="container header-main">
         <!-- Разметка переключателя темы -->
