@@ -132,30 +132,46 @@
       </div>
       <div class="logo-container light-logo">
         <picture>
-          <source srcset="
-          ./images/light-theme/desktop/logo-desktop-@1x.png 1x,
-          ./images/light-theme/desktop/logo-desktop-@2x.png 2x
-        " media="(min-width:1280px)">
-          <source srcset="
-          ./images/light-theme/tablet/logo-tablet-@1x.png 1x,
-          ./images/light-theme/tablet/logo-tablet-@2x.png 2x
-        " media="(min-width:768px)">
-          <source srcset="
-          ./images/light-theme/mobile/logo-mobile-@1x.png 1x,
-          ./images/light-theme/mobile/logo-mobile-@2x.png 2x
-        " media="(min-width:767px)">
-          <img src="./images/light-theme/mobile/logo-mobile-@2x.png" alt="Светлая тема">
+          <source
+            srcset="
+              ./images/light-theme/desktop/logo-desktop-@1x.png 1x,
+              ./images/light-theme/desktop/logo-desktop-@2x.png 2x
+            "
+            media="(min-width:1280px)"
+          />
+          <source
+            srcset="
+              ./images/light-theme/tablet/logo-tablet-@1x.png 1x,
+              ./images/light-theme/tablet/logo-tablet-@2x.png 2x
+            "
+            media="(min-width:768px)"
+          />
+          <source
+            srcset="
+              ./images/light-theme/mobile/logo-mobile-@1x.png 1x,
+              ./images/light-theme/mobile/logo-mobile-@2x.png 2x
+            "
+            media="(min-width:767px)"
+          />
+          <img
+            src="./images/light-theme/mobile/logo-mobile-@2x.png"
+            alt="Светлая тема"
+          />
         </picture>
       </div>
 
       <div class="container header-main">
         <!-- Разметка переключателя темы -->
-        <div class="theme-switch">
-          <!-- <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+        <div class="toggle">
+          <input type="checkbox" id="toggle" />
+          <label class="toggle-lable" for="toggle"></label>
+        </div>
+        <!-- <div class="theme-switch"> -->
+        <!-- <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
           <use href="./images/sprite.svg#sun"></use>
         </svg> -->
 
-          <div class="theme-switch__control">
+        <!-- <div class="theme-switch__control">
             <input
               class="theme-switch__toggle"
               type="checkbox"
@@ -170,12 +186,12 @@
             >
             </label>
             <div aria-hidden="true" class="theme-switch__marker"></div>
-          </div>
+          </div> -->
 
-          <!-- <svg class="theme-switch__icon" aria-label="Иконка луны">
+        <!-- <svg class="theme-switch__icon" aria-label="Иконка луны">
           <use href="./images/sprite.svg#moon"></use>
         </svg> -->
-        </div>
+        <!-- </div> -->
 
         <div class="header-title-container">
           <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>

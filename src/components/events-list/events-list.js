@@ -1,5 +1,4 @@
 import { paginationRender, clearPagList } from '../pagination/pagination';
-
 import countryCodes from '../../services/countriesCodes.js';
 import preloaderFactory from '../../services/placeholder/placeholder.js';
 import ApiService from '../../services/apiService.js';
