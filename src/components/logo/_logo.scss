@@ -12,12 +12,12 @@
   left: 0;
   top: 0;
   z-index: 1001;
-  max-width: 105px;
+  width: 105px;
   @include for-size(tablet) {
-    max-width: 175px;
+    width: 175px;
   }
   @include for-size(desktop) {
-    max-width: 240px;
+    width: 240px;
   }
 
   &.dark-logo.dark-theme {
