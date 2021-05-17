@@ -12,21 +12,9 @@ const currentThemeClass =
     : localStorage.getItem('body-theme');
 
 refs.chekBoxRef.addEventListener('change', onThemeChange);
-// console.log(refs.chekBoxRef);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
 
-const toggle = document.querySelector('#toggle');
-
-// const updateBackground = event => {
-//   document.body.classList.toggle('on');
-// };
-
-toggle.addEventListener(
-  'click',
-  () => document.body.classList.toggle('on'),
-  false,
-);
-
+refs.chekBoxContainer.classList.add(currentThemeClass);
 refs.bodyRef.classList.add(currentThemeClass);
 refs.searchEventInp.classList.add(currentThemeClass);
 refs.selectForm.classList.add(currentThemeClass);
@@ -36,7 +24,6 @@ refs.svgScroll.classList.add(currentThemeClass);
 refs.lightLogoEl.classList.add(currentThemeClass);
 refs.darkLogoEl.classList.add(currentThemeClass);
 
-
 function onThemeChange({ target }) {
   target.checked
     ? changeTheme(Theme.LIGHT, Theme.DARK)
@@ -44,6 +31,7 @@ function onThemeChange({ target }) {
 }
 
 function changeTheme(add, rem) {
+  refs.chekBoxContainer.classList.replace(rem, add);
   refs.bodyRef.classList.replace(rem, add);
   refs.headerOverlay.classList.replace(rem, add);
   refs.svgScroll.classList.replace(rem, add);

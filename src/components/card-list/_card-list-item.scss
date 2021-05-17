@@ -49,6 +49,7 @@
   text-align: center;
   font-weight: 600;
   line-height: 1.22;
+  margin: 0;
 
   @include for-size(tablet) {
     font-size: 14px;
