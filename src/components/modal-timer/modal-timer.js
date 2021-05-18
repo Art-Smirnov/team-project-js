@@ -2,6 +2,7 @@ class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.element = selector;
     this.targetDate = targetDate;
+    this.intervalId = null;
   }
 
   countdownTime() {
@@ -20,9 +21,13 @@ class CountdownTimer {
       secs < 10 ? `0${secs}` : `${secs}`;
   }
   startTime() {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.countdownTime();
     }, 1000);
+  }
+
+  stopTime() {
+    clearInterval(this.intervalId - 1);
   }
 }
 export default function modalTimer(date) {
@@ -31,4 +36,5 @@ export default function modalTimer(date) {
     targetDate: new Date(date),
   });
   timer.startTime();
+  timer.stopTime();
 }
