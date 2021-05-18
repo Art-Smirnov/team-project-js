@@ -25,7 +25,6 @@ export default async function onClickCard(e) {
   if (e.target.classList.contains('card-list')) {
     return;
   }
-  let currentID = '';
 
   onToggleModal();
   removeScroll();

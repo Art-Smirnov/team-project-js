@@ -16,7 +16,7 @@ export default function getRefs() {
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
     pagList: document.querySelector('.pag__list'),
-    btnSignIn: document.querySelector('.btn-sign'),
+    btnProfile: document.querySelector('.btn-sign'),
     btnLikeEvent: document.querySelector('.like-event')
   };
 }

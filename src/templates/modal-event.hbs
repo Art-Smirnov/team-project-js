@@ -1,11 +1,36 @@
 <div class="overlay-lightbox modal">
-    <button class="close-button" data-modal-close>X
-    </button>
-    <button class="like-event">like</button>
-    <div class="overlay-modal">
-        <div>
-            <div class="modal-img-wrapper">
-                <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
+  <button class="close-button" data-modal-close>X
+  </button>
+  <button class="like-event">like</button>
+  <div class="overlay-modal">
+    <div>
+      <div class="modal-img-wrapper">
+        <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-content-img-wrapper">
+          <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
+          <h1 class="title">Start event in:</h1>
+          <div class="timer" id="timer-1">
+            <div class="field">
+              <span class="value-date" data-value="days">??</span>
+              <span class="label">ds</span>
+            </div>
+
+            <div class="field">
+              <span class="value-date" data-value="hours">??</span>
+              <span class="label">h</span>
+            </div>
+
+            <div class="field">
+              <span class="value-date" data-value="mins">??</span>
+              <span class="label">min</span>
+            </div>
+
+            <div class="field">
+              <span class="value-date" data-value="secs">??</span>
+              <span class="label">sec</span>
             </div>
           </div>
 
@@ -49,7 +74,7 @@
                 {{#each priceRanges}}
                 <div class="modal-ticket-text">
                   <span class="modal-skan-svg">
-                    
+
                   </span>
                   <span class="modal-status-ticket">
                     {{this.type}} :{{this.min}}-{{this.max}}
@@ -67,36 +92,42 @@
 
               </div>
               {{/if}}
-             
-       <div><p class="social"> Share in :</p>
-      <ul class="social-icons">
-        <li><a class="social-icon-twitter" href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/" title="share in Twitter" target="_blank"
-            rel="noopener"></a></li>
-        <li><a class="social-icon-fb" href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/" title="share Facebook" target="_blank"
-            rel="noopener"></a></li>
-        <li><a class="social-icon-vk" href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share" target="_blank" rel="noopener"></a></li>
-      </ul></div>
-            
+
+              <div>
+                <p class="social"> Share in :</p>
+                <ul class="social-icons">
+                  <li><a class="social-icon-twitter"
+                      href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/"
+                      title="share in Twitter" target="_blank" rel="noopener"></a></li>
+                  <li><a class="social-icon-fb"
+                      href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/"
+                      title="share Facebook" target="_blank" rel="noopener"></a></li>
+                  <li><a class="social-icon-vk"
+                      href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
+                      target="_blank" rel="noopener"></a></li>
+                </ul>
+              </div>
+
             </div>
-            
-            </div>
-          </li>
-        </ul>
+
       </div>
+      </li>
+      </ul>
     </div>
-    <div class="button-more-grop">
-      {{#if _embedded.attractions.[1]}}
-      <label for="search-country" class="">
-        <select name="country" id="search-country" class="form-select-author">
-          <option class="form-select-option" value="" disabled selected hidden>
-            MORE FROM AUTHORS
-          </option>
-        </select>
+  </div>
+  <div class="button-more-grop">
+    {{#if _embedded.attractions.[1]}}
+    <label for="search-country" class="">
+      <select name="country" id="search-country" class="form-select-author">
+        <option class="form-select-option" value="" disabled selected hidden>
+          MORE FROM AUTHORS
+        </option>
+      </select>
       {{else}}
       <button class="modal-button-more">
         more from : <span>{{ _embedded.attractions.[0].name}}</span>
       </button>
       {{/if}}
-    </div>
   </div>
+</div>
 </div>
