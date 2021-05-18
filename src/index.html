@@ -18,6 +18,9 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
   </head>
   <body>
     <header class="header header-overlay">
@@ -156,6 +159,7 @@
         </div>
 
         <button class="btn-sign">Profile</button>
+        <button class="btn-list-event-user">Your favorite events</button>
 
         <div class="header-title-container">
           <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
@@ -245,6 +249,28 @@
         </a>
       </div>
       <div class="is-hidden backdrop" data-modal></div>
+      <div class="is-hidden backdrop-auth" data-modal>
+        <div class="modal-sign-in">
+          <form action="submit" class="form-sign-in">
+            <div class="form-field">
+              <label for="name" class="label-field">Name</label>
+              <input type="text" name="name" id="name" class="form-input" required>
+            </div>
+            <div class="form-field">
+              <label for="email" class="label-field">E-mail</label>
+              <input type="email" name="email" id="email" class="form-input" required>
+            </div>
+            <div class="form-field">
+              <label for="password" class="label-field">Password</label>
+              <input type="password" name="password" id="password" class="form-input" required>
+            </div>
+            <button type="submit" class="btn-sign-in">sign in</button>
+            <button type="submit" class="btn-register">register</button>
+            <button type="submit" class="btn-sign-up">sign up</button>
+            <p class="form-auth-error"></p>
+          </form>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container">

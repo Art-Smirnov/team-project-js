@@ -17,6 +17,8 @@ export default function getRefs() {
     svgScroll: document.querySelector('.svg-theme'),
     pagList: document.querySelector('.pag__list'),
     btnProfile: document.querySelector('.btn-sign'),
-    btnLikeEvent: document.querySelector('.like-event')
+    btnLikeEvent: document.querySelector('.like-event'),
+    backdropAuth: document.querySelector('.backdrop-auth'),
+    eventCurrentUsers: document.querySelector('.btn-list-event-user')
   };
 }

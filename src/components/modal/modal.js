@@ -16,7 +16,7 @@ let currentID = '';
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
-refs.backdrop.addEventListener('click', onClickLikeEventBtn);
+// refs.backdrop.addEventListener('click', onClickLikeEventBtn);
 
 
 export default async function onClickCard(e) {
@@ -108,19 +108,19 @@ function onKeyModalEscClose(e) {
 
 
 // myyyyyyyyyy
-function onClickLikeEventBtn(e) {
-    if (e.target.className !== 'like-event') {
-        return
-  }
-  e.target.classList.toggle('current-like');
-  console.log(currentID);
-  const idLikeEvent = {
-    idLike: currentID
-  }
-  //запрос на сервер с добавлением айди ивента
-  LikeEvent.create(idLikeEvent)
+// function onClickLikeEventBtn(e) {
+//     if (e.target.className !== 'like-event') {
+//         return
+//   }
+//   e.target.classList.toggle('current-like');
+//   console.log(currentID);
+//   const idLikeEvent = {
+//     idLike: currentID
+//   }
+//   //запрос на сервер с добавлением айди ивента
+//   LikeEvent.create(idLikeEvent)
   
-}
+// }
 
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
