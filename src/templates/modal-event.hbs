@@ -1,12 +1,12 @@
 <div class="overlay-lightbox modal">
   <button class="close-button" data-modal-close>X</button>
   <div class="overlay-modal">
-    <div>
-      <div class="modal-img-wrapper">
-        <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
-      </div>
+    <div class="modal-img-wrapper">
+      <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo" />
+    </div>
 
-      <div class="modal-content">
+    <div class="modal-content">
+      <div class="wrapper">
         <div class="modal-content-img-wrapper">
           <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
         </div>
@@ -60,29 +60,33 @@
               </div>
 
               {{/if}}
-
-              <div>
-                <p class="social">Share in :</p>
-                <ul class="social-icons">
-                  <li>
-                    <a class="social-icon-twitter"
-                      href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/"
-                      title="share in Twitter" target="_blank" rel="noopener"></a>
-                  </li>
-                  <li>
-                    <a class="social-icon-fb"
-                      href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/"
-                      title="share Facebook" target="_blank" rel="noopener"></a>
-                  </li>
-                  <li>
-                    <a class="social-icon-vk"
-                      href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
-                      target="_blank" rel="noopener"></a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </li>
+          
+        </ul>
+      </div>
+      <div class="wrapper wrapper-information-container">
+        <div class="wrapper-social">
+          <p class="social">Share in :</p>
+          <ul class="social-icons">
+            <li>
+              <a class="social-icon-twitter"
+                href=" https://twitter.com/intent/tweet?url=https://art-smirnov.github.io/team-project-js/"
+                title="share in Twitter" target="_blank" rel="noopener"></a>
+            </li>
+            <li>
+              <a class="social-icon-fb"
+                href=" https://www.facebook.com/sharer/sharer.php?u=https://art-smirnov.github.io/team-project-js/"
+                title="share Facebook" target="_blank" rel="noopener"></a>
+            </li>
+            <li>
+              <a class="social-icon-vk"
+                href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
+                target="_blank" rel="noopener"></a>
+            </li>
+          </ul>
+        </div>
+        <div>
           <h1 class="modal-title">Event start in:</h1>
           <div class="timer" id="timer-1">
             <div class="field">
@@ -105,7 +109,7 @@
               <span class="label">Seconds</span>
             </div>
           </div>
-        </ul>
+        </div>
       </div>
       <div class="button-more-grop">
         {{#if _embedded.attractions.[1]}}
