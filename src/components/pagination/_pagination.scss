@@ -2,6 +2,12 @@
   display: flex;
 
   margin-top: 60px;
+  margin-bottom: 60px;
+
+  @include for-size(desktop) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 
   &__list {
     display: flex;
@@ -34,6 +40,7 @@
       border-color: #dc56c5;
     }
   }
+
   &__item:not(:last-child) {
     // margin-right: 2px;
 

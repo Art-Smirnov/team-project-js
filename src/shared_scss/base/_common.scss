@@ -12,18 +12,21 @@ html {
 body {
   font-family: $main-font;
 }
-
 body.dark-theme {
   background-color: $modal-content;
   background-image: url(../images/mobile/noise_body_mobile.jpg);
   color: $text-cl;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @include for-size(tablet) {
-    background-image: url(../images/tablet/bg_body_tablet@1x.jpg);
+    background-image: url(../images/tablet/noise_body_tablet@2x.png),
+      url(../images/tablet/bg-black-body-tablet@2x.png);
   }
 
   @include for-size(desktop) {
-    background-image: url(../images/desktop/bg_body_desktop@1x.jpg);
+    background-image: url(../images/desktop/noise_body_desktop@2x.png),
+      url(../images/desktop/bg-black-body-desktop@2x.png);
   }
 }
 
@@ -31,7 +34,7 @@ body.light-theme {
   background-color: $modal-bg;
   background-image: url(../images/light-theme/mobile/noise_body_mobile_light.jpg);
   color: $modal-content;
-
+  background-size: contain;
   @include for-size(tablet) {
     background-image: url(../images/light-theme/tablet/bg_body_tablet_light@1x.jpg);
   }
@@ -65,6 +68,7 @@ img {
 }
 
 .container {
+  position: relative;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -82,17 +86,19 @@ img {
     width: 930px;
   }
 }
-
 .main-container {
   position: relative;
   top: -51px;
+  margin-bottom: -111px;
 
   @include for-size(tablet) {
     top: -47px;
+    margin-bottom: -107px;
   }
 
   @include for-size(desktop) {
     top: -46px;
+    // margin-bottom: -126px;
   }
 }
 

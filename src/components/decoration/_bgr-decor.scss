@@ -1,0 +1,288 @@
+.decor-1 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/line-1.svg);
+    width: 1px;
+    top: -268px;
+    left: 0px;
+    height: 0px;
+  }
+  @include for-size(desktop) {
+    top: -321px;
+    left: -62px;
+    height: 780px;
+  }
+}
+
+.decor-2 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-5-2.svg);
+    color: red;
+    width: 127px;
+    top: 200px;
+    left: -66px;
+    height: 127px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-5.svg);
+    width: 216px;
+    top: 457px;
+    left: -168px;
+    height: 216px;
+  }
+}
+
+.decor-3 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-2.svg);
+    opacity: 0.5;
+
+    width: 80px;
+    height: 80px;
+    left: -41px;
+    top: 226px;
+
+    background: linear-gradient(
+      151.61deg,
+      rgba(196, 196, 196, 0.03) -7.48%,
+      rgba(196, 196, 196, 0) 106.62%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-2.svg);
+    width: 136px;
+    height: 136px;
+    left: -131px;
+    top: 498px;
+  }
+}
+
+.decor-4 {
+  position: absolute;
+  @include for-size(tablet) {
+    background-image: url(../images/tablet/decor/line-1.svg);
+    width: 1px;
+    top: 326px;
+    left: 0px;
+    height: 2535px;
+  }
+
+  @include for-size(desktop) {
+    top: 672px;
+    left: -62px;
+    height: 1495px;
+  }
+}
+
+.decor-5 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-5-2.svg);
+    width: 127px;
+    top: 2860px;
+    left: -66px;
+    height: 65px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-5.svg);
+
+    width: 216px;
+    top: 2167px;
+    left: -168px;
+    height: 107px;
+  }
+}
+
+.ellipse-half {
+  @include for-size(tablet) {
+    position: absolute;
+    height: 42px;
+    width: 80px;
+    overflow: hidden;
+
+    left: -41px;
+    top: 2880px;
+  }
+
+  @include for-size(desktop) {
+    height: 68px;
+    width: 136px;
+    overflow: hidden;
+    left: -126px;
+    top: 2206px;
+  }
+}
+.decor-6 {
+  @include for-size(tablet) {
+    background-image: url(../images/tablet/decor/ellipse-2.svg);
+    opacity: 0.5;
+
+    width: 80px;
+    height: 80px;
+
+    background: linear-gradient(
+      151.61deg,
+      rgba(196, 196, 196, 0.03) -7.48%,
+      rgba(196, 196, 196, 0) 106.62%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-2.svg);
+    width: 136px;
+    height: 136px;
+  }
+}
+
+.decor-7 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-6.svg);
+    width: 230px;
+    top: 1426px;
+    left: -58px;
+    height: 237px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-6.svg);
+    width: 334px;
+    top: 1025px;
+    left: -150px;
+    height: 334px;
+  }
+}
+
+.decor-8 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/line-1.svg);
+    width: 1px;
+    top: 62px;
+    left: 592px;
+    height: 1211px;
+  }
+
+  @include for-size(desktop) {
+    top: -334px;
+    left: 989px;
+    height: 1391px;
+  }
+}
+
+.decor-9 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-5-2.svg);
+
+    width: 127px;
+    height: 127px;
+    top: 1380px;
+    left: 529px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-5.svg);
+    width: 216px;
+    top: 1057px;
+    left: 880px;
+    height: 216px;
+  }
+}
+
+.decor-10 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-2.svg);
+    opacity: 0.5;
+
+    width: 80px;
+    height: 80px;
+    top: 1403px;
+    left: 552px;
+
+    background: linear-gradient(
+      151.61deg,
+      rgba(196, 196, 196, 0.03) -7.48%,
+      rgba(196, 196, 196, 0) 106.62%
+    );
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-2.svg);
+    width: 136px;
+    height: 136px;
+    left: 918px;
+    top: 1098px;
+  }
+}
+
+.decor-11 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/line-1.svg);
+    width: 1px;
+    top: 1507px;
+    left: 592px;
+    height: 1420px;
+  }
+
+  @include for-size(desktop) {
+    top: 1273px;
+    left: 989px;
+    height: 1001px;
+  }
+}
+
+.decor-12 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-7.svg);
+    width: 238px;
+    top: 568px;
+    left: 414px;
+    height: 237px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-9.svg);
+    width: 334px;
+    top: 157px;
+    left: 743px;
+    height: 334px;
+  }
+}
+
+.decor-13 {
+  @include for-size(tablet) {
+    position: absolute;
+    background-image: url(../images/tablet/decor/ellipse-7.svg);
+    width: 238px;
+    top: 2411px;
+    left: 414px;
+    height: 237px;
+  }
+
+  @include for-size(desktop) {
+    background-image: url(../images/desktop/decor/desktop-ellipse-9.svg);
+    width: 334px;
+    top: 1807px;
+    left: 743px;
+    height: 334px;
+  }
+}
+
+.bg-decor-elements.light-theme {
+  display: none;
+}
