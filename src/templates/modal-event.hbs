@@ -20,7 +20,7 @@
             when
 
             <span class="modal-text">{{dates.start.localDate}}</span>
-            <span class="modal-text">{{resultFeatch.dates.start.localTime}}
+            <span class="modal-text">{{dates.start.localTime}}
               ({{dates.timezone}})</span>
           </li>
 
@@ -78,6 +78,11 @@
                     <a class="social-icon-vk"
                       href="https://vk.com/share.php?url=https://art-smirnov.github.io/team-project-js/" title="Share"
                       target="_blank" rel="noopener"></a>
+                  </li>
+                  <li>
+                    <a class="social-icon-google"
+                      href="http://www.google.com/calendar/event?action=TEMPLATE&text={{name}}&dates={{startGoogle}}/{{endGoogle}}&details={{url}}&location={{_embedded.venues.0.country.name}}" 
+                      target="_blank" rel="nofollow"></a>
                   </li>
                 </ul>
               </div>
