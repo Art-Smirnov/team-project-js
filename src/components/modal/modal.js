@@ -5,8 +5,7 @@ import modalTimer from '../modal-timer/modal-timer.js';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 import { writeUserData } from '../authentication/auth';
-import { deleteEventFromDataLikeUser } from '../authentication/auth'
-
+import { deleteEventFromDataLikeUser } from '../authentication/auth';
 
 const refs = getRefs();
 let currentID = '';
@@ -16,7 +15,6 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
 refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
-
 
 export default async function onClickCard(e) {
   refs.bodyRef.classList.add('modal-open');
@@ -78,8 +76,6 @@ function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-// const timerRef = document.getElementById('timer-1');
-
 function onCloseModal(e) {
   refs.bodyRef.classList.remove('modal-open');
   if (
@@ -110,8 +106,8 @@ function onKeyModalEscClose(e) {
 
 // database
 function onClickLikeEventBtn(e) {
-    if (e.target.className !== 'like-event') {
-        return
+  if (e.target.className !== 'like-event') {
+    return;
   }
   e.target.classList.toggle('current-like');
   writeUserData(currentID);
@@ -119,16 +115,9 @@ function onClickLikeEventBtn(e) {
 
 function onClickDeleteEventBtn(e) {
   if (e.target.className !== 'delete-event') {
-    return
+    return;
   }
   deleteEventFromDataLikeUser(currentID);
-}
-
-function appendImagesMarkup(events) {
-  refs.cardList.innerHTML = cardTmpl(events);
-}
-function clearGallery() {
-  refs.cardList.innerHTML = '';
 }
 
 function onSelectAuthor(e) {
