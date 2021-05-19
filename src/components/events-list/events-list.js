@@ -11,14 +11,22 @@ import onClickCard from '../modal/modal.js';
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 const APIQ = ApiService.tag;
-renderSelectCountry(countryCodes);
+let idCategory;
 
+renderSelectCountry(countryCodes);
 if (APIQ === undefined) {
   renderDefaultEvents();
 }
 
 refs.form.addEventListener('submit', onInputChange);
+refs.listCategory.addEventListener('click', searchEven);
 
+function searchEven(e) {
+  if (e.target.nodeName === 'P') {
+    idCategory = e.target.id;
+  }
+  bySegment(idCategory);
+}
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);
@@ -38,6 +46,25 @@ function onInputChange(e) {
   refs.selectForm.value = '';
   localStorage.setItem('value', `${e.currentTarget.elements[0].value}`);
   byQuery();
+}
+
+async function bySegment(idCategory, page = 0) {
+  try {
+    preloader.show();
+    clearGallery();
+    clearPagList();
+
+    const result = await ApiService.feachEventBySegments(idCategory, page);
+
+    appendImagesMarkup(result._embedded.events);
+    paginationRender(result.page, page);
+  } catch (error) {
+    console.log(error);
+    clearGallery();
+    onNoResultsError();
+  } finally {
+    preloader.hide();
+  }
 }
 
 async function byQuery(page = 0) {
