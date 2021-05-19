@@ -830,14 +830,6 @@ img {
   }
 }
 
-.card-list-item__title.dark-theme {
-  color: #dc56c5;
-}
-
-.card-list-item__title.light-theme {
-  color: #4c00fe;
-}
-
 .card-list-item__date {
   color: inherit;
   font-size: 14px;
