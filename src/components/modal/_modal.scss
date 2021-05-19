@@ -95,6 +95,7 @@ body.modal-open {
   }
 }
 .modal-content-img-wrapper {
+  position: relative;
   @include for-size(tablet) {
     width: 233px;
     height: 416px;
@@ -106,6 +107,11 @@ body.modal-open {
     height: 641px;
     margin-right: 60px;
   }
+}
+.btn-event {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 .modal-photo-main {
   @include for-size(mobile-only) {

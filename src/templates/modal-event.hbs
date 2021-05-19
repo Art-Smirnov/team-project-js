@@ -10,7 +10,12 @@
         <div>
           <div class="modal-content-img-wrapper">
           <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
+          <div class="btn-event">
+            <button class="like-event">Add my event</button>
+            <button class="delete-event">Remove</button>
+          </div>
         </div>
+        
         {{!-- <div class="wrapper-social">
           <p class="social">Share in :</p>
           <ul class="social-icons">
@@ -163,8 +168,8 @@
           </div>
         </div>
       </div>
-        <button class="like-event">like</button>
-        <button class="delete-event">delete</button>
+      
+        
       <div class="button-more-grop">
         {{#if _embedded.attractions.[1]}}
 
