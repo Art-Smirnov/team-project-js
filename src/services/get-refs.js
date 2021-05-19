@@ -28,6 +28,6 @@ export default function getRefs() {
     titleContainer: document.querySelector('.header-title-container'),
     title: document.querySelector('.header-title'),
     cardTitle: document.querySelector('.card-list-item__title'),
-    listCategory: document.querySelector('.category-list'),
+    teammates: document.querySelector('.teammates'),
   };
 }
