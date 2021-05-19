@@ -2,6 +2,9 @@ import ApiService from '../../services/apiService.js';
 import modalTmpl from '../../templates/modal-event.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
+import moment from 'moment';
+
+import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 import { writeUserData } from '../authentication/auth';
@@ -35,6 +38,12 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
+    console.log(result);
+    //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
+    result.startGoogle = moment.utc(result.dates.start.dateTime).startOf('day').format('YYYYMMDD[T]HHmmss[Z]');
+    result.endGoogle = moment.utc(result.dates.start.dateTime).startOf('day').format('YYYYMMDD[T]HHmmss[Z]');
+
+
     markupModalText(result);
 
     const selectAuthor = document.querySelector('.form-select-author');
