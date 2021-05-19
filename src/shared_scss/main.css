@@ -107,20 +107,19 @@ img {
 .main-container {
   position: relative;
   top: -51px;
-  margin-bottom: -51px;
+  margin-bottom: -111px;
 }
 
 @media (min-width: 768px) {
   .main-container {
     top: -47px;
-    margin-bottom: -47px;
+    margin-bottom: -107px;
   }
 }
 
 @media (min-width: 1280px) {
   .main-container {
     top: -46px;
-    margin-bottom: -46px;
   }
 }
 
@@ -1556,10 +1555,10 @@ body.modal-open {
 }
 
 .toggle {
-  z-index: 0;
+  z-index: 100;
   position: absolute;
-  right: 0;
-  top: 20px;
+  right: 10%;
+  top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1574,16 +1573,33 @@ body.modal-open {
   content: 'DARK';
   position: absolute;
   left: -50px;
-  top: 35px;
+  top: 15px;
   font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .toggle:before {
+    top: 20px;
+    font-size: 10px;
+    top: 12px;
+    left: -35px;
+  }
 }
 
 .toggle:after {
   content: 'LIGHT';
   position: absolute;
   right: -50px;
-  top: 35px;
+  top: 15px;
   font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .toggle:after {
+    right: -35px;
+    font-size: 10px;
+    top: 12px;
+  }
 }
 
 .toggle input {
@@ -1622,7 +1638,6 @@ body.modal-open {
 .toggle-lable {
   position: relative;
   display: inline-block;
-  top: 20px;
   width: 40px;
   height: 40px;
   background-color: #dc56c5;
@@ -1631,6 +1646,13 @@ body.modal-open {
   -webkit-box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.1), 0px 9px 15px 0px #4c00fe;
           box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.1), 0px 9px 15px 0px #4c00fe;
   -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .toggle-lable {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .toggle-lable:before {
@@ -1646,8 +1668,17 @@ body.modal-open {
   width: 20px;
   background-color: #4c00fe;
   border-radius: 46px;
-  -webkit-box-shadow: inset 0px 0px 0px 8px #fff;
-          box-shadow: inset 0px 0px 0px 8px #fff;
+  -webkit-box-shadow: inset 0px 0px 0px 5px #fff;
+          box-shadow: inset 0px 0px 0px 5px #fff;
+}
+
+@media (max-width: 767px) {
+  .toggle-lable:before {
+    height: 15px;
+    width: 15px;
+    -webkit-box-shadow: inset 0px 0px 0px 5px #fff;
+            box-shadow: inset 0px 0px 0px 5px #fff;
+  }
 }
 
 .pag {
@@ -1655,6 +1686,14 @@ body.modal-open {
   display: -ms-flexbox;
   display: flex;
   margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 1280px) {
+  .pag {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 }
 
 .pag__list {

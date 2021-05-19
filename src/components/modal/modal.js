@@ -19,8 +19,6 @@ refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
 
 
 export default async function onClickCard(e) {
-  refs.bodyRef.classList.add('modal-open');
-
   if (e.target.classList.contains('card-list')) {
     return;
   }
@@ -78,10 +76,7 @@ function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-// const timerRef = document.getElementById('timer-1');
-
 function onCloseModal(e) {
-  refs.bodyRef.classList.remove('modal-open');
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
@@ -93,6 +88,7 @@ function onCloseModal(e) {
 
 function onToggleModal() {
   refs.backdrop.classList.toggle('is-hidden');
+  refs.bodyRef.classList.toggle('modal-open');
 }
 
 function removeScroll() {
