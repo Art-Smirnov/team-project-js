@@ -14,9 +14,9 @@
   opacity: 0;
   pointer-events: none;
 }
-// body.modal-open {
-//   overflow: hidden;
-// }
+body.modal-open {
+  overflow: hidden;
+}
 .modal {
   background-color: $modal-bg;
   margin-left: auto;
@@ -170,12 +170,12 @@
   }
 }
 
-.modal-svg {
-  width: 29px;
-  height: 19px;
-  fill: black;
-  border: 1px solid black;
-}
+// .modal-svg {
+//   width: 29px;
+//   height: 19px;
+//   fill: black;
+//   border: 1px solid black;
+// }
 
 .close-button {
   color: $btn;
