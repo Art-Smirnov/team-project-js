@@ -18,6 +18,7 @@ export default function getRefs() {
     pagList: document.querySelector('.pag__list'),
     btnProfile: document.querySelector('.btn-sign'),
     btnLikeEvent: document.querySelector('.like-event'),
+    btnDeleteEvent: document.querySelector('.delete-event'),
     backdropAuth: document.querySelector('.backdrop-auth'),
     eventCurrentUsers: document.querySelector('.btn-list-event-user')
   };

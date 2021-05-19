@@ -8,6 +8,9 @@ import preloaderFactory from '../../services/placeholder/placeholder';
 import {LikeEvent} from '../authentication/like-event'
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
+import { writeUserData } from '../authentication/auth';
+import { deleteEventFromDataLikeUser } from '../authentication/auth'
+
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -16,7 +19,8 @@ let currentID = '';
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
-// refs.backdrop.addEventListener('click', onClickLikeEventBtn);
+refs.backdrop.addEventListener('click', onClickLikeEventBtn);
+refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
 
 
 export default async function onClickCard(e) {
@@ -107,20 +111,24 @@ function onKeyModalEscClose(e) {
 }
 
 
-// myyyyyyyyyy
-// function onClickLikeEventBtn(e) {
-//     if (e.target.className !== 'like-event') {
-//         return
-//   }
-//   e.target.classList.toggle('current-like');
-//   console.log(currentID);
-//   const idLikeEvent = {
-//     idLike: currentID
-//   }
-//   //запрос на сервер с добавлением айди ивента
-//   LikeEvent.create(idLikeEvent)
-  
-// }
+// myyyyyyyyy
+function onClickLikeEventBtn(e) {
+    if (e.target.className !== 'like-event') {
+        return
+  }
+  e.target.classList.toggle('current-like');
+  writeUserData(currentID);
+}
+
+function onClickDeleteEventBtn(e) {
+  if (e.target.className !== 'delete-event') {
+    return
+  }
+  deleteEventFromDataLikeUser(currentID);
+}
+
+
+
 
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);

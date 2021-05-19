@@ -1,6 +1,6 @@
 import getRefs from '../../services/get-refs.js';
-// import { AuthUser } from './authentication.js';
-import { LikeEvent } from './like-event.js';
+import ApiService from '../../services/apiService.js';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCnMsJDer_0Gcb2_8fWu32IDAPP-hHTPtU",
@@ -20,7 +20,7 @@ refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
 
 const formAuth = document.querySelector('.form-sign-in');
-const nameUser = formAuth.querySelector('#name')
+const inputName = formAuth.querySelector('#name')
 const inputEmail = formAuth.querySelector('#email');
 const inputPassword = formAuth.querySelector('#password');
 const btnSignIn = formAuth.querySelector('.btn-sign-in');
@@ -29,6 +29,8 @@ const btnSignUp = formAuth.querySelector('.btn-sign-up');
 const formError = formAuth.querySelector('.form-auth-error');
 let loggedIn = false;
 let myUserId = '';
+let dataIDLikeUsers = {};
+
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
@@ -38,6 +40,7 @@ firebase.auth().onAuthStateChanged(user => {
       loggedIn = true;
       myUserId = firebase.auth().currentUser.uid;
       console.log('id', myUserId);
+      readUserData();
   } else {
     refs.btnProfile.textContent = 'Profile';
     loggedIn = false;
@@ -89,30 +92,16 @@ function onKeyModalAuthEscClose(e) {
 }
 
 
-// function authWithEmailAndPassword(email, password) {
-//     const apiKey = 'AIzaSyCnMsJDer_0Gcb2_8fWu32IDAPP-hHTPtU';
-//     return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`, {
-//         method: 'POST',
-//         body: JSON.stringify({
-//             email, password,
-//             returnSecureToken: true
-//         }),
-//         headers: {
-//             'Content-Type': 'application/json'}
-//     })
-//         .then(response => response.json())
-//         .then(data => data.idToken)
-// }
-
 function signUpWithEmailPassword() {
         var email = inputEmail.value;
         var password = inputPassword.value;
+        var name = inputName.value;
         firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(userCredential => {
             // authError.classList.add('visually-hidden');
-            var user = userCredential.user;
+                var user = userCredential.user;
             })
             .catch(error => {
             var errorCode = error.code;
@@ -158,16 +147,52 @@ function signOut() {
             });
 }
 
-// function writeUserData(userId, name, email, imageUrl) {
-//   firebase.database().ref('users/' + userId).set({
-//     username: name,
-//     email: email,
-//     profile_picture : imageUrl
-//   });
-// }
+function readUserData() {
+    var likeListRef = database.ref('users/' + myUserId + '/idLikeEvent');
+    likeListRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        dataIDLikeUsers = data
+            ? Object.keys(data).map(key => ({
+                id: key,
+                likeId: data[key] 
+            }))
+            : []
+    })
+}
 
-function writeUserData(userID, name) {
-    database.ref('users/' + userID).set({
-        userName: name
-    });
+export function writeUserData(idLike) {
+    var likeListRef = database.ref('users/' + myUserId + '/idLikeEvent');
+    var newLikeEvent = likeListRef.push();
+    newLikeEvent.set(idLike);
+
+    likeListRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        dataIDLikeUsers = data
+            ? Object.keys(data).map(key => ({
+                id: key,
+                likeId: data[key] 
+            }))
+            : []
+    })
+}
+
+export function deleteEventFromDataLikeUser(idLike) {
+    const recordData = dataIDLikeUsers.find(us => us.likeId === idLike)
+    var deleteDataRef = database.ref('users/' + myUserId + '/idLikeEvent' + '/' + recordData.id);
+    deleteDataRef.remove();
+}
+
+
+//render like event
+refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
+
+async function onClickMyEventsBtn () {
+    const arr = dataIDLikeUsers.map(evt => evt.likeId);
+    try {
+        const result = await Promise.all(arr.map(evtId => ApiService.feachEventById(evtId)))
+        console.log(result);
+    } catch (error) {
+        
+    }
+    
 }
