@@ -5,5 +5,4 @@ import './components/modal/modal';
 import './components/scroll-up/scroll_up';
 import './components/theme-switch/theme-switch';
 import './components/authentication/auth';
-import './components/authentication/like-event'
 import './components/modal-timer/modal-timer';
