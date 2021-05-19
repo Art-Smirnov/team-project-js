@@ -84,4 +84,16 @@ export default class ApiService {
     const res = await responce.json();
     return res;
   }
+  static async feachEventBySegments(id, currentPage = 0) {
+    const responce = await fetch(
+      `${BASE_URL}events.json?segmentId=${id}&page=${
+        currentPage - 1 < 0 ? 0 : currentPage - 1
+      }&apikey=${MY_KEY}`,
+    );
+    if (!responce.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const res = await responce.json();
+    return res;
+  }
 }
