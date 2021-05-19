@@ -10,7 +10,7 @@ import { deleteEventFromDataLikeUser } from '../authentication/auth';
 const refs = getRefs();
 let currentID = '';
 
-refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
+// refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
@@ -71,6 +71,7 @@ export default async function onClickCard(e) {
 }
 
 function markupModalText(text) {
+refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
