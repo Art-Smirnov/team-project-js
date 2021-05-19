@@ -163,16 +163,12 @@
         </picture>
       </div>
 
+      <!-- Разметка переключателя темы -->
+      <div class="toggle">
+        <input type="checkbox" id="toggle" />
+        <label class="toggle-lable" for="toggle"></label>
+      </div>
       <div class="container header-main">
-        <!-- Разметка переключателя темы -->
-        <div class="toggle">
-          <input type="checkbox" id="toggle" />
-          <label class="toggle-lable" for="toggle"></label>
-        </div>
-
-        <button class="btn-sign">Profile</button>
-        <button class="btn-list-event-user">Your favorite events</button>
-
         <div class="header-title-container">
           <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
         </div>
@@ -281,15 +277,33 @@
           <form action="submit" class="form-sign-in">
             <div class="form-field">
               <label for="name" class="label-field">Name</label>
-              <input type="text" name="name" id="name" class="form-input" required>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-input"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="email" class="label-field">E-mail</label>
-              <input type="email" name="email" id="email" class="form-input" required>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-input"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="password" class="label-field">Password</label>
-              <input type="password" name="password" id="password" class="form-input" required>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-input"
+                required
+              />
             </div>
             <button type="submit" class="btn-sign-in">sign in</button>
             <button type="submit" class="btn-register">register</button>
