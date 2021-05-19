@@ -1,0 +1,15 @@
+.category-list {
+  display: flex;
+}
+.category-item {
+  margin-left: 10px;
+}
+.category-event {
+  color: royalblue;
+  font-weight: 700;
+  cursor: pointer;
+}
+.category-event:hover {
+  color: rosybrown;
+  text-decoration: underline;
+}
