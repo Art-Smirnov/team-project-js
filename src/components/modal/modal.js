@@ -6,6 +6,7 @@ import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 
 const refs = getRefs();
+let currentID = '';
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
@@ -17,8 +18,6 @@ export default async function onClickCard(e) {
   if (e.target.classList.contains('card-list')) {
     return;
   }
-
-  let currentID = '';
 
   onToggleModal();
   removeScroll();
