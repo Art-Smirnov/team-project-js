@@ -7,6 +7,8 @@ import cardTmpl from '../../templates/card-list-item.hbs';
 import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
 import onClickCard from '../modal/modal.js';
+import { fetchLikedEvnts } from '../authentication/auth.js';
+// console.log(fetchLikedEvnts());
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -18,8 +20,10 @@ if (APIQ === undefined) {
   renderDefaultEvents();
 }
 
+refs.selectForm.addEventListener('change', onSelectCountry);
 refs.form.addEventListener('submit', onInputChange);
 refs.listCategory.addEventListener('click', searchEven);
+refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
   if (e.target.nodeName === 'P') {
@@ -87,8 +91,6 @@ async function byQuery(page = 0) {
   }
 }
 
-refs.selectForm.addEventListener('change', onSelectCountry);
-
 function onSelectCountry(e) {
   refs.cardList.addEventListener('click', onClickCard);
   refs.searchEventInp.value = '';
@@ -114,6 +116,25 @@ async function byCountry(page = 0) {
       appendImagesMarkup(result._embedded.events);
       paginationRender(result.page, page);
     }
+  } catch (error) {
+    console.log(error);
+    clearGallery();
+    onNoResultsError();
+  } finally {
+    preloader.hide();
+  }
+}
+
+async function onClickMyEventsBtn(page = 0) {
+  try {
+    preloader.show();
+    clearGallery();
+    clearPagList();
+    const result = await fetchLikedEvnts();
+
+    console.log(result.length);
+    appendImagesMarkup(result);
+    paginationRender({ totalPages: 1 }, page);
   } catch (error) {
     console.log(error);
     clearGallery();

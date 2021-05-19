@@ -1,24 +1,38 @@
 .toggle {
-  z-index: 0;
+  z-index: 100;
   position: absolute;
-  right: 0;
-  top: 20px;
+  right: 10%;
+  top: 30px;
   display: flex;
   align-items: center;
   transform: translate3d(-50%, -50%, 0);
+
   &:before {
+    @include for-size(mobile-only) {
+      top: 20px;
+      font-size: 10px;
+      top: 12px;
+      left: -35px;
+    }
+
     content: 'DARK';
     position: absolute;
     left: -50px;
-    top: 35px;
+    top: 15px;
     font-size: 15px;
   }
 
   &:after {
+    @include for-size(mobile-only) {
+      right: -35px;
+      font-size: 10px;
+      top: 12px;
+    }
+
     content: 'LIGHT';
     position: absolute;
     right: -50px;
-    top: 35px;
+    top: 15px;
     font-size: 15px;
   }
 
@@ -59,9 +73,13 @@
 }
 
 .toggle-lable {
+  @include for-size(mobile-only) {
+    width: 30px;
+    height: 30px;
+  }
+
   position: relative;
   display: inline-block;
-  top: 20px;
   width: 40px;
   height: 40px;
   background-color: $primary-accent;
@@ -71,6 +89,11 @@
   -webkit-tap-highlight-color: transparent;
 
   &:before {
+    @include for-size(mobile-only) {
+      height: 15px;
+      width: 15px;
+      box-shadow: inset 0px 0px 0px 5px #fff;
+    }
     content: '';
     position: absolute;
     top: 50%;
@@ -81,6 +104,6 @@
     width: 20px;
     background-color: $btn;
     border-radius: 46px;
-    box-shadow: inset 0px 0px 0px 8px #fff;
+    box-shadow: inset 0px 0px 0px 5px #fff;
   }
 }
