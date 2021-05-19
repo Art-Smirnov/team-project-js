@@ -1,13 +1,10 @@
 import ApiService from '../../services/apiService.js';
 import modalTmpl from '../../templates/modal-event.hbs';
-import cardTmpl from '../../templates/card-list-item.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
-import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 
-const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
@@ -15,11 +12,12 @@ refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 
 export default async function onClickCard(e) {
-  // console.log(e.target.classList.contains('card-list'));
-  // console.log(e.target.classList.contains('card-list-item'));
+  refs.bodyRef.classList.add('modal-open');
+
   if (e.target.classList.contains('card-list')) {
     return;
   }
+
   let currentID = '';
 
   onToggleModal();
@@ -34,8 +32,7 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
       currentID = e.target.parentElement.parentElement.dataset.id;
     }
-    refs.bodyRef.classList.add('modal-open')
-    
+
     const result = await ApiService.feachEventById(currentID);
     markupModalText(result);
 
@@ -76,10 +73,10 @@ function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-const timerRef = document.getElementById('timer-1');
-console.log(timerRef);
+// const timerRef = document.getElementById('timer-1');
 
 function onCloseModal(e) {
+  refs.bodyRef.classList.remove('modal-open');
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
@@ -105,18 +102,11 @@ function onKeyModalEscClose(e) {
   }
   refs.backdrop.classList.add('is-hidden');
 }
-function appendImagesMarkup(events) {
-  refs.cardList.innerHTML = cardTmpl(events);
-}
-function clearGallery() {
-  refs.cardList.innerHTML = '';
-}
 
 function onSelectAuthor(e) {
   const selectEl = e.target;
   const authorSelect = selectEl.options[selectEl.selectedIndex].value;
-  console.log(authorSelect);
-  // refs.selectForm.value = '';
+  refs.selectForm.value = '';
   localStorage.setItem('value', authorSelect);
   byQuery();
   onToggleModal();

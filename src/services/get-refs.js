@@ -19,5 +19,9 @@ export default function getRefs() {
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
     pagList: document.querySelector('.pag__list'),
+    bgDecorContainer: document.querySelector('.bg-decor-elements'),
+    titleContainer: document.querySelector('.header-title-container'),
+    title: document.querySelector('.header-title'),
+    cardTitle: document.querySelector('.card-list-item__title'),
   };
 }
