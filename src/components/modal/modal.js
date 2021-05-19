@@ -4,6 +4,9 @@ import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
+import { writeUserData } from '../authentication/auth';
+import { deleteEventFromDataLikeUser } from '../authentication/auth'
+
 
 const refs = getRefs();
 let currentID = '';
@@ -11,6 +14,9 @@ let currentID = '';
 refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
+refs.backdrop.addEventListener('click', onClickLikeEventBtn);
+refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
+
 
 export default async function onClickCard(e) {
   refs.bodyRef.classList.add('modal-open');
@@ -100,6 +106,29 @@ function onKeyModalEscClose(e) {
     return;
   }
   refs.backdrop.classList.add('is-hidden');
+}
+
+// database
+function onClickLikeEventBtn(e) {
+    if (e.target.className !== 'like-event') {
+        return
+  }
+  e.target.classList.toggle('current-like');
+  writeUserData(currentID);
+}
+
+function onClickDeleteEventBtn(e) {
+  if (e.target.className !== 'delete-event') {
+    return
+  }
+  deleteEventFromDataLikeUser(currentID);
+}
+
+function appendImagesMarkup(events) {
+  refs.cardList.innerHTML = cardTmpl(events);
+}
+function clearGallery() {
+  refs.cardList.innerHTML = '';
 }
 
 function onSelectAuthor(e) {
