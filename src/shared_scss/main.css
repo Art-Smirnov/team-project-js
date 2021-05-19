@@ -936,6 +936,10 @@ img {
   pointer-events: none;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .modal {
   background-color: #fff2fd;
   margin-left: auto;
@@ -1147,13 +1151,6 @@ img {
     width: 29px;
     height: 19px;
   }
-}
-
-.modal-svg {
-  width: 29px;
-  height: 19px;
-  fill: black;
-  border: 1px solid black;
 }
 
 .close-button {
@@ -3298,6 +3295,18 @@ img {
   margin-top: 20px;
   color: #dc56c5;
   font-weight: 600;
+}
+
+@media (min-width: 320px) {
+  .social {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .social {
+    font-size: 24px;
+  }
 }
 
 .social-icons a {
