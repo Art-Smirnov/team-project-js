@@ -6,4 +6,3 @@ import './components/scroll-up/scroll_up';
 import './components/theme-switch/theme-switch';
 import './components/authentication/auth';
 import './components/modal-timer/modal-timer';
-import './components/category_list/category_list';
