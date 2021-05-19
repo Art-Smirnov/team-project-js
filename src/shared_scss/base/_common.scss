@@ -34,7 +34,7 @@ body.light-theme {
   background-color: $modal-bg;
   background-image: url(../images/light-theme/mobile/noise_body_mobile_light.jpg);
   color: $modal-content;
-
+  background-size: contain;
   @include for-size(tablet) {
     background-image: url(../images/light-theme/tablet/bg_body_tablet_light@1x.jpg);
   }
@@ -89,13 +89,16 @@ img {
 .main-container {
   position: relative;
   top: -51px;
+  margin-bottom: -51px;
 
   @include for-size(tablet) {
     top: -47px;
+    margin-bottom: -47px;
   }
 
   @include for-size(desktop) {
     top: -46px;
+    margin-bottom: -46px;
   }
 }
 

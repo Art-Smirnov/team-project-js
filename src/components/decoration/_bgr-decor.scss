@@ -18,7 +18,7 @@
   @include for-size(tablet) {
     position: absolute;
     background-image: url(../images/tablet/decor/ellipse-5-2.svg);
-
+    color: red;
     width: 127px;
     top: 200px;
     left: -66px;
@@ -281,4 +281,8 @@
     left: 743px;
     height: 334px;
   }
+}
+
+.bg-decor-elements.light-theme {
+  display: none;
 }
