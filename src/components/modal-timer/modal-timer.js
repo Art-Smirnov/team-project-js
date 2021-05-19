@@ -2,7 +2,9 @@ class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.element = selector;
     this.targetDate = targetDate;
+    this.intervalId = null;
   }
+
   countdownTime() {
     const time = this.targetDate - Date.now();
     const days = Math.floor(time / (1000 * 60 * 60 * 24));
@@ -19,9 +21,15 @@ class CountdownTimer {
       secs < 10 ? `0${secs}` : `${secs}`;
   }
   startTime() {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.countdownTime();
     }, 1000);
+    sessionStorage.setItem('intervalID', this.intervalId);
+  }
+
+  stopTime() {
+    const id = sessionStorage.getItem('intervalID');
+    clearInterval(id);
   }
 }
 export default function modalTimer(date) {
@@ -29,5 +37,6 @@ export default function modalTimer(date) {
     selector: '#timer-1',
     targetDate: new Date(date),
   });
+  timer.stopTime();
   timer.startTime();
 }

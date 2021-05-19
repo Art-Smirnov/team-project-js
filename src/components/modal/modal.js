@@ -1,18 +1,13 @@
 import ApiService from '../../services/apiService.js';
 import modalTmpl from '../../templates/modal-event.hbs';
-import cardTmpl from '../../templates/card-list-item.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
-
-import preloaderFactory from '../../services/placeholder/placeholder';
-import {LikeEvent} from '../authentication/like-event'
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 import { writeUserData } from '../authentication/auth';
 import { deleteEventFromDataLikeUser } from '../authentication/auth'
 
 
-const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 let currentID = '';
 
@@ -24,8 +19,8 @@ refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
 
 
 export default async function onClickCard(e) {
-  // console.log(e.target.classList.contains('card-list'));
-  // console.log(e.target.classList.contains('card-list-item'));
+  refs.bodyRef.classList.add('modal-open');
+
   if (e.target.classList.contains('card-list')) {
     return;
   }
@@ -83,7 +78,10 @@ function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
+// const timerRef = document.getElementById('timer-1');
+
 function onCloseModal(e) {
+  refs.bodyRef.classList.remove('modal-open');
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
@@ -110,8 +108,7 @@ function onKeyModalEscClose(e) {
   refs.backdrop.classList.add('is-hidden');
 }
 
-
-// myyyyyyyyy
+// database
 function onClickLikeEventBtn(e) {
     if (e.target.className !== 'like-event') {
         return
@@ -127,9 +124,6 @@ function onClickDeleteEventBtn(e) {
   deleteEventFromDataLikeUser(currentID);
 }
 
-
-
-
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
 }
@@ -140,8 +134,7 @@ function clearGallery() {
 function onSelectAuthor(e) {
   const selectEl = e.target;
   const authorSelect = selectEl.options[selectEl.selectedIndex].value;
-  console.log(authorSelect);
-  // refs.selectForm.value = '';
+  refs.selectForm.value = '';
   localStorage.setItem('value', authorSelect);
   byQuery();
   onToggleModal();

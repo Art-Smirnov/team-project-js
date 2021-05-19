@@ -10,8 +10,11 @@ export default function getRefs() {
     modal: document.querySelector('.modal'),
     backdrop: document.querySelector('.backdrop'),
     form: document.querySelector('.form-search'),
-    chekBoxRef: document.querySelector('#theme-switch-toggle'),
-    logoEl: document.querySelector('.logo-container'),
+    chekBoxRef: document.querySelector('#toggle'),
+    chekBoxContainer: document.querySelector('.toggle'),
+    logoEl: document.querySelectorAll('.logo-container'),
+    lightLogoEl: document.querySelector('.logo-container.light-logo'),
+    darkLogoEl: document.querySelector('.logo-container.dark-logo'),
     dreamTeamEl: document.querySelector('.dream-team-section'),
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
@@ -20,6 +23,10 @@ export default function getRefs() {
     btnLikeEvent: document.querySelector('.like-event'),
     btnDeleteEvent: document.querySelector('.delete-event'),
     backdropAuth: document.querySelector('.backdrop-auth'),
-    eventCurrentUsers: document.querySelector('.btn-list-event-user')
+    eventCurrentUsers: document.querySelector('.btn-list-event-user'),
+    bgDecorContainer: document.querySelector('.bg-decor-elements'),
+    titleContainer: document.querySelector('.header-title-container'),
+    title: document.querySelector('.header-title'),
+    cardTitle: document.querySelector('.card-list-item__title'),
   };
 }

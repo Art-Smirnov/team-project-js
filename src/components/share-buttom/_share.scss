@@ -1,4 +1,8 @@
+.wrapper-social {
+  justify-content: center;
+}
 .social-icons {
+  justify-content: center;
   display: flex;
 
   list-style: none;
@@ -15,6 +19,12 @@
   margin-top: 20px;
   color: $primary-accent;
   font-weight: 600;
+  @include for-size(mobile) {
+    font-size: 20px;
+  }
+  @include for-size(desktop) {
+    font-size: 24px;
+  }
 }
 .social-icons a {
   position: relative;
@@ -29,7 +39,6 @@
   height: 2.5rem;
   border-radius: 0.25rem;
 }
-
 .social-icons a:hover {
   background-color: $text-cl;
 }

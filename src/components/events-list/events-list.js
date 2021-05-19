@@ -1,5 +1,4 @@
 import { paginationRender, clearPagList } from '../pagination/pagination';
-
 import countryCodes from '../../services/countriesCodes.js';
 import preloaderFactory from '../../services/placeholder/placeholder.js';
 import ApiService from '../../services/apiService.js';
@@ -111,7 +110,11 @@ function onNoResultsError() {
 }
 
 //Появление секции команды
-refs.logoEl.addEventListener('click', e => {
+refs.logoEl[0].addEventListener('click', e => {
+  refs.dreamTeamEl.classList.toggle('show');
+});
+
+refs.logoEl[1].addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
 

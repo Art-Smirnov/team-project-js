@@ -2,7 +2,7 @@
   height: 364px;
   // background: #c4c4c4;
   background: white;
-  text-align: center;  
+  text-align: center;
   position: relative;
   @include for-size(desktop) {
     height: 446px;
@@ -66,16 +66,25 @@
   margin-right: auto;
   transition: text-shadow 0.25s ease-in-out;
 
-  &:hover {
-    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
-  }
-
   @include for-size(tablet) {
     padding-top: 40px;
     width: 353px;
   }
   @include for-size(desktop) {
     width: 589px;
+  }
+}
+.header-title-container.dark-theme {
+  &:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de,
+      0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  }
+}
+
+.header-title-container.light-theme {
+  &:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $btn,
+      0 0 20px $btn, 0 0 30px $btn, 0 0 35px $btn;
   }
 }
 
@@ -86,10 +95,9 @@
   line-height: 22px;
   text-align: center;
   margin-bottom: 0;
-  color: $primary-accent;
+  cursor: default;
   -webkit-animation: text-flicker-in-glow 4s linear both;
-	        animation: text-flicker-in-glow 4s linear both;
-  
+  animation: text-flicker-in-glow 4s linear both;
 
   @include for-size(tablet) {
     font-size: 30px;
@@ -100,6 +108,13 @@
     font-size: 50px;
     line-height: 61px;
   }
+}
+
+.header-title.dark-theme {
+  color: $primary-accent;
+}
+.header-title.light-theme {
+  color: $btn;
 }
 
 .dream-team-section {
@@ -114,18 +129,18 @@
     bottom: 0;
     background: #0d0d0df2;
     -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-	        animation: scale-up-tl 0.4s ease-in-out both;
+    animation: scale-up-tl 0.4s ease-in-out both;
 
     &.show {
-    display: block;
-    opacity: 1;
-    z-index: 20;
-    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-	        animation: scale-up-tl 0.4s ease-in-out both;
+      display: block;
+      opacity: 1;
+      z-index: 20;
+      -webkit-animation: scale-up-tl 0.4s ease-in-out both;
+      animation: scale-up-tl 0.4s ease-in-out both;
     }
 
-   &.light-theme {
-    background: #c9c9c9cc;
+    &.light-theme {
+      background: #dadadaeb;
     }
   }
 }

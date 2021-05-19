@@ -15,6 +15,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     />
     <link
+      href="https://pagecdn.io/lib/easyfonts/digital-numbers.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -100,8 +104,8 @@
           </li>
         </ul>
       </div>
-      <div class="logo-container">
-        <!-- <picture>
+      <div class="logo-container dark-logo">
+        <picture>
           <source
             srcset="
               ./images/desktop/logo-desktop-@1x.png 1x,
@@ -127,35 +131,43 @@
             src="./images/mobile/logo-mobile-@1x.png"
             alt="Описание изображени для всех версий"
           />
-        </picture> -->
+        </picture>
       </div>
+      <div class="logo-container light-logo">
+        <picture>
+          <source
+            srcset="
+              ./images/light-theme/desktop/logo-desktop-@1x.png 1x,
+              ./images/light-theme/desktop/logo-desktop-@2x.png 2x
+            "
+            media="(min-width:1280px)"
+          />
+          <source
+            srcset="
+              ./images/light-theme/tablet/logo-tablet-@1x.png 1x,
+              ./images/light-theme/tablet/logo-tablet-@2x.png 2x
+            "
+            media="(min-width:768px)"
+          />
+          <source
+            srcset="
+              ./images/light-theme/mobile/logo-mobile-@1x.png 1x,
+              ./images/light-theme/mobile/logo-mobile-@2x.png 2x
+            "
+            media="(min-width:767px)"
+          />
+          <img
+            src="./images/light-theme/mobile/logo-mobile-@2x.png"
+            alt="Светлая тема"
+          />
+        </picture>
+      </div>
+
       <div class="container header-main">
         <!-- Разметка переключателя темы -->
-        <div class="theme-switch">
-          <!-- <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-          <use href="./images/sprite.svg#sun"></use>
-        </svg> -->
-
-          <div class="theme-switch__control">
-            <input
-              class="theme-switch__toggle"
-              type="checkbox"
-              name="theme"
-              id="theme-switch-toggle"
-              aria-label="Переключить между тёмной и светлой темой"
-            />
-            <label
-              aria-hidden="true"
-              class="theme-switch__track"
-              for="theme-switch-toggle"
-            >
-            </label>
-            <div aria-hidden="true" class="theme-switch__marker"></div>
-          </div>
-
-          <!-- <svg class="theme-switch__icon" aria-label="Иконка луны">
-          <use href="./images/sprite.svg#moon"></use>
-        </svg> -->
+        <div class="toggle">
+          <input type="checkbox" id="toggle" />
+          <label class="toggle-lable" for="toggle"></label>
         </div>
 
         <button class="btn-sign">Profile</button>
@@ -203,6 +215,21 @@
     </header>
     <main>
       <div class="container main-container">
+        <div class="bg-decor-elements">
+          <div class="decor-1"></div>
+          <div class="decor-2"></div>
+          <div class="decor-3"></div>
+          <div class="decor-4"></div>
+          <div class="decor-5"></div>
+          <div class="ellipse-half"><div class="decor-6"></div></div>
+          <div class="decor-7"></div>
+          <div class="decor-8"></div>
+          <div class="decor-9"></div>
+          <div class="decor-10"></div>
+          <div class="decor-11"></div>
+          <div class="decor-12"></div>
+          <div class="decor-13"></div>
+        </div>
         <ul class="card-list list"></ul>
         <div class="pag"><ul class="pag__list"></ul></div>
         <!-- loader -->
@@ -248,8 +275,8 @@
           </div>
         </a>
       </div>
-      <div class="is-hidden backdrop" data-modal></div>
-      <div class="is-hidden backdrop-auth" data-modal>
+      <div class="is-hidden backdrop"></div>
+      <div class="is-hidden backdrop-auth">
         <div class="modal-sign-in">
           <form action="submit" class="form-sign-in">
             <div class="form-field">
@@ -278,6 +305,298 @@
           © 2021 | All Rights Reserved | Developed with
           <span class="footer-heart">♥</span> by GoIT Students
         </h3>
+        <div class="dev-card container">
+          <ul class="team-list list">
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Cherniak-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Andrey Cherniak</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/ChristianRC007"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://www.linkedin.com/in/andrei-cherniak-294666210/"
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Myzika-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Anna Myzika</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/AnnaMyzika"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Smirnov-foto.png"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Artem Smirnov</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/Art-Smirnov"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Arylova-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Ayta Arylova</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/AytaAA"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://www.linkedin.com/in/ayta-arylova-45406470/"
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Hordyna-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Dmitriy Hordyna</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/DmitryHordyna"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Selina-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Irina Selina</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/IrinaSelina"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Stulkivska-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Lesya Stulkivska</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/Legrito"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Nyrkova-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Nika Nyrkova</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/NikaNyrkova"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="team-list-item">
+              <img
+                class="team-list-item-img"
+                src="./images/dev-card-foto/Bohatyrenko-foto.jpg"
+                alt="член команды"
+              />
+              <h3 class="team-list-item-name">Oleksii Bohatyrenko</h3>
+              <ul class="sotial-list list">
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href="https://github.com/Bohatyrenko"
+                    aria-label="иконка гитхаб"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#github"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sotial-list-item">
+                  <a
+                    class="sotial-list-item-link link"
+                    href=""
+                    aria-label="иконка линкедит"
+                  >
+                    <svg class="sotial-list-item-link-svg">
+                      <use href="./images/sprite.svg#linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>
