@@ -24,10 +24,12 @@ class CountdownTimer {
     this.intervalId = setInterval(() => {
       this.countdownTime();
     }, 1000);
+    sessionStorage.setItem('intervalID', this.intervalId);
   }
 
   stopTime() {
-    clearInterval(this.intervalId - 1);
+    const id = sessionStorage.getItem('intervalID');
+    clearInterval(id);
   }
 }
 export default function modalTimer(date) {
@@ -35,6 +37,6 @@ export default function modalTimer(date) {
     selector: '#timer-1',
     targetDate: new Date(date),
   });
-  timer.startTime();
   timer.stopTime();
+  timer.startTime();
 }
