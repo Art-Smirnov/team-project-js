@@ -102,12 +102,12 @@ async function onClickMyEventsBtn(page = 0) {
   try {
     preloader.show();
     clearGallery();
-    // clearPagList();
+    clearPagList();
     const result = await fetchLikedEvnts();
 
     console.log(result.length);
     appendImagesMarkup(result);
-    // paginationRender(result.page, page);
+    paginationRender({ totalPages: 1 }, page);
   } catch (error) {
     console.log(error);
     clearGallery();

@@ -14,6 +14,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 const refs = getRefs();
+
 refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
@@ -161,6 +162,7 @@ function writeUserData(idLike) {
 
   likeListRef.on('value', snapshot => {
     const data = snapshot.val();
+    // console.log(Object.values(data));
     dataIDLikeUsers = data
       ? Object.keys(data).map(key => ({
           id: key,
@@ -180,6 +182,7 @@ function deleteEventFromDataLikeUser(idLike) {
 
 async function fetchLikedEvnts() {
   const arr = dataIDLikeUsers.map(evt => evt.likeId);
+  console.log(arr);
   const result = await Promise.all(
     arr.map(evtId => ApiService.feachEventById(evtId)),
   );
