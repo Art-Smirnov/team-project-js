@@ -20,6 +20,10 @@ const refs = getRefs();
 refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
+refs.btnCloseModalUser;
+refs.btnCloseModalUser.addEventListener('click', (e) => {
+  onToggleClassModal();
+})
 
 const formAuth = document.querySelector('.form-sign-in');
 const inputEmail = formAuth.querySelector('#email');
@@ -36,7 +40,7 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     const userName =
       user.email.length > 10 ? user.email.slice(0, 7) + '...' : user.email;
-    refs.greetingUser.textContent = `hi ${userName}`;
+    refs.greetingUser.textContent = `hi, ${userName}`;
     loggedIn = true;
     myUserId = firebase.auth().currentUser.uid;
     console.log('id', myUserId);
