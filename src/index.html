@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
+    <title>Event Buster</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
@@ -40,7 +40,7 @@
             <div class="card-list-item__info">
               <p data-genre="KZFzniwnSyZfZ7v7nl" class="category-event">TOP</p>
             </div>
-          </li>         
+          </li>
           <li class="genre-item" data-id="vvG1VZG5LseKSl">
             <img
               class="genre-header"
@@ -49,7 +49,9 @@
               alt="Sports"
             />
             <div class="card-list-item__info">
-              <p data-genre="KZFzniwnSyZfZ7v7nE" class="category-event">Sports</p>
+              <p data-genre="KZFzniwnSyZfZ7v7nE" class="category-event">
+                Sports
+              </p>
             </div>
           </li>
           <li class="genre-item" data-id="vvG1VZG5LseKSl">
@@ -60,7 +62,9 @@
               alt="Music"
             />
             <div class="card-list-item__info">
-              <p data-genre="KZFzniwnSyZfZ7v7nJ" class="category-event">Music</p>
+              <p data-genre="KZFzniwnSyZfZ7v7nJ" class="category-event">
+                Music
+              </p>
             </div>
           </li>
           <li class="genre-item" data-id="vvG1VZG5LseKSl">
@@ -285,35 +289,35 @@
       <div class="is-hidden backdrop"></div>
       <div class="is-hidden backdrop-auth">
         <div class="modal-sign-in">
-          <button type="button" class="modal-sign-in-close-btn"><span class="material-icons">
-            close
-          </span></button>
+          <button type="button" class="modal-sign-in-close-btn">
+            <span class="material-icons"> close </span>
+          </button>
           <h2 class="form-title">sign in</h2>
           <form action="submit" class="form-sign-in">
             <!-- <div class="form-field">
               <label for="name" class="label-field">Name</label>
               <input type="text" name="name" id="name" class="form-input" required>
             </div> -->
-              <div class="form-field">
-                <label for="email" class="label-field">E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="form-input"
-                  required
-                />
-              </div>
-              <div class="form-field">
-                <label for="password" class="label-field">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="form-input"
-                  required
-                />
-              </div>
+            <div class="form-field">
+              <label for="email" class="label-field">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label for="password" class="label-field">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-input"
+                required
+              />
+            </div>
             <div class="form-btn-wrapper">
               <button type="submit" class="btn-sign-in btn-form">
                 sign in
@@ -338,366 +342,7 @@
           <span class="footer-heart">♥</span>
           <a href="#" class="dev-link">by GoIT Students</a>
         </h3>
-        <!-- <div class="dev-card container">
-          <ul class="team-list list">
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Cherniak-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Andrey Cherniak</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/ChristianRC007"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://www.linkedin.com/in/andrei-cherniak-294666210/"
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Myzika-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Anna Myzika</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/AnnaMyzika"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Smirnov-foto.png"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Artem Smirnov</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/Art-Smirnov"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Arylova-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Ayta Arylova</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/AytaAA"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://www.linkedin.com/in/ayta-arylova-45406470/"
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Hordyna-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Dmitriy Hordyna</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/DmitryHordyna"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Selina-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Irina Selina</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/IrinaSelina"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Stulkivska-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Lesya Stulkivska</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/Legrito"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Nyrkova-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Nika Nyrkova</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/NikaNyrkova"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="team-list-item">
-              <img
-                class="team-list-item-img"
-                src="./images/dev-card-foto/Bohatyrenko-foto.jpg"
-                alt="член команды"
-              />
-              <h3 class="team-list-item-name">Oleksii Bohatyrenko</h3>
-              <ul class="sotial-list list">
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href="https://github.com/Bohatyrenko"
-                    aria-label="иконка гитхаб"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#github"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sotial-list-item">
-                  <a
-                    class="sotial-list-item-link link"
-                    href=""
-                    aria-label="иконка линкедит"
-                  >
-                    <svg class="sotial-list-item-link-svg">
-                      <use href="./images/sprite.svg#linkedin"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div> -->
       </div>
     </footer>
   </body>
 </html>
-
-<!-- <ul class="genre">
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7n1" class="category-event">
-                Miscellaneous
-              </p>
-            </div>
-          </li>
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7nE" class="category-event">Sports</p>
-            </div>
-          </li>
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7nJ" class="category-event">Music</p>
-            </div>
-          </li>
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7na" class="category-event">
-                Arts & Theatre
-              </p>
-            </div>
-          </li>
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7nn" class="category-event">Film</p>
-            </div>
-          </li>
-          <li class="card-list-item photo-card" data-id="vvG1VZG5LseKSl">
-            <img
-              class="card-list-item__photo"
-              src="https://s1.ticketm.net/dam/a/c3e/be11078a-2197-4590-a36e-0e2c61ba9c3e_1365891_ARTIST_PAGE_3_2.jpg"
-              alt="Orlando Philharmonic Orchestra"
-            />
-            <div class="card-list-item__info">
-              <p id="KZFzniwnSyZfZ7v7nl" class="category-event">TOP</p>
-            </div>
-          </li>
-        </ul> -->

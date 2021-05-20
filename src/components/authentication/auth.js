@@ -21,9 +21,9 @@ refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
 refs.btnCloseModalUser;
-refs.btnCloseModalUser.addEventListener('click', (e) => {
+refs.btnCloseModalUser.addEventListener('click', e => {
   onToggleClassModal();
-})
+});
 
 const formAuth = document.querySelector('.form-sign-in');
 const inputEmail = formAuth.querySelector('#email');
@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged(user => {
     refs.greetingUser.textContent = `hi, ${userName}`;
     loggedIn = true;
     myUserId = firebase.auth().currentUser.uid;
-    console.log('id', myUserId);
+
     readUserData();
   } else {
     refs.greetingUser.textContent = 'sign in';
@@ -189,12 +189,14 @@ function deleteEventFromDataLikeUser(idLike) {
 
 async function fetchLikedEvnts() {
   const arr = dataIDLikeUsers.map(evt => evt.likeId);
-  console.log(arr);
+
+  // const uniqArr = [...new Set(arr)];
+  // console.log(uniqArr);
+
   const result = await Promise.all(
     arr.map(evtId => ApiService.feachEventById(evtId)),
   );
 
-  console.log(result);
   return result;
 }
 
