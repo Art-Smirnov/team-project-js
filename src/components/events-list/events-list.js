@@ -11,11 +11,11 @@ import { fetchLikedEvnts } from '../authentication/auth.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
-const APIQ = ApiService.tag;
+const apiTag = ApiService.tag;
 let idCategory;
 
 renderSelectCountry(countryCodes);
-if (APIQ === undefined) {
+if (apiTag === undefined) {
   renderDefaultEvents();
 }
 
@@ -27,8 +27,9 @@ refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 function searchEven(e) {
   if (e.target.nodeName === 'P') {
     idCategory = e.target.id;
+    sessionStorage.setItem('segmentId', `${e.target.id}`);
   }
-  bySegment(idCategory);
+  bySegment();
 }
 
 async function renderDefaultEvents(page = 0) {
@@ -48,17 +49,18 @@ function onInputChange(e) {
   refs.cardList.addEventListener('click', onClickCard);
   e.preventDefault();
   refs.selectForm.value = '';
-  localStorage.setItem('value', `${e.currentTarget.elements[0].value}`);
+  sessionStorage.setItem('value', `${e.currentTarget.elements[0].value}`);
   byQuery();
 }
 
-async function bySegment(idCategory, page = 0) {
+async function bySegment(page = 0) {
+  const segmentId = sessionStorage.getItem('segmentId');
   try {
     preloader.show();
     clearGallery();
     clearPagList();
 
-    const result = await ApiService.feachEventBySegments(idCategory, page);
+    const result = await ApiService.feachEventBySegments(segmentId, page);
 
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);
@@ -72,7 +74,7 @@ async function bySegment(idCategory, page = 0) {
 }
 
 async function byQuery(page = 0) {
-  const value = localStorage.getItem('value');
+  const value = sessionStorage.getItem('value');
   try {
     preloader.show();
     clearGallery();
@@ -96,12 +98,12 @@ function onSelectCountry(e) {
   refs.searchEventInp.value = '';
   const selectEl = e.target;
   const selectCountryCode = selectEl.options[selectEl.selectedIndex].value;
-  localStorage.setItem('country', `${selectCountryCode}`);
+  sessionStorage.setItem('country', `${selectCountryCode}`);
   byCountry();
 }
 
 async function byCountry(page = 0) {
-  const country = localStorage.getItem('country');
+  const country = sessionStorage.getItem('country');
   try {
     preloader.show();
     clearGallery();
@@ -166,4 +168,4 @@ refs.logoEl[1].addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
 
-export { renderDefaultEvents, byCountry, byQuery, clearGallery };
+export { renderDefaultEvents, byCountry, byQuery, clearGallery, bySegment };

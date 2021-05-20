@@ -95,6 +95,7 @@ export default class ApiService {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await responce.json();
+    this.tag = 'byCategory';
     return res;
   }
 }

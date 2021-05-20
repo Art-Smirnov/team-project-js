@@ -82,7 +82,7 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
-    localStorage.setItem('value', nameEvent);
+    sessionStorage.setItem('value', nameEvent);
 
     onToggleModal();
     byQuery();
@@ -142,7 +142,7 @@ function onSelectAuthor(e) {
   const selectEl = e.target;
   const authorSelect = selectEl.options[selectEl.selectedIndex].value;
   refs.selectForm.value = '';
-  localStorage.setItem('value', authorSelect);
+  sessionStorage.setItem('value', authorSelect);
   byQuery();
   onToggleModal();
 }
