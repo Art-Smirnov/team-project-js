@@ -22,7 +22,7 @@ if (APIQ === undefined) {
 
 refs.selectForm.addEventListener('change', onSelectCountry);
 refs.form.addEventListener('submit', onInputChange);
-refs.listCategory.addEventListener('click', searchEven);
+refs.genre.addEventListener('click', searchEven);
 refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
