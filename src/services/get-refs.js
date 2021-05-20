@@ -15,7 +15,7 @@ export default function getRefs() {
     logoEl: document.querySelectorAll('.logo-container'),
     lightLogoEl: document.querySelector('.logo-container.light-logo'),
     darkLogoEl: document.querySelector('.logo-container.dark-logo'),
-    dreamTeamEl: document.querySelector('.genre-section'),
+    genreEl: document.querySelector('.genre-section'),
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
     pagList: document.querySelector('.pag__list'),
