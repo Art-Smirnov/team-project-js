@@ -116,7 +116,6 @@ function onClickLikeEventBtn(e) {
   if (e.target.className !== 'like-event') {
     return;
   }
-  e.target.classList.toggle('current-like');
   writeUserData(currentID);
 }
 
