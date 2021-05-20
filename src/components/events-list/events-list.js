@@ -13,6 +13,10 @@ const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 const apiTag = ApiService.tag;
 let idCategory;
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
 
 renderSelectCountry(countryCodes);
 if (apiTag === undefined) {
@@ -149,6 +153,29 @@ async function onClickMyEventsBtn(page = 0) {
 
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
+
+  refs.chekBoxRef.addEventListener('change', onThemeChange);
+  const cardTitle = document.querySelectorAll('.card-list-item__title');
+  const currentThemeClass =
+    localStorage.getItem('body-theme') === null
+      ? Theme.DARK
+      : localStorage.getItem('body-theme');
+
+  cardTitle.forEach(el => {
+    el.classList.add(currentThemeClass);
+  });
+
+  function onThemeChange({ target }) {
+    target.checked
+      ? changeTheme(Theme.LIGHT, Theme.DARK)
+      : changeTheme(Theme.DARK, Theme.LIGHT);
+  }
+
+  function changeTheme(add, rem) {
+    cardTitle.forEach(el => {
+      el.classList.replace(rem, add);
+    });
+  }
 }
 
 function clearGallery() {

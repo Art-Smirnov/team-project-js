@@ -36,12 +36,12 @@
   }
 }
 
-// .card-list-item__title.dark-theme {
-//   color: $primary-accent;
-// }
-// .card-list-item__title.light-theme {
-//   color: $btn;
-// }
+.card-list-item__title.dark-theme {
+  color: $primary-accent;
+}
+.card-list-item__title.light-theme {
+  color: $btn;
+}
 
 .card-list-item__date {
   color: inherit;
