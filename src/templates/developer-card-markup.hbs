@@ -8,6 +8,7 @@
        class="team-list-item-img"
         src="{{image}}"
         alt="{{nameDev}}"
+        loading="lazy"
       />
       <h3 class="team-list-item-name">{{nameDev}}</h3>
       <ul class="sotial-list list">
@@ -15,7 +16,9 @@
           <a
             class="sotial-list-item-link git link"
             href="{{github}}"
-            aria-label="иконка гитхаб"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to GitHub"
           >
           </a>
         </li>
@@ -23,7 +26,9 @@
           <a
             class="sotial-list-item-link linked link"
             href="{{linkedin}}"
-            aria-label="иконка линкедит"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Link to LinkedIn"
           >
           </a>
         </li>
