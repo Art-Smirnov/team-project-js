@@ -33,7 +33,7 @@ export default [
         nameDev: 'Irina Selina',
         image: 'https://i.ibb.co/ZdJSPq7/Selina-foto.jpg',
         github: 'https://github.com/IrinaSelina',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/irina-selina-9857541b6/',
     },
         {
         nameDev: 'Lesya Stulkivska',
