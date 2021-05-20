@@ -30,7 +30,6 @@ function searchEven(e) {
   if (e.target.nodeName === 'P' || e.target.nodeName === 'IMG') {
     idCategory = e.target.dataset.genre;
   }
-  console.log(idCategory);
   bySegment(idCategory);
 }
 
