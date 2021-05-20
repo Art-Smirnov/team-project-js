@@ -121,15 +121,15 @@ function onKeyModalEscClose(e) {
 
 // database
 function onClickLikeEventBtn(e) {
-  if (e.target.className !== 'like-event') {
+  if (e.target.className !== 'material-icons material-icons-like') {
     return;
   }
-  e.target.classList.toggle('current-like');
+  console.log('клик лайк');
   writeUserData(currentID);
 }
 
 function onClickDeleteEventBtn(e) {
-  if (e.target.className !== 'delete-event') {
+  if (e.target.className !== 'material-icons material-icons-delete') {
     return;
   }
   deleteEventFromDataLikeUser(currentID);

@@ -160,9 +160,14 @@
         <input type="checkbox" id="toggle" />
         <label class="toggle-lable" for="toggle"></label>
       </div>
-      <div class="container header-main">
-        <button class="btn-sign">Profile</button>
-        <button class="btn-list-event-user">Your favorite events</button>
+        <button class="btn-sign btn-user"><span class="material-icons material-icons-user">
+          account_circle
+        </span></button>
+        <button class="btn-list-event-user btn-user"><span class="material-icons material-icons-user">
+          favorite_border
+        </span></button>      
+      <div class="container header-main">       
+        <!-- Разметка переключателя темы -->
         <div class="header-title-container">
           <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
         </div>
@@ -268,17 +273,12 @@
       <div class="is-hidden backdrop"></div>
       <div class="is-hidden backdrop-auth">
         <div class="modal-sign-in">
+          <h2 class="form-title">sign in</h2>
           <form action="submit" class="form-sign-in">
-            <div class="form-field">
+            <!-- <div class="form-field">
               <label for="name" class="label-field">Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="form-input"
-                required
-              />
-            </div>
+              <input type="text" name="name" id="name" class="form-input" required>
+            </div> -->
             <div class="form-field">
               <label for="email" class="label-field">E-mail</label>
               <input
@@ -299,9 +299,12 @@
                 required
               />
             </div>
-            <button type="submit" class="btn-sign-in">sign in</button>
-            <button type="submit" class="btn-register">register</button>
-            <button type="submit" class="btn-sign-up">sign up</button>
+            <div class="form-btn-wrapper">
+              <button type="submit" class="btn-sign-in btn-form">sign in</button>
+              <button type="submit" class="btn-register btn-form">register</button>
+              <button type="submit" class="btn-sign-up btn-form">sign up</button>
+            </div>
+            
             <p class="form-auth-error"></p>
           </form>
         </div>

@@ -10,6 +10,14 @@
         <div>
           <div class="modal-content-img-wrapper">
           <img src="{{images.9.url}}" alt="{{name}}" class="modal-photo-main" />
+          <div class="btn-event">
+            <button class="like-event"><span class="material-icons material-icons-like">
+              favorite
+            </span></button>
+            <button class="delete-event"><span class="material-icons material-icons-delete">
+              delete_outline
+            </span></button>
+          </div>
         </div>
         </div>
         <div>
@@ -120,8 +128,8 @@
           </div>
         </div>
       </div>
-        <button class="like-event">like</button>
-        <button class="delete-event">delete</button>
+      
+        
       <div class="button-more-grop">
         {{#if _embedded.attractions.[1]}}
 
