@@ -385,26 +385,16 @@ body.modal-open {
 
 .btn-event button {
   color: #4c00fe;
-  border: 1px solid #4c00fe;
-  background-color: rgba(255, 242, 253, 0.6);
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px;
-  width: 50px;
-  border-radius: 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
   cursor: pointer;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    border: 1px solid $primary-accent;
+    color: $primary-accent;
   }
-}
-
-.btn-event button:hover.like-event,
-.btn-event button:hover.delete-event,
-.btn-event button:focus.like-event,
-.btn-event button:focus.delete-event {
-  color: $primary-accent;
 }
