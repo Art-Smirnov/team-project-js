@@ -30,7 +30,9 @@ function searchEven(e) {
     idCategory = e.target.dataset.genre;
   }
 
-  bySegment(idCategory);
+  sessionStorage.setItem('segmentId', idCategory);
+  bySegment();
+
 }
 console.log(e.target.dataset.genre);
 async function renderDefaultEvents(page = 0) {
@@ -54,8 +56,8 @@ function onInputChange(e) {
   byQuery();
 }
 
-async function bySegment(segmentId, page = 0) {
-  // const segmentId = sessionStorage.getItem('segmentId');
+async function bySegment(page = 0) {
+  const segmentId = sessionStorage.getItem('segmentId');
   try {
     preloader.show();
     clearGallery();
