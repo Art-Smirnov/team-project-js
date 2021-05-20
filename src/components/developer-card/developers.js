@@ -31,7 +31,7 @@ export default [
     },
        {
         nameDev: 'Irina Selina',
-        image: 'https://i.ibb.co/MC0NNBp/Selina-foto.jpg',
+        image: 'https://i.ibb.co/ZdJSPq7/Selina-foto.jpg',
         github: 'https://github.com/IrinaSelina',
         linkedin: '#',
     },
