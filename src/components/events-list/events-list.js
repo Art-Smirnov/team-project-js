@@ -160,11 +160,11 @@ function onNoResultsError() {
 
 //Появление секции команды
 refs.logoEl[0].addEventListener('click', e => {
-  refs.dreamTeamEl.classList.toggle('show');
+  refs.genreEl.classList.toggle('show');
 });
 
 refs.logoEl[1].addEventListener('click', e => {
-  refs.dreamTeamEl.classList.toggle('show');
+  refs.genreEl.classList.toggle('show');
 });
 
 export { renderDefaultEvents, byCountry, byQuery, clearGallery };
