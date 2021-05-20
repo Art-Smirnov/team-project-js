@@ -27,12 +27,10 @@ refs.genre.addEventListener('click', searchEven);
 refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
-  console.log(e.target.nodeName);
-  if (e.target.nodeName === 'P') {
-    idCategory = e.target.id;
-    sessionStorage.setItem('segmentId', `${e.target.id}`);
+  if (e.target.nodeName === 'P' || e.target.nodeName === 'IMG') {
+    idCategory = e.target.dataset.genre;
   }
-  bySegment();
+  bySegment(idCategory);
 }
 
 async function renderDefaultEvents(page = 0) {
@@ -56,8 +54,8 @@ function onInputChange(e) {
   byQuery();
 }
 
-async function bySegment(page = 0) {
-  const segmentId = sessionStorage.getItem('segmentId');
+async function bySegment(segmentId, page = 0) {
+  // const segmentId = sessionStorage.getItem('segmentId');
   try {
     preloader.show();
     clearGallery();

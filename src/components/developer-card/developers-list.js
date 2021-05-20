@@ -3,7 +3,7 @@ import { clearGallery } from '../events-list/events-list.js';
 import devCardTmpl from '../../templates/developer-card-markup.hbs';
 import developers from './developers.js';
 import { paginationRender, clearPagList } from '../pagination/pagination';
-import { onCloseModal } from '../modal/modal.js';
+import { onCloseModal, onClickCard } from '../modal/modal.js';
 
 const refs = getRefs();
 
@@ -14,4 +14,5 @@ function renderDevelopersList() {
   clearPagList();
   refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
   refs.cardList.removeEventListener('click', onCloseModal);
+  refs.cardList.removeEventListener('click', onClickCard);
 }

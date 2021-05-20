@@ -125,32 +125,3 @@
 .header-title.light-theme {
   color: $btn;
 }
-
-.genre-section {
-  display: none;
-  opacity: 0;
-  @include for-size(desktop) {
-    display: none;
-    opacity: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: #0d0d0df2;
-    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-    animation: scale-up-tl 0.4s ease-in-out both;
-
-    &.show {
-      display: block;
-      opacity: 1;
-      z-index: 20;
-      height: 300px;
-      -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-      animation: scale-up-tl 0.4s ease-in-out both;
-    }
-
-    &.light-theme {
-      background: #dadadaeb;
-    }
-  }
-}
