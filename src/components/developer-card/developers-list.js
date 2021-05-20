@@ -10,9 +10,10 @@ const refs = getRefs();
 refs.developersLink.addEventListener('click', renderDevelopersList);
 
 function renderDevelopersList() {
-  clearGallery();
+  window.scrollTo(0, 0);
   clearPagList();
-  refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
+  refs.cardList.innerHTML = devCardTmpl(developers)
+  // refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
   refs.cardList.removeEventListener('click', onCloseModal);
   refs.cardList.removeEventListener('click', onClickCard);
 
