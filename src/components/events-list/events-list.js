@@ -7,18 +7,30 @@ import cardTmpl from '../../templates/card-list-item.hbs';
 import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
 import onClickCard from '../modal/modal.js';
+import { fetchLikedEvnts } from '../authentication/auth.js';
+// console.log(fetchLikedEvnts());
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 const APIQ = ApiService.tag;
-renderSelectCountry(countryCodes);
+let idCategory;
 
+renderSelectCountry(countryCodes);
 if (APIQ === undefined) {
   renderDefaultEvents();
 }
 
+refs.selectForm.addEventListener('change', onSelectCountry);
 refs.form.addEventListener('submit', onInputChange);
+refs.listCategory.addEventListener('click', searchEven);
+refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
+function searchEven(e) {
+  if (e.target.nodeName === 'P') {
+    idCategory = e.target.id;
+  }
+  bySegment(idCategory);
+}
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);
@@ -40,6 +52,25 @@ function onInputChange(e) {
   byQuery();
 }
 
+async function bySegment(idCategory, page = 0) {
+  try {
+    preloader.show();
+    clearGallery();
+    clearPagList();
+
+    const result = await ApiService.feachEventBySegments(idCategory, page);
+
+    appendImagesMarkup(result._embedded.events);
+    paginationRender(result.page, page);
+  } catch (error) {
+    console.log(error);
+    clearGallery();
+    onNoResultsError();
+  } finally {
+    preloader.hide();
+  }
+}
+
 async function byQuery(page = 0) {
   const value = localStorage.getItem('value');
   try {
@@ -59,8 +90,6 @@ async function byQuery(page = 0) {
     preloader.hide();
   }
 }
-
-refs.selectForm.addEventListener('change', onSelectCountry);
 
 function onSelectCountry(e) {
   refs.cardList.addEventListener('click', onClickCard);
@@ -87,6 +116,25 @@ async function byCountry(page = 0) {
       appendImagesMarkup(result._embedded.events);
       paginationRender(result.page, page);
     }
+  } catch (error) {
+    console.log(error);
+    clearGallery();
+    onNoResultsError();
+  } finally {
+    preloader.hide();
+  }
+}
+
+async function onClickMyEventsBtn(page = 0) {
+  try {
+    preloader.show();
+    clearGallery();
+    clearPagList();
+    const result = await fetchLikedEvnts();
+
+    console.log(result.length);
+    appendImagesMarkup(result);
+    paginationRender({ totalPages: 1 }, page);
   } catch (error) {
     console.log(error);
     clearGallery();
