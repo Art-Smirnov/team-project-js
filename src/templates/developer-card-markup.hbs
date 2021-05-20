@@ -1,24 +1,35 @@
-
-{{!-- <ul class="team-list container list"> --}}
+<li class="card-list-developers-item">
+<div class="dev-card container">
+<h2 class="teame-title">Nice to meet you😉</h2>
+<ul class="team-list list">
     {{#each this}}
     <li class="team-list-item">
-        <img class="team-list-item-img" src="{{image}}" alt="член команды" />
-        <h3 class="team-list-item-name">"{{nameDev}}"</h3>
-        <ul class="sotial-list list">
-            <li class="sotial-list-item">
-                <a class="sotial-list-item-link link" href="{{github}}"
-                    aria-label="иконка гитхаб">
-                    <img src="" alt="иконка гитхаб" class="social-list-item-icon" />
-                </a>
-            </li>
-             <li class="sotial-list-item">
-                    <a class="sotial-list-item-link link" href="" aria-label="иконка линкедит">
-                        <img src="./images/sotial-list/linkedin.svg" alt="иконка линкедит" class="social-list-item-icon" />
-                    </a>
-             </li>
-        </ul>
-     </li>
-        </ul>
+      <img
+       class="team-list-item-img"
+        src="{{image}}"
+        alt="{{nameDev}}"
+      />
+      <h3 class="team-list-item-name">{{nameDev}}</h3>
+      <ul class="sotial-list list">
+        <li class="sotial-list-item">
+          <a
+            class="sotial-list-item-link git link"
+            href="{{github}}"
+            aria-label="иконка гитхаб"
+          >
+          </a>
+        </li>
+        <li class="sotial-list-item">
+          <a
+            class="sotial-list-item-link linked link"
+            href="{{linkedin}}"
+            aria-label="иконка линкедит"
+          >
+          </a>
+        </li>
+      </ul>
     </li>
     {{/each}}
-{{!-- </ul> --}}
+</ul>
+</div>
+</li>
