@@ -1,11 +1,14 @@
 .toggle {
-  z-index: 100;
-  position: absolute;
-  right: 10%;
-  top: 30px;
   display: flex;
   align-items: center;
-  transform: translate3d(-50%, -50%, 0);
+  justify-content: center;
+  // transform: translate3d(-50%, -50%, 0);
+  @include for-size(mobile-only) {
+    margin-bottom: 10px;
+  }
+  @include for-size(tablet) {
+    margin-bottom: 13px;
+  }
 
   &:before {
     @include for-size(mobile-only) {

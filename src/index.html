@@ -156,17 +156,24 @@
       </div>
 
       <!-- Разметка переключателя темы -->
-      <div class="toggle">
-        <input type="checkbox" id="toggle" />
-        <label class="toggle-lable" for="toggle"></label>
+      <div class="headerOptions">
+        <div class="toggle">
+          <input type="checkbox" id="toggle" />
+          <label class="toggle-lable" for="toggle"></label>
+        </div>
+        <button class="btn-sign btn-user">
+          <span class="material-icons material-icons-user">
+            account_circle
+          </span>
+        </button>
+        <button class="btn-list-event-user btn-user">
+          <span class="material-icons material-icons-user">
+            favorite_border
+          </span>
+        </button>
       </div>
-        <button class="btn-sign btn-user"><span class="material-icons material-icons-user">
-          account_circle
-        </span></button>
-        <button class="btn-list-event-user btn-user"><span class="material-icons material-icons-user">
-          favorite_border
-        </span></button>      
-      <div class="container header-main">       
+
+      <div class="container header-main">
         <!-- Разметка переключателя темы -->
         <div class="header-title-container">
           <h1 class="header-title">FIND BEST EVENTS AROUND THE WORLD</h1>
@@ -300,11 +307,17 @@
               />
             </div>
             <div class="form-btn-wrapper">
-              <button type="submit" class="btn-sign-in btn-form">sign in</button>
-              <button type="submit" class="btn-register btn-form">register</button>
-              <button type="submit" class="btn-sign-up btn-form">sign up</button>
+              <button type="submit" class="btn-sign-in btn-form">
+                sign in
+              </button>
+              <button type="submit" class="btn-register btn-form">
+                register
+              </button>
+              <button type="submit" class="btn-sign-up btn-form">
+                sign up
+              </button>
             </div>
-            
+
             <p class="form-auth-error"></p>
           </form>
         </div>
