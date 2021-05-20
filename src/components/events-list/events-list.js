@@ -198,6 +198,7 @@ function onNoResultsError() {
 
 //Появление секции команды
 refs.logoEl[0].addEventListener('click', e => {
+  e.preventDefault();
   refs.genreEl.classList.toggle('show');
 });
 
