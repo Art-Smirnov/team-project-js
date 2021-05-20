@@ -34,6 +34,7 @@ export default function getRefs() {
     developersLink: document.querySelector('.dev-link'),
     devSection: document.querySelector('.dev-card.container'),
     btnCloseModalUser: document.querySelector('.modal-sign-in-close-btn'),
-    boxHideInputsModal: document.querySelector('.modal-signin-inputs-js')
+    boxHideInputsModal: document.querySelector('.modal-signin-inputs-js'),
+    decors: document.querySelectorAll('.kaput'),
   };
 }
