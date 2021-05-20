@@ -59,6 +59,15 @@
   position: relative;
 }
 
+.headerOptions {
+  z-index: 19;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 10%;
+  top: 30px;
+}
+
 .header-title-container {
   width: 212px;
   padding-top: 78px;

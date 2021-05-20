@@ -1,5 +1,7 @@
 import getRefs from '../../services/get-refs.js';
 import ApiService from '../../services/apiService.js';
+import { onClickMyEventsBtn } from '../events-list/events-list.js';
+import { onToggleModal } from '../modal/modal.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCnMsJDer_0Gcb2_8fWu32IDAPP-hHTPtU',
@@ -35,10 +37,10 @@ firebase.auth().onAuthStateChanged(user => {
     const userName =
       user.email.length > 10 ? user.email.slice(0, 7) + '...' : user.email;
     refs.greetingUser.textContent = `hi ${userName}`;
-      loggedIn = true;
-      myUserId = firebase.auth().currentUser.uid;
-      console.log('id', myUserId);
-      readUserData();
+    loggedIn = true;
+    myUserId = firebase.auth().currentUser.uid;
+    console.log('id', myUserId);
+    readUserData();
   } else {
     refs.greetingUser.textContent = 'sign in';
     loggedIn = false;
@@ -177,6 +179,8 @@ function deleteEventFromDataLikeUser(idLike) {
     'users/' + myUserId + '/idLikeEvent' + '/' + recordData.id,
   );
   deleteDataRef.remove();
+  onClickMyEventsBtn();
+  onToggleModal();
 }
 
 async function fetchLikedEvnts() {

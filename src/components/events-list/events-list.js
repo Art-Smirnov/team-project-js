@@ -6,9 +6,8 @@ import getRefs from '../../services/get-refs.js';
 import cardTmpl from '../../templates/card-list-item.hbs';
 import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
-import onClickCard from '../modal/modal.js';
+import { onClickCard } from '../modal/modal.js';
 import { fetchLikedEvnts } from '../authentication/auth.js';
-// console.log(fetchLikedEvnts());
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -33,6 +32,7 @@ function searchEven(e) {
   }
   bySegment();
 }
+
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);
@@ -169,4 +169,11 @@ refs.logoEl[1].addEventListener('click', e => {
   refs.genreEl.classList.toggle('show');
 });
 
-export { renderDefaultEvents, byCountry, byQuery, clearGallery, bySegment };
+export {
+  renderDefaultEvents,
+  byCountry,
+  byQuery,
+  clearGallery,
+  bySegment,
+  onClickMyEventsBtn,
+};
