@@ -127,7 +127,6 @@ function onClickLikeEventBtn(e) {
   if (e.target.className !== 'material-icons material-icons-like') {
     return;
   }
-  console.log('клик лайк');
   writeUserData(currentID);
 }
 
