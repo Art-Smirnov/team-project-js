@@ -108,19 +108,20 @@ img {
 .main-container {
   position: relative;
   top: -51px;
-  margin-bottom: -111px;
+  margin-bottom: -9px;
 }
 
 @media (min-width: 768px) {
   .main-container {
     top: -47px;
-    margin-bottom: -107px;
+    margin-bottom: 23px;
   }
 }
 
 @media (min-width: 1280px) {
   .main-container {
     top: -46px;
+    margin-bottom: 29px;
   }
 }
 
@@ -133,6 +134,10 @@ img {
 .link {
   color: inherit;
   text-decoration: none;
+}
+
+.hide {
+  display: none;
 }
 
 .lds-roller {
@@ -1530,8 +1535,7 @@ body.modal-open {
 }
 
 .back_to_top {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -1544,12 +1548,18 @@ body.modal-open {
   display: none;
   width: 0px;
   bottom: 10%;
-  left: 100%;
+  left: 75%;
 }
 
-@media screen and (max-width: 350px) {
+@media (min-width: 768px) {
   .back_to_top {
-    left: 75%;
+    left: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .back_to_top {
+    left: 86%;
   }
 }
 
@@ -1808,13 +1818,11 @@ body.modal-open {
   display: -ms-flexbox;
   display: flex;
   margin-top: 60px;
-  margin-bottom: 60px;
 }
 
 @media (min-width: 1280px) {
   .pag {
     margin-top: 80px;
-    margin-bottom: 80px;
   }
 }
 

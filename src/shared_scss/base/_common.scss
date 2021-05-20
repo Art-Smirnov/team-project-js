@@ -90,16 +90,16 @@ img {
 .main-container {
   position: relative;
   top: -51px;
-  margin-bottom: -111px;
+  margin-bottom: -9px;
 
   @include for-size(tablet) {
     top: -47px;
-    margin-bottom: -107px;
+    margin-bottom: 23px;
   }
 
   @include for-size(desktop) {
     top: -46px;
-    // margin-bottom: -126px;
+    margin-bottom: 29px;
   }
 }
 

@@ -17,6 +17,12 @@
   width: 0px;
   bottom: 10%;
   left: 75%;
+  @include for-size(tablet) {
+    left: 80%;
+  }
+  @include for-size(desktop) {
+    left: 86%;
+  }
 }
 
 .back_to_top:hover {
