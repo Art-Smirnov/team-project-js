@@ -20,7 +20,8 @@
 }
 
 .card-list-item__photo.genre-header {
-  height: 130px;
+  width: 80px;
+  height: 80px;
 }
 
 .card-list-item__title {
@@ -107,4 +108,13 @@
 .card-list-item__info {
   -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.card-list-item.photo-card {
+
+  .genre-item::after {
+    content: '';
+    width: 0;
+    height: 0;
+  }
 }

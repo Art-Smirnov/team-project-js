@@ -26,8 +26,9 @@ refs.genre.addEventListener('click', searchEven);
 refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
-  if (e.target.nodeName === 'P') {
-    idCategory = e.target.id;
+  if (e.target.nodeName === 'P' || e.target.nodeName === 'IMG') {
+    idCategory = e.target.dataset.genre;
+    console.log(e.target.dataset.genre);
   }
   bySegment(idCategory);
 }
