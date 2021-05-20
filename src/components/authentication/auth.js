@@ -36,13 +36,13 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     const userName =
       user.email.length > 10 ? user.email.slice(0, 7) + '...' : user.email;
-    refs.btnProfile.textContent = userName;
+    // refs.btnProfile.textContent = userName;
       loggedIn = true;
       myUserId = firebase.auth().currentUser.uid;
       console.log('id', myUserId);
       readUserData();
   } else {
-    refs.btnProfile.textContent = 'Profile';
+    // refs.btnProfile.textContent = 'Profile';
     loggedIn = false;
   }
 });
