@@ -8,7 +8,6 @@ import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
 import onClickCard from '../modal/modal.js';
 import { fetchLikedEvnts } from '../authentication/auth.js';
-// console.log(fetchLikedEvnts());
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -31,6 +30,7 @@ function searchEven(e) {
   }
   bySegment(idCategory);
 }
+
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);
@@ -79,7 +79,6 @@ async function byQuery(page = 0) {
     clearPagList();
 
     const result = await ApiService.fetchEventsByQuery(value, page);
-    console.log(result);
 
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);

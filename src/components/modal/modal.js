@@ -3,8 +3,6 @@ import modalTmpl from '../../templates/modal-event.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
 import moment from 'moment';
-
-import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 import { writeUserData } from '../authentication/auth';
@@ -13,7 +11,6 @@ import { deleteEventFromDataLikeUser } from '../authentication/auth';
 const refs = getRefs();
 let currentID = '';
 
-// refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
@@ -38,6 +35,7 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
+    console.log(result);
 
     //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
     result.startGoogle = moment
@@ -57,7 +55,12 @@ export default async function onClickCard(e) {
       renderSelectAuthors(result._embedded.attractions, selectAuthor);
       selectAuthor.addEventListener('change', onSelectAuthor);
     }
-    modalTimer(result.dates.start.dateTime);
+
+    modalTimer(
+      result.dates.start.dateTime
+        ? result.dates.start.dateTime
+        : result.dates.start.localDate,
+    );
     const dots = document.querySelectorAll('.box-dots');
     dotsBlinker(dots);
   } catch (error) {
