@@ -94,6 +94,7 @@ function onSetPaginationItemClass() {
 }
 
 function onClick(e) {
+  window.scrollTo(0, 0);
   const APITag = ApiService.tag;
   const page = +e.target.textContent;
   sessionStorage.setItem('page', page);

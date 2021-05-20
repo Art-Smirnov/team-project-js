@@ -33,5 +33,6 @@ export default function getRefs() {
     greetingUser: document.querySelector('.form-title'),
     developersLink: document.querySelector('.dev-link'),
     devSection: document.querySelector('.dev-card.container'),
+    decors: document.querySelectorAll('.kaput'),
   };
 }

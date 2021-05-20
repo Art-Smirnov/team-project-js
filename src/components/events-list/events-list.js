@@ -15,6 +15,8 @@ const refs = getRefs();
 const apiTag = ApiService.tag;
 let idCategory;
 
+console.log(refs.decors);
+
 renderSelectCountry(countryCodes);
 if (apiTag === undefined) {
   renderDefaultEvents();
@@ -148,6 +150,12 @@ async function onClickMyEventsBtn(page = 0) {
 
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
+  if (refs.cardList.children.length < 17) {
+    refs.decors.forEach(el => el.classList.add('hide'));
+  }
+  if (refs.cardList.children.length > 17) {
+    refs.decors.forEach(el => el.classList.remove('hide'));
+  }
 }
 
 function clearGallery() {
@@ -157,6 +165,9 @@ function clearGallery() {
 function onNoResultsError() {
   refs.cardList.removeEventListener('click', onClickCard);
   refs.cardList.insertAdjacentHTML('beforeend', gameMarkup());
+  if (refs.cardList.children.length < 17) {
+    refs.decors.forEach(el => el.classList.add('hide'));
+  }
 }
 
 //Появление секции команды
