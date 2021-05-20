@@ -28,7 +28,7 @@ export default function getRefs() {
     titleContainer: document.querySelector('.header-title-container'),
     title: document.querySelector('.header-title'),
     cardTitle: document.querySelector('.card-list-item__title'),
-    genre: document.querySelector('.genre'),
+    genre: document.querySelector('.genre-list'),
     listCategory: document.querySelector('.category-list'),
     greetingUser: document.querySelector('.form-title'),
     developersLink: document.querySelector('.dev-link'),

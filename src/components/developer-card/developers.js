@@ -9,13 +9,13 @@ export default [
         nameDev: 'Anna Myzika',
         image: 'https://i.ibb.co/s9XjBtm/Myzika-foto.jpg',
         github: 'https://github.com/AnnaMyzika',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/feed/',
     },
     {
         nameDev: 'Artem Smirnov',
         image: 'https://i.ibb.co/7p3rf2g/Smirnov-foto.png',
         github: 'https://github.com/Art-Smirnov',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/feed/',
     },
      {
         nameDev: 'Ayta Arylova',
@@ -27,13 +27,13 @@ export default [
         nameDev: 'Dmitriy Hordyna',
         image: 'https://i.ibb.co/KsTLTnQ/Hordyna-foto.jpg',
         github: 'https://github.com/DmitryHordyna',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/feed/',
     },
        {
         nameDev: 'Irina Selina',
-        image: 'https://i.ibb.co/MC0NNBp/Selina-foto.jpg',
+        image: 'https://i.ibb.co/ZdJSPq7/Selina-foto.jpg',
         github: 'https://github.com/IrinaSelina',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/irina-selina-9857541b6/',
     },
         {
         nameDev: 'Lesya Stulkivska',
@@ -45,13 +45,13 @@ export default [
         nameDev: 'Nika Nyrkova',
         image: 'https://i.ibb.co/mbxF7MG/Nyrkova-foto.jpg',
         github: 'https://github.com/NikaNyrkova',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/feed/',
     },
    
     {
         nameDev: 'Oleksii Bohatyrenko',
         image: 'https://i.ibb.co/ZVhjH78/Bohatyrenko-foto.jpg',
         github: 'https://github.com/Bohatyrenko',
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/feed/',
     },
 ];
