@@ -26,6 +26,7 @@ refs.genre.addEventListener('click', searchEven);
 refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
+  console.log(e.target.nodeName);
   if (e.target.nodeName === 'P') {
     idCategory = e.target.id;
   }
