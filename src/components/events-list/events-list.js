@@ -148,7 +148,7 @@ function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
 }
 
-export default function clearGallery() {
+function clearGallery() {
   refs.cardList.innerHTML = '';
 }
 
@@ -166,4 +166,4 @@ refs.logoEl[1].addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
 
-export { renderDefaultEvents, byCountry, byQuery };
+export { renderDefaultEvents, byCountry, byQuery, clearGallery };
