@@ -148,7 +148,7 @@ function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
 }
 
-function clearGallery() {
+export default function clearGallery() {
   refs.cardList.innerHTML = '';
 }
 
