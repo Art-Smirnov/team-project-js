@@ -20,7 +20,6 @@ refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
 
 const formAuth = document.querySelector('.form-sign-in');
-const inputName = formAuth.querySelector('#name');
 const inputEmail = formAuth.querySelector('#email');
 const inputPassword = formAuth.querySelector('#password');
 const btnSignIn = formAuth.querySelector('.btn-sign-in');
@@ -35,12 +34,13 @@ firebase.auth().onAuthStateChanged(user => {
   if (user) {
     const userName =
       user.email.length > 10 ? user.email.slice(0, 7) + '...' : user.email;
-    refs.btnProfile.textContent = userName;
-    loggedIn = true;
-    myUserId = firebase.auth().currentUser.uid;
-    readUserData();
+    refs.greetingUser.textContent = `hi ${userName}`;
+      loggedIn = true;
+      myUserId = firebase.auth().currentUser.uid;
+      console.log('id', myUserId);
+      readUserData();
   } else {
-    refs.btnProfile.textContent = 'Profile';
+    refs.greetingUser.textContent = 'sign in';
     loggedIn = false;
   }
 });
@@ -91,7 +91,6 @@ function onKeyModalAuthEscClose(e) {
 function signUpWithEmailPassword() {
   var email = inputEmail.value;
   var password = inputPassword.value;
-  var name = inputName.value;
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
