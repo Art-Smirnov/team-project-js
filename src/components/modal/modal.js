@@ -35,7 +35,6 @@ async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
-    console.log(result);
 
     //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
     result.startGoogle = moment

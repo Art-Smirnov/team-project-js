@@ -18,8 +18,6 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-console.log(refs.decors);
-
 renderSelectCountry(countryCodes);
 if (apiTag === undefined) {
   renderDefaultEvents();
@@ -139,7 +137,6 @@ async function onClickMyEventsBtn(page = 0) {
     clearPagList();
     const result = await fetchLikedEvnts();
 
-    console.log(result.length);
     appendImagesMarkup(result);
     paginationRender({ totalPages: 1 }, page);
   } catch (error) {

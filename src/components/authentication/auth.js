@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged(user => {
     refs.greetingUser.textContent = `hi, ${userName}`;
     loggedIn = true;
     myUserId = firebase.auth().currentUser.uid;
-    console.log('id', myUserId);
+
     readUserData();
   } else {
     refs.greetingUser.textContent = 'sign in';
@@ -197,7 +197,6 @@ async function fetchLikedEvnts() {
     arr.map(evtId => ApiService.feachEventById(evtId)),
   );
 
-  console.log(result);
   return result;
 }
 
