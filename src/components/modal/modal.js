@@ -16,7 +16,7 @@ window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
 refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
 
-export default async function onClickCard(e) {
+async function onClickCard(e) {
   if (e.target.classList.contains('card-list')) {
     return;
   }
@@ -94,7 +94,7 @@ function markupModalText(text) {
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-export function onCloseModal(e) {
+function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
@@ -155,3 +155,4 @@ function dotsBlinker(dots) {
     dots.forEach(el => (el.style.opacity = 1));
   }, 1400);
 }
+export { onToggleModal, onClickCard, onCloseModal };

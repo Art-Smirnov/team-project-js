@@ -6,7 +6,7 @@ import getRefs from '../../services/get-refs.js';
 import cardTmpl from '../../templates/card-list-item.hbs';
 import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
-import onClickCard from '../modal/modal.js';
+import { onClickCard } from '../modal/modal.js';
 import { fetchLikedEvnts } from '../authentication/auth.js';
 
 const preloader = preloaderFactory('.lds-roller');
@@ -168,4 +168,11 @@ refs.logoEl[1].addEventListener('click', e => {
   refs.dreamTeamEl.classList.toggle('show');
 });
 
-export { renderDefaultEvents, byCountry, byQuery, clearGallery, bySegment };
+export {
+  renderDefaultEvents,
+  byCountry,
+  byQuery,
+  clearGallery,
+  bySegment,
+  onClickMyEventsBtn,
+};
