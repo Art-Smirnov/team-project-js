@@ -15,7 +15,7 @@ export default function getRefs() {
     logoEl: document.querySelectorAll('.logo-container'),
     lightLogoEl: document.querySelector('.logo-container.light-logo'),
     darkLogoEl: document.querySelector('.logo-container.dark-logo'),
-    dreamTeamEl: document.querySelector('.dream-team-section'),
+    dreamTeamEl: document.querySelector('.genre-section'),
     scroll: document.querySelector('.back_to_top'),
     svgScroll: document.querySelector('.svg-theme'),
     pagList: document.querySelector('.pag__list'),
@@ -28,6 +28,6 @@ export default function getRefs() {
     titleContainer: document.querySelector('.header-title-container'),
     title: document.querySelector('.header-title'),
     cardTitle: document.querySelector('.card-list-item__title'),
-    teammates: document.querySelector('.teammates'),
+    genre: document.querySelector('.genre'),
   };
 }
