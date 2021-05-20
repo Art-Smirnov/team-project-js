@@ -13,7 +13,7 @@ import { deleteEventFromDataLikeUser } from '../authentication/auth';
 const refs = getRefs();
 let currentID = '';
 
-refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
+// refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
@@ -40,9 +40,14 @@ export default async function onClickCard(e) {
     const result = await ApiService.feachEventById(currentID);
     console.log(result);
     //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
-    result.startGoogle = moment.utc(result.dates.start.dateTime).startOf('day').format('YYYYMMDD[T]HHmmss[Z]');
-    result.endGoogle = moment.utc(result.dates.start.dateTime).startOf('day').format('YYYYMMDD[T]HHmmss[Z]');
-
+    result.startGoogle = moment
+      .utc(result.dates.start.dateTime)
+      .startOf('day')
+      .format('YYYYMMDD[T]HHmmss[Z]');
+    result.endGoogle = moment
+      .utc(result.dates.start.dateTime)
+      .startOf('day')
+      .format('YYYYMMDD[T]HHmmss[Z]');
 
     markupModalText(result);
 
@@ -53,6 +58,8 @@ export default async function onClickCard(e) {
       selectAuthor.addEventListener('change', onSelectAuthor);
     }
     modalTimer(result.dates.start.dateTime);
+    const dots = document.querySelectorAll('.box-dots');
+    dotsBlinker(dots);
   } catch (error) {
     console.log(error);
   }
@@ -80,6 +87,7 @@ export default async function onClickCard(e) {
 }
 
 function markupModalText(text) {
+refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
@@ -134,4 +142,13 @@ function onSelectAuthor(e) {
   localStorage.setItem('value', authorSelect);
   byQuery();
   onToggleModal();
+}
+
+function dotsBlinker(dots) {
+  setInterval(() => {
+    dots.forEach(el => (el.style.opacity = 0));
+  }, 700);
+  setInterval(() => {
+    dots.forEach(el => (el.style.opacity = 1));
+  }, 1400);
 }
