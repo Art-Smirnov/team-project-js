@@ -13,8 +13,10 @@ const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
 const apiTag = ApiService.tag;
 let idCategory;
-
-console.log(refs.decors);
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
 
 renderSelectCountry(countryCodes);
 if (apiTag === undefined) {
@@ -30,9 +32,15 @@ function searchEven(e) {
     idCategory = e.target.dataset.genre;
   }
 
-  bySegment(idCategory);
+  sessionStorage.setItem('segmentId', idCategory);
+  bySegment();
+
 }
+
 // console.log(e.target.dataset.genre);
+
+
+
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);
@@ -54,8 +62,8 @@ function onInputChange(e) {
   byQuery();
 }
 
-async function bySegment(segmentId, page = 0) {
-  // const segmentId = sessionStorage.getItem('segmentId');
+async function bySegment(page = 0) {
+  const segmentId = sessionStorage.getItem('segmentId');
   try {
     preloader.show();
     clearGallery();
@@ -135,7 +143,6 @@ async function onClickMyEventsBtn(page = 0) {
     clearPagList();
     const result = await fetchLikedEvnts();
 
-    console.log(result.length);
     appendImagesMarkup(result);
     paginationRender({ totalPages: 1 }, page);
   } catch (error) {
@@ -149,11 +156,35 @@ async function onClickMyEventsBtn(page = 0) {
 
 function appendImagesMarkup(events) {
   refs.cardList.innerHTML = cardTmpl(events);
+
   if (refs.cardList.children.length < 17) {
     refs.decors.forEach(el => el.classList.add('hide'));
   }
   if (refs.cardList.children.length > 17) {
     refs.decors.forEach(el => el.classList.remove('hide'));
+  }
+  //логика отображения заголовков корточек в светлой теме
+  refs.chekBoxRef.addEventListener('change', onThemeChange);
+  const cardTitle = document.querySelectorAll('.card-list-item__title');
+  const currentThemeClass =
+    localStorage.getItem('body-theme') === null
+      ? Theme.DARK
+      : localStorage.getItem('body-theme');
+
+  cardTitle.forEach(el => {
+    el.classList.add(currentThemeClass);
+  });
+
+  function onThemeChange({ target }) {
+    target.checked
+      ? changeTheme(Theme.LIGHT, Theme.DARK)
+      : changeTheme(Theme.DARK, Theme.LIGHT);
+  }
+
+  function changeTheme(add, rem) {
+    cardTitle.forEach(el => {
+      el.classList.replace(rem, add);
+    });
   }
 }
 

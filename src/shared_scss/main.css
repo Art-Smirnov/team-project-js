@@ -84,7 +84,6 @@ img {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  outline: 1px solid red;
 }
 
 @media (min-width: 320px) {
@@ -108,19 +107,20 @@ img {
 .main-container {
   position: relative;
   top: -51px;
-  margin-bottom: -111px;
+  margin-bottom: -9px;
 }
 
 @media (min-width: 768px) {
   .main-container {
     top: -47px;
-    margin-bottom: -107px;
+    margin-bottom: 23px;
   }
 }
 
 @media (min-width: 1280px) {
   .main-container {
     top: -46px;
+    margin-bottom: 29px;
   }
 }
 
@@ -815,6 +815,14 @@ img {
   }
 }
 
+.card-list-item__title.dark-theme {
+  color: #dc56c5;
+}
+
+.card-list-item__title.light-theme {
+  color: #4c00fe;
+}
+
 .card-list-item__date {
   color: inherit;
   font-size: 14px;
@@ -1474,19 +1482,30 @@ body.modal-open {
 
 .back_to_top {
   position: fixed;
-  z-index: 1;
+  z-index: 50;
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
   line-height: 31px;
   background: initial;
   color: #d1caca;
   opacity: 0.9;
-  z-index: 5;
   cursor: pointer;
   display: none;
   width: 0px;
   bottom: 10%;
   left: 75%;
+}
+
+@media (min-width: 768px) {
+  .back_to_top {
+    left: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .back_to_top {
+    left: 86%;
+  }
 }
 
 .back_to_top:hover {
@@ -1744,13 +1763,11 @@ body.modal-open {
   display: -ms-flexbox;
   display: flex;
   margin-top: 60px;
-  margin-bottom: 100px;
 }
 
 @media (min-width: 1280px) {
   .pag {
     margin-top: 80px;
-    margin-bottom: 120px;
   }
 }
 
