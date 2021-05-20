@@ -84,6 +84,7 @@ export default class ApiService {
     const res = await responce.json();
     return res;
   }
+
   static async feachEventBySegments(id, currentPage = 0) {
     const responce = await fetch(
       `${BASE_URL}events.json?segmentId=${id}&page=${
@@ -94,6 +95,7 @@ export default class ApiService {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const res = await responce.json();
+    this.tag = 'byCategory';
     return res;
   }
 }

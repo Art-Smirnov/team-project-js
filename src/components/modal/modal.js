@@ -3,8 +3,6 @@ import modalTmpl from '../../templates/modal-event.hbs';
 import getRefs from '../../services/get-refs';
 import modalTimer from '../modal-timer/modal-timer.js';
 import moment from 'moment';
-
-import preloaderFactory from '../../services/placeholder/placeholder';
 import renderSelectAuthors from '../authorsSelect/renderSelectAuthors.js';
 import { byQuery } from '../events-list/events-list.js';
 import { writeUserData } from '../authentication/auth';
@@ -13,13 +11,12 @@ import { deleteEventFromDataLikeUser } from '../authentication/auth';
 const refs = getRefs();
 let currentID = '';
 
-// refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
 refs.backdrop.addEventListener('click', onCloseModal);
 window.addEventListener('keyup', onKeyModalEscClose);
 refs.backdrop.addEventListener('click', onClickLikeEventBtn);
 refs.backdrop.addEventListener('click', onClickDeleteEventBtn);
 
-export default async function onClickCard(e) {
+async function onClickCard(e) {
   if (e.target.classList.contains('card-list')) {
     return;
   }
@@ -39,6 +36,7 @@ export default async function onClickCard(e) {
 
     const result = await ApiService.feachEventById(currentID);
     console.log(result);
+
     //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
     result.startGoogle = moment
       .utc(result.dates.start.dateTime)
@@ -57,7 +55,12 @@ export default async function onClickCard(e) {
       renderSelectAuthors(result._embedded.attractions, selectAuthor);
       selectAuthor.addEventListener('change', onSelectAuthor);
     }
-    modalTimer(result.dates.start.dateTime);
+
+    modalTimer(
+      result.dates.start.dateTime
+        ? result.dates.start.dateTime
+        : result.dates.start.localDate,
+    );
     const dots = document.querySelectorAll('.box-dots');
     dotsBlinker(dots);
   } catch (error) {
@@ -79,7 +82,7 @@ export default async function onClickCard(e) {
     if (e.target.nodeName === 'SPAN') {
       nameEvent = e.target.textContent;
     }
-    localStorage.setItem('value', nameEvent);
+    sessionStorage.setItem('value', nameEvent);
 
     onToggleModal();
     byQuery();
@@ -87,11 +90,11 @@ export default async function onClickCard(e) {
 }
 
 function markupModalText(text) {
-refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
+  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-export function onCloseModal(e) {
+function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
@@ -139,7 +142,7 @@ function onSelectAuthor(e) {
   const selectEl = e.target;
   const authorSelect = selectEl.options[selectEl.selectedIndex].value;
   refs.selectForm.value = '';
-  localStorage.setItem('value', authorSelect);
+  sessionStorage.setItem('value', authorSelect);
   byQuery();
   onToggleModal();
 }
@@ -152,3 +155,4 @@ function dotsBlinker(dots) {
     dots.forEach(el => (el.style.opacity = 1));
   }, 1400);
 }
+export { onToggleModal, onClickCard, onCloseModal };

@@ -59,6 +59,15 @@
   position: relative;
 }
 
+.headerOptions {
+  z-index: 19;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 10%;
+  top: 30px;
+}
+
 .header-title-container {
   width: 212px;
   padding-top: 78px;
@@ -136,7 +145,7 @@
       justify-content: center;
       opacity: 1;
       z-index: 20;
-      height: 279px;
+      height: 300px;
       -webkit-animation: scale-up-tl 0.4s ease-in-out both;
       animation: scale-up-tl 0.4s ease-in-out both;
     }
