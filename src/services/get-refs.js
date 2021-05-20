@@ -29,5 +29,8 @@ export default function getRefs() {
     title: document.querySelector('.header-title'),
     cardTitle: document.querySelector('.card-list-item__title'),
     genre: document.querySelector('.genre'),
+    listCategory: document.querySelector('.category-list'),
+    developersLink: document.querySelector('.dev-link'),
+    devSection: document.querySelector('.dev-card.container'),
   };
 }
