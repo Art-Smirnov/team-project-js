@@ -17,36 +17,45 @@
 body.modal-open {
   overflow: hidden;
 }
+
 .modal {
   background-color: $modal-bg;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  display: flex;
   position: relative;
 
   @include for-size(mobile) {
-    width: 272px;
+    width: 260px;
     min-height: auto;
-    margin-top: 414px;
+    margin-top: 207px;
+    margin-bottom: 207px;
     border-radius: 150px 0px;
-    padding: 75px 15px 104px;
+    padding: 55px 15px 104px;
   }
 
   @include for-size(tablet) {
-    padding: 28px 17px 56px 50px;
-    width: 595px;
+    padding: 28px 20px 56px;
+    width: 560px;
+    // width: 595px;
     min-height: auto;
     margin-top: 161px;
-    padding: 62px 30px;
+    margin-bottom: 161px;
   }
   @include for-size(desktop) {
     margin-top: 201px;
-    width: 930px;
+    margin-bottom: 201px;
+    width: 770px;
+    // width: 930px;
     transform: scale(0.95);
     transition: transform $animation-duration $timing-function;
     border-radius: 300px 0px;
+    padding: 62px 15px;
+    // padding: 62px 30px;
   }
 }
+
 .overlay-modal {
   justify-content: center;
   align-items: center;
@@ -87,12 +96,6 @@ body.modal-open {
 }
 .modal-content {
   display: block;
-  @include for-size(tablet) {
-    // min-height: 641px;
-  }
-  @include for-size(desktop) {
-    // min-height: 641px;
-  }
 }
 .modal-content-img-wrapper {
   @include for-size(tablet) {
@@ -104,7 +107,8 @@ body.modal-open {
   }
   @include for-size(desktop) {
     width: 360px;
-    height: 641px;
+    height: 100%;
+    // height: 641px;
     margin-right: 60px;
   }
 }
@@ -121,14 +125,13 @@ body.modal-open {
     display: none;
   }
   @include for-size(tablet) {
-    // position: relative;
     height: 416px;
     display: block;
     object-fit: cover;
   }
   @include for-size(desktop) {
-    // position: relative;
-    height: 641px;
+    height: 570px;
+    // height: 641px;
   }
 }
 .modal-title {
@@ -136,16 +139,20 @@ body.modal-open {
   display: grid;
   line-height: 1.22em;
   text-transform: uppercase;
-
+  font-weight: 600;
   @include for-size(mobile) {
-    font-size: 20px;
-    font-weight: 600;
+    // font-size: 20px;
+    font-size: 12px;
+
     margin-bottom: 10px;
   }
-
+  @include for-size(tablet) {
+    font-size: 16px;
+  }
   @include for-size(desktop) {
-    font-size: 24px;
-    font-weight: 600;
+    // font-size: 24px;
+    font-size: 22px;
+
     margin-bottom: 20px;
   }
 }
@@ -157,6 +164,9 @@ body.modal-open {
 }
 .modal-status-ticket {
   color: $modal-content;
+  @include for-size(mobile) {
+    font-size: 12px;
+  }
   @include for-size(desktop) {
     font-size: 18px;
     font-weight: 400;
@@ -178,13 +188,6 @@ body.modal-open {
     height: 19px;
   }
 }
-
-// .modal-svg {
-//   width: 29px;
-//   height: 19px;
-//   fill: black;
-//   border: 1px solid black;
-// }
 
 .close-button {
   color: $btn;
@@ -222,11 +225,16 @@ body.modal-open {
   font-weight: 800;
 }
 
-.modal-content-list {
+.modal-ticket-list {
   @include for-size(tablet) {
     text-align: left;
     padding: 0px;
     margin: 0px;
+  }
+}
+.modal-content-list {
+  @include for-size(tablet) {
+    text-align: left;
   }
 }
 .modal-content-list .modal-ticket:not(:last-child) {
@@ -243,8 +251,10 @@ body.modal-open {
   font-weight: 400;
   font-style: normal;
   align-items: 1.22em;
-  font-size: 16px;
-
+  font-size: 12px;
+  @include for-size(tablet) {
+    font-size: 14px;
+  }
   @include for-size(desktop) {
     font-size: 18px;
   }
@@ -255,8 +265,9 @@ body.modal-open {
 
 .modal-ticket-text {
   display: flex;
-  @include for-size(mobile) {
+  @include for-size(mobile-only) {
     margin-bottom: 10px;
+    justify-content: center;
   }
 }
 
@@ -264,7 +275,7 @@ body.modal-open {
   display: inline-block;
   background-color: $btn;
   border-radius: 5px;
-  font-size: 16px;
+
   font-weight: 500px;
   align-items: 1.22em;
   text-decoration: none;
@@ -273,6 +284,11 @@ body.modal-open {
   border: 1px solid transparent;
   @include for-size(mobile) {
     padding: 9px 19px;
+    font-size: 12px;
+  }
+  @include for-size(tablet) {
+    font-size: 16px;
+    margin-top: 10px;
   }
 }
 
@@ -280,15 +296,11 @@ body.modal-open {
 .modal-button:hover {
   background-color: #2e009a;
 }
-// .modal-button-more:not(:last-child) {
-//   margin-bottom: 10px;
-// }
 
 .modal-button-more {
   color: $btn;
   background-color: transparent;
   text-transform: uppercase;
-  font-size: 16px;
   font-weight: 700;
   align-items: 1.22em;
   border-radius: 5px;
@@ -300,13 +312,14 @@ body.modal-open {
     border: 1px solid $btn;
     padding-top: 10px;
     padding-bottom: 10px;
-
+    font-size: 14px;
     width: 230px;
     min-height: 40px;
   }
   @include for-size(tablet) {
     padding: 10px 15px;
     width: 255px;
+    font-size: 16px;
   }
 }
 
@@ -314,27 +327,24 @@ body.modal-open {
   color: $btn;
   background-color: transparent;
   text-transform: uppercase;
-  font-size: 16px;
   font-weight: 700;
   align-items: 1.22em;
   border-radius: 5px;
   cursor: pointer;
-
   transition: $transition;
-
   @include for-size(mobile) {
     border: 1px solid $btn;
     padding-top: 10px;
     padding-bottom: 10px;
-
     max-width: 230px;
     min-height: 40px;
+    font-size: 14px;
   }
   @include for-size(tablet) {
     padding: 10px 15px;
     max-width: 255px;
+    font-size: 16px;
   }
-
   @include for-size(desktop) {
     border: 1px solid $btn;
   }
@@ -378,8 +388,8 @@ body.modal-open {
   }
 
   @include for-size(desktop) {
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-left: 85px;
+    padding-right: 35px;
   }
 }
 
@@ -397,4 +407,6 @@ body.modal-open {
   &:focus {
     color: $primary-accent;
   }
+.modal-title-event {
+  margin-top: 10px;
 }

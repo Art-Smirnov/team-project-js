@@ -1,8 +1,31 @@
+.card-list-developers-item {
+  margin-left: 15px;
+  @include for-size(tablet) {
+    margin-left: 28px;
+  }
+  @include for-size(desktop) {
+    margin-left: 72px;
+  }
+}
+
 .dev-card {
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.teame-title {
+  text-align: center;
+  font-size: 20px;
+
+  @include for-size(tablet) {
+    font-size: 32px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 48px;
+  }
 }
 .team-list-item {
   width: 138px;
@@ -16,6 +39,8 @@
   width: 128px;
   height: 161px;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5px;
   //   padding-right: 10px;
   border-radius: 50px 0px;
@@ -47,6 +72,9 @@
     flex-wrap: wrap;
   }
   .team-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: calc((100% - 60px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
@@ -68,11 +96,6 @@
   .team-list-item-name {
     font-size: 16px;
     line-height: 20px;
-  }
-}
-
-@include for-size(desktop) {
-  .team-list-item-name {
-    margin-right: 100px;
+    text-align: center;
   }
 }
