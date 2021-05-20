@@ -2,6 +2,7 @@ import {
   renderDefaultEvents,
   byCountry,
   byQuery,
+  bySegment,
 } from '../events-list/events-list';
 import ApiService from '../../services/apiService';
 import getRefs from '../../services/get-refs.js';
@@ -73,7 +74,7 @@ function paginationRender({ totalPages }, currentPage) {
 }
 
 function onSetPaginationItemClass() {
-  const pagPage = localStorage.getItem('page');
+  const pagPage = sessionStorage.getItem('page');
   refs.pagList.firstElementChild.classList.add('is-active');
   refs.pagList.childNodes.forEach(el => {
     if (el.textContent === pagPage) {
@@ -89,13 +90,13 @@ function onSetPaginationItemClass() {
       el.classList.add('modified');
     }
   });
-  localStorage.setItem('page', '1');
+  sessionStorage.setItem('page', '1');
 }
 
 function onClick(e) {
   const APITag = ApiService.tag;
   const page = +e.target.textContent;
-  localStorage.setItem('page', page);
+  sessionStorage.setItem('page', page);
 
   if (e.target.nodeName === 'UL') {
     return;
@@ -112,6 +113,9 @@ function onClick(e) {
   }
   if (APITag === 'byAllCountries' || APITag === 'byOneCountry') {
     byCountry(page);
+  }
+  if (APITag === 'byCategory') {
+    bySegment(page);
   }
 }
 
