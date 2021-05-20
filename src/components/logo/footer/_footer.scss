@@ -18,6 +18,20 @@
   margin-bottom: 27px;
 
   color: #939393;
+
+  
+.dev-link {
+  text-decoration: none;
+  color: #dc56c5 !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: rgb(255, 0, 0);
+  }
+}
 }
 
 @include for-size(tablet) {
