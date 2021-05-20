@@ -1,28 +1,6 @@
-
-{{!-- <ul class="team-list container list">
-    {{#each this}}
-    <li class="team-list-item">
-        <img class="team-list-item-img" src="{{image}}" alt="член команды" />
-        <h3 class="team-list-item-name">"{{nameDev}}"</h3>
-        <ul class="sotial-list list">
-            <li class="sotial-list-item">
-                <a class="sotial-list-item-link link" href="{{github}}"
-                    aria-label="иконка гитхаб">
-                    <img src="" alt="иконка гитхаб" class="social-list-item-icon" />
-                </a>
-            </li>
-             <li class="sotial-list-item">
-                    <a class="sotial-list-item-link link" href="" aria-label="иконка линкедин">
-                        <img src="./images/sotial-list/linkedin.svg" alt="иконка линкедин" class="social-list-item-icon" />
-                    </a>
-             </li>
-        </ul>
-     </li>
-        </ul>
-    </li>
-    {{/each}}
-</ul> --}}
-
+<li class="card-list-developers-item">
+<div class="dev-card container">
+<h2 class="teame-title">Nice to meet you😉</h2>
 <ul class="team-list list">
     {{#each this}}
     <li class="team-list-item">
@@ -35,27 +13,23 @@
       <ul class="sotial-list list">
         <li class="sotial-list-item">
           <a
-            class="sotial-list-item-link link"
+            class="sotial-list-item-link git link"
             href="{{github}}"
             aria-label="иконка гитхаб"
           >
-            <svg class="sotial-list-item-link-svg">
-              <use href="./images/sprite.svg#github"></use>
-            </svg>
           </a>
         </li>
         <li class="sotial-list-item">
           <a
-            class="sotial-list-item-link link"
+            class="sotial-list-item-link linked link"
             href="{{linkedin}}"
             aria-label="иконка линкедит"
           >
-            <svg class="sotial-list-item-link-svg">
-              <use href="./images/sprite.svg#linkedin"></use>
-            </svg>
           </a>
         </li>
       </ul>
     </li>
     {{/each}}
 </ul>
+</div>
+</li>
