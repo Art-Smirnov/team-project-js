@@ -91,7 +91,7 @@ refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 
-function onCloseModal(e) {
+export function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&
     e.target.className !== 'backdrop'
