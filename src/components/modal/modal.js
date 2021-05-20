@@ -38,7 +38,7 @@ export default async function onClickCard(e) {
     }
 
     const result = await ApiService.feachEventById(currentID);
-    console.log(result);
+
     //Добавляю в объект ивента свойство с датой в нужном формате для гугл-календаря
     result.startGoogle = moment
       .utc(result.dates.start.dateTime)
@@ -87,7 +87,7 @@ export default async function onClickCard(e) {
 }
 
 function markupModalText(text) {
-refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
+  refs.backdrop.insertAdjacentHTML('beforeend', modalTmpl());
   refs.backdrop.innerHTML = modalTmpl(text);
 }
 

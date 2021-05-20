@@ -79,6 +79,7 @@ async function byQuery(page = 0) {
     clearPagList();
 
     const result = await ApiService.fetchEventsByQuery(value, page);
+    console.log(result);
 
     appendImagesMarkup(result._embedded.events);
     paginationRender(result.page, page);
