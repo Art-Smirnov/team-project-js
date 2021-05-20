@@ -25,6 +25,7 @@ refs.genre.addEventListener('click', searchEven);
 refs.eventCurrentUsers.addEventListener('click', onClickMyEventsBtn);
 
 function searchEven(e) {
+  console.log(e.target.nodeName);
   if (e.target.nodeName === 'P') {
     idCategory = e.target.id;
     sessionStorage.setItem('segmentId', `${e.target.id}`);
@@ -161,11 +162,11 @@ function onNoResultsError() {
 
 //Появление секции команды
 refs.logoEl[0].addEventListener('click', e => {
-  refs.dreamTeamEl.classList.toggle('show');
+  refs.genreEl.classList.toggle('show');
 });
 
 refs.logoEl[1].addEventListener('click', e => {
-  refs.dreamTeamEl.classList.toggle('show');
+  refs.genreEl.classList.toggle('show');
 });
 
 export {

@@ -20,7 +20,7 @@ refs.chekBoxContainer.classList.add(currentThemeClass);
 refs.bodyRef.classList.add(currentThemeClass);
 refs.searchEventInp.classList.add(currentThemeClass);
 refs.selectForm.classList.add(currentThemeClass);
-refs.dreamTeamEl.classList.add(currentThemeClass);
+refs.genreEl.classList.add(currentThemeClass);
 refs.headerOverlay.classList.add(currentThemeClass);
 refs.svgScroll.classList.add(currentThemeClass);
 refs.lightLogoEl.classList.add(currentThemeClass);
@@ -43,7 +43,7 @@ function changeTheme(add, rem) {
   refs.svgScroll.classList.replace(rem, add);
   refs.searchEventInp.classList.replace(rem, add);
   refs.selectForm.classList.replace(rem, add);
-  refs.dreamTeamEl.classList.replace(rem, add);
+  refs.genreEl.classList.replace(rem, add);
   refs.lightLogoEl.classList.replace(rem, add);
   refs.darkLogoEl.classList.replace(rem, add);
   refs.bgDecorContainer.classList.replace(rem, add);
