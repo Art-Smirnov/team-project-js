@@ -1,5 +1,5 @@
 .back_to_top {
-  position: sticky;
+  position: fixed;
   z-index: 1;
 
   background-color: rgba(0, 0, 0, 0.6);
@@ -14,12 +14,9 @@
 
   display: none;
 
-  @media screen and (max-width: 350px) {
-    left: 75%;
-  }
   width: 0px;
   bottom: 10%;
-  left: 100%;
+  left: 75%;
 }
 
 .back_to_top:hover {
