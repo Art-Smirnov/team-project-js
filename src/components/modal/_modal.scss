@@ -204,7 +204,7 @@ body.modal-open {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @include for-size(desktop) {
-    color: $primary-accent;
+    font-size: 35px;
   }
   &:hover,
   &:focus {
