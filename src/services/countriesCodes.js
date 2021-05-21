@@ -23,18 +23,18 @@ export default [
         alphaCode: 'AT',
         name: 'Austria'
     },
-    {
-        alphaCode: 'AZ',
-        name: 'Azerbaijan'
-    },
-    {
-        alphaCode: 'BS',
-        name: 'Bahamas'
-    },
-    {
-        alphaCode: 'BH',
-        name: 'Bahrain'
-    },
+    // {
+    //     alphaCode: 'AZ',
+    //     name: 'Azerbaijan'
+    // },
+    // {
+    //     alphaCode: 'BS',
+    //     name: 'Bahamas'
+    // },
+    // {
+    //     alphaCode: 'BH',
+    //     name: 'Bahrain'
+    // },
     {
         alphaCode: 'BB',
         name: 'Barbados'
@@ -47,38 +47,38 @@ export default [
         alphaCode: 'BM',
         name: 'Bermuda'
     },
-    {
-        alphaCode: 'BR',
-        name: 'Brazil'
-    },
-    {
-        alphaCode: 'BG',
-        name: 'Bulgaria'
-    },
+    // {
+    //     alphaCode: 'BR',
+    //     name: 'Brazil'
+    // },
+    // {
+    //     alphaCode: 'BG',
+    //     name: 'Bulgaria'
+    // },
     {
         alphaCode: 'CA',
         name: 'Canada'
     },
-    {
-        alphaCode: 'CL',
-        name: 'Chile'
-    },
-    {
-        alphaCode: 'CN',
-        name: 'China'
-    },
-    {
-        alphaCode: 'CO',
-        name: 'Colombia'
-    },
+    // {
+    //     alphaCode: 'CL',
+    //     name: 'Chile'
+    // },
+    // {
+    //     alphaCode: 'CN',
+    //     name: 'China'
+    // },
+    // {
+    //     alphaCode: 'CO',
+    //     name: 'Colombia'
+    // },
     {
         alphaCode: 'CR',
         name: 'Costa Rica'
     },
-    {
-        alphaCode: 'HR',
-        name: 'Croatia'
-    },
+    // {
+    //     alphaCode: 'HR',
+    //     name: 'Croatia'
+    // },
     {
         alphaCode: 'CY',
         name: 'Cyprus'
@@ -91,18 +91,18 @@ export default [
         alphaCode: 'DK',
         name: 'Denmark'
     },
-    {
-        alphaCode: 'DO',
-        name: 'Dominican Republic'
-    },
-    {
-        alphaCode: 'EC',
-        name: 'Ecuador'
-    },
-    {
-        alphaCode: 'EE',
-        name: 'Estonia'
-    },
+    // {
+    //     alphaCode: 'DO',
+    //     name: 'Dominican Republic'
+    // },
+    // {
+    //     alphaCode: 'EC',
+    //     name: 'Ecuador'
+    // },
+    // {
+    //     alphaCode: 'EE',
+    //     name: 'Estonia'
+    // },
     {
         alphaCode: 'FO',
         name: 'Faroe Islands'
@@ -115,10 +115,10 @@ export default [
         alphaCode: 'FR',
         name: 'France'
     },
-    {
-        alphaCode: 'GE',
-        name: 'Georgia'
-    },
+    // {
+    //     alphaCode: 'GE',
+    //     name: 'Georgia'
+    // },
     {
         alphaCode: 'DE',
         name: 'Germany'
@@ -135,18 +135,18 @@ export default [
         alphaCode: 'GB',
         name: 'Great Britain'
     },
-    {
-        alphaCode: 'GR',
-        name: 'Greece'
-    },
-    {
-        alphaCode: 'HK',
-        name: 'Hong Kong'
-    },
-    {
-        alphaCode: 'HU',
-        name: 'Hungary'
-    },
+    // {
+    //     alphaCode: 'GR',
+    //     name: 'Greece'
+    // },
+    // {
+    //     alphaCode: 'HK',
+    //     name: 'Hong Kong'
+    // },
+    // {
+    //     alphaCode: 'HU',
+    //     name: 'Hungary'
+    // },
     {
         alphaCode: 'IS',
         name: 'Iceland'
@@ -163,26 +163,26 @@ export default [
         alphaCode: 'IL',
         name: 'Israel'
     },
-    {
-        alphaCode: 'IT',
-        name: 'Italy'
-    },
-    {
-        alphaCode: 'JM',
-        name: 'Jamaica'
-    },
-    {
-        alphaCode: 'JP',
-        name: 'Japan'
-    },
-    {
-        alphaCode: 'KR',
-        name: 'Korea, Republic of'
-    },
-    {
-        alphaCode: 'LV',
-        name: 'Latvia'
-    },
+    // {
+    //     alphaCode: 'IT',
+    //     name: 'Italy'
+    // },
+    // {
+    //     alphaCode: 'JM',
+    //     name: 'Jamaica'
+    // },
+    // {
+    //     alphaCode: 'JP',
+    //     name: 'Japan'
+    // },
+    // {
+    //     alphaCode: 'KR',
+    //     name: 'Korea, Republic of'
+    // },
+    // {
+    //     alphaCode: 'LV',
+    //     name: 'Latvia'
+    // },
     {
         alphaCode: 'LB',
         name: 'Lebanon'
@@ -195,10 +195,10 @@ export default [
         alphaCode: 'LU',
         name: 'Luxembourg'
     },
-    {
-        alphaCode: 'MY',
-        name: 'Malaysia'
-    },
+    // {
+    //     alphaCode: 'MY',
+    //     name: 'Malaysia'
+    // },
     {
         alphaCode: 'MT',
         name: 'Malta'
@@ -223,26 +223,26 @@ export default [
         alphaCode: 'NL',
         name: 'Netherlands'
     },
-    {
-        alphaCode: 'AN',
-        name: 'Netherlands Antilles'
-    },
+    // {
+    //     alphaCode: 'AN',
+    //     name: 'Netherlands Antilles'
+    // },
     {
         alphaCode: 'NZ',
         name: 'New Zealand'
     },
-    {
-        alphaCode: 'ND',
-        name: 'Northern Ireland'
-    },
+    // {
+    //     alphaCode: 'ND',
+    //     name: 'Northern Ireland'
+    // },
     {
         alphaCode: 'NO',
         name: 'Norway'
     },
-    {
-        alphaCode: 'PE',
-        name: 'Peru'
-    },
+    // {
+    //     alphaCode: 'PE',
+    //     name: 'Peru'
+    // },
     {
         alphaCode: 'PL',
         name: 'Poland'
@@ -259,34 +259,34 @@ export default [
         alphaCode: 'RU',
         name: 'Russian Federation'
     },
-    {
-        alphaCode: 'LC',
-        name: 'Saint Lucia'
-    },
-    {
-        alphaCode: 'SA',
-        name: 'Saudi Arabia'
-    },
-    {
-        alphaCode: 'RS',
-        name: 'Serbia'
-    },
-    {
-        alphaCode: 'SG',
-        name: 'Singapore'
-    },
-    {
-        alphaCode: 'SK',
-        name: 'Slovakia'
-    },
-    {
-        alphaCode: 'SI',
-        name: 'Slovenia'
-    },
-    {
-        alphaCode: 'ZA',
-        name: 'South Africa'
-    },
+    // {
+    //     alphaCode: 'LC',
+    //     name: 'Saint Lucia'
+    // },
+    // {
+    //     alphaCode: 'SA',
+    //     name: 'Saudi Arabia'
+    // },
+    // {
+    //     alphaCode: 'RS',
+    //     name: 'Serbia'
+    // },
+    // {
+    //     alphaCode: 'SG',
+    //     name: 'Singapore'
+    // },
+    // {
+    //     alphaCode: 'SK',
+    //     name: 'Slovakia'
+    // },
+    // {
+    //     alphaCode: 'SI',
+    //     name: 'Slovenia'
+    // },
+    // {
+    //     alphaCode: 'ZA',
+    //     name: 'South Africa'
+    // },
     {
         alphaCode: 'ES',
         name: 'Spain'
@@ -299,14 +299,14 @@ export default [
         alphaCode: 'CH',
         name: 'Swittzerland'
     },
-    {
-        alphaCode: 'TW',
-        name: 'Taiwan'
-    },
-    {
-        alphaCode: 'TH',
-        name: 'Thailand'
-    },
+    // {
+    //     alphaCode: 'TW',
+    //     name: 'Taiwan'
+    // },
+    // {
+    //     alphaCode: 'TH',
+    //     name: 'Thailand'
+    // },
     {
         alphaCode: 'TT',
         name: 'Trinidad and Tobago'
@@ -319,16 +319,16 @@ export default [
         alphaCode: 'UA',
         name: 'Ukraine'
     },
-    {
-        alphaCode: 'AE',
-        name: 'United Arab Emirates'
-    },
-    {
-        alphaCode: 'UY',
-        name: 'Uruguay'
-    },
-    {
-        alphaCode: 'VE',
-        name: 'Venezuela'
-    }
+    // {
+    //     alphaCode: 'AE',
+    //     name: 'United Arab Emirates'
+    // },
+    // {
+    //     alphaCode: 'UY',
+    //     name: 'Uruguay'
+    // },
+    // {
+    //     alphaCode: 'VE',
+    //     name: 'Venezuela'
+    // }
 ]
