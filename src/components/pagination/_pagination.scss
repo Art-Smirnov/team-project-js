@@ -2,11 +2,9 @@
   display: flex;
 
   margin-top: 60px;
-  margin-bottom: 100px;
 
   @include for-size(desktop) {
     margin-top: 80px;
-    margin-bottom: 120px;
   }
 
   &__list {

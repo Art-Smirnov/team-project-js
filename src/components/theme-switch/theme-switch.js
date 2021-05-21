@@ -14,8 +14,6 @@ const currentThemeClass =
 refs.chekBoxRef.addEventListener('change', onThemeChange);
 refs.chekBoxRef.checked = localStorage.getItem('body-theme') === Theme.LIGHT;
 
-// const cardTitle = document.querySelector('.card-list-item__title');
-
 refs.chekBoxContainer.classList.add(currentThemeClass);
 refs.bodyRef.classList.add(currentThemeClass);
 refs.searchEventInp.classList.add(currentThemeClass);

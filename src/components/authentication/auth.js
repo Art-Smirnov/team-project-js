@@ -20,10 +20,9 @@ const refs = getRefs();
 refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
-// refs.btnCloseModalUser;
 refs.btnCloseModalUser.addEventListener('click', (e) => {
   onToggleClassModal();
-})
+});
 
 const formAuth = document.querySelector('.form-sign-in');
 const inputEmail = formAuth.querySelector('#email');
@@ -203,12 +202,14 @@ function deleteAllEventFromDataLikeUser() {
 
 async function fetchLikedEvnts() {
   const arr = dataIDLikeUsers.map(evt => evt.likeId);
-  console.log(arr);
+
+  // const uniqArr = [...new Set(arr)];
+  // console.log(uniqArr);
+
   const result = await Promise.all(
     arr.map(evtId => ApiService.feachEventById(evtId)),
   );
 
-  console.log(result);
   return result;
 }
 
