@@ -1,8 +1,11 @@
 .genre-section {
     display: none;
     position: absolute;
-    opacity: 0;
-    @include for-size(desktop) {
+    opacity: 0;  
+    -webkit-animation: scale-up-tl 0.4s ease-in-out both alternate;
+    animation: scale-up-tl 0.4s ease-in-out alternate;
+
+    @include for-size(tablet) {
       display: none;
       opacity: 0;
       top: 0;
@@ -10,48 +13,66 @@
       left: 0;
       bottom: 0;
       background: #0d0d0df2;
-      -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-      animation: scale-up-tl 0.4s ease-in-out both;
   
       &.show {
         display: flex;
-        align-items: center;
         justify-content: center;
         opacity: 1;
         z-index: 20;
-        -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-        animation: scale-up-tl 0.4s ease-in-out both;
       }
   
       &.light-theme {
         background: #dadadaeb;
       }
     }
+
+    @include for-size(desktop) {
+      &.show {
+        align-items: center;
+      }
+    }
   }
 
   .genre-list {
     list-style: none;
-    padding-left: 200px;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: center;
+    align-content: flex-start;
+    width: 600px;
+    padding: 0;
     margin: 0;
-    // margin-top: auto;
-    // margin-left: 10%;
-    // margin-right: 10%;
-    // margin-bottom: auto;
-    display: flex;
+    margin-top: 30px;
+    margin-left: 50px;
+
+    @include for-size(desktop) { 
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    min-width: 900px;
+    margin: 0;
+    margin-left: 200px;
+    margin-right: 200px;
+    }
 
     .genre-header {
-        width: 200px;
-        height: 130px;
-        border-top-left-radius: 50px;
-        border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      width: 120px;
+      height: 80px;   
 
-    &:hover{
-        -webkit-animation: wobble-hor-bottom 0.8s both;
-	    animation: wobble-hor-bottom 0.8s both;
-    }
+      @include for-size(desktop) {
+        width: 100%;
+        max-width: 180px;
+        height: 100px; 
+        max-height: 120px;
+
+        &:hover{
+          -webkit-animation: wobble-hor-bottom 0.8s both;
+          animation: wobble-hor-bottom 0.8s both;
+        }
+      }
     }
   
     & li {
@@ -59,17 +80,21 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 250px;
+        width: calc((100% - 20px) / 3);
 
-      &:not(:last-child) {
-          margin-right: 30px;
-      }
-
-      &::after {
+        &::after {
           content: '';
           width: 0;
           height: 0;
-      }
+        }
+
+        @include for-size(desktop) {          
+          width: 250px;        
+
+        &:not(:last-child) {
+          margin-right: 35px;
+        }
+        }
     }
   }
 
