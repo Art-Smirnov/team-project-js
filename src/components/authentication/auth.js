@@ -188,7 +188,6 @@ function deleteEventFromDataLikeUser(idLike) {
 }
 
 function deleteAllEventFromDataLikeUser(e) {
-  console.log(e.currentTarget);
   var deleteDataRef = database.ref('users/' + myUserId);
   deleteDataRef.remove();
   onClickMyEventsBtn();
