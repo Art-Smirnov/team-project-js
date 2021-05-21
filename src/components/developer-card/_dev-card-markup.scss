@@ -33,6 +33,96 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+
+  &:nth-child(1) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Cherniak-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(2) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Myzika-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(3) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Smirnov-foto.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(4) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Arylova-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(5) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Hordyna-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(6) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Selina-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(7) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Stulkivska-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(8) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Nyrkova-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &:nth-child(9) {
+
+    .team-list-item-img {
+      background-image: url('../images/dev-card-foto/Bohatyrenko-foto.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
 }
 
 .team-list-item-img {
@@ -44,6 +134,11 @@
   margin-bottom: 5px;
   //   padding-right: 10px;
   border-radius: 50px 0px;
+  transition: transform 0.25s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5%);
+  }
 }
 
 .team-list-item-name {
