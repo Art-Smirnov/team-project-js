@@ -15,7 +15,7 @@ export default [
     },
     {
         nameDev: 'Artem Smirnov',
-        image: 'images/dev-card-foto/Smirnov-foto.png',
+        image: 'images/dev-card-foto/Smirnov-foto.jpg',
         // image: 'https://i.ibb.co/7p3rf2g/Smirnov-foto.png',
         github: 'https://github.com/Art-Smirnov',
         linkedin: 'https://www.linkedin.com/feed/',
