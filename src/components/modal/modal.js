@@ -96,7 +96,8 @@ function markupModalText(text) {
 function onCloseModal(e) {
   if (
     e.target.className !== 'close-button' &&
-    e.target.className !== 'backdrop'
+    e.target.className !== 'backdrop' &&
+    e.target.className !== 'material-icons material-icons-close'
   ) {
     return;
   }
