@@ -6,7 +6,6 @@ export class AuthUser {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(userCredential => {
-        // authError.classList.add('visually-hidden');
         var user = userCredential.user;
       })
       .catch(error => {
@@ -24,9 +23,9 @@ export class AuthUser {
       .signInWithEmailAndPassword(email, password)
       .then(userCredential => {
         var user = userCredential.user;
-        // authError.classList.add('visually-hidden');
+
         formError.textContent = 'registration completed successfully';
-        // authError.classList.remove('visually-hidden');
+
         loggedIn = true;
         onCloseModalAuth();
       })
@@ -34,7 +33,6 @@ export class AuthUser {
         var errorCode = error.code;
         var errorMessage = error.message;
         formError.textContent = errorMessage;
-        // authError.classList.remove('visually-hidden');
       });
   }
 
@@ -48,7 +46,6 @@ export class AuthUser {
       })
       .catch(error => {
         formError.textContent = '';
-        // authError.classList.remove('visually-hidden');
       });
   }
 }
