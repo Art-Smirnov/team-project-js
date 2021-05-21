@@ -205,7 +205,6 @@ function deleteAllEventFromDataLikeUser(e) {
   var deleteDataRef = database.ref('users/' + myUserId);
   deleteDataRef.remove();
   onClickMyEventsBtn();
-  // renderDefaultEvents();
   onToggleModal();
 }
 
