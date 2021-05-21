@@ -1,6 +1,9 @@
 import getRefs from '../../services/get-refs.js';
 import ApiService from '../../services/apiService.js';
-import { onClickMyEventsBtn } from '../events-list/events-list.js';
+import {
+  onClickMyEventsBtn,
+  renderDefaultEvents,
+} from '../events-list/events-list.js';
 import { onToggleModal } from '../modal/modal.js';
 
 const firebaseConfig = {
@@ -20,7 +23,7 @@ const refs = getRefs();
 refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
-refs.btnCloseModalUser.addEventListener('click', (e) => {
+refs.btnCloseModalUser.addEventListener('click', e => {
   onToggleClassModal();
 });
 
@@ -36,7 +39,6 @@ let loggedIn = false;
 let myUserId = '';
 let dataIDLikeUsers = {};
 
-
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     const userName =
@@ -50,11 +52,10 @@ firebase.auth().onAuthStateChanged(user => {
     btnSignRegister.setAttribute('disabled', '');
     readUserData();
   } else {
-      refs.greetingUser.textContent = 'sign in';
-      loggedIn = false;
+    refs.greetingUser.textContent = 'sign in';
+    loggedIn = false;
   }
 });
-
 
 function onClickBtnProfile() {
   // refs.backdrop.innerHTML = contentModalSign;
@@ -145,7 +146,7 @@ function signOut() {
     .then(() => {
       loggedIn = false;
       onToggleClassModal();
-      window.location.reload()
+      window.location.reload();
     })
     .catch(error => {
       formError.textContent = '';
@@ -184,20 +185,28 @@ function writeUserData(idLike) {
 }
 
 function deleteEventFromDataLikeUser(idLike) {
-  const recordData = dataIDLikeUsers.find(us => us.likeId === idLike);
-  var deleteDataRef = database.ref(
-    'users/' + myUserId + '/idLikeEvent' + '/' + recordData.id,
-  );
-  deleteDataRef.remove();
-  onClickMyEventsBtn();
-  onToggleModal();
+  try {
+    // refs.cardList.removeEventListener('click', onClickCard);
+    // refs.backdrop.removeEventListener('click', onClickCard);
+    const recordData = dataIDLikeUsers.find(us => us.likeId === idLike);
+    var deleteDataRef = database.ref(
+      'users/' + myUserId + '/idLikeEvent' + '/' + recordData.id,
+    );
+    deleteDataRef.remove();
+    onClickMyEventsBtn();
+    onToggleModal();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function deleteAllEventFromDataLikeUser() {
-  var deleteDataRef = database.ref(
-    'users/' + myUserId);
+function deleteAllEventFromDataLikeUser(e) {
+  console.log(e.currentTarget);
+  var deleteDataRef = database.ref('users/' + myUserId);
   deleteDataRef.remove();
   onClickMyEventsBtn();
+  // renderDefaultEvents();
+  onToggleModal();
 }
 
 async function fetchLikedEvnts() {
@@ -213,4 +222,9 @@ async function fetchLikedEvnts() {
   return result;
 }
 
-export { writeUserData, deleteEventFromDataLikeUser, fetchLikedEvnts, deleteAllEventFromDataLikeUser };
+export {
+  writeUserData,
+  deleteEventFromDataLikeUser,
+  fetchLikedEvnts,
+  deleteAllEventFromDataLikeUser,
+};

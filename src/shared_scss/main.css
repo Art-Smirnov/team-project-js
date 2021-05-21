@@ -440,6 +440,13 @@ img {
   top: 30px;
 }
 
+@media (max-width: 767px) {
+  .headerOptions {
+    right: 2.5%;
+    top: 17px;
+  }
+}
+
 .header-title-container {
   width: 212px;
   padding-top: 78px;
@@ -694,9 +701,8 @@ img {
 }
 
 .form-search_icon-search {
-  width: 12px;
-  height: 12px;
-  fill: #939393;
+  font-size: 18px;
+  color: #939393;
   position: absolute;
   top: 4px;
   right: -240px;
@@ -707,7 +713,7 @@ img {
 }
 
 .form-search-event:focus ~ .form-search_icon-search {
-  fill: #dc56c5;
+  color: #dc56c5;
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
 }
@@ -724,12 +730,11 @@ img {
 }
 
 .form-search_icon-arrow {
-  width: 15px;
-  height: 10px;
-  fill: #939393;
+  font-size: 28px;
+  color: #939393;
   position: absolute;
-  top: 5px;
-  right: 30px;
+  top: -2px;
+  right: 23px;
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -738,36 +743,12 @@ img {
 
 @media (min-width: 768px) {
   .form-search_icon-arrow {
-    top: 15px;
+    top: 7px;
   }
 }
 
 .form-select:focus ~ .form-search_icon-arrow {
-  opacity: 0;
-}
-
-.form-search_icon-eject {
-  width: 18px;
-  height: 13px;
-  fill: #dc56c5;
-  position: absolute;
-  top: 3px;
-  right: 30px;
-  opacity: 0;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 768px) {
-  .form-search_icon-eject {
-    top: 13px;
-  }
-}
-
-.form-select:focus ~ .form-search_icon-eject {
-  opacity: 1;
+  color: #dc56c5;
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
 }
@@ -866,8 +847,8 @@ img {
   right: -10px;
   content: '';
   display: block;
-  width: 175px;
-  height: 220px;
+  width: 125px;
+  height: 160px;
   border: solid 1px rgba(220, 86, 197, 0.3);
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -880,8 +861,8 @@ img {
 
 @media (min-width: 768px) {
   .card-list-item::after {
-    width: 108px;
-    height: 108px;
+    width: 175px;
+    height: 220px;
     top: -13px;
     right: -14px;
   }
@@ -1656,10 +1637,7 @@ body.modal-open {
 
 @media (max-width: 767px) {
   .toggle:before {
-    top: 20px;
-    font-size: 10px;
-    top: 12px;
-    left: -35px;
+    display: none;
   }
 }
 
@@ -1673,9 +1651,7 @@ body.modal-open {
 
 @media (max-width: 767px) {
   .toggle:after {
-    right: -35px;
-    font-size: 10px;
-    top: 12px;
+    display: none;
   }
 }
 
@@ -2693,32 +2669,6 @@ body.modal-open {
   }
 }
 
-@-webkit-keyframes slide-out-bck-tl {
-  0% {
-    -webkit-transform: translateZ(0) translateY(0) translateX(0);
-    transform: translateZ(0) translateY(0) translateX(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
-    transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
-    opacity: 0;
-  }
-}
-
-@keyframes slide-out-bck-tl {
-  0% {
-    -webkit-transform: translateZ(0) translateY(0) translateX(0);
-    transform: translateZ(0) translateY(0) translateX(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
-    transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
-    opacity: 0;
-  }
-}
-
 @-webkit-keyframes scale-up-tl {
   0% {
     -webkit-transform: scale(0.5);
@@ -3010,6 +2960,12 @@ body.modal-open {
   color: #dc56c5;
 }
 
+.btn-form[disabled] {
+  color: #0e0e0e;
+  border-color: #0e0e0e;
+  cursor: default;
+}
+
 .btn-user {
   color: #4c00fe;
   -webkit-appearance: none;
@@ -3020,6 +2976,10 @@ body.modal-open {
   cursor: pointer;
   -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-user:hover {
+  text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
 }
 
 .material-icons-user {
@@ -3035,6 +2995,44 @@ body.modal-open {
 .btn-user:hover,
 .btn-user:focus {
   color: #dc56c5;
+}
+
+.btn-user.btn-remove-all {
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  z-index: 22;
+}
+
+@media (min-width: 1280px) {
+  .btn-user.btn-remove-all {
+    font-size: 35px;
+  }
+}
+
+.btn-user.btn-remove-all:hover {
+  color: #e41212;
+  text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e41212, 0 0 20px #e41212, 0 0 30px #e41212, 0 0 35px #e41212;
+}
+
+.material-icons-delete-sweep {
+  font-size: 30px;
+}
+
+@media (min-width: 1280px) {
+  .material-icons-delete-sweep {
+    font-size: 40px;
+  }
 }
 
 .card-list-developers-item {
