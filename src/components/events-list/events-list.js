@@ -8,6 +8,7 @@ import renderSelectCountry from '../search-form/renderSearchForm.js';
 import gameMarkup from '../tic-tac-toe/game-markup.js';
 import { onClickCard } from '../modal/modal.js';
 import { fetchLikedEvnts } from '../authentication/auth.js';
+import { deleteAllEventFromDataLikeUser } from '../authentication/auth.js';
 
 const preloader = preloaderFactory('.lds-roller');
 const refs = getRefs();
@@ -137,6 +138,9 @@ async function onClickMyEventsBtn(page = 0) {
 
     console.log(result.length);
     appendImagesMarkup(result);
+    createBtnRemoveAll();
+    document.querySelector('.btn-remove-all')
+      .addEventListener('click', deleteAllEventFromDataLikeUser);
     paginationRender({ totalPages: 1 }, page);
   } catch (error) {
     console.log(error);
@@ -177,6 +181,11 @@ refs.logoEl[0].addEventListener('click', e => {
 refs.logoEl[1].addEventListener('click', e => {
   refs.genreEl.classList.toggle('show');
 });
+
+function createBtnRemoveAll() {
+  const btnRemoveAll = '<button type="button" class="btn-user btn-remove-all"> <span class="material-icons material-icons-delete-sweep">delete_sweep</span>ALL</button>';
+  refs.cardList.insertAdjacentHTML('afterbegin', btnRemoveAll);
+}
 
 export {
   renderDefaultEvents,

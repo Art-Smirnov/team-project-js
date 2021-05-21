@@ -138,6 +138,12 @@
   color: $primary-accent;
 }
 
+.btn-form[disabled] {
+  color: $modal-content;
+  border-color: $modal-content;
+  cursor: default;
+}
+
 .btn-user {
   color: #4c00fe;
   -webkit-appearance: none;
@@ -147,6 +153,11 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00de,
+      0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de;
+  }
 }
 
 .material-icons-user {
@@ -159,4 +170,33 @@
 .btn-user:hover,
 .btn-user:focus {
   color: $primary-accent;
+}
+
+.btn-user.btn-remove-all {
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  left: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 22;
+
+  @include for-size(desktop) {
+    font-size: 35px;
+  }
+
+  &:hover {
+    color: #e41212;
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e41212,
+      0 0 20px #e41212, 0 0 30px #e41212, 0 0 35px #e41212;
+  }
+}
+
+.material-icons-delete-sweep {
+  font-size: 30px;
+  @include for-size(desktop) {
+    font-size: 40px;
+  }
 }
