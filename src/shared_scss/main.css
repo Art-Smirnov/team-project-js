@@ -440,13 +440,6 @@ img {
   top: 30px;
 }
 
-@media (max-width: 767px) {
-  .headerOptions {
-    right: 2.5%;
-    top: 17px;
-  }
-}
-
 .header-title-container {
   width: 212px;
   padding-top: 78px;
@@ -1637,7 +1630,10 @@ body.modal-open {
 
 @media (max-width: 767px) {
   .toggle:before {
-    display: none;
+    top: 20px;
+    font-size: 10px;
+    top: 12px;
+    left: -35px;
   }
 }
 
@@ -1651,7 +1647,9 @@ body.modal-open {
 
 @media (max-width: 767px) {
   .toggle:after {
-    display: none;
+    right: -35px;
+    font-size: 10px;
+    top: 12px;
   }
 }
 
@@ -3001,8 +2999,7 @@ body.modal-open {
   font-size: 25px;
   font-weight: 700;
   position: absolute;
-  top: -30px;
-  left: 50%;
+  left: 30px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3083,6 +3080,69 @@ body.modal-open {
   margin-bottom: 30px;
 }
 
+.team-list-item:nth-child(1) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Cherniak-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(2) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Myzika-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(3) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Smirnov-foto.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(4) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Arylova-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(5) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Hordyna-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(6) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Selina-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(7) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Stulkivska-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(8) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Nyrkova-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.team-list-item:nth-child(9) .team-list-item-img {
+  background-image: url("../images/dev-card-foto/Bohatyrenko-foto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .team-list-item-img {
   width: 128px;
   height: 161px;
@@ -3092,6 +3152,15 @@ body.modal-open {
   margin-right: auto;
   margin-bottom: 5px;
   border-radius: 50px 0px;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+.team-list-item-img:hover {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
 }
 
 .team-list-item-name {
