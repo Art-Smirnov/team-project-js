@@ -196,9 +196,9 @@
                 type="text"
                 placeholder="Start searching"
               />
-              <svg class="form-search_icon-search">
-                <use href="./images/sprite.svg#search-icon"></use>
-              </svg>
+              <span class="material-icons form-search_icon-search">
+                zoom_in
+              </span>
             </label>
             <label for="search-country" class="search-country_position-svg">
               <select name="country" id="search-country" class="form-select">
@@ -213,12 +213,9 @@
                 </option>
                 <option value="All">All countries</option>
               </select>
-              <svg class="form-search_icon-arrow">
-                <use href="./images/sprite.svg#arrow"></use>
-              </svg>
-              <svg class="form-search_icon-eject">
-                <use href="./images/sprite.svg#eject"></use>
-              </svg>
+              <span class="material-icons form-search_icon-arrow">
+                arrow_drop_down
+              </span>
             </label>
           </form>
         </div>
@@ -298,26 +295,29 @@
               <label for="name" class="label-field">Name</label>
               <input type="text" name="name" id="name" class="form-input" required>
             </div> -->
-            <div class="form-field">
-              <label for="email" class="label-field">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="form-input"
-                required
-              />
-            </div>
-            <div class="form-field">
-              <label for="password" class="label-field">Password</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="form-input"
-                required
-              />
-            </div>
+              <div class="modal-signin-inputs-js">
+                <div class="form-field">
+                  <label for="email" class="label-field">E-mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-input"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="password" class="label-field">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-input"
+                    required
+                  />
+                </div>
+              </div>
+              
             <div class="form-btn-wrapper">
               <button type="submit" class="btn-sign-in btn-form">
                 sign in
@@ -325,11 +325,10 @@
               <button type="submit" class="btn-register btn-form">
                 register
               </button>
-              <button type="submit" class="btn-sign-up btn-form">
-                sign up
+              <button type="submit" class="btn-sign-out btn-form">
+                sign out
               </button>
             </div>
-
             <p class="form-auth-error"></p>
           </form>
         </div>
