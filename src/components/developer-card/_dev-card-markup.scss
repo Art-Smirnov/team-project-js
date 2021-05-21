@@ -28,6 +28,7 @@
   }
 }
 .team-list-item {
+  position: relative;
   width: 138px;
   height: 242px;
   margin-left: auto;
@@ -41,6 +42,29 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 18%;
+          right: 21%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 120px;
+          height: 100px;
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -51,6 +75,31 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 7%;
+          right: 21%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 100px;
+          height: 100px;
+          transform: rotate(10deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
+      
     }
   }
 
@@ -61,6 +110,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 20%;
+          right: 33%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 51px;
+          height: 100px;
+          transform: rotate(5deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -71,6 +144,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 4%;
+          right: 31%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 130px;
+          height: 100px;
+          transform: rotate(10deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -81,6 +178,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 11%;
+          right: 38%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 40px;
+          height: 100px;
+          transform: rotate(-4deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -91,6 +212,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 12%;
+          right: 8%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 100px;
+          height: 100px;
+          transform: rotate(-10deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -101,6 +246,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 8%;
+          right: 22%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 110px;
+          height: 100px;
+          transform: rotate(-3deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -111,6 +280,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: 18%;
+          right: 19%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 120px;
+          height: 100px;
+          transform: rotate(4deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 
@@ -121,6 +314,30 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @include for-size(tablet) {
+        &::after {
+          position: absolute;
+          z-index: 150;
+          top: -2%;
+          right: 24%;
+          content: '';
+          display: block;
+          opacity: 0;
+          width: 90px;
+          height: 100px;
+          transform: rotate(10deg);
+          background-image: url('../images/dev-card-foto/glasses-pixel.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transition: opacity 0.25s ease-in-out;
+        }
+
+        &:hover::after {
+          opacity: 0.8;
+        }
+      }
     }
   }
 }

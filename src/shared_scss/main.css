@@ -3084,6 +3084,7 @@ body.modal-open {
 }
 
 .team-list-item {
+  position: relative;
   width: 138px;
   height: 242px;
   margin-left: auto;
@@ -3098,11 +3099,59 @@ body.modal-open {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .team-list-item:nth-child(1) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 18%;
+    right: 21%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 120px;
+    height: 100px;
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(1) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .team-list-item:nth-child(2) .team-list-item-img {
   background-image: url("../images/dev-card-foto/Myzika-foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .team-list-item:nth-child(2) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 7%;
+    right: 21%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(2) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
 }
 
 .team-list-item:nth-child(3) .team-list-item-img {
@@ -3112,11 +3161,61 @@ body.modal-open {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .team-list-item:nth-child(3) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 20%;
+    right: 33%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 51px;
+    height: 100px;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(3) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .team-list-item:nth-child(4) .team-list-item-img {
   background-image: url("../images/dev-card-foto/Arylova-foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .team-list-item:nth-child(4) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 4%;
+    right: 31%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 130px;
+    height: 100px;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(4) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
 }
 
 .team-list-item:nth-child(5) .team-list-item-img {
@@ -3126,11 +3225,61 @@ body.modal-open {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .team-list-item:nth-child(5) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 11%;
+    right: 38%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 40px;
+    height: 100px;
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(5) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .team-list-item:nth-child(6) .team-list-item-img {
   background-image: url("../images/dev-card-foto/Selina-foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .team-list-item:nth-child(6) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 12%;
+    right: 8%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(6) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
 }
 
 .team-list-item:nth-child(7) .team-list-item-img {
@@ -3140,6 +3289,31 @@ body.modal-open {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .team-list-item:nth-child(7) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 8%;
+    right: 22%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 110px;
+    height: 100px;
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(7) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .team-list-item:nth-child(8) .team-list-item-img {
   background-image: url("../images/dev-card-foto/Nyrkova-foto.jpg");
   background-repeat: no-repeat;
@@ -3147,11 +3321,61 @@ body.modal-open {
   background-size: cover;
 }
 
+@media (min-width: 768px) {
+  .team-list-item:nth-child(8) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: 18%;
+    right: 19%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 120px;
+    height: 100px;
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(8) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
+}
+
 .team-list-item:nth-child(9) .team-list-item-img {
   background-image: url("../images/dev-card-foto/Bohatyrenko-foto.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .team-list-item:nth-child(9) .team-list-item-img::after {
+    position: absolute;
+    z-index: 150;
+    top: -2%;
+    right: 24%;
+    content: '';
+    display: block;
+    opacity: 0;
+    width: 90px;
+    height: 100px;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+    background-image: url("../images/dev-card-foto/glasses-pixel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+  }
+  .team-list-item:nth-child(9) .team-list-item-img:hover::after {
+    opacity: 0.8;
+  }
 }
 
 .team-list-item-img {
