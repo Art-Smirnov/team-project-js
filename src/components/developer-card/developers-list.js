@@ -10,6 +10,7 @@ const refs = getRefs();
 refs.developersLink.addEventListener('click', renderDevelopersList);
 
 function renderDevelopersList() {
+  window.scrollTo(0, 0);
   clearGallery();
   clearPagList();
   refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
