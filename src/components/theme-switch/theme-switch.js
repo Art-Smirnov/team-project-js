@@ -26,7 +26,6 @@ refs.darkLogoEl.classList.add(currentThemeClass);
 refs.bgDecorContainer.classList.add(currentThemeClass);
 refs.titleContainer.classList.add(currentThemeClass);
 refs.title.classList.add(currentThemeClass);
-// cardTitle.classList.add(currentThemeClass);
 
 function onThemeChange({ target }) {
   target.checked
@@ -47,6 +46,5 @@ function changeTheme(add, rem) {
   refs.bgDecorContainer.classList.replace(rem, add);
   refs.titleContainer.classList.replace(rem, add);
   refs.title.classList.replace(rem, add);
-  // cardTitle.classList.replace(rem, add);
   localStorage.setItem('body-theme', add);
 }

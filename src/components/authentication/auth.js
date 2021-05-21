@@ -46,7 +46,7 @@ firebase.auth().onAuthStateChanged(user => {
     refs.greetingUser.textContent = `hi, ${userName}`;
     loggedIn = true;
     myUserId = firebase.auth().currentUser.uid;
-    console.log('id', myUserId);
+
     hideInput.classList.add('hide');
     btnSignIn.setAttribute('disabled', '');
     btnSignRegister.setAttribute('disabled', '');
@@ -58,10 +58,7 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 function onClickBtnProfile() {
-  // refs.backdrop.innerHTML = contentModalSign;
   onToggleClassModal();
-  // onHandlerAuthForm();
-  // formAuth.addEventListener('submit', onHandlerAuthForm)
 }
 
 btnSignIn.addEventListener('click', e => {
@@ -73,7 +70,6 @@ btnSignRegister.addEventListener('click', e => {
   e.preventDefault();
   formError.textContent = '';
   signUpWithEmailPassword();
-  //функция записи нового пользователя в бд
 });
 btnSignOut.addEventListener('click', e => {
   e.preventDefault();
@@ -85,10 +81,7 @@ function onToggleClassModal() {
   refs.backdropAuth.classList.toggle('is-hidden');
 }
 function onCloseModalAuth(e) {
-  if (
-    // e.target.className !== 'close-button' &&
-    e.target.className !== 'backdrop-auth'
-  ) {
+  if (e.target.className !== 'backdrop-auth') {
     return;
   }
   onToggleClassModal();
@@ -107,7 +100,6 @@ function signUpWithEmailPassword() {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(userCredential => {
-      // authError.classList.add('visually-hidden');
       var user = userCredential.user;
     })
     .catch(error => {
@@ -125,9 +117,9 @@ function signInWithEmailPassword() {
     .signInWithEmailAndPassword(email, password)
     .then(userCredential => {
       var user = userCredential.user;
-      // authError.classList.add('visually-hidden');
+
       formError.textContent = 'registration completed successfully';
-      // authError.classList.remove('visually-hidden');
+
       loggedIn = true;
       onToggleClassModal();
     })
@@ -135,7 +127,6 @@ function signInWithEmailPassword() {
       var errorCode = error.code;
       var errorMessage = error.message;
       formError.textContent = errorMessage;
-      // authError.classList.remove('visually-hidden');
     });
 }
 
@@ -150,7 +141,6 @@ function signOut() {
     })
     .catch(error => {
       formError.textContent = '';
-      // authError.classList.remove('visually-hidden');
     });
 }
 
@@ -174,7 +164,6 @@ function writeUserData(idLike) {
 
   likeListRef.on('value', snapshot => {
     const data = snapshot.val();
-    // console.log(Object.values(data));
     dataIDLikeUsers = data
       ? Object.keys(data).map(key => ({
           id: key,
@@ -199,7 +188,6 @@ function deleteEventFromDataLikeUser(idLike) {
 }
 
 function deleteAllEventFromDataLikeUser(e) {
-  console.log(e.currentTarget);
   var deleteDataRef = database.ref('users/' + myUserId);
   deleteDataRef.remove();
   onClickMyEventsBtn();
@@ -208,10 +196,6 @@ function deleteAllEventFromDataLikeUser(e) {
 
 async function fetchLikedEvnts() {
   const arr = dataIDLikeUsers.map(evt => evt.likeId);
-
-  // const uniqArr = [...new Set(arr)];
-  // console.log(uniqArr);
-
   const result = await Promise.all(
     arr.map(evtId => ApiService.feachEventById(evtId)),
   );
