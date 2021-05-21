@@ -37,6 +37,10 @@ function searchEven(e) {
 
 }
 
+// console.log(e.target.dataset.genre);
+
+
+
 async function renderDefaultEvents(page = 0) {
   preloader.show();
   refs.cardList.addEventListener('click', onClickCard);

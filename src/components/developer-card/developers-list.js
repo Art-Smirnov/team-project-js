@@ -13,9 +13,11 @@ function renderDevelopersList() {
   window.scrollTo(0, 0);
   clearGallery();
   clearPagList();
-  refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
+  refs.cardList.innerHTML = devCardTmpl(developers)
+  // refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
   refs.cardList.removeEventListener('click', onCloseModal);
   refs.cardList.removeEventListener('click', onClickCard);
+
   if (refs.cardList.children.length < 17) {
     refs.decors.forEach(el => el.classList.add('hide'));
   }
@@ -23,3 +25,4 @@ function renderDevelopersList() {
     refs.decors.forEach(el => el.classList.remove('hide'));
   }
 }
+
