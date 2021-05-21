@@ -12,10 +12,7 @@
 
   &:before {
     @include for-size(mobile-only) {
-      top: 20px;
-      font-size: 10px;
-      top: 12px;
-      left: -35px;
+      display: none;
     }
 
     content: 'DARK';
@@ -27,9 +24,7 @@
 
   &:after {
     @include for-size(mobile-only) {
-      right: -35px;
-      font-size: 10px;
-      top: 12px;
+      display: none;
     }
 
     content: 'LIGHT';
@@ -64,6 +59,7 @@
     color: $input-bg;
   }
 }
+
 .toggle.light-theme {
   &:before {
     color: rgb(180, 180, 180);

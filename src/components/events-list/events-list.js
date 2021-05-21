@@ -35,12 +35,9 @@ function searchEven(e) {
 
   sessionStorage.setItem('segmentId', idCategory);
   bySegment();
-
 }
 
 // console.log(e.target.dataset.genre);
-
-
 
 async function renderDefaultEvents(page = 0) {
   preloader.show();
@@ -143,10 +140,10 @@ async function onClickMyEventsBtn(page = 0) {
     clearGallery();
     clearPagList();
     const result = await fetchLikedEvnts();
-
     appendImagesMarkup(result);
     createBtnRemoveAll();
-    document.querySelector('.btn-remove-all')
+    document
+      .querySelector('.btn-remove-all')
       .addEventListener('click', deleteAllEventFromDataLikeUser);
     paginationRender({ totalPages: 1 }, page);
   } catch (error) {
@@ -155,6 +152,8 @@ async function onClickMyEventsBtn(page = 0) {
     onNoResultsError();
   } finally {
     preloader.hide();
+    // refs.cardList.addEventListener('click', onClickCard);
+    // refs.backdrop.addEventListener('click', onClickCard);
   }
 }
 
@@ -215,7 +214,8 @@ refs.logoEl[1].addEventListener('click', e => {
 });
 
 function createBtnRemoveAll() {
-  const btnRemoveAll = '<button type="button" class="btn-user btn-remove-all"> <span class="material-icons material-icons-delete-sweep">delete_sweep</span>ALL</button>';
+  const btnRemoveAll =
+    '<button type="button" class="btn-user btn-remove-all"> <span class="material-icons material-icons-delete-sweep">delete_sweep</span>ALL</button>';
   refs.cardList.insertAdjacentHTML('afterbegin', btnRemoveAll);
 }
 
@@ -226,4 +226,5 @@ export {
   clearGallery,
   bySegment,
   onClickMyEventsBtn,
+  onClickCard,
 };
