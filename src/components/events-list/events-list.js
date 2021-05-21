@@ -152,8 +152,6 @@ async function onClickMyEventsBtn(page = 0) {
     onNoResultsError();
   } finally {
     preloader.hide();
-    // refs.cardList.addEventListener('click', onClickCard);
-    // refs.backdrop.addEventListener('click', onClickCard);
   }
 }
 
