@@ -186,8 +186,6 @@ function writeUserData(idLike) {
 
 function deleteEventFromDataLikeUser(idLike) {
   try {
-    // refs.cardList.removeEventListener('click', onClickCard);
-    // refs.backdrop.removeEventListener('click', onClickCard);
     const recordData = dataIDLikeUsers.find(us => us.likeId === idLike);
     var deleteDataRef = database.ref(
       'users/' + myUserId + '/idLikeEvent' + '/' + recordData.id,
