@@ -2693,6 +2693,32 @@ body.modal-open {
   }
 }
 
+@-webkit-keyframes slide-out-bck-tl {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+    transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
+    transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-bck-tl {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0) translateX(0);
+    transform: translateZ(0) translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
+    transform: translateZ(-1100px) translateY(-1000px) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes scale-up-tl {
   0% {
     -webkit-transform: scale(0.5);
@@ -3752,9 +3778,11 @@ body.modal-open {
   display: none;
   position: absolute;
   opacity: 0;
+  -webkit-animation: scale-up-tl 0.4s ease-in-out both alternate;
+  animation: scale-up-tl 0.4s ease-in-out alternate;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .genre-section {
     display: none;
     opacity: 0;
@@ -3763,55 +3791,85 @@ body.modal-open {
     left: 0;
     bottom: 0;
     background: #0d0d0df2;
-    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-    animation: scale-up-tl 0.4s ease-in-out both;
   }
   .genre-section.show {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     opacity: 1;
     z-index: 20;
-    -webkit-animation: scale-up-tl 0.4s ease-in-out both;
-    animation: scale-up-tl 0.4s ease-in-out both;
   }
   .genre-section.light-theme {
     background: #dadadaeb;
   }
 }
 
+@media (min-width: 1280px) {
+  .genre-section.show {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .genre-list {
   list-style: none;
-  padding-left: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  width: 600px;
+  padding: 0;
   margin: 0;
-  display: flex;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+@media (min-width: 1280px) {
+  .genre-list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    min-width: 900px;
+    margin: 0;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 }
 
 .genre-list .genre-header {
-  width: 200px;
-  height: 130px;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  width: 120px;
+  height: 80px;
 }
 
-.genre-list .genre-header:hover {
-  -webkit-animation: wobble-hor-bottom 0.8s both;
-  animation: wobble-hor-bottom 0.8s both;
+@media (min-width: 1280px) {
+  .genre-list .genre-header {
+    width: 100%;
+    max-width: 180px;
+    height: 100px;
+    max-height: 120px;
+  }
+  .genre-list .genre-header:hover {
+    -webkit-animation: wobble-hor-bottom 0.8s both;
+    animation: wobble-hor-bottom 0.8s both;
+  }
 }
 
 .genre-list li {
@@ -3828,17 +3886,22 @@ body.modal-open {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 250px;
-}
-
-.genre-list li:not(:last-child) {
-  margin-right: 30px;
+  width: calc((100% - 20px) / 3);
 }
 
 .genre-list li::after {
   content: '';
   width: 0;
   height: 0;
+}
+
+@media (min-width: 1280px) {
+  .genre-list li {
+    width: 250px;
+  }
+  .genre-list li:not(:last-child) {
+    margin-right: 35px;
+  }
 }
 
 @-webkit-keyframes wobble-hor-bottom {

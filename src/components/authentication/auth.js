@@ -20,21 +20,22 @@ const refs = getRefs();
 refs.btnProfile.addEventListener('click', onClickBtnProfile);
 refs.backdropAuth.addEventListener('click', onCloseModalAuth);
 window.addEventListener('keyup', onKeyModalAuthEscClose);
-refs.btnCloseModalUser;
-refs.btnCloseModalUser.addEventListener('click', e => {
+refs.btnCloseModalUser.addEventListener('click', (e) => {
   onToggleClassModal();
 });
 
 const formAuth = document.querySelector('.form-sign-in');
 const inputEmail = formAuth.querySelector('#email');
 const inputPassword = formAuth.querySelector('#password');
+const hideInput = formAuth.querySelector('.modal-signin-inputs-js');
 const btnSignIn = formAuth.querySelector('.btn-sign-in');
 const btnSignRegister = formAuth.querySelector('.btn-register');
-const btnSignUp = formAuth.querySelector('.btn-sign-up');
+const btnSignOut = formAuth.querySelector('.btn-sign-out');
 const formError = formAuth.querySelector('.form-auth-error');
 let loggedIn = false;
 let myUserId = '';
 let dataIDLikeUsers = {};
+
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
@@ -43,13 +44,17 @@ firebase.auth().onAuthStateChanged(user => {
     refs.greetingUser.textContent = `hi, ${userName}`;
     loggedIn = true;
     myUserId = firebase.auth().currentUser.uid;
-
+    console.log('id', myUserId);
+    hideInput.classList.add('hide');
+    btnSignIn.setAttribute('disabled', '');
+    btnSignRegister.setAttribute('disabled', '');
     readUserData();
   } else {
-    refs.greetingUser.textContent = 'sign in';
-    loggedIn = false;
+      refs.greetingUser.textContent = 'sign in';
+      loggedIn = false;
   }
 });
+
 
 function onClickBtnProfile() {
   // refs.backdrop.innerHTML = contentModalSign;
@@ -69,7 +74,7 @@ btnSignRegister.addEventListener('click', e => {
   signUpWithEmailPassword();
   //функция записи нового пользователя в бд
 });
-btnSignUp.addEventListener('click', e => {
+btnSignOut.addEventListener('click', e => {
   e.preventDefault();
   formError.textContent = '';
   signOut();
@@ -140,6 +145,7 @@ function signOut() {
     .then(() => {
       loggedIn = false;
       onToggleClassModal();
+      window.location.reload()
     })
     .catch(error => {
       formError.textContent = '';
@@ -187,6 +193,13 @@ function deleteEventFromDataLikeUser(idLike) {
   onToggleModal();
 }
 
+function deleteAllEventFromDataLikeUser() {
+  var deleteDataRef = database.ref(
+    'users/' + myUserId);
+  deleteDataRef.remove();
+  onClickMyEventsBtn();
+}
+
 async function fetchLikedEvnts() {
   const arr = dataIDLikeUsers.map(evt => evt.likeId);
 
@@ -200,4 +213,4 @@ async function fetchLikedEvnts() {
   return result;
 }
 
-export { writeUserData, deleteEventFromDataLikeUser, fetchLikedEvnts };
+export { writeUserData, deleteEventFromDataLikeUser, fetchLikedEvnts, deleteAllEventFromDataLikeUser };

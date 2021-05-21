@@ -58,8 +58,9 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .form-select::before {
@@ -91,8 +92,9 @@
 
 .form-search-event {
   margin-bottom: 25px;
-  -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
   @include for-size(tablet) {
     margin-right: 30px;
@@ -105,9 +107,8 @@
 }
 
 .form-search_icon-search {
-  width: 12px;
-  height: 12px;
-  fill: $input-content;
+  font-size: 18px;
+  color: $input-content;
 
   position: absolute;
   top: 4px;
@@ -117,7 +118,7 @@
   transition-timing-function: $timing-function;
 
   .form-search-event:focus ~ & {
-    fill: $primary-accent;
+    color: $primary-accent;
     transform: scale(1.15);
   }
 
@@ -132,46 +133,44 @@
 }
 
 .form-search_icon-arrow {
-  width: 15px;
-  height: 10px;
-  fill: $input-content;
+  font-size: 28px;
+  color: $input-content;
 
   position: absolute;
-  top: 5px;
-  right: 30px;
+  top: -2px;
+  right: 23px;
 
   transition-duration: $animation-duration;
   transition-timing-function: $timing-function;
 
   @include for-size(tablet) {
-    top: 15px;
+    top: 7px;
   }
 
   .form-select:focus ~ & {
-    opacity: 0;
-  }
-}
-
-.form-search_icon-eject {
-  width: 18px;
-  height: 13px;
-  fill: $primary-accent;
-
-  position: absolute;
-  top: 3px;
-  right: 30px;
-  opacity: 0;
-
-  transition-duration: $animation-duration;
-  transition-timing-function: $timing-function;
-
-  @include for-size(tablet) {
-    top: 13px;
-  }
-
-  .form-select:focus ~ & {
-    opacity: 1;
+    color: $primary-accent;
     transform: scale(1.15);
   }
 }
 
+// .form-search_icon-eject {
+//   font-size: 18px;
+//   color: $input-content;
+
+//   position: absolute;
+//   top: 3px;
+//   right: 30px;
+//   opacity: 0;
+
+//   transition-duration: $animation-duration;
+//   transition-timing-function: $timing-function;
+
+//   @include for-size(tablet) {
+//     top: 13px;
+//   }
+
+//   .form-select:focus ~ & {
+//     opacity: 1;
+//     transform: scale(1.15);
+//   }
+// }

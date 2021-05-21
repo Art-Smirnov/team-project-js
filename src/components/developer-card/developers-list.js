@@ -11,7 +11,10 @@ refs.developersLink.addEventListener('click', renderDevelopersList);
 
 function renderDevelopersList() {
   window.scrollTo(0, 0);
+
     clearPagList();
+
+
   refs.cardList.innerHTML = devCardTmpl(developers)
   // refs.cardList.insertAdjacentHTML('afterbegin', devCardTmpl(developers));
   refs.cardList.removeEventListener('click', onCloseModal);
