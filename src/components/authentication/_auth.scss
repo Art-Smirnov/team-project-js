@@ -173,10 +173,17 @@
 }
 
 .btn-user.btn-remove-all {
+  @include for-size(mobile-only) {
+    transform: translate(-50%, 0);
+    top: -15px;
+  }
+
   font-size: 25px;
   font-weight: 700;
   position: absolute;
-  left: 30px;
+  top: -30px;
+  left: 50%;
+  // transform: translate(-50%, 0);
   text-align: center;
   display: flex;
   align-items: center;

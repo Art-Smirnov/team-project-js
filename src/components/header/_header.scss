@@ -60,6 +60,10 @@
 }
 
 .headerOptions {
+  @include for-size(mobile-only) {
+    right: 2.5%;
+    top: 17px;
+  }
   z-index: 19;
   position: absolute;
   display: flex;
