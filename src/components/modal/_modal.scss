@@ -179,10 +179,18 @@ body.modal-open {
   height: 16px;
   justify-content: center;
   align-items: center;
-  background-image: url(../images/ticket2.svg);
-  background-size: cover;
   margin-right: 13px;
 
+  @include for-size(desktop) {
+    width: 29px;
+    height: 19px;
+  }
+}
+.inline-svg-icon {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  fill: black;
   @include for-size(desktop) {
     width: 29px;
     height: 19px;
