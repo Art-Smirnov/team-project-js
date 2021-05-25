@@ -23,22 +23,25 @@ body.modal-open {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  justify-content: center;
   display: flex;
   position: relative;
+  border-radius: 150px 0px;
+  padding: 55px 15px 104px;
 
-  @include for-size(mobile) {
-    width: 260px;
+  @include for-size(mobile-only) {
+    min-width: 260px;
+    max-width: 560px;
     min-height: auto;
     margin-top: 207px;
     margin-bottom: 207px;
-    border-radius: 150px 0px;
-    padding: 55px 15px 104px;
+    margin-left: max(10vw);
+    margin-right: max(10vw);
   }
 
   @include for-size(tablet) {
     padding: 28px 20px 56px;
     width: 560px;
-    // width: 595px;
     min-height: auto;
     margin-top: 161px;
     margin-bottom: 161px;
@@ -179,8 +182,6 @@ body.modal-open {
   height: 16px;
   justify-content: center;
   align-items: center;
-  background-image: url(../images/ticket2.svg);
-  background-size: cover;
   margin-right: 13px;
 
   @include for-size(desktop) {
@@ -188,7 +189,16 @@ body.modal-open {
     height: 19px;
   }
 }
-
+.inline-svg-icon {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  fill: black;
+  @include for-size(desktop) {
+    width: 29px;
+    height: 19px;
+  }
+}
 .close-button {
   position: absolute;
   top: 25px;
